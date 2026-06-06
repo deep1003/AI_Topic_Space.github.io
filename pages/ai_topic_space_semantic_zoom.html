@@ -380,12 +380,35 @@ function groupCentroids(items, keyFn, labelFn, minCount=1) {
 }
 function chooseLabelPlan() {
   const span = getVisibleBounds().span;
-  if (span > 10.0) return [{level:"L0", maxLabels:3, size:36, alpha:235}];
+  if (span > 10.0) return [{level:"L0", maxLabels:3, size:36, alpha:235}, {level:"L3D", perDomain:5, size:16, alpha:242}];
   if (span > 7.2) return [{level:"L0", maxLabels:3, size:32, alpha:130}, {level:"L1", maxLabels:3, size:28, alpha:230}];
   if (span > 5.0) return [{level:"L1", maxLabels:3, size:28, alpha:135}, {level:"L2", maxLabels:10, size:23, alpha:235}];
   if (span > 3.2) return [{level:"L2", maxLabels:14, size:22, alpha:155}, {level:"L3", maxLabels:10, size:18, alpha:238}];
   if (span > 1.65) return [{level:"L2", maxLabels:8, size:20, alpha:105}, {level:"L3", maxLabels:20, size:18, alpha:245}];
   return [{level:"L3", maxLabels:30, size:18, alpha:245}];
+}
+function selectTopL3PerDomain(candidates, perDomain) {
+  // Representative L3 key phrases per domain for the initial overview:
+  // top activation-mass nodes, deduplicated and spatially spread.
+  const period = document.getElementById("period").value;
+  const corpus = document.getElementById("corpus").value;
+  const out = [];
+  ["Policy", "Science", "Technology"].forEach(dom => {
+    const scored = candidates.filter(n => n.l0 === dom).map(n => {
+      const a = getActivation(n.id, period, corpus);
+      return {...n, score: a ? a.mass : 0};
+    }).filter(n => n.score > 0).sort((a,b) => b.score - a.score);
+    const kept = [];
+    const minDist = 0.55;
+    for (const n of scored) {
+      if (kept.some(k => k.l3_label === n.l3_label)) continue;
+      if (kept.some(k => Math.hypot(k.x - n.x, k.y - n.y) < minDist)) continue;
+      kept.push(n);
+      if (kept.length >= perDomain) break;
+    }
+    out.push(...kept);
+  });
+  return out;
 }
 function selectL3Labels(candidates, maxLabels) {
   const period = document.getElementById("period").value;
@@ -426,6 +449,7 @@ function labelData(fnodes) {
     if (spec.level === "L0") add(groupCentroids(visibleOrFallback, n=>n.l0, n=>n.l0).slice(0, spec.maxLabels), spec);
     else if (spec.level === "L1") add(groupCentroids(visibleOrFallback, n=>n.l0+"||"+n.l1, n=>n.l1).sort((a,b)=>b.n-a.n).slice(0, spec.maxLabels), spec);
     else if (spec.level === "L2") add(groupCentroids(visibleOrFallback, n=>n.l0+"||"+n.l2, n=>n.l2, mode === "gap" ? 1 : 3).sort((a,b)=>b.n-a.n).slice(0, spec.maxLabels), spec);
+    else if (spec.level === "L3D") add(selectTopL3PerDomain(visibleOrFallback, spec.perDomain || 5).map(n => ({x:n.x,y:n.y,label:n.l3_label,n:1,l0:n.l0})), spec);
     else add(selectL3Labels(visibleOrFallback, spec.maxLabels).map(n => ({x:n.x,y:n.y,label:n.l3_label,n:1,l0:n.l0})), spec);
   });
   return out;
@@ -483,7 +507,7 @@ function layers() {
   layerList.push(new deck.TextLayer({
     id:"semantic-labels", data:labels, pickable:false,
     getPosition:d=>[d.x,d.y], getText:d=>d.label, getSize:d=>d.size, sizeUnits:"pixels",
-    getColor:d=> d.level === "L0" ? hexToRgb(DOMAIN_COLORS[d.l0] || "#111111", d.alpha) : [38,38,38,d.alpha],
+    getColor:d=> (d.level === "L0" || d.level === "L3D") ? hexToRgb(DOMAIN_COLORS[d.l0] || "#111111", d.alpha) : [38,38,38,d.alpha],
     fontFamily:"Roboto", fontWeight:600, lineHeight:0.95, fontSettings:{sdf:true},
     outlineWidth:8, outlineColor:[238,238,238,221],
     background:true, getBackgroundColor:[255,255,255,64], getBackgroundPadding:[15,15,15,15],
