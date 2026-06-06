@@ -533,7 +533,15 @@ function update() {
 function updateStatus() {
   const mode = document.getElementById("mode").value;
   document.getElementById("period").disabled = mode === "reference";
-  document.getElementById("corpus").disabled = mode === "reference";
+  const corpusSel = document.getElementById("corpus");
+  if (mode === "gap") {
+    // The policy gap is computed from the observed policy space versus Korean
+    // policy activation, so the corpus selector has no effect in this mode.
+    corpusSel.value = "__all__";
+    corpusSel.disabled = true;
+  } else {
+    corpusSel.disabled = mode === "reference";
+  }
   const fnodes = filteredNodes();
   const active = fnodes.filter(n=>getActivation(n.id, document.getElementById("period").value, document.getElementById("corpus").value)).length;
   const gap = fnodes.filter(isGapNode).length;
