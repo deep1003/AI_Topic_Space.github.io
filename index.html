@@ -140,7 +140,7 @@
   <select id="mode">
     <option value="reference">Reference L0/L1/L2/L3 space</option>
     <option value="activation" selected>Korea activation</option>
-    <option value="gap">Korea relative L3 gap</option>
+    <option value="gap">Korea relative L3 gap (policy)</option>
   </select>
   <div class="row">
     <div>
@@ -273,7 +273,9 @@ function getRelativeGap(n) {
   return {isGap, ratio, strength, koreaMass, koreaDocs, benchmark, benchmarkDocs, benchmarkLabel, severity};
 }
 function isGapNode(n) {
-  return getRelativeGap(n).isGap;
+  // Gap judgement is restricted to the Policy domain: science/technology corpora
+  // are Korea-only, so no cross-national gap is defined for them (see paper, Sec. 5.4).
+  return n.l0 === "Policy" && getRelativeGap(n).isGap;
 }
 function filteredNodes() {
   const q = document.getElementById("search").value.toLowerCase().trim();
@@ -306,6 +308,7 @@ function tooltipFor(info) {
     if (!a) return null;
     extra = `<div style="margin-top:6px;"><b>Korea activation</b>: mass=${a.mass.toFixed(2)}, docs=${a.docs}</div>`;
   } else if (mode === "gap") {
+    if (n.l0 !== "Policy") return null;
     const g = getRelativeGap(n);
     if (!g.isGap) return null;
     extra = `<div style="margin-top:6px;"><b>State</b>: ${escapeHtml(g.severity)}</div>` +
