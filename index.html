@@ -380,7 +380,7 @@ function groupCentroids(items, keyFn, labelFn, minCount=1) {
 }
 function chooseLabelPlan() {
   const span = getVisibleBounds().span;
-  if (span > 10.0) return [{level:"L0", maxLabels:3, size:36, alpha:235}, {level:"L3D", perDomain:5, size:16, alpha:242}];
+  if (span > 10.0) return [{level:"L0", maxLabels:3, size:108, alpha:235}, {level:"L3D", perDomain:5, size:32, alpha:242}];
   if (span > 7.2) return [{level:"L0", maxLabels:3, size:32, alpha:130}, {level:"L1", maxLabels:3, size:28, alpha:230}];
   if (span > 5.0) return [{level:"L1", maxLabels:3, size:28, alpha:135}, {level:"L2", maxLabels:10, size:23, alpha:235}];
   if (span > 3.2) return [{level:"L2", maxLabels:14, size:22, alpha:155}, {level:"L3", maxLabels:10, size:18, alpha:238}];
