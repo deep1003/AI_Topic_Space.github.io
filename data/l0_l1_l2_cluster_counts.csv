@@ -1,0 +1,76 @@
+L0,L1,L2,L3_count
+Policy,AI policy and governance,"AI, rights, and biometrics",63
+Policy,AI policy and governance,Risk-based AI regulation and oversight,41
+Policy,AI policy and governance,Responsible AI and compliance,40
+Policy,AI policy and governance,Digital rights and legal frameworks,28
+Policy,AI policy and governance,Institutional AI governance,28
+Policy,AI policy and governance,Data governance and digital sovereignty,27
+Policy,AI policy and governance,"AI economy, labor, and industrial policy",26
+Policy,AI policy and governance,AI ethics and human-centered governance,25
+Policy,AI policy and governance,AI safety and risk management,25
+Policy,AI policy and governance,Algorithmic transparency and accountability,22
+Policy,AI policy and governance,Data protection and privacy,22
+Policy,AI policy and governance,AI security and critical infrastructure,20
+Policy,AI policy and governance,Algorithmic fairness and bias governance,18
+Policy,AI policy and governance,AI cybersecurity and resilience,16
+Policy,AI policy and governance,International AI governance coordination,16
+Policy,AI policy and governance,Participatory and inclusive AI governance,14
+Policy,AI policy and governance,Disinformation and information integrity,13
+Policy,AI policy and governance,Liability and fundamental rights,13
+Policy,AI policy and governance,STS and philosophy of AI,10
+Policy,AI policy and governance,Sustainability and environmental impact of AI,5
+Policy,AI policy and governance,Algorithmic fairness and bias mitigation,1
+Policy,AI policy and governance,Language modeling and NLP,1
+Policy,AI policy and governance,Symbolic reasoning and knowledge representation,1
+Science,AI science and research,"Optimization, inference, and evaluation methods",71
+Science,AI science and research,Cognitive science and philosophy of mind,70
+Science,AI science and research,"AI governance, assurance, and applications",52
+Science,AI science and research,Machine learning methods and tasks,52
+Science,AI science and research,Representation learning and embedding methods,48
+Science,AI science and research,Neural networks and deep learning,47
+Science,AI science and research,Language modeling and NLP,39
+Science,AI science and research,Statistical modeling and data mining,38
+Science,AI science and research,Computer vision and multimodal perception,34
+Science,AI science and research,Cognitive biases and decision theory,32
+Science,AI science and research,Computational science and modeling,32
+Science,AI science and research,Data governance and law,31
+Science,AI science and research,STS and algorithmic governance,31
+Science,AI science and research,Ethics and normative AI theory,30
+Science,AI science and research,Moral philosophy and economic theory,28
+Science,AI science and research,Mathematical and information-theoretic foundations,27
+Science,AI science and research,Computing systems and infrastructure,26
+Science,AI science and research,AI safety and security,23
+Science,AI science and research,Language models and generative NLP,23
+Science,AI science and research,Symbolic reasoning and knowledge representation,23
+Science,AI science and research,Adversarial ML and information harms,20
+Science,AI science and research,"Robotics, embodied AI, and bio-inspired systems",20
+Science,AI science and research,Model training pathologies,13
+Science,AI science and research,AI alignment and control,11
+Science,AI science and research,"AI law, liability, and intellectual property",11
+Science,AI science and research,Automated decision-making and agent systems,10
+Science,AI science and research,"AI alignment, fairness, and liability",7
+Science,AI science and research,Complexity and bio-inspired computation,7
+Science,AI science and research,Autonomous agents and formal decision systems,6
+Science,AI science and research,Algorithmic fairness and accountability,5
+Science,AI science and research,AI innovation and economic institutions,2
+Science,AI science and research,Foundations of complex systems and physical theory,2
+Science,AI science and research,AI education and learning systems,1
+Science,AI science and research,"AI, rights, and biometrics",1
+Science,AI science and research,Algorithmic fairness and bias mitigation,1
+Technology,AI technology and invention,Machine learning and model training techniques,90
+Technology,AI technology and invention,Computer vision and image understanding,73
+Technology,AI technology and invention,Language and summarization technologies,57
+Technology,AI technology and invention,Neural network architectures and deep learning,42
+Technology,AI technology and invention,"Reasoning, search, and inference technologies",42
+Technology,AI technology and invention,AI hardware and accelerators,38
+Technology,AI technology and invention,Predictive modeling and forecasting,38
+Technology,AI technology and invention,Generative AI and content generation,37
+Technology,AI technology and invention,Robotics and autonomous navigation,35
+Technology,AI technology and invention,Edge AI and distributed inference,30
+Technology,AI technology and invention,AI security and threat detection,27
+Technology,AI technology and invention,Agentic and multimodal AI systems,21
+Technology,AI technology and invention,MLOps and model lifecycle,20
+Technology,AI technology and invention,Unsupervised and swarm methods,19
+Technology,AI technology and invention,Speech and audio AI technologies,13
+Technology,AI technology and invention,"Document, language, and decision intelligence",6
+Technology,AI technology and invention,Computational science and modeling,1

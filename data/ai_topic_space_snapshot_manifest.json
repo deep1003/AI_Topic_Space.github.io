@@ -1,0 +1,38 @@
+{
+  "title": "AI Topic Space L0/L1/L2/L3 static snapshots",
+  "payload": "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/02_data_outputs/interactive_l1_l2_l3_payload.json",
+  "hierarchy_note": {
+    "L0": "Analytical domain: Policy, Science, or Technology",
+    "L1": "Broad thematic family within each L0 domain",
+    "L2": "Intermediate semantic cluster within L1",
+    "L3": "Finest-grained key phrase node used for activation and gap measurement"
+  },
+  "counts_by_L0": {
+    "Policy": {
+      "L1": 1,
+      "L2": 23,
+      "L3": 475
+    },
+    "Science": {
+      "L1": 1,
+      "L2": 35,
+      "L3": 874
+    },
+    "Technology": {
+      "L1": 1,
+      "L2": 17,
+      "L3": 589
+    }
+  },
+  "figures": [
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/04_snapshots/ai_topic_space_reference_l0_l1_l2_l3.png",
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/04_snapshots/ai_topic_space_korea_activation_2022_2026.png",
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/04_snapshots/ai_topic_space_korea_policy_gap_2022_2026.png"
+  ],
+  "tables": [
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/02_data_outputs/l0_l1_l2_l3_hierarchy_counts.csv",
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/02_data_outputs/l0_l1_l2_l3_representative_examples.csv",
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/02_data_outputs/l0_l1_l2_cluster_counts.csv",
+    "/Users/deep1003/data3/ai_knowledge_ecosystem_codex/47_interactive_l1_l2_l3_map/02_data_outputs/l0_l1_l2_l3_dictionary_for_appendix.csv"
+  ]
+}
