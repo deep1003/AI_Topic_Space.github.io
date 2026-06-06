@@ -210,6 +210,18 @@ function getActivation(id, period, corpus) {
   const cs = corpus === "__all__" ? corpora : [corpus];
   let mass = 0, docs = 0, share = 0, hits = 0;
   ps.forEach(p => cs.forEach(c => {
+    if (c === "Policy") {
+      // The Policy activation payload covers the full (domestic + international)
+      // observed policy space. Korea activation must use Korea-only masses,
+      // which are stored in the policy_gap records (korea_mass / korea_docs).
+      const g = ((policyGap[p] || {})[id]);
+      if (g && Number(g.korea_mass || 0) > 0) {
+        mass += Number(g.korea_mass || 0);
+        docs += Number(g.korea_docs || 0);
+        hits += 1;
+      }
+      return;
+    }
     const a = (((activation[p] || {})[c] || {})[id]);
     if (a) { mass += Number(a.mass || 0); docs += Number(a.docs || 0); share += Number(a.share || 0); hits += 1; }
   }));
