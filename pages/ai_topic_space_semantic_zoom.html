@@ -59,6 +59,23 @@
     border-bottom-right-radius: 14px;
     box-shadow: 0 8px 28px rgba(0,0,0,0.10);
   }
+  aside { transition: transform 0.25s ease; }
+  body.panel-hidden aside { transform: translateX(-110%); pointer-events: none; }
+  #panelToggle {
+    position: absolute; right: 10px; top: 10px;
+    width: 38px; height: 38px; border-radius: 9px;
+    border: 1px solid var(--line); background: rgba(255,255,255,0.95);
+    font-size: 19px; line-height: 1; cursor: pointer; color: #333;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  }
+  #panelToggle:hover { background: #fff; }
+  @media (max-width: 900px) {
+    .hero { width: auto; max-width: calc(100vw - 16px); padding: 9px 58px 9px 14px;
+            background: transparent; backdrop-filter: none; box-shadow: none; }
+    .hero h1 { font-size: 24px; text-shadow: 0 1px 6px rgba(255,255,255,0.9); }
+    .hero .subtitle { display: none; }
+    aside { top: 58px; width: min(330px, 86vw); max-height: calc(100vh - 74px); }
+  }
   label { display: block; margin: 10px 0 5px; font-size: 12px; font-weight: 900; }
   select, input {
     width: 100%;
@@ -130,6 +147,7 @@
 <body>
 <div id="deck-container"></div>
 <section class="hero">
+  <button id="panelToggle" aria-label="Toggle control panel" title="Show or hide controls">☰</button>
   <h1>AI Topic Space</h1>
   <div class="subtitle">
     Semantic zoom browser for the L0/L1/L2/L3 reference hierarchy. L3 key phrase nodes are colored by L2 cluster; Korea activation and gap views use the same reference denominator.
@@ -622,6 +640,15 @@ function updateSearchResults(fnodes) {
 buildControls();
 buildTree();
 update();
+
+// Collapsible control panel: hidden by default on small screens.
+const panelToggle = document.getElementById("panelToggle");
+function setPanelHidden(hidden) {
+  document.body.classList.toggle("panel-hidden", hidden);
+  panelToggle.textContent = hidden ? "\u2630" : "\u00d7";
+}
+panelToggle.addEventListener("click", () => setPanelHidden(!document.body.classList.contains("panel-hidden")));
+setPanelHidden(window.innerWidth <= 900);
 </script>
 </body>
 </html>
