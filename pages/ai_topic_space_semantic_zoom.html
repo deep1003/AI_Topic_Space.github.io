@@ -499,8 +499,15 @@ function layers() {
     }));
     layerList.push(new deck.ScatterplotLayer({
       id:"points-activation", data:active, pickable:true, stroked:true, filled:true,
-      getPosition:d=>[d.x,d.y], getRadius:d=>Math.max(5.0, Math.min(24, 5 + Math.sqrt(getActivation(d.id, period, corpus).mass) * 2.4)),
-      radiusUnits:"pixels", radiusMinPixels:4, radiusMaxPixels:26,
+      getPosition:d=>[d.x,d.y], getRadius:d=>{
+        // On small screens cap large bubbles so one or two nodes cannot fill the
+        // viewport; small nodes keep the same base size on every device.
+        const mobile = window.innerWidth <= 900;
+        const cap = mobile ? 11 : 24;
+        const k = mobile ? 1.1 : 2.4;
+        return Math.max(5.0, Math.min(cap, 5 + Math.sqrt(getActivation(d.id, period, corpus).mass) * k));
+      },
+      radiusUnits:"pixels", radiusMinPixels:4, radiusMaxPixels:(window.innerWidth <= 900) ? 12 : 26,
       getFillColor:d=>hexToRgb(d.l2_color, 222), getLineColor:[255,255,255,235], lineWidthUnits:"pixels", getLineWidth:0.9,
       autoHighlight:true, highlightColor:[30,30,30,70], parameters:{depthTest:false}
     }));
