@@ -398,12 +398,18 @@ function groupCentroids(items, keyFn, labelFn, minCount=1) {
 }
 function chooseLabelPlan() {
   const span = getVisibleBounds().span;
-  if (span > 10.0) return [{level:"L0", maxLabels:3, size:108, alpha:235}, {level:"L3D", perDomain:5, size:32, alpha:242}];
-  if (span > 7.2) return [{level:"L0", maxLabels:3, size:32, alpha:130}, {level:"L1", maxLabels:3, size:28, alpha:230}];
-  if (span > 5.0) return [{level:"L1", maxLabels:3, size:28, alpha:135}, {level:"L2", maxLabels:10, size:23, alpha:235}];
-  if (span > 3.2) return [{level:"L2", maxLabels:14, size:22, alpha:155}, {level:"L3", maxLabels:10, size:18, alpha:238}];
-  if (span > 1.65) return [{level:"L2", maxLabels:8, size:20, alpha:105}, {level:"L3", maxLabels:20, size:18, alpha:245}];
-  return [{level:"L3", maxLabels:30, size:18, alpha:245}];
+  let plan;
+  if (span > 10.0) plan = [{level:"L0", maxLabels:3, size:108, alpha:235}, {level:"L3D", perDomain:5, size:32, alpha:242}];
+  else if (span > 7.2) plan = [{level:"L0", maxLabels:3, size:32, alpha:130}, {level:"L1", maxLabels:3, size:28, alpha:230}];
+  else if (span > 5.0) plan = [{level:"L1", maxLabels:3, size:28, alpha:135}, {level:"L2", maxLabels:10, size:23, alpha:235}];
+  else if (span > 3.2) plan = [{level:"L2", maxLabels:14, size:22, alpha:155}, {level:"L3", maxLabels:10, size:18, alpha:238}];
+  else if (span > 1.65) plan = [{level:"L2", maxLabels:8, size:20, alpha:105}, {level:"L3", maxLabels:20, size:18, alpha:245}];
+  else plan = [{level:"L3", maxLabels:30, size:18, alpha:245}];
+  // On small screens shrink all labels: domain names to 1/3, other labels to 1/2.
+  if (window.innerWidth <= 900) {
+    plan = plan.map(p => ({...p, size: Math.max(9, Math.round(p.size * (p.level === "L0" ? 1/3 : 0.5)))}));
+  }
+  return plan;
 }
 function selectTopL3PerDomain(candidates, perDomain) {
   // Representative L3 key phrases per domain for the initial overview:
@@ -649,6 +655,9 @@ function setPanelHidden(hidden) {
 }
 panelToggle.addEventListener("click", () => setPanelHidden(!document.body.classList.contains("panel-hidden")));
 setPanelHidden(window.innerWidth <= 900);
+
+// Re-render labels when the viewport size class changes.
+window.addEventListener("resize", () => update());
 </script>
 </body>
 </html>
