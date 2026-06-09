@@ -1,6 +1,8 @@
 # AI Topic Space
 
-Interactive AI Topic Space for the Korean AI knowledge ecosystem project.
+![AI Topic Space — Korea activation overview](snapshots/ai_topic_space_social_card.png)
+
+Interactive AI Topic Space for the Korean AI knowledge ecosystem project. It visualizes how Korean policy, science, and technology corpora (1990–2026) activate a shared four-level AI topic reference space, and where Korean AI policy under-covers topics that are actively discussed in the international policy space.
 
 The site provides a four-level topic hierarchy:
 
