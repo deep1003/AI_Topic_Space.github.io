@@ -105,7 +105,7 @@
   .tree h2, .results h2 { font-size: 14px; margin: 8px 0; }
   details { margin: 4px 0; }
   summary { cursor: pointer; font-size: 13px; line-height: 1.32; }
-  .l2 {
+  .l2, .risk-l2, .risk-l3, .risk-l4 {
     display: block;
     margin: 4px 0 4px 18px;
     padding-left: 7px;
@@ -113,7 +113,9 @@
     font-size: 12px;
     cursor: pointer;
   }
-  .l2:hover { border-left-color: #777; color: #000; }
+  .risk-l3 { margin-left: 26px; font-size: 11.7px; }
+  .risk-l4 { margin-left: 34px; font-size: 11.3px; color: #555; }
+  .l2:hover, .risk-l2:hover, .risk-l3:hover, .risk-l4:hover { border-left-color: #777; color: #000; }
   .result { padding: 7px 0; border-bottom: 1px solid #ecece7; font-size: 12px; cursor: pointer; }
   .result b { font-size: 12.5px; }
   .result span { display: block; margin-top: 2px; color: var(--muted); }
@@ -177,7 +179,7 @@
   <div class="pills"><span class="pill active" id="resetBtn">Reset view</span></div>
   <p class="note" id="status"></p>
   <div class="tree">
-    <h2>Topic Tree (L0/L1/L2/L3)</h2>
+    <h2>Topic Tree (L0/L1/L2/L3/L4)</h2>
     <div id="tree"></div>
   </div>
   <div class="results">
@@ -199,6 +201,7 @@ const activation = payload.activation;
 const policyGap = payload.policy_gap;
 let activeDomains = new Set(payload.domains);
 let focus = null;
+let riskFocus = null;
 let currentLabelLevel = "L0";
 let viewState = null;
 const DOMAIN_COLORS = {"Policy":"#c95662", "Science":"#2f6fad", "Technology":"#25864b", "Risk":"#7a3b84"};
@@ -322,6 +325,11 @@ function filteredNodes() {
 function filteredRiskNodes() {
   const q = document.getElementById("search").value.toLowerCase().trim();
   return riskNodes.filter(n => {
+    if (riskFocus) {
+      if (riskFocus.l1 && n.l1 !== riskFocus.l1) return false;
+      if (riskFocus.l2 && n.l2 !== riskFocus.l2) return false;
+      if (riskFocus.l3 && n.l3 !== riskFocus.l3) return false;
+    }
     if (!q) return true;
     return [n.l4_label,n.l3,n.l2,n.l1,n.definition,n.source,n.scope,n.phrase].join(" ").toLowerCase().includes(q);
   });
@@ -667,6 +675,7 @@ function buildControls() {
   ["mode","period","corpus","search"].forEach(id => document.getElementById(id).addEventListener("input", update));
   document.getElementById("resetBtn").addEventListener("click", () => {
     focus = null;
+    riskFocus = null;
     document.getElementById("search").value = "";
     viewState = initialView();
     deckgl.setProps({initialViewState:viewState});
@@ -681,6 +690,13 @@ function buildTree() {
     tree[n.l0][n.l1][n.l2] ||= 0;
     tree[n.l0][n.l1][n.l2] += 1;
   });
+  const riskTree = {};
+  riskNodes.forEach(n => {
+    riskTree[n.l1] ||= {};
+    riskTree[n.l1][n.l2] ||= {};
+    riskTree[n.l1][n.l2][n.l3] ||= [];
+    riskTree[n.l1][n.l2][n.l3].push(n);
+  });
   let html = "";
   Object.entries(tree).forEach(([l0,l1s]) => {
     html += `<details open><summary><b>L0: ${escapeHtml(l0)}</b></summary>`;
@@ -694,15 +710,69 @@ function buildTree() {
     });
     html += `</details>`;
   });
+  if (riskNodes.length) {
+    html += `<details open><summary><b>L0: Risk</b> <span class="note">(${riskNodes.length} L4)</span></summary>`;
+    Object.entries(riskTree).forEach(([l1,l2s]) => {
+      const l1Count = Object.values(l2s).flatMap(l3s => Object.values(l3s).flat()).length;
+      html += `<details><summary>L1: ${escapeHtml(l1)} <span class="note">(${l1Count} L4)</span></summary>`;
+      Object.entries(l2s).sort((a,b)=>Object.values(b[1]).flat().length-Object.values(a[1]).flat().length).forEach(([l2,l3s]) => {
+        const l2Count = Object.values(l3s).flat().length;
+        html += `<details><summary class="risk-l2" data-risk-l1="${escapeHtml(l1)}" data-risk-l2="${escapeHtml(l2)}">L2: ${escapeHtml(l2)} <span class="note">(${l2Count})</span></summary>`;
+        Object.entries(l3s).sort((a,b)=>b[1].length-a[1].length).forEach(([l3,l4s]) => {
+          html += `<details><summary class="risk-l3" data-risk-l1="${escapeHtml(l1)}" data-risk-l2="${escapeHtml(l2)}" data-risk-l3="${escapeHtml(l3)}">L3: ${escapeHtml(l3)} <span class="note">(${l4s.length})</span></summary>`;
+          l4s.sort((a,b)=>(a.l4_label || "").localeCompare(b.l4_label || "")).forEach(n => {
+            html += `<span class="risk-l4" data-id="${escapeHtml(n.id)}">L4: ${escapeHtml(n.l4_label || n.phrase)}</span>`;
+          });
+          html += `</details>`;
+        });
+        html += `</details>`;
+      });
+      html += `</details>`;
+    });
+    html += `</details>`;
+  }
   document.getElementById("tree").innerHTML = html;
   document.querySelectorAll(".l2").forEach(el => el.addEventListener("click", () => {
     focus = {l0:el.dataset.l0, l1:el.dataset.l1, l2:el.dataset.l2};
+    riskFocus = null;
     const items = filteredNodes();
     const b = getBoundsFor(items);
     const centerX = (b.minX + b.maxX) / 2, centerY = (b.minY + b.maxY) / 2;
     const span = Math.max(b.maxX-b.minX, b.maxY-b.minY, 0.3);
     const zoom = Math.log2((window.innerWidth * 360) / (512 * span)) - 0.95;
     viewState = {...(viewState || initialView()), longitude:centerX, latitude:centerY, zoom, transitionDuration:700};
+    deckgl.setProps({initialViewState:viewState});
+    update();
+  }));
+  const focusRisk = (nextFocus, items) => {
+    focus = null;
+    riskFocus = nextFocus;
+    document.getElementById("mode").value = "risk";
+    const target = items && items.length ? items : filteredRiskNodes();
+    const b = getBoundsFor(target);
+    const centerX = (b.minX + b.maxX) / 2, centerY = (b.minY + b.maxY) / 2;
+    const span = Math.max(b.maxX-b.minX, b.maxY-b.minY, 0.25);
+    const zoom = Math.log2((window.innerWidth * 360) / (512 * span)) - 1.05;
+    viewState = {...(viewState || initialView()), longitude:centerX, latitude:centerY, zoom, transitionDuration:700};
+    deckgl.setProps({initialViewState:viewState});
+    update();
+  };
+  document.querySelectorAll(".risk-l2").forEach(el => el.addEventListener("click", (event) => {
+    event.preventDefault();
+    const nextFocus = {l1:el.dataset.riskL1, l2:el.dataset.riskL2};
+    focusRisk(nextFocus, riskNodes.filter(n => n.l1 === nextFocus.l1 && n.l2 === nextFocus.l2));
+  }));
+  document.querySelectorAll(".risk-l3").forEach(el => el.addEventListener("click", (event) => {
+    event.preventDefault();
+    const nextFocus = {l1:el.dataset.riskL1, l2:el.dataset.riskL2, l3:el.dataset.riskL3};
+    focusRisk(nextFocus, riskNodes.filter(n => n.l1 === nextFocus.l1 && n.l2 === nextFocus.l2 && n.l3 === nextFocus.l3));
+  }));
+  document.querySelectorAll(".risk-l4").forEach(el => el.addEventListener("click", (event) => {
+    event.preventDefault();
+    const n = riskNodes.find(v => v.id === el.dataset.id);
+    if (!n) return;
+    focusRisk({l1:n.l1, l2:n.l2, l3:n.l3}, [n]);
+    viewState = {...(viewState || initialView()), longitude:n.x, latitude:n.y, zoom:10.5, transitionDuration:650};
     deckgl.setProps({initialViewState:viewState});
     update();
   }));
