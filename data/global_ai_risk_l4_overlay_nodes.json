@@ -16,7 +16,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Allocative and representational harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0002",
@@ -35,7 +38,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Allocative and representational harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0003",
@@ -54,7 +60,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Allocative and representational harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0004",
@@ -73,7 +82,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Toxic and abusive content",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0005",
@@ -92,7 +104,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Toxic and abusive content",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0006",
@@ -111,7 +126,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Sensitive-context harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0007",
@@ -130,7 +148,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Sensitive-context harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0008",
@@ -149,7 +170,10 @@
     "risk_color": "#b84d8b",
     "l2_key": "Risk||Sensitive-context harms",
     "l1_key": "Risk||Discrimination and harmful content",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0009",
@@ -168,7 +192,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Privacy leakage",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Extracting Training Data from Large Language Models",
+    "evidence_url": "https://arxiv.org/abs/2012.07805",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0010",
@@ -187,7 +214,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Privacy leakage",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0011",
@@ -206,7 +236,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Privacy leakage",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0012",
@@ -225,7 +258,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Cyber vulnerability",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Prompt Injection Attacks against GPT-Integrated Applications",
+    "evidence_url": "https://arxiv.org/abs/2302.12173",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0013",
@@ -244,7 +280,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Cyber vulnerability",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0014",
@@ -263,7 +302,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Cyber vulnerability",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "MITRE ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems",
+    "evidence_url": "https://atlas.mitre.org/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0015",
@@ -282,7 +324,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Cyber vulnerability",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0016",
@@ -301,7 +346,10 @@
     "risk_color": "#5a67c8",
     "l2_key": "Risk||Cyber vulnerability",
     "l1_key": "Risk||Privacy, security, and cyber vulnerability",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0017",
@@ -320,7 +368,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Synthetic media and deception",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0018",
@@ -339,7 +390,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Synthetic media and deception",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0019",
@@ -358,7 +412,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Synthetic media and deception",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0020",
@@ -377,7 +434,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Epistemic integrity",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0021",
@@ -396,7 +456,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Epistemic integrity",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0022",
@@ -415,7 +478,10 @@
     "risk_color": "#c58a2d",
     "l2_key": "Risk||Epistemic integrity",
     "l1_key": "Risk||Misinformation and information integrity",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
+    "evidence_url": "https://arxiv.org/abs/2305.17493",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0023",
@@ -434,7 +500,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Dual-use misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0024",
@@ -453,7 +522,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Dual-use misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0025",
@@ -472,7 +544,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Dual-use misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Incidents and Hazards Monitor",
+    "evidence_url": "https://oecd.ai/en/incidents",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0026",
@@ -491,7 +566,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Criminal misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0027",
@@ -510,7 +588,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Criminal misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0028",
@@ -529,7 +610,10 @@
     "risk_color": "#b74343",
     "l2_key": "Risk||Surveillance misuse",
     "l1_key": "Risk||Malicious use and weaponization",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "EU Artificial Intelligence Act",
+    "evidence_url": "https://artificialintelligenceact.eu/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0029",
@@ -548,7 +632,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Autonomy and manipulation",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Sycophancy in Language Models",
+    "evidence_url": "https://arxiv.org/abs/2310.13548",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0030",
@@ -567,7 +654,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Autonomy and manipulation",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0031",
@@ -586,7 +676,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Autonomy and manipulation",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0032",
@@ -605,7 +698,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Human-machine interaction",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0033",
@@ -624,7 +720,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Human-machine interaction",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0034",
@@ -643,7 +742,10 @@
     "risk_color": "#8a63c7",
     "l2_key": "Risk||Human-machine interaction",
     "l1_key": "Risk||Human agency and interaction harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Taxonomy of Failure Modes in AI Agents",
+    "evidence_url": "https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0035",
@@ -662,7 +764,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Labor and inequality",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0036",
@@ -681,7 +786,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Labor and inequality",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0037",
@@ -700,7 +808,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Labor and inequality",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Incident Database",
+    "evidence_url": "https://incidentdatabase.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0038",
@@ -719,7 +830,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Economic concentration",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0039",
@@ -738,7 +852,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Economic concentration",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0040",
@@ -757,7 +874,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Environmental harms",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0041",
@@ -776,7 +896,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Environmental harms",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0042",
@@ -795,7 +918,10 @@
     "risk_color": "#3c9a6b",
     "l2_key": "Risk||Cultural harms",
     "l1_key": "Risk||Socioeconomic, labor, cultural, and environmental harms",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0043",
@@ -814,7 +940,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Reliability and robustness",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Vulnerability Database",
+    "evidence_url": "https://avidml.org/database/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0044",
@@ -833,7 +962,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Reliability and robustness",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Explaining and Harnessing Adversarial Examples",
+    "evidence_url": "https://arxiv.org/abs/1412.6572",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0045",
@@ -852,7 +984,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Reliability and robustness",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0046",
@@ -871,7 +1006,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Alignment and control",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Concrete Problems in AI Safety",
+    "evidence_url": "https://arxiv.org/abs/1606.06565",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0047",
@@ -890,7 +1028,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Alignment and control",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Goal Misgeneralization in Deep Reinforcement Learning",
+    "evidence_url": "https://arxiv.org/abs/2105.14111",
+    "evidence_type": "paper"
   },
   {
     "id": "RISK-REF-0048",
@@ -909,7 +1050,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Alignment and control",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0049",
@@ -928,7 +1072,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Evaluation limits",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative AI Profile",
+    "evidence_url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0050",
@@ -947,7 +1094,10 @@
     "risk_color": "#2f8fa3",
     "l2_key": "Risk||Evaluation limits",
     "l1_key": "Risk||AI system safety, robustness, and control",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "AI Vulnerability Database",
+    "evidence_url": "https://avidml.org/database/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0051",
@@ -966,7 +1116,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Pluralistic values",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0052",
@@ -985,7 +1138,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Pluralistic values",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0053",
@@ -1004,7 +1160,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Pluralistic values",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0054",
@@ -1023,7 +1182,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Pluralistic values",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0055",
@@ -1042,7 +1204,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Cultural and linguistic risks",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0056",
@@ -1061,7 +1226,10 @@
     "risk_color": "#d65f8d",
     "l2_key": "Risk||Cultural and linguistic risks",
     "l1_key": "Risk||Value alignment and local-cultural mismatch",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Research Value Compass",
+    "evidence_url": "https://www.microsoft.com/en-us/research/project/value-compass/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0057",
@@ -1080,7 +1248,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||Agent planning failures",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Taxonomy of Failure Modes in AI Agents",
+    "evidence_url": "https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0058",
@@ -1099,7 +1270,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||Agent planning failures",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Taxonomy of Failure Modes in AI Agents",
+    "evidence_url": "https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0059",
@@ -1118,7 +1292,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||Agent planning failures",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Taxonomy of Failure Modes in AI Agents",
+    "evidence_url": "https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0060",
@@ -1137,7 +1314,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||Multi-agent interactions",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "Microsoft Taxonomy of Failure Modes in AI Agents",
+    "evidence_url": "https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0061",
@@ -1156,7 +1336,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||Multi-agent interactions",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0062",
@@ -1175,7 +1358,10 @@
     "risk_color": "#7a8f2f",
     "l2_key": "Risk||RAG and memory risks",
     "l1_key": "Risk||Agentic AI and multi-agent failures",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OWASP Top 10 for Large Language Model Applications",
+    "evidence_url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0063",
@@ -1194,7 +1380,10 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Accountability gaps",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0064",
@@ -1213,7 +1402,10 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Accountability gaps",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0065",
@@ -1232,7 +1424,10 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Accountability gaps",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0066",
@@ -1251,7 +1446,10 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Institutional capacity",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "OECD AI Policy Observatory",
+    "evidence_url": "https://oecd.ai/",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0067",
@@ -1270,7 +1468,10 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Institutional capacity",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   },
   {
     "id": "RISK-REF-0068",
@@ -1289,6 +1490,9 @@
     "risk_color": "#6c6c6c",
     "l2_key": "Risk||Institutional capacity",
     "l1_key": "Risk||Governance, accountability, and institutional failure",
-    "evidence_status": "framework-derived initial node"
+    "evidence_status": "framework-derived initial node",
+    "evidence_title": "NIST AI Risk Management Framework",
+    "evidence_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "evidence_type": "source"
   }
 ]
