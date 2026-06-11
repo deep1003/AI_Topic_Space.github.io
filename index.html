@@ -344,10 +344,10 @@ function riskLabelData(rnodes) {
   const visibleOrFallback = visible.length ? visible : rnodes;
   const span = getVisibleBounds().span;
   let plan;
-  if (span > 10.0) plan = [{level:"L1", maxLabels:5, size:22, alpha:238}];
-  else if (span > 7.2) plan = [{level:"L1", maxLabels:6, size:22, alpha:238}];
-  else if (span > 5.0) plan = [{level:"L1", maxLabels:5, size:22, alpha:120}, {level:"L2", maxLabels:12, size:21, alpha:238}];
-  else if (span > 2.4) plan = [{level:"L2", maxLabels:10, size:18, alpha:115}, {level:"L3", maxLabels:18, size:17, alpha:244}];
+  if (span > 10.0) plan = [{level:"L1", maxLabels:6, size:29, alpha:248}];
+  else if (span > 7.2) plan = [{level:"L1", maxLabels:7, size:28, alpha:248}];
+  else if (span > 5.0) plan = [{level:"L1", maxLabels:6, size:26, alpha:180}, {level:"L2", maxLabels:12, size:21, alpha:238}];
+  else if (span > 2.4) plan = [{level:"L2", maxLabels:10, size:19, alpha:150}, {level:"L3", maxLabels:18, size:17, alpha:244}];
   else plan = [{level:"L4", maxLabels:32, size:16, alpha:246}];
   if (window.innerWidth <= 900) plan = plan.map(p => ({...p, size: Math.max(9, Math.round(p.size * 0.52))}));
   currentLabelLevel = plan.map(p=>p.level).join("+");
@@ -567,7 +567,7 @@ function layers() {
     const rnodes = filteredRiskNodes();
     layerList.push(new deck.ScatterplotLayer({
       id:"points-risk-bg", data:nodes.map(n=>({...n,__noTooltip:true})), pickable:false, stroked:false, filled:true,
-      getPosition:d=>[d.x,d.y], getRadius:2.8, radiusUnits:"pixels", getFillColor:[160,162,160,24], parameters:{depthTest:false}
+      getPosition:d=>[d.x,d.y], getRadius:3.4, radiusUnits:"pixels", getFillColor:[145,148,146,42], parameters:{depthTest:false}
     }));
     layerList.push(new deck.ScatterplotLayer({
       id:"points-risk", data:rnodes, pickable:true, stroked:true, filled:true,
