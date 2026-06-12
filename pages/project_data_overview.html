@@ -56,8 +56,8 @@
     </div>
 
     <div class="card wide">
-      <h2>Policy / institutional documents by period</h2>
-      <p class="sub">Domestic (Korean) vs. international policy documents across eight 5-year periods</p>
+      <h2>Policy documents by period <span style="color:var(--muted);font-weight:400;font-size:12px">(v5 collection)</span></h2>
+      <p class="sub">Domestic (Korean) vs. international policy documents across eight 5-year periods — temporal growth of the expanded v5 policy collection (the analysed core is 8,993)</p>
       <div class="cv"><canvas id="cPeriod"></canvas></div>
     </div>
 
@@ -91,7 +91,7 @@
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Corpus totals and period splits: AI knowledge-ecosystem project master tables (papers 34,664; patents 67,727; policy 12,002). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>. Figures may differ slightly as the risk overlay is updated.</p>
+  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>. Figures may differ slightly as the risk overlay is updated.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -108,7 +108,7 @@ function bar(id,labels,data,colors,opts={}){
 }
 
 // ---- static project figures ----
-const papers=34664, patents=67727, policy=12002, totalCorpus=papers+patents+policy;
+const papers=34664, patents=67727, policy=8993, totalCorpus=papers+patents+policy; // documents projected into the STPI space (m2 L3 activation manifest)
 document.getElementById("kpis").innerHTML=[
   ["Total documents",fmt(totalCorpus)],["Academic papers (Science)",fmt(papers)],
   ["Patents (Technology)",fmt(patents)],["Policy / institutional",fmt(policy)],
