@@ -163,6 +163,7 @@
     <option value="gap">Korea relative L3 gap (policy)</option>
     <option value="risk">Global AI Risks</option>
     <option value="anchor">AI Risk anchor links (nearest-STPI)</option>
+    <option value="taxonomy">Science, Technology, Policy, and Risks taxonomy</option>
   </select>
   <div class="row">
     <div>
@@ -807,7 +808,11 @@ function buildControls() {
     else { activeDomains.add(d); p.classList.add("active"); }
     update();
   }));
-  ["mode","period","corpus","search"].forEach(id => document.getElementById(id).addEventListener("input", update));
+  ["period","corpus","search"].forEach(id => document.getElementById(id).addEventListener("input", update));
+  document.getElementById("mode").addEventListener("input", () => {
+    if (document.getElementById("mode").value === "taxonomy") window.location.href = "taxonomy_browser.html";
+    else update();
+  });
   document.getElementById("resetBtn").addEventListener("click", () => {
     focus = null;
     riskFocus = null;

@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Topic Taxonomy</title>
+<style>
+  :root {
+    --policy: #c95662;
+    --science: #2f6fad;
+    --technology: #25864b;
+    --risk: #7a3b84;
+    --ink: #111;
+    --muted: #667085;
+    --line: #e6e8ec;
+    --soft: #f7f8fa;
+    --card: rgba(255,255,255,0.92);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 28px 18px;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 760;
+  }
+  .subtitle {
+    margin-top: 8px;
+    max-width: 980px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .top-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  a.button, button.tab {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 14px;
+    font-weight: 720;
+    cursor: pointer;
+  }
+  button.tab.active {
+    color: #fff;
+    border-color: transparent;
+  }
+  button.tab[data-domain="Science"].active { background: var(--science); }
+  button.tab[data-domain="Technology"].active { background: var(--technology); }
+  button.tab[data-domain="Policy"].active { background: var(--policy); }
+  button.tab[data-domain="Risks"].active { background: var(--risk); }
+  main {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 22px;
+    padding: 22px 28px 40px;
+  }
+  aside {
+    position: sticky;
+    top: 154px;
+    align-self: start;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 10px 36px rgba(16, 24, 40, 0.08);
+    padding: 16px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  input, select {
+    width: 100%;
+    border: 1px solid #d7dbe2;
+    border-radius: 9px;
+    padding: 10px 11px;
+    font-size: 14px;
+    background: white;
+    margin-bottom: 14px;
+  }
+  .stats {
+    border-top: 1px solid var(--line);
+    margin-top: 4px;
+    padding-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .stat-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .stat-line strong { color: var(--ink); }
+  .note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .section-head {
+    margin-bottom: 16px;
+    padding: 4px 0 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .section-head p {
+    color: var(--muted);
+    margin: 8px 0 0;
+    font-size: 15px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 5px solid #999;
+    border-radius: 12px;
+    padding: 15px 16px 14px;
+    box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+  }
+  .card[data-domain="Science"] { border-left-color: var(--science); }
+  .card[data-domain="Technology"] { border-left-color: var(--technology); }
+  .card[data-domain="Policy"] { border-left-color: var(--policy); }
+  .card[data-domain="Risks"] { border-left-color: var(--risk); }
+  .card h3 {
+    margin: 5px 0 4px;
+    font-size: 20px;
+    line-height: 1.16;
+    letter-spacing: 0;
+  }
+  .ordinal {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 820;
+  }
+  .korean {
+    color: #4f5560;
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+  }
+  .chip {
+    border: 1px solid #d9dde4;
+    background: #f6f7f9;
+    color: #344054;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 720;
+  }
+  .path {
+    color: #475467;
+    font-size: 13px;
+    line-height: 1.38;
+    margin: 8px 0;
+  }
+  .definition {
+    font-size: 14px;
+    line-height: 1.46;
+    margin: 10px 0;
+  }
+  .definition-note {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.4;
+    background: var(--soft);
+    border-radius: 8px;
+    padding: 9px 10px;
+    margin: 10px 0;
+  }
+  .meta {
+    border-top: 1px solid var(--line);
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #344054;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .meta b { color: #111827; }
+  .refs {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .refs a {
+    color: #1f5e9f;
+    font-weight: 760;
+    text-decoration: none;
+  }
+  .refs a:hover { text-decoration: underline; }
+  .sample-list {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: #344054;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .empty {
+    border: 1px dashed #cfd4dc;
+    border-radius: 12px;
+    padding: 26px;
+    color: var(--muted);
+    background: #fff;
+  }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; padding: 16px; }
+    aside { position: static; }
+    header { padding: 18px 16px; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI Topic Taxonomy</h1>
+  <div class="subtitle">
+    Science, Technology, Policy, and Risks taxonomy browser. Cards are generated from the existing AI Topic Space payload; no new labels, definitions, sources, or evidence links are created on this page.
+  </div>
+  <div class="top-actions" id="domainTabs"></div>
+</header>
+<main>
+  <aside>
+    <label for="query">Search taxonomy cards</label>
+    <input id="query" placeholder="e.g., AI security, transformer, hallucination"/>
+    <label for="level">Level</label>
+    <select id="level">
+      <option value="all">All levels</option>
+      <option value="L0">L0</option>
+      <option value="L1">L1</option>
+      <option value="L2">L2</option>
+      <option value="L3">L3</option>
+      <option value="L4">L4</option>
+    </select>
+    <label for="sort">Sort</label>
+    <select id="sort">
+      <option value="hierarchy">Hierarchy order</option>
+      <option value="name">Name A-Z</option>
+      <option value="count">Child count</option>
+      <option value="risk">Risk score</option>
+    </select>
+    <label for="evidence">Risk evidence</label>
+    <select id="evidence">
+      <option value="all">All risk cards</option>
+      <option value="linked">L4 risk cards with evidence links</option>
+    </select>
+    <a class="button" href="../index.html">Back to AI Topic Space</a>
+    <div class="stats" id="stats">Loading taxonomy...</div>
+    <p class="note">
+      L0-L3 Science, Technology, and Policy cards summarize the reference topic taxonomy. L4 cards are available for Risks because risk cards carry lower-level definitions, scores, and evidence links.
+    </p>
+  </aside>
+  <section>
+    <div class="section-head">
+      <h2 id="sectionTitle">Science</h2>
+      <p id="sectionNote"></p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+</main>
+<script>
+const PAYLOAD_URL = "../data/interactive_l1_l2_l3_payload.json";
+const KEY_PAPERS_URL = "../data/key_papers.json";
+const DOMAIN_ORDER = ["Science", "Technology", "Policy", "Risks"];
+const DOMAIN_LETTERS = {Science: "A", Technology: "B", Policy: "C", Risks: "D"};
+const DOMAIN_COLORS = {Policy: "#c95662", Science: "#2f6fad", Technology: "#25864b", Risks: "#7a3b84"};
+const state = {domain: "Science", level: "all", query: "", sort: "hierarchy", evidence: "all"};
+let payload = null;
+let cards = [];
+
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[ch]));
+}
+function norm(value) { return String(value ?? "").toLowerCase().trim(); }
+function labelOf(node) { return node.l4_label || node.l3_label || node.l3 || node.phrase || node.id; }
+function unique(values) { return Array.from(new Set(values.filter(Boolean))); }
+function groupBy(rows, fn) {
+  const m = new Map();
+  rows.forEach(row => {
+    const key = fn(row) || "Unspecified";
+    if (!m.has(key)) m.set(key, []);
+    m.get(key).push(row);
+  });
+  return Array.from(m.entries()).sort((a,b)=>String(a[0]).localeCompare(String(b[0])));
+}
+function representativeTerms(rows, max=5) {
+  return unique(rows.map(labelOf)).sort((a,b)=>a.localeCompare(b)).slice(0, max);
+}
+function indexText(card) {
+  return norm([
+    card.title, card.korean, card.definition, card.source, card.id,
+    card.path.join(" "), card.evidenceTitle, card.evidenceUrl, card.samples.join(" ")
+  ].join(" "));
+}
+function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote}) {
+  out.push({
+    kind: "group",
+    domain, level, ordinal, title, path,
+    id: "",
+    korean: "",
+    definition: "",
+    definitionNote: depthNote || "No standalone definition field is stored for this hierarchy level; this card summarizes existing child nodes and their definitions.",
+    source: "Existing AI Topic Space taxonomy payload",
+    childCount: rows.length,
+    samples: representativeTerms(rows),
+    riskScore: null,
+    evidenceTitle: "",
+    evidenceUrl: "",
+    orderKey: ordinal
+  });
+}
+function addTopicCard(out, node, ordinal) {
+  out.push({
+    kind: "topic",
+    domain: node.l0 || node.domain,
+    level: "L3",
+    ordinal,
+    title: node.l3_label || node.l3 || node.phrase || node.id,
+    path: [node.l0 || node.domain, node.l1, node.l2, node.l3_label || node.l3].filter(Boolean),
+    id: node.id,
+    korean: node.korean || "",
+    definition: node.definition || "",
+    definitionNote: node.definition ? "" : "No separate definition field is stored for this L3 node.",
+    source: node.source || "",
+    childCount: 0,
+    samples: [],
+    riskScore: null,
+    evidenceTitle: "",
+    evidenceUrl: "",
+    review: node.review || "",
+    orderKey: ordinal
+  });
+}
+function addRiskCard(out, node, ordinal) {
+  const keyPapers = Array.isArray(node.key_papers) ? node.key_papers : [];
+  out.push({
+    kind: "risk",
+    domain: "Risks",
+    level: "L4",
+    ordinal,
+    title: node.l4_label || node.phrase || node.id,
+    path: [node.l0, node.l1, node.l2, node.l3, node.l4_label || node.phrase].filter(Boolean),
+    id: node.id,
+    korean: "",
+    definition: node.definition || "",
+    definitionNote: node.definition ? "" : "No separate definition field is stored for this L4 risk card.",
+    source: node.source || "",
+    scope: node.scope || "",
+    childCount: 0,
+    samples: [],
+    riskScore: Number(node.risk_impact_score || 0),
+    severity: node.risk_severity_1to5,
+    probability: node.risk_probability_proxy_0to1,
+    percentile: node.risk_impact_percentile,
+    evidenceStatus: node.evidence_status || "",
+    evidenceTitle: node.evidence_title || "",
+    evidenceUrl: node.evidence_url || "",
+    evidenceType: node.evidence_type || "",
+    keyPapers,
+    orderKey: ordinal
+  });
+}
+function buildCards() {
+  const out = [];
+  for (const domain of ["Science", "Technology", "Policy"]) {
+    const nodes = (payload.nodes || []).filter(n => (n.l0 || n.domain) === domain);
+    const d = DOMAIN_LETTERS[domain];
+    addGroupCard(out, {domain, level:"L0", ordinal:d, title:domain, path:[domain], rows:nodes, depthNote:"L0 identifies one of the three reference knowledge domains in the existing STPI topic space."});
+    groupBy(nodes, n=>n.l1).forEach(([l1, l1Rows], i1) => {
+      const o1 = `${d}.${i1+1}`;
+      addGroupCard(out, {domain, level:"L1", ordinal:o1, title:l1, path:[domain,l1], rows:l1Rows});
+      groupBy(l1Rows, n=>n.l2).forEach(([l2, l2Rows], i2) => {
+        const o2 = `${o1}.${i2+1}`;
+        addGroupCard(out, {domain, level:"L2", ordinal:o2, title:l2, path:[domain,l1,l2], rows:l2Rows});
+        l2Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i3) => {
+          addTopicCard(out, n, `${o2}.${i3+1}`);
+        });
+      });
+    });
+  }
+  const risks = payload.risk_nodes || [];
+  addGroupCard(out, {domain:"Risks", level:"L0", ordinal:"D", title:"Risks", path:["Risk"], rows:risks, depthNote:"L0 identifies the global AI risk reference domain overlaid on the STPI topic space."});
+  groupBy(risks, n=>n.l1).forEach(([l1, l1Rows], i1) => {
+    const o1 = `D.${i1+1}`;
+    addGroupCard(out, {domain:"Risks", level:"L1", ordinal:o1, title:l1, path:["Risk",l1], rows:l1Rows});
+    groupBy(l1Rows, n=>n.l2).forEach(([l2, l2Rows], i2) => {
+      const o2 = `${o1}.${i2+1}`;
+      addGroupCard(out, {domain:"Risks", level:"L2", ordinal:o2, title:l2, path:["Risk",l1,l2], rows:l2Rows});
+      groupBy(l2Rows, n=>n.l3).forEach(([l3, l3Rows], i3) => {
+        const o3 = `${o2}.${i3+1}`;
+        addGroupCard(out, {domain:"Risks", level:"L3", ordinal:o3, title:l3, path:["Risk",l1,l2,l3], rows:l3Rows});
+        l3Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i4) => {
+          addRiskCard(out, n, `${o3}.${i4+1}`);
+        });
+      });
+    });
+  });
+  out.forEach(card => { card._index = indexText(card); });
+  return out;
+}
+function domainStats(domain) {
+  const subset = cards.filter(c => c.domain === domain);
+  const byLevel = {};
+  subset.forEach(c => { byLevel[c.level] = (byLevel[c.level] || 0) + 1; });
+  return {total: subset.length, byLevel};
+}
+function renderTabs() {
+  const tabs = document.getElementById("domainTabs");
+  tabs.innerHTML = DOMAIN_ORDER.map(d => `<button class="tab${state.domain===d?" active":""}" data-domain="${esc(d)}">${DOMAIN_LETTERS[d]}. ${esc(d)}</button>`).join("") +
+    `<a class="button" href="../index.html">Map view</a>`;
+  tabs.querySelectorAll("button.tab").forEach(btn => btn.addEventListener("click", () => {
+    state.domain = btn.dataset.domain;
+    render();
+  }));
+}
+function filteredCards() {
+  let rows = cards.filter(c => c.domain === state.domain);
+  if (state.level !== "all") rows = rows.filter(c => c.level === state.level);
+  if (state.evidence === "linked") rows = rows.filter(c => c.level === "L4" && c.evidenceUrl);
+  if (state.query) rows = rows.filter(c => c._index.includes(state.query));
+  rows = rows.slice();
+  if (state.sort === "name") rows.sort((a,b)=>a.title.localeCompare(b.title));
+  else if (state.sort === "count") rows.sort((a,b)=>(b.childCount || 0) - (a.childCount || 0) || a.orderKey.localeCompare(b.orderKey));
+  else if (state.sort === "risk") rows.sort((a,b)=>(b.riskScore || 0) - (a.riskScore || 0) || a.orderKey.localeCompare(b.orderKey));
+  else rows.sort((a,b)=>a.orderKey.localeCompare(b.orderKey, undefined, {numeric:true}));
+  return rows;
+}
+function cardHtml(card) {
+  const chips = [
+    card.level,
+    card.kind === "risk" ? "risk card" : card.kind,
+    card.childCount ? `${card.childCount.toLocaleString()} child L${card.domain==="Risks" ? "4" : "3"} nodes` : "",
+    card.evidenceUrl ? "linked evidence" : "",
+    card.evidenceType || ""
+  ].filter(Boolean);
+  const samples = card.samples.length
+    ? `<ul class="sample-list">${card.samples.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`
+    : "";
+  const score = card.level === "L4"
+    ? `<div><b>Risk score:</b> ${Number(card.riskScore || 0).toFixed(3)}${card.severity ? ` (severity ${esc(card.severity)} × probability ${esc(card.probability)})` : ""}</div>`
+    : "";
+  const evidence = card.evidenceUrl
+    ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
+    : "";
+  const keyPapers = card.keyPapers && card.keyPapers.length
+    ? `<div class="refs"><b>Additional linked papers:</b><ul class="sample-list">${card.keyPapers.slice(0,3).map(p=>`<li><a href="${esc(p.url || p.pdf_url || "#")}" target="_blank" rel="noopener">${esc(p.title || p.url || "linked paper")}</a></li>`).join("")}</ul></div>`
+    : "";
+  return `<article class="card" data-domain="${esc(card.domain)}">
+    <div class="ordinal">${esc(card.ordinal)} · ${esc(card.level)}</div>
+    <h3>${esc(card.title)}</h3>
+    ${card.korean ? `<p class="korean">${esc(card.korean)}</p>` : ""}
+    <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
+    <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
+    ${card.definition ? `<div class="definition"><b>Definition:</b> ${esc(card.definition)}</div>` : `<div class="definition-note">${esc(card.definitionNote)}</div>`}
+    ${samples}
+    <div class="meta">
+      ${card.id ? `<div><b>ID:</b> ${esc(card.id)}</div>` : ""}
+      ${card.source ? `<div><b>Source:</b> ${esc(card.source)}</div>` : ""}
+      ${card.scope ? `<div><b>Scope:</b> ${esc(card.scope)}</div>` : ""}
+      ${card.evidenceStatus ? `<div><b>Evidence status:</b> ${esc(card.evidenceStatus)}</div>` : ""}
+      ${score}
+    </div>
+    ${evidence}
+    ${keyPapers}
+  </article>`;
+}
+function renderStats(rows) {
+  const s = domainStats(state.domain);
+  const parts = ["L0","L1","L2","L3","L4"].map(l => `<div class="stat-line"><span>${l}</span><strong>${(s.byLevel[l] || 0).toLocaleString()}</strong></div>`).join("");
+  document.getElementById("stats").innerHTML = `<div class="stat-line"><span>Visible cards</span><strong>${rows.length.toLocaleString()}</strong></div>
+    <div class="stat-line"><span>Domain cards</span><strong>${s.total.toLocaleString()}</strong></div>${parts}`;
+}
+function render() {
+  renderTabs();
+  document.getElementById("sectionTitle").textContent = `${DOMAIN_LETTERS[state.domain]}. ${state.domain}`;
+  document.getElementById("sectionNote").textContent = state.domain === "Risks"
+    ? "Risk L4 cards include existing definitions, evidence links, and calculated risk scores where available."
+    : "Reference topic cards show the existing STPI hierarchy; L3 cards carry stored definitions and source metadata.";
+  const rows = filteredCards();
+  renderStats(rows);
+  const box = document.getElementById("cards");
+  box.innerHTML = rows.length ? rows.map(cardHtml).join("") : `<div class="empty">No cards match the current filters.</div>`;
+}
+async function load() {
+  payload = await fetch(PAYLOAD_URL).then(r => {
+    if (!r.ok) throw new Error(`Failed to load ${PAYLOAD_URL}`);
+    return r.json();
+  });
+  try {
+    const kp = await fetch(KEY_PAPERS_URL).then(r => r.ok ? r.json() : null);
+    if (kp && kp.node_links && Array.isArray(payload.risk_nodes)) {
+      payload.risk_nodes.forEach(n => {
+        const ix = kp.node_links[n.id];
+        if (ix) n.key_papers = ix.map(o => ({...(kp.papers[o.i] || {}), rel:o.rel}));
+      });
+    }
+  } catch (err) {
+    // Key-paper enrichment is optional; the core taxonomy remains fully usable.
+  }
+  cards = buildCards();
+  ["query","level","sort","evidence"].forEach(id => {
+    document.getElementById(id).addEventListener("input", e => {
+      state[id === "query" ? "query" : id] = id === "query" ? norm(e.target.value) : e.target.value;
+      render();
+    });
+  });
+  render();
+}
+load().catch(err => {
+  document.getElementById("cards").innerHTML = `<div class="empty">${esc(err.message)}. If opened as a local file, use a local web server or the GitHub Pages version so the browser can load the JSON payload.</div>`;
+});
+</script>
+</body>
+</html>
