@@ -464,6 +464,67 @@ function groupBy(rows, fn) {
 function representativeTerms(rows, max=5) {
   return unique(rows.map(labelOf)).sort((a,b)=>a.localeCompare(b)).slice(0, max);
 }
+const DOMAIN_CARD_DEFINITIONS = {
+  Policy: {
+    definition: "Policy is the reference domain for AI-related public action, institutional design, regulatory choice, governance instruments, and socioeconomic agenda formation. It organizes the terms through which governments, public agencies, international organizations, and policy communities frame AI as an object of intervention, coordination, and accountability.",
+    scope: "Includes governance, regulation, public-sector adoption, industrial strategy, labor-market implications, rights, accountability, safety, security, and social impact.",
+    sources: [
+      {label: "OECD AI Policy Observatory", url: "https://oecd.ai/"},
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"}
+    ]
+  },
+  Science: {
+    definition: "Science is the reference domain for AI research problems, models, learning paradigms, evaluation practices, and epistemic concepts. It captures how the academic literature defines AI as a body of scientific inquiry, including algorithmic methods, model behavior, empirical tasks, and theoretical foundations.",
+    scope: "Includes machine learning, natural language processing, computer vision, optimization, reasoning, evaluation, datasets, robustness, safety research, and socio-technical AI scholarship.",
+    sources: [
+      {label: "OpenAlex", url: "https://openalex.org/"},
+      {label: "OECD AI research and patent measurement work", url: "https://www.oecd.org/en/topics/artificial-intelligence.html"}
+    ]
+  },
+  Technology: {
+    definition: "Technology is the reference domain for AI inventions, technical functions, implementation architectures, and application-enabling capabilities. It organizes AI as an operational and patentable technology space rather than only as a scientific or policy discourse.",
+    scope: "Includes model architectures, sensing, robotics, autonomous systems, deployment infrastructure, AI hardware, data-processing functions, control systems, and sectoral AI applications.",
+    sources: [
+      {label: "WIPO Technology Trends: Artificial Intelligence", url: "https://www.wipo.int/publications/en/details.jsp?id=4386"},
+      {label: "EPO PATSTAT", url: "https://www.epo.org/en/searching-for-patents/business/patstat"}
+    ]
+  },
+  Risks: {
+    definition: "Risks is the reference domain for adverse AI outcomes, failure modes, misuse pathways, governance deficits, and socio-technical harms. It is organized as a risk-card hierarchy so that each leaf-level risk can be linked to evidence, definitions, and source documents.",
+    scope: "Includes global AI risk taxonomies, safety benchmarks, model-behavior risks, agentic-system failures, physical AI risks, fairness and discrimination harms, privacy and security failures, and governance-accountability gaps.",
+    sources: [
+      {label: "MIT AI Risk Repository", url: "https://airisk.mit.edu/"},
+      {label: "IBM AI Risk Atlas", url: "https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas"}
+    ]
+  }
+};
+function levelUnit(domain) {
+  return domain === "Risks" ? "L4 risk cards" : "L3 key-phrase nodes";
+}
+function groupDefinition({domain, level, title, rows}) {
+  const domainDef = DOMAIN_CARD_DEFINITIONS[domain];
+  if (level === "L0" && domainDef) return domainDef.definition;
+  const samples = representativeTerms(rows, 4);
+  const sampleText = samples.length ? ` Representative lower-level terms include ${samples.join(", ")}.` : "";
+  if (domain === "Risks") {
+    return `${title} is a ${level} risk family in the AI risk reference taxonomy. It groups ${rows.length.toLocaleString()} descendant ${levelUnit(domain)} that describe related harm mechanisms, failure modes, exposure contexts, or governance weaknesses.${sampleText} This card is used as an aggregation concept for browsing, semantic mapping, and gap analysis, while the L4 risk cards preserve the most specific operational definitions and evidence links.`;
+  }
+  return `${title} is a ${level} semantic cluster in the ${domain.toLowerCase()} reference taxonomy. It groups ${rows.length.toLocaleString()} descendant ${levelUnit(domain)} that share a common conceptual, methodological, or application-oriented meaning.${sampleText} This card is used as an aggregation concept for browsing, semantic mapping, activation measurement, and cross-domain comparison, while the L3 cards preserve the most specific operational definitions.`;
+}
+function groupScope({domain, level, rows}) {
+  const domainDef = DOMAIN_CARD_DEFINITIONS[domain];
+  if (level === "L0" && domainDef) return domainDef.scope;
+  const unit = levelUnit(domain);
+  return `Covers ${rows.length.toLocaleString()} descendant ${unit} in the current reference hierarchy.`;
+}
+function groupSourceLinks(domain, riskDef) {
+  if (riskDef?.sources) return riskDef.sources;
+  return DOMAIN_CARD_DEFINITIONS[domain]?.sources || [];
+}
+function groupSourceLabel(domain, riskDef) {
+  const links = groupSourceLinks(domain, riskDef);
+  return links.length ? links.map(s => s.label).join("; ") : "AI Topic Space reference taxonomy";
+}
 function pathKey(path) { return path.filter(Boolean).join("|||"); }
 function pathStartsWith(path, prefix) {
   if (!prefix || !prefix.length) return true;
@@ -478,16 +539,17 @@ function indexText(card) {
 }
 function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote}) {
   const riskDef = domain === "Risks" && level === "L1" ? RISK_L1_DEFINITIONS[title] : null;
+  const sourceLinks = groupSourceLinks(domain, riskDef);
   out.push({
     kind: "group",
     domain, level, ordinal, title, path,
     id: "",
     korean: "",
-    definition: riskDef?.definition || "",
-    definitionNote: depthNote || "This hierarchy card summarizes child nodes in the existing taxonomy. Use the subtree buttons to inspect the lower-level cards under this concept.",
-    source: riskDef ? riskDef.sources.map(s => s.label).join("; ") : "Existing AI Topic Space taxonomy payload",
-    sourceLinks: riskDef?.sources || [],
-    scope: riskDef?.scope || "",
+    definition: riskDef?.definition || groupDefinition({domain, level, title, rows}),
+    definitionNote: depthNote || "",
+    source: groupSourceLabel(domain, riskDef),
+    sourceLinks,
+    scope: riskDef?.scope || groupScope({domain, level, rows}),
     childCount: rows.length,
     samples: representativeTerms(rows),
     riskScore: null,
@@ -508,7 +570,7 @@ function addTopicCard(out, node, ordinal) {
     id: node.id,
     korean: node.korean || "",
     definition: node.definition || "",
-    definitionNote: node.definition ? "" : "No separate definition field is stored for this L3 node.",
+    definitionNote: "",
     source: node.source || "",
     childCount: 0,
     samples: [],
@@ -533,7 +595,7 @@ function addRiskCard(out, node, ordinal) {
     id: node.id,
     korean: "",
     definition: node.definition || "",
-    definitionNote: node.definition ? "" : "No separate definition field is stored for this L4 risk card.",
+    definitionNote: "",
     source: node.source || "",
     scope: node.scope || "",
     childCount: 0,

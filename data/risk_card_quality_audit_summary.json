@@ -1,9 +1,8 @@
 {
   "audit_date": "2026-06-13",
   "total_l4_cards": 1712,
-  "cards_with_issues": 1305,
+  "cards_with_issues": 190,
   "issue_counts": {
-    "definition_under_3_sentences": 1305,
     "generic_evidence_url": 35,
     "generic_evidence_title": 28,
     "ambiguous_verified_status": 157

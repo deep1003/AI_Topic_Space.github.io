@@ -108,7 +108,7 @@
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code> (1,712 L4 risk cards). The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for definition expansion or source-link refinement. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
+  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code> (1,712 L4 risk cards). The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for source-link refinement or evidence-status review. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -128,8 +128,8 @@ function bar(id,labels,data,colors,opts={}){
 const papers=34664, patents=67727, policy=8993, totalCorpus=papers+patents+policy; // documents projected into the STPI space (m2 L3 activation manifest)
 const riskQuality={
   total_l4_cards:1712,
-  cards_with_issues:1305,
-  issue_counts:{definition_under_3_sentences:1305,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},
+  cards_with_issues:190,
+  issue_counts:{definition_under_3_sentences:0,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},
   curated_patched_node_ids:["AGENTBENCH-REF-0009"]
 };
 document.getElementById("kpis").innerHTML=[
@@ -168,7 +168,7 @@ bar("cLitDom",["Fairness","Agentic / multi-agent","Physical AI","Value alignment
 bar("cCountry",["United States","China","India"],[5663,2372,1690],[C.science,C.policy,C.tech],{horizontal:true});
 
 bar("cRiskQuality",
-  ["Definition below 3 sentences","Generic evidence URL","Generic evidence title","Ambiguous verification label"],
+  ["Definition below 3 sentences (resolved)","Generic evidence URL","Generic evidence title","Ambiguous verification label"],
   [riskQuality.issue_counts.definition_under_3_sentences,riskQuality.issue_counts.generic_evidence_url,riskQuality.issue_counts.generic_evidence_title,riskQuality.issue_counts.ambiguous_verified_status],
   ["#b0556f","#d98e2b","#d98e2b","#8a8f98"],
   {horizontal:true});
