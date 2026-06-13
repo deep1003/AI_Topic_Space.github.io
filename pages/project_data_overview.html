@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI Topic Space — Project Data &amp; Coverage</title>
+<title>AI Topic Space — Project Data, Coverage &amp; Risk-Card Quality</title>
+<link rel="icon" href="data:,"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -37,8 +38,8 @@
 <body>
 <header>
   <a class="back" href="../index.html">&larr; Back to the interactive AI Topic Space / AI Risks Space</a>
-  <h1>Project Data &amp; Coverage Overview</h1>
-  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Corpus figures are project totals; the AI-risk charts and the seminal-reference list are computed live from the published data.</p>
+  <h1>Project Data, Coverage &amp; Risk-Card Quality Overview</h1>
+  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Corpus figures are project totals; the AI-risk charts, evidence-status counts, risk-card quality audit, and seminal-reference list are computed from the published data.</p>
 </header>
 <div class="wrap">
   <div class="kpis" id="kpis"></div>
@@ -79,6 +80,17 @@
     </div>
 
     <div class="card">
+      <h2>Risk-card quality audit</h2>
+      <p class="sub">Non-exclusive curation flags for L4 risk cards: definition depth, direct evidence, and verification status</p>
+      <div class="cv"><canvas id="cRiskQuality"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Risk-card evidence status</h2>
+      <p class="sub">Current evidence-status labels in the published L4 risk-card records (live)</p>
+      <div class="cv"><canvas id="cStatus"></canvas></div>
+    </div>
+
+    <div class="card">
       <h2>AI-risk literature screened, by risk domain</h2>
       <p class="sub">Broad records retrieved for the risk overlay (26,937 total)</p>
       <div class="cv"><canvas id="cLitDom"></canvas></div>
@@ -96,7 +108,7 @@
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
+  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code> (1,712 L4 risk cards). The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for definition expansion or source-link refinement. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -114,10 +126,17 @@ function bar(id,labels,data,colors,opts={}){
 
 // ---- static project figures ----
 const papers=34664, patents=67727, policy=8993, totalCorpus=papers+patents+policy; // documents projected into the STPI space (m2 L3 activation manifest)
+const riskQuality={
+  total_l4_cards:1712,
+  cards_with_issues:1305,
+  issue_counts:{definition_under_3_sentences:1305,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},
+  curated_patched_node_ids:["AGENTBENCH-REF-0009"]
+};
 document.getElementById("kpis").innerHTML=[
   ["Total documents",fmt(totalCorpus)],["AI research incl. risk (Science)",fmt(papers+26937)],
   ["Patents (Technology)",fmt(patents)],["Policy / institutional",fmt(policy)],
-  ["AI-risk research papers",fmt(26937)],["Seminal top-venue refs","39"],
+  ["AI-risk research papers",fmt(26937)],["AI-risk L4 cards",fmt(riskQuality.total_l4_cards)],
+  ["Risk cards in review queue",fmt(riskQuality.cards_with_issues)],["Seminal top-venue refs","39"],
   ["Reference L3 nodes",fmt(1938)],["Period","1990–2026"]
 ].map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 
@@ -148,6 +167,12 @@ bar("cLitDom",["Fairness","Agentic / multi-agent","Physical AI","Value alignment
     [7972,7891,6583,2854,2482],PALETTE);
 bar("cCountry",["United States","China","India"],[5663,2372,1690],[C.science,C.policy,C.tech],{horizontal:true});
 
+bar("cRiskQuality",
+  ["Definition below 3 sentences","Generic evidence URL","Generic evidence title","Ambiguous verification label"],
+  [riskQuality.issue_counts.definition_under_3_sentences,riskQuality.issue_counts.generic_evidence_url,riskQuality.issue_counts.generic_evidence_title,riskQuality.issue_counts.ambiguous_verified_status],
+  ["#b0556f","#d98e2b","#d98e2b","#8a8f98"],
+  {horizontal:true});
+
 // ---- live AI-risk charts ----
 fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>{
   document.getElementById("riskN").textContent="("+fmt(R.length)+" L4 nodes)";
@@ -169,6 +194,21 @@ fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>
   const allsrc=R.map(n=>n.source||"").join(" || ");
   const fc=fws.map(f=>[f,(allsrc.split(f).length-1)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
   bar("cFw",fc.map(x=>x[0]),fc.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
+  const status=count("evidence_status",10,v=>{
+    v=(""+v).trim();
+    if(!v)return"Missing status";
+    if(v.includes("verified direct public PDF"))return"Direct public PDF";
+    if(v.includes("verified direct governance"))return"Direct governance evidence";
+    if(v.includes("verified direct literature"))return"Direct literature URL";
+    if(v==="direct_risk_definition_verified")return"Direct risk definition";
+    if(v==="source_document_verified")return"Source document verified";
+    if(v.includes("MIT AI Risk Repository leaf"))return"MIT repository leaf risk";
+    if(v.includes("incremental markdown"))return"Incremental source expansion";
+    if(v.includes("Physical AI risk overlay"))return"Physical AI overlay";
+    if(v.includes("framework-derived"))return"Framework-derived initial node";
+    return v;
+  });
+  bar("cStatus",status.map(x=>x[0]),status.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
 }).catch(e=>{document.getElementById("riskN").textContent="(risk data unavailable)";});
 
 fetch("../data/key_papers.json").then(r=>r.json()).then(kp=>{

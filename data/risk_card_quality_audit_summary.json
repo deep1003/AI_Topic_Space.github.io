@@ -1,0 +1,15 @@
+{
+  "audit_date": "2026-06-13",
+  "total_l4_cards": 1712,
+  "cards_with_issues": 1305,
+  "issue_counts": {
+    "definition_under_3_sentences": 1305,
+    "generic_evidence_url": 35,
+    "generic_evidence_title": 28,
+    "ambiguous_verified_status": 157
+  },
+  "curated_patched_node_ids": [
+    "AGENTBENCH-REF-0009"
+  ],
+  "audit_csv": "/Users/deep1003/data3/ai_risk_coevolution_1990_2026/17_risk_card_quality_audit/risk_card_quality_audit_20260613.csv"
+}
