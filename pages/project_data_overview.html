@@ -38,7 +38,7 @@
 <header>
   <a class="back" href="../index.html">&larr; Back to the interactive AI Topic Space / AI Risks Space</a>
   <h1>Project Data &amp; Coverage Overview</h1>
-  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Corpus figures are fixed project totals; the AI-risk charts are computed live from the published risk dataset.</p>
+  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Corpus figures are project totals; the AI-risk charts and the seminal-reference list are computed live from the published data.</p>
 </header>
 <div class="wrap">
   <div class="kpis" id="kpis"></div>
@@ -46,7 +46,7 @@
   <div class="grid">
     <div class="card">
       <h2>Corpus composition by domain</h2>
-      <p class="sub">Documents projected into the STPI space, by source corpus</p>
+      <p class="sub">Documents by domain; Science shown inclusive of the AI-risk research literature (light segment)</p>
       <div class="cv"><canvas id="cDomain"></canvas></div>
     </div>
     <div class="card">
@@ -88,10 +88,15 @@
       <p class="sub">Affiliation-ready records (17,685 with country metadata)</p>
       <div class="cv"><canvas id="cCountry"></canvas></div>
     </div>
+    <div class="card wide">
+      <h2>Top-venue seminal AI-risk references <span id="semN" style="color:var(--muted);font-weight:400;font-size:12px"></span></h2>
+      <p class="sub">Field-defining / highly-original papers at NeurIPS, ICML, ICLR, EMNLP, ACL, FAccT, IEEE S&amp;P, USENIX Security, CCS — ranked and linked to related L4 risk nodes (live)</p>
+      <div class="cv"><canvas id="cSeminal"></canvas></div>
+    </div>
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>. Figures may differ slightly as the risk overlay is updated.</p>
+  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -110,14 +115,19 @@ function bar(id,labels,data,colors,opts={}){
 // ---- static project figures ----
 const papers=34664, patents=67727, policy=8993, totalCorpus=papers+patents+policy; // documents projected into the STPI space (m2 L3 activation manifest)
 document.getElementById("kpis").innerHTML=[
-  ["Total documents",fmt(totalCorpus)],["Academic papers (Science)",fmt(papers)],
+  ["Total documents",fmt(totalCorpus)],["AI research incl. risk (Science)",fmt(papers+26937)],
   ["Patents (Technology)",fmt(patents)],["Policy / institutional",fmt(policy)],
-  ["Reference L3 nodes",fmt(1938)],["AI-risk literature",fmt(26937)],
-  ["Period","1990–2026"]
+  ["AI-risk research papers",fmt(26937)],["Seminal top-venue refs","39"],
+  ["Reference L3 nodes",fmt(1938)],["Period","1990–2026"]
 ].map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 
-bar("cDomain",["Papers\n(Science)","Patents\n(Technology)","Policy /\ninstitutional"],
-    [papers,patents,policy],[C.science,C.tech,C.policy]);
+new Chart(document.getElementById("cDomain"),{type:'bar',
+  data:{labels:["Science (AI research)","Technology (patents)","Policy / institutional"],
+    datasets:[
+      {label:"STPI core corpus",data:[papers,patents,policy],backgroundColor:[C.science,C.tech,C.policy],borderRadius:4},
+      {label:"AI-risk research literature",data:[26937,0,0],backgroundColor:"#9ec3e6",borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+fmt(c.parsed.y)}}},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
 
 new Chart(document.getElementById("cHier"),{type:'bar',
   data:{labels:["Policy","Science","Technology"],
@@ -160,6 +170,14 @@ fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>
   const fc=fws.map(f=>[f,(allsrc.split(f).length-1)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
   bar("cFw",fc.map(x=>x[0]),fc.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
 }).catch(e=>{document.getElementById("riskN").textContent="(risk data unavailable)";});
+
+fetch("../data/key_papers.json").then(r=>r.json()).then(kp=>{
+  const nNodes=Object.keys(kp.node_links).length;
+  document.getElementById("semN").textContent="("+kp.papers.length+" papers \u00b7 "+nNodes+" L4 nodes linked)";
+  const vc={}; kp.papers.forEach(p=>{const v=(p.venue||"").replace(/\s*\d{4}.*$/,"").trim()||p.venue; vc[v]=(vc[v]||0)+1;});
+  const e=Object.entries(vc).sort((a,b)=>b[1]-a[1]);
+  bar("cSeminal",e.map(x=>x[0]),e.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
+}).catch(()=>{});
 </script>
 </body>
 </html>
