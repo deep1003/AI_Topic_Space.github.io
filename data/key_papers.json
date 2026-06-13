@@ -1,0 +1,756 @@
+{
+"papers": [
+{
+"i": 0,
+"title": "Intriguing properties of neural networks",
+"authors_short": "Szegedy et al.",
+"venue": "ICLR 2014",
+"year": 2014,
+"url": "https://arxiv.org/abs/1312.6199",
+"theme": "Adversarial examples"
+},
+{
+"i": 1,
+"title": "Explaining and Harnessing Adversarial Examples",
+"authors_short": "Goodfellow et al.",
+"venue": "ICLR 2015",
+"year": 2015,
+"url": "https://arxiv.org/abs/1412.6572",
+"theme": "Adversarial examples"
+},
+{
+"i": 2,
+"title": "Towards Deep Learning Models Resistant to Adversarial Attacks",
+"authors_short": "Madry et al.",
+"venue": "ICLR 2018",
+"year": 2018,
+"url": "https://arxiv.org/abs/1706.06083",
+"theme": "Adversarial robustness"
+},
+{
+"i": 3,
+"title": "Towards Evaluating the Robustness of Neural Networks",
+"authors_short": "Carlini & Wagner",
+"venue": "IEEE S&P 2017",
+"year": 2017,
+"url": "https://arxiv.org/abs/1608.04644",
+"theme": "Adversarial attacks"
+},
+{
+"i": 4,
+"title": "Robust Physical-World Attacks on Deep Learning Visual Classification",
+"authors_short": "Eykholt et al.",
+"venue": "CVPR 2018",
+"year": 2018,
+"url": "https://arxiv.org/abs/1707.08945",
+"theme": "Physical adversarial attacks"
+},
+{
+"i": 5,
+"title": "Poisoning Attacks against Support Vector Machines",
+"authors_short": "Biggio et al.",
+"venue": "ICML 2012",
+"year": 2012,
+"url": "https://arxiv.org/abs/1206.6389",
+"theme": "Data poisoning"
+},
+{
+"i": 6,
+"title": "BadNets: Identifying Vulnerabilities in the ML Model Supply Chain",
+"authors_short": "Gu et al.",
+"venue": "arXiv 2017",
+"year": 2017,
+"url": "https://arxiv.org/abs/1708.06733",
+"theme": "Backdoor attacks"
+},
+{
+"i": 7,
+"title": "Membership Inference Attacks Against Machine Learning Models",
+"authors_short": "Shokri et al.",
+"venue": "IEEE S&P 2017",
+"year": 2017,
+"url": "https://arxiv.org/abs/1610.05820",
+"theme": "Membership inference"
+},
+{
+"i": 8,
+"title": "Model Inversion Attacks that Exploit Confidence Information",
+"authors_short": "Fredrikson et al.",
+"venue": "ACM CCS 2015",
+"year": 2015,
+"url": "https://doi.org/10.1145/2810103.2813677",
+"theme": "Model inversion"
+},
+{
+"i": 9,
+"title": "Extracting Training Data from Large Language Models",
+"authors_short": "Carlini et al.",
+"venue": "USENIX Security 2021",
+"year": 2021,
+"url": "https://arxiv.org/abs/2012.07805",
+"theme": "Training-data extraction"
+},
+{
+"i": 10,
+"title": "Defining and Characterizing Reward Hacking",
+"authors_short": "Skalse et al.",
+"venue": "NeurIPS 2022",
+"year": 2022,
+"url": "https://arxiv.org/abs/2209.13085",
+"theme": "Reward hacking"
+},
+{
+"i": 11,
+"title": "Deep Reinforcement Learning from Human Preferences",
+"authors_short": "Christiano et al.",
+"venue": "NeurIPS 2017",
+"year": 2017,
+"url": "https://arxiv.org/abs/1706.03741",
+"theme": "Learning from human feedback"
+},
+{
+"i": 12,
+"title": "The Off-Switch Game",
+"authors_short": "Hadfield-Menell et al.",
+"venue": "IJCAI 2017",
+"year": 2017,
+"url": "https://arxiv.org/abs/1611.08219",
+"theme": "Corrigibility / shutdown"
+},
+{
+"i": 13,
+"title": "Optimal Policies Tend to Seek Power",
+"authors_short": "Turner et al.",
+"venue": "NeurIPS 2021",
+"year": 2021,
+"url": "https://arxiv.org/abs/1912.01683",
+"theme": "Power-seeking"
+},
+{
+"i": 14,
+"title": "Risks from Learned Optimization in Advanced ML Systems",
+"authors_short": "Hubinger et al.",
+"venue": "arXiv 2019",
+"year": 2019,
+"url": "https://arxiv.org/abs/1906.01820",
+"theme": "Mesa-optimization / inner misalignment"
+},
+{
+"i": 15,
+"title": "Goal Misgeneralization in Deep Reinforcement Learning",
+"authors_short": "Langosco et al.",
+"venue": "ICML 2022",
+"year": 2022,
+"url": "https://arxiv.org/abs/2105.14111",
+"theme": "Goal misgeneralization"
+},
+{
+"i": 16,
+"title": "Goal Misgeneralization: Why Correct Specifications Aren't Enough",
+"authors_short": "Shah et al.",
+"venue": "arXiv 2022",
+"year": 2022,
+"url": "https://arxiv.org/abs/2210.01790",
+"theme": "Goal misgeneralization"
+},
+{
+"i": 17,
+"title": "Concrete Problems in AI Safety",
+"authors_short": "Amodei et al.",
+"venue": "arXiv 2016",
+"year": 2016,
+"url": "https://arxiv.org/abs/1606.06565",
+"theme": "AI safety problem taxonomy"
+},
+{
+"i": 18,
+"title": "Unsolved Problems in ML Safety",
+"authors_short": "Hendrycks et al.",
+"venue": "arXiv 2021",
+"year": 2021,
+"url": "https://arxiv.org/abs/2109.13916",
+"theme": "ML safety roadmap"
+},
+{
+"i": 19,
+"title": "X-Risk Analysis for AI Research",
+"authors_short": "Hendrycks & Mazeika",
+"venue": "arXiv 2022",
+"year": 2022,
+"url": "https://arxiv.org/abs/2206.05862",
+"theme": "Existential risk analysis"
+},
+{
+"i": 20,
+"title": "An Overview of Catastrophic AI Risks",
+"authors_short": "Hendrycks et al.",
+"venue": "arXiv 2023",
+"year": 2023,
+"url": "https://arxiv.org/abs/2306.12001",
+"theme": "Catastrophic risk overview"
+},
+{
+"i": 21,
+"title": "Model evaluation for extreme risks",
+"authors_short": "Shevlane et al.",
+"venue": "arXiv 2023",
+"year": 2023,
+"url": "https://arxiv.org/abs/2305.15324",
+"theme": "Dangerous-capability evaluation"
+},
+{
+"i": 22,
+"title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+"authors_short": "Hubinger et al.",
+"venue": "arXiv 2024",
+"year": 2024,
+"url": "https://arxiv.org/abs/2401.05566",
+"theme": "Deceptive alignment / backdoors"
+},
+{
+"i": 23,
+"title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+"authors_short": "Perez et al.",
+"venue": "ACL Findings 2023",
+"year": 2022,
+"url": "https://arxiv.org/abs/2212.09251",
+"theme": "Emergent behaviors / sycophancy"
+},
+{
+"i": 24,
+"title": "Towards Understanding Sycophancy in Language Models",
+"authors_short": "Sharma et al.",
+"venue": "ICLR 2024",
+"year": 2023,
+"url": "https://arxiv.org/abs/2310.13548",
+"theme": "Sycophancy"
+},
+{
+"i": 25,
+"title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+"authors_short": "Zou et al.",
+"venue": "arXiv 2023",
+"year": 2023,
+"url": "https://arxiv.org/abs/2307.15043",
+"theme": "Jailbreaks"
+},
+{
+"i": 26,
+"title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+"authors_short": "Perez & Ribeiro",
+"venue": "arXiv 2022 (NeurIPS ML Safety WS)",
+"year": 2022,
+"url": "https://arxiv.org/abs/2211.09527",
+"theme": "Prompt injection"
+},
+{
+"i": 27,
+"title": "On Faithfulness and Factuality in Abstractive Summarization",
+"authors_short": "Maynez et al.",
+"venue": "ACL 2020",
+"year": 2020,
+"url": "https://aclanthology.org/2020.acl-main.173/",
+"theme": "Hallucination / faithfulness"
+},
+{
+"i": 28,
+"title": "Survey of Hallucination in Natural Language Generation",
+"authors_short": "Ji et al.",
+"venue": "ACM Computing Surveys 2023",
+"year": 2023,
+"url": "https://doi.org/10.1145/3571730",
+"theme": "Hallucination"
+},
+{
+"i": 29,
+"title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in LMs",
+"authors_short": "Gehman et al.",
+"venue": "EMNLP Findings 2020",
+"year": 2020,
+"url": "https://aclanthology.org/2020.findings-emnlp.301/",
+"theme": "Toxicity"
+},
+{
+"i": 30,
+"title": "Equality of Opportunity in Supervised Learning",
+"authors_short": "Hardt et al.",
+"venue": "NeurIPS 2016",
+"year": 2016,
+"url": "https://arxiv.org/abs/1610.02413",
+"theme": "Fairness"
+},
+{
+"i": 31,
+"title": "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings",
+"authors_short": "Bolukbasi et al.",
+"venue": "NeurIPS 2016",
+"year": 2016,
+"url": "https://arxiv.org/abs/1607.06520",
+"theme": "Bias in representations"
+},
+{
+"i": 32,
+"title": "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification",
+"authors_short": "Buolamwini & Gebru",
+"venue": "ACM FAccT 2018",
+"year": 2018,
+"url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
+"theme": "Disparate accuracy"
+},
+{
+"i": 33,
+"title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+"authors_short": "Bender et al.",
+"venue": "ACM FAccT 2021",
+"year": 2021,
+"url": "https://doi.org/10.1145/3442188.3445922",
+"theme": "LLM societal risks"
+},
+{
+"i": 34,
+"title": "Ethical and social risks of harm from Language Models",
+"authors_short": "Weidinger et al.",
+"venue": "arXiv 2021",
+"year": 2021,
+"url": "https://arxiv.org/abs/2112.04359",
+"theme": "LLM harm taxonomy"
+},
+{
+"i": 35,
+"title": "The Malicious Use of Artificial Intelligence",
+"authors_short": "Brundage et al.",
+"venue": "arXiv 2018",
+"year": 2018,
+"url": "https://arxiv.org/abs/1802.07228",
+"theme": "Malicious use"
+},
+{
+"i": 36,
+"title": "The Alignment Problem from a Deep Learning Perspective",
+"authors_short": "Ngo et al.",
+"venue": "ICLR 2024",
+"year": 2022,
+"url": "https://arxiv.org/abs/2209.00626",
+"theme": "Alignment / deception"
+},
+{
+"i": 37,
+"title": "Open Problems in Cooperative AI",
+"authors_short": "Dafoe et al.",
+"venue": "arXiv 2020",
+"year": 2020,
+"url": "https://arxiv.org/abs/2012.08630",
+"theme": "Cooperative / multi-agent AI"
+},
+{
+"i": 38,
+"title": "Multi-Agent Risks from Advanced AI",
+"authors_short": "Hammond et al.",
+"venue": "arXiv 2025",
+"year": 2025,
+"url": "https://arxiv.org/abs/2502.14143",
+"theme": "Multi-agent risks"
+}
+],
+"node_links": {
+"RISK-REF-1141": [
+0
+],
+"RISK-REF-0045": [
+0
+],
+"RISK-REF-0044": [
+0,
+1
+],
+"RISK-REF-0043": [
+0
+],
+"RISK-REF-0695": [
+1,
+3
+],
+"RISK-REF-1359": [
+1,
+2,
+3
+],
+"RISK-REF-0951": [
+1,
+2,
+3
+],
+"RISK-REF-1142": [
+2
+],
+"RISK-REF-1172": [
+2,
+3
+],
+"PHYSBENCH-REF-0030": [
+4
+],
+"PHYSRISK-REF-0027": [
+4
+],
+"PHYSRISK-REF-0004": [
+4
+],
+"PHYSRISK-REF-0002": [
+4
+],
+"RISK-REF-0506": [
+5
+],
+"RISK-REF-1360": [
+5
+],
+"RISK-REF-1248": [
+5,
+33
+],
+"RISK-REF-1243": [
+5
+],
+"RISK-REF-0353": [
+6
+],
+"RISK-REF-1351": [
+6,
+22
+],
+"RISK-REF-0954": [
+6
+],
+"PHYSBENCH-REF-0043": [
+6
+],
+"RISK-REF-0333": [
+7
+],
+"RISK-REF-0327": [
+7
+],
+"RISK-REF-0347": [
+7
+],
+"RISK-REF-0331": [
+8
+],
+"RISK-REF-0309": [
+8
+],
+"RISK-REF-1290": [
+9
+],
+"RISK-REF-1289": [
+9
+],
+"RISK-REF-1288": [
+9
+],
+"RISK-REF-0871": [
+9
+],
+"RISK-REF-0831": [
+10
+],
+"RISK-REF-1372": [
+10,
+17
+],
+"RISK-REF-1366": [
+10
+],
+"AGENTBENCH-REF-0001": [
+10
+],
+"PVMRISK-REF-0036": [
+11
+],
+"RISK-REF-0835": [
+11
+],
+"RISK-REF-0834": [
+11
+],
+"PVMRISK-REF-0056": [
+11
+],
+"RISK-REF-1347": [
+12
+],
+"RISK-REF-1379": [
+12
+],
+"RISK-REF-1377": [
+12
+],
+"RISK-REF-1000": [
+12
+],
+"RISK-REF-1312": [
+13
+],
+"RISK-REF-1311": [
+13,
+23
+],
+"RISK-REF-1021": [
+13
+],
+"RISK-REF-0709": [
+13,
+23
+],
+"RISK-REF-1365": [
+14,
+22
+],
+"RISK-REF-1033": [
+14
+],
+"RISK-REF-0842": [
+14
+],
+"RISK-REF-0838": [
+14
+],
+"RISK-REF-0832": [
+15,
+16
+],
+"RISK-REF-1185": [
+15,
+16
+],
+"RISK-REF-0048": [
+15,
+16
+],
+"RISK-REF-0047": [
+15,
+16
+],
+"RISK-REF-1375": [
+17
+],
+"RISK-REF-1374": [
+17
+],
+"RISK-REF-1373": [
+17
+],
+"PHYSBENCH-REF-0100": [
+18
+],
+"RISK-REF-1123": [
+18
+],
+"RISK-REF-1121": [
+18
+],
+"RISK-REF-1378": [
+18
+],
+"RISK-REF-0565": [
+19
+],
+"RISK-REF-1024": [
+19
+],
+"RISK-REF-0992": [
+19
+],
+"RISK-REF-0915": [
+19
+],
+"RISK-REF-0703": [
+20
+],
+"RISK-REF-0708": [
+20
+],
+"RISK-REF-0475": [
+20
+],
+"RISK-REF-1285": [
+20
+],
+"RISK-REF-1191": [
+21,
+36
+],
+"RISK-REF-1169": [
+21
+],
+"RISK-REF-0940": [
+21
+],
+"RISK-REF-0939": [
+21
+],
+"RISK-REF-1340": [
+22
+],
+"RISK-REF-1149": [
+22
+],
+"RISK-REF-0630": [
+23
+],
+"RISK-REF-0407": [
+23,
+24
+],
+"RISK-REF-0422": [
+24
+],
+"RISK-REF-0325": [
+25
+],
+"RISK-REF-1349": [
+25
+],
+"RISK-REF-1339": [
+25,
+26
+],
+"RISK-REF-1338": [
+25
+],
+"RISK-REF-0509": [
+26
+],
+"RISK-REF-0338": [
+26
+],
+"RISK-REF-1346": [
+26
+],
+"RISK-REF-0375": [
+27
+],
+"RISK-REF-0410": [
+27,
+28
+],
+"RISK-REF-0392": [
+27
+],
+"RISK-REF-0374": [
+27
+],
+"RISK-REF-0380": [
+28
+],
+"RISK-REF-0393": [
+28
+],
+"RISK-REF-0388": [
+28
+],
+"RISK-REF-0925": [
+29
+],
+"RISK-REF-0655": [
+29
+],
+"RISK-REF-0305": [
+29
+],
+"RISK-REF-0269": [
+29,
+34
+],
+"RISK-REF-0911": [
+30
+],
+"RISK-REF-0575": [
+30
+],
+"RISK-REF-0537": [
+30
+],
+"RISK-REF-0518": [
+30
+],
+"RISK-REF-0603": [
+31
+],
+"RISK-REF-0581": [
+31
+],
+"RISK-REF-0265": [
+31,
+34
+],
+"RISK-REF-0003": [
+31
+],
+"RISK-REF-1034": [
+32
+],
+"RISK-REF-0639": [
+32
+],
+"RISK-REF-1246": [
+33
+],
+"RISK-REF-0651": [
+33
+],
+"RISK-REF-1247": [
+33
+],
+"RISK-REF-0667": [
+34
+],
+"RISK-REF-0267": [
+34
+],
+"RISK-REF-1329": [
+35
+],
+"RISK-REF-1328": [
+35
+],
+"RISK-REF-1327": [
+35
+],
+"RISK-REF-1326": [
+35
+],
+"RISK-REF-0840": [
+36
+],
+"RISK-REF-1184": [
+36
+],
+"RISK-REF-0851": [
+36
+],
+"RISK-REF-0060": [
+37
+],
+"RISK-REF-1319": [
+37
+],
+"RISK-REF-1233": [
+37,
+38
+],
+"RISK-REF-1229": [
+37
+],
+"RISK-REF-1232": [
+38
+],
+"RISK-REF-1322": [
+38
+],
+"RISK-REF-1231": [
+38
+]
+}
+}
