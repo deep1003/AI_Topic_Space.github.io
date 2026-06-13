@@ -6,7 +6,7 @@
 "authors_short": "Szegedy et al.",
 "venue": "ICLR 2014",
 "year": 2014,
-"url": "https://arxiv.org/abs/1312.6199",
+"url": "https://arxiv.org/pdf/1312.6199",
 "theme": "Adversarial examples",
 "orig": 5,
 "imp": 5
@@ -17,7 +17,7 @@
 "authors_short": "Goodfellow et al.",
 "venue": "ICLR 2015",
 "year": 2015,
-"url": "https://arxiv.org/abs/1412.6572",
+"url": "https://arxiv.org/pdf/1412.6572",
 "theme": "Adversarial examples",
 "orig": 5,
 "imp": 5
@@ -28,7 +28,7 @@
 "authors_short": "Madry et al.",
 "venue": "ICLR 2018",
 "year": 2018,
-"url": "https://arxiv.org/abs/1706.06083",
+"url": "https://arxiv.org/pdf/1706.06083",
 "theme": "Adversarial robustness",
 "orig": 4,
 "imp": 5
@@ -39,7 +39,7 @@
 "authors_short": "Carlini & Wagner",
 "venue": "IEEE S&P 2017",
 "year": 2017,
-"url": "https://arxiv.org/abs/1608.04644",
+"url": "https://arxiv.org/pdf/1608.04644",
 "theme": "Adversarial attacks",
 "orig": 4,
 "imp": 4
@@ -50,7 +50,7 @@
 "authors_short": "Eykholt et al.",
 "venue": "CVPR 2018",
 "year": 2018,
-"url": "https://arxiv.org/abs/1707.08945",
+"url": "https://arxiv.org/pdf/1707.08945",
 "theme": "Physical adversarial attacks",
 "orig": 4,
 "imp": 4
@@ -61,7 +61,7 @@
 "authors_short": "Biggio et al.",
 "venue": "ICML 2012",
 "year": 2012,
-"url": "https://arxiv.org/abs/1206.6389",
+"url": "https://arxiv.org/pdf/1206.6389",
 "theme": "Data poisoning",
 "orig": 5,
 "imp": 4
@@ -72,7 +72,7 @@
 "authors_short": "Gu et al.",
 "venue": "arXiv 2017",
 "year": 2017,
-"url": "https://arxiv.org/abs/1708.06733",
+"url": "https://arxiv.org/pdf/1708.06733",
 "theme": "Backdoor attacks",
 "orig": 5,
 "imp": 5
@@ -83,7 +83,7 @@
 "authors_short": "Shokri et al.",
 "venue": "IEEE S&P 2017",
 "year": 2017,
-"url": "https://arxiv.org/abs/1610.05820",
+"url": "https://arxiv.org/pdf/1610.05820",
 "theme": "Membership inference",
 "orig": 5,
 "imp": 5
@@ -105,7 +105,7 @@
 "authors_short": "Carlini et al.",
 "venue": "USENIX Security 2021",
 "year": 2021,
-"url": "https://arxiv.org/abs/2012.07805",
+"url": "https://arxiv.org/pdf/2012.07805",
 "theme": "Training-data extraction",
 "orig": 5,
 "imp": 5
@@ -116,7 +116,7 @@
 "authors_short": "Skalse et al.",
 "venue": "NeurIPS 2022",
 "year": 2022,
-"url": "https://arxiv.org/abs/2209.13085",
+"url": "https://arxiv.org/pdf/2209.13085",
 "theme": "Reward hacking",
 "orig": 4,
 "imp": 4
@@ -127,7 +127,7 @@
 "authors_short": "Christiano et al.",
 "venue": "NeurIPS 2017",
 "year": 2017,
-"url": "https://arxiv.org/abs/1706.03741",
+"url": "https://arxiv.org/pdf/1706.03741",
 "theme": "Learning from human feedback",
 "orig": 5,
 "imp": 5
@@ -138,7 +138,7 @@
 "authors_short": "Hadfield-Menell et al.",
 "venue": "IJCAI 2017",
 "year": 2017,
-"url": "https://arxiv.org/abs/1611.08219",
+"url": "https://arxiv.org/pdf/1611.08219",
 "theme": "Corrigibility / shutdown",
 "orig": 5,
 "imp": 4
@@ -149,7 +149,7 @@
 "authors_short": "Turner et al.",
 "venue": "NeurIPS 2021",
 "year": 2021,
-"url": "https://arxiv.org/abs/1912.01683",
+"url": "https://arxiv.org/pdf/1912.01683",
 "theme": "Power-seeking",
 "orig": 5,
 "imp": 4
@@ -160,7 +160,7 @@
 "authors_short": "Hubinger et al.",
 "venue": "arXiv 2019",
 "year": 2019,
-"url": "https://arxiv.org/abs/1906.01820",
+"url": "https://arxiv.org/pdf/1906.01820",
 "theme": "Mesa-optimization / inner misalignment",
 "orig": 5,
 "imp": 5
@@ -171,7 +171,7 @@
 "authors_short": "Langosco et al.",
 "venue": "ICML 2022",
 "year": 2022,
-"url": "https://arxiv.org/abs/2105.14111",
+"url": "https://arxiv.org/pdf/2105.14111",
 "theme": "Goal misgeneralization",
 "orig": 5,
 "imp": 4
@@ -182,7 +182,7 @@
 "authors_short": "Shah et al.",
 "venue": "arXiv 2022",
 "year": 2022,
-"url": "https://arxiv.org/abs/2210.01790",
+"url": "https://arxiv.org/pdf/2210.01790",
 "theme": "Goal misgeneralization",
 "orig": 4,
 "imp": 4
@@ -193,7 +193,7 @@
 "authors_short": "Amodei et al.",
 "venue": "arXiv 2016",
 "year": 2016,
-"url": "https://arxiv.org/abs/1606.06565",
+"url": "https://arxiv.org/pdf/1606.06565",
 "theme": "AI safety problem taxonomy",
 "orig": 5,
 "imp": 5
@@ -204,7 +204,7 @@
 "authors_short": "Hendrycks et al.",
 "venue": "arXiv 2021",
 "year": 2021,
-"url": "https://arxiv.org/abs/2109.13916",
+"url": "https://arxiv.org/pdf/2109.13916",
 "theme": "ML safety roadmap",
 "orig": 4,
 "imp": 4
@@ -215,7 +215,7 @@
 "authors_short": "Hendrycks & Mazeika",
 "venue": "arXiv 2022",
 "year": 2022,
-"url": "https://arxiv.org/abs/2206.05862",
+"url": "https://arxiv.org/pdf/2206.05862",
 "theme": "Existential risk analysis",
 "orig": 4,
 "imp": 3
@@ -226,7 +226,7 @@
 "authors_short": "Hendrycks et al.",
 "venue": "arXiv 2023",
 "year": 2023,
-"url": "https://arxiv.org/abs/2306.12001",
+"url": "https://arxiv.org/pdf/2306.12001",
 "theme": "Catastrophic risk overview",
 "orig": 4,
 "imp": 4
@@ -237,7 +237,7 @@
 "authors_short": "Shevlane et al.",
 "venue": "arXiv 2023",
 "year": 2023,
-"url": "https://arxiv.org/abs/2305.15324",
+"url": "https://arxiv.org/pdf/2305.15324",
 "theme": "Dangerous-capability evaluation",
 "orig": 5,
 "imp": 4
@@ -248,7 +248,7 @@
 "authors_short": "Hubinger et al.",
 "venue": "arXiv 2024",
 "year": 2024,
-"url": "https://arxiv.org/abs/2401.05566",
+"url": "https://arxiv.org/pdf/2401.05566",
 "theme": "Deceptive alignment / backdoors",
 "orig": 5,
 "imp": 4
@@ -259,7 +259,7 @@
 "authors_short": "Perez et al.",
 "venue": "ACL Findings 2023",
 "year": 2022,
-"url": "https://arxiv.org/abs/2212.09251",
+"url": "https://arxiv.org/pdf/2212.09251",
 "theme": "Emergent behaviors / sycophancy",
 "orig": 5,
 "imp": 4
@@ -270,7 +270,7 @@
 "authors_short": "Sharma et al.",
 "venue": "ICLR 2024",
 "year": 2023,
-"url": "https://arxiv.org/abs/2310.13548",
+"url": "https://arxiv.org/pdf/2310.13548",
 "theme": "Sycophancy",
 "orig": 4,
 "imp": 4
@@ -281,7 +281,7 @@
 "authors_short": "Zou et al.",
 "venue": "arXiv 2023",
 "year": 2023,
-"url": "https://arxiv.org/abs/2307.15043",
+"url": "https://arxiv.org/pdf/2307.15043",
 "theme": "Jailbreaks",
 "orig": 5,
 "imp": 5
@@ -292,7 +292,7 @@
 "authors_short": "Perez & Ribeiro",
 "venue": "arXiv 2022 (NeurIPS ML Safety WS)",
 "year": 2022,
-"url": "https://arxiv.org/abs/2211.09527",
+"url": "https://arxiv.org/pdf/2211.09527",
 "theme": "Prompt injection",
 "orig": 5,
 "imp": 4
@@ -336,7 +336,7 @@
 "authors_short": "Hardt et al.",
 "venue": "NeurIPS 2016",
 "year": 2016,
-"url": "https://arxiv.org/abs/1610.02413",
+"url": "https://arxiv.org/pdf/1610.02413",
 "theme": "Fairness",
 "orig": 5,
 "imp": 5
@@ -347,7 +347,7 @@
 "authors_short": "Bolukbasi et al.",
 "venue": "NeurIPS 2016",
 "year": 2016,
-"url": "https://arxiv.org/abs/1607.06520",
+"url": "https://arxiv.org/pdf/1607.06520",
 "theme": "Bias in representations",
 "orig": 5,
 "imp": 5
@@ -380,7 +380,7 @@
 "authors_short": "Weidinger et al.",
 "venue": "arXiv 2021",
 "year": 2021,
-"url": "https://arxiv.org/abs/2112.04359",
+"url": "https://arxiv.org/pdf/2112.04359",
 "theme": "LLM harm taxonomy",
 "orig": 4,
 "imp": 4
@@ -391,7 +391,7 @@
 "authors_short": "Brundage et al.",
 "venue": "arXiv 2018",
 "year": 2018,
-"url": "https://arxiv.org/abs/1802.07228",
+"url": "https://arxiv.org/pdf/1802.07228",
 "theme": "Malicious use",
 "orig": 5,
 "imp": 4
@@ -402,7 +402,7 @@
 "authors_short": "Ngo et al.",
 "venue": "ICLR 2024",
 "year": 2022,
-"url": "https://arxiv.org/abs/2209.00626",
+"url": "https://arxiv.org/pdf/2209.00626",
 "theme": "Alignment / deception",
 "orig": 4,
 "imp": 4
@@ -413,7 +413,7 @@
 "authors_short": "Dafoe et al.",
 "venue": "arXiv 2020",
 "year": 2020,
-"url": "https://arxiv.org/abs/2012.08630",
+"url": "https://arxiv.org/pdf/2012.08630",
 "theme": "Cooperative / multi-agent AI",
 "orig": 5,
 "imp": 4
@@ -424,7 +424,7 @@
 "authors_short": "Hammond et al.",
 "venue": "arXiv 2025",
 "year": 2025,
-"url": "https://arxiv.org/abs/2502.14143",
+"url": "https://arxiv.org/pdf/2502.14143",
 "theme": "Multi-agent risks",
 "orig": 5,
 "imp": 4
