@@ -197,7 +197,7 @@ const payload = {"metadata":{"title":"AI Topic Space: L0/L1/L2/L3 Interactive Br
 const nodes = payload.nodes;
 const riskNodes = payload.risk_nodes || [];
 fetch("data/key_papers.json").then(r=>r.json()).then(kp=>{
-  (riskNodes||[]).forEach(n=>{ const ix = kp.node_links[n.id]; if (ix) n.key_papers = ix.map(i=>kp.papers[i]); });
+  (riskNodes||[]).forEach(n=>{ const ix = kp.node_links[n.id]; if (ix) n.key_papers = ix.map(o=>({...kp.papers[o.i], rel:o.rel})); });
   try { if (window.update) window.update(); } catch(e){}
 }).catch(()=>{});
 let _nearestStpiCache = null;
@@ -384,6 +384,14 @@ function filteredRiskNodes() {
     return [n.l4_label,n.l3,n.l2,n.l1,n.definition,n.source,n.scope,n.phrase].join(" ").toLowerCase().includes(q);
   });
 }
+function rankedLinks(n) {
+  const out = [];
+  (n.key_papers || []).forEach(p => out.push({kind:"Paper", title:p.title, meta:p.venue + (p.year ? " " + p.year : ""), url:p.url, rel:p.rel || 3, imp:p.imp || 3, orig:p.orig || 3}));
+  if (n.evidence_url) out.push({kind:"Risk-defining source", title:n.evidence_title || "Defining framework / report", meta:(n.source || "").split(";")[0].trim(), url:n.evidence_url, rel:5, imp:3, orig:2});
+  out.forEach(l => l._s = l.rel*2 + l.imp + l.orig);
+  out.sort((a,b) => b._s - a._s);
+  return out.slice(0, 3);
+}
 function riskTooltipHtml(n) {
   const scoreLine = n.risk_impact_score === undefined ? "" :
     `<div style="margin-top:6px;"><b>Risk score</b>: ${Number(n.risk_impact_score).toFixed(3)} ` +
@@ -401,11 +409,15 @@ function riskTooltipHtml(n) {
     `<div style="margin-top:6px;"><b>Scope</b>: ${escapeHtml(n.scope || "global")}</div>` +
     `<div><b>Source families</b>: ${escapeHtml(n.source || "")}</div>` +
     `<div style="margin-top:6px;"><b>Evidence</b>: ${escapeHtml(n.evidence_title || "Open source")}</div>` +
-    (n.key_papers && n.key_papers.length ? `<div style="margin-top:6px;"><b>Seminal papers</b> <span style="color:#888;font-size:11px;">(click the node to open the first)</span>` + n.key_papers.map(p=>`<div style="margin-top:2px;">• ${escapeHtml(p.title)} <span style="color:#888;">(${escapeHtml(p.venue)})</span></div>`).join("") + `</div>` : "") +
+    (function(){ const ls = rankedLinks(n); if(!ls.length) return ""; const top = ls[0];
+      let h = `<div style="margin-top:6px;"><b>Key references</b> <span style="color:#888;font-size:11px;">(ranked; click node opens #1)</span>`;
+      h += `<div style="margin-top:3px;padding:4px 6px;background:#eef4fb;border-left:3px solid #2f6fad;border-radius:3px;"><b>#1 ${escapeHtml(top.title)}</b><div style="color:#555;font-size:11px;">${escapeHtml(top.kind)}${top.meta?" \u00b7 "+escapeHtml(top.meta):""}</div><div style="font-size:11px;color:#2f6fad;">Relevance ${top.rel}/5 &nbsp;\u00b7&nbsp; Importance ${top.imp}/5 &nbsp;\u00b7&nbsp; Originality ${top.orig}/5</div></div>`;
+      for(let k=1;k<ls.length;k++){ const l=ls[k]; h += `<div style="margin-top:2px;font-size:12px;">#${k+1} ${escapeHtml(l.title)} <span style="color:#888;">(${escapeHtml(l.meta)}; R${l.rel}\u00b7I${l.imp}\u00b7O${l.orig})</span></div>`; }
+      return h + `</div>`; })() +
     `<div style="margin-top:6px;color:#666;"><b>ID</b>: ${escapeHtml(n.id)}</div>`;
 }
 function openRiskEvidence(n) {
-  const url = (n && n.key_papers && n.key_papers.length) ? n.key_papers[0].url : (n && n.evidence_url);
+  const ls = rankedLinks(n); const url = ls.length ? ls[0].url : (n && n.evidence_url);
   if (!url) return false;
   window.open(url, "_blank", "noopener,noreferrer");
   return true;

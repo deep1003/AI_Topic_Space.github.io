@@ -7,7 +7,9 @@
 "venue": "ICLR 2014",
 "year": 2014,
 "url": "https://arxiv.org/abs/1312.6199",
-"theme": "Adversarial examples"
+"theme": "Adversarial examples",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 1,
@@ -16,7 +18,9 @@
 "venue": "ICLR 2015",
 "year": 2015,
 "url": "https://arxiv.org/abs/1412.6572",
-"theme": "Adversarial examples"
+"theme": "Adversarial examples",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 2,
@@ -25,7 +29,9 @@
 "venue": "ICLR 2018",
 "year": 2018,
 "url": "https://arxiv.org/abs/1706.06083",
-"theme": "Adversarial robustness"
+"theme": "Adversarial robustness",
+"orig": 4,
+"imp": 5
 },
 {
 "i": 3,
@@ -34,7 +40,9 @@
 "venue": "IEEE S&P 2017",
 "year": 2017,
 "url": "https://arxiv.org/abs/1608.04644",
-"theme": "Adversarial attacks"
+"theme": "Adversarial attacks",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 4,
@@ -43,7 +51,9 @@
 "venue": "CVPR 2018",
 "year": 2018,
 "url": "https://arxiv.org/abs/1707.08945",
-"theme": "Physical adversarial attacks"
+"theme": "Physical adversarial attacks",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 5,
@@ -52,7 +62,9 @@
 "venue": "ICML 2012",
 "year": 2012,
 "url": "https://arxiv.org/abs/1206.6389",
-"theme": "Data poisoning"
+"theme": "Data poisoning",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 6,
@@ -61,7 +73,9 @@
 "venue": "arXiv 2017",
 "year": 2017,
 "url": "https://arxiv.org/abs/1708.06733",
-"theme": "Backdoor attacks"
+"theme": "Backdoor attacks",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 7,
@@ -70,7 +84,9 @@
 "venue": "IEEE S&P 2017",
 "year": 2017,
 "url": "https://arxiv.org/abs/1610.05820",
-"theme": "Membership inference"
+"theme": "Membership inference",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 8,
@@ -79,7 +95,9 @@
 "venue": "ACM CCS 2015",
 "year": 2015,
 "url": "https://doi.org/10.1145/2810103.2813677",
-"theme": "Model inversion"
+"theme": "Model inversion",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 9,
@@ -88,7 +106,9 @@
 "venue": "USENIX Security 2021",
 "year": 2021,
 "url": "https://arxiv.org/abs/2012.07805",
-"theme": "Training-data extraction"
+"theme": "Training-data extraction",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 10,
@@ -97,7 +117,9 @@
 "venue": "NeurIPS 2022",
 "year": 2022,
 "url": "https://arxiv.org/abs/2209.13085",
-"theme": "Reward hacking"
+"theme": "Reward hacking",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 11,
@@ -106,7 +128,9 @@
 "venue": "NeurIPS 2017",
 "year": 2017,
 "url": "https://arxiv.org/abs/1706.03741",
-"theme": "Learning from human feedback"
+"theme": "Learning from human feedback",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 12,
@@ -115,7 +139,9 @@
 "venue": "IJCAI 2017",
 "year": 2017,
 "url": "https://arxiv.org/abs/1611.08219",
-"theme": "Corrigibility / shutdown"
+"theme": "Corrigibility / shutdown",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 13,
@@ -124,7 +150,9 @@
 "venue": "NeurIPS 2021",
 "year": 2021,
 "url": "https://arxiv.org/abs/1912.01683",
-"theme": "Power-seeking"
+"theme": "Power-seeking",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 14,
@@ -133,7 +161,9 @@
 "venue": "arXiv 2019",
 "year": 2019,
 "url": "https://arxiv.org/abs/1906.01820",
-"theme": "Mesa-optimization / inner misalignment"
+"theme": "Mesa-optimization / inner misalignment",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 15,
@@ -142,7 +172,9 @@
 "venue": "ICML 2022",
 "year": 2022,
 "url": "https://arxiv.org/abs/2105.14111",
-"theme": "Goal misgeneralization"
+"theme": "Goal misgeneralization",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 16,
@@ -151,7 +183,9 @@
 "venue": "arXiv 2022",
 "year": 2022,
 "url": "https://arxiv.org/abs/2210.01790",
-"theme": "Goal misgeneralization"
+"theme": "Goal misgeneralization",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 17,
@@ -160,7 +194,9 @@
 "venue": "arXiv 2016",
 "year": 2016,
 "url": "https://arxiv.org/abs/1606.06565",
-"theme": "AI safety problem taxonomy"
+"theme": "AI safety problem taxonomy",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 18,
@@ -169,7 +205,9 @@
 "venue": "arXiv 2021",
 "year": 2021,
 "url": "https://arxiv.org/abs/2109.13916",
-"theme": "ML safety roadmap"
+"theme": "ML safety roadmap",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 19,
@@ -178,7 +216,9 @@
 "venue": "arXiv 2022",
 "year": 2022,
 "url": "https://arxiv.org/abs/2206.05862",
-"theme": "Existential risk analysis"
+"theme": "Existential risk analysis",
+"orig": 4,
+"imp": 3
 },
 {
 "i": 20,
@@ -187,7 +227,9 @@
 "venue": "arXiv 2023",
 "year": 2023,
 "url": "https://arxiv.org/abs/2306.12001",
-"theme": "Catastrophic risk overview"
+"theme": "Catastrophic risk overview",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 21,
@@ -196,7 +238,9 @@
 "venue": "arXiv 2023",
 "year": 2023,
 "url": "https://arxiv.org/abs/2305.15324",
-"theme": "Dangerous-capability evaluation"
+"theme": "Dangerous-capability evaluation",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 22,
@@ -205,7 +249,9 @@
 "venue": "arXiv 2024",
 "year": 2024,
 "url": "https://arxiv.org/abs/2401.05566",
-"theme": "Deceptive alignment / backdoors"
+"theme": "Deceptive alignment / backdoors",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 23,
@@ -214,7 +260,9 @@
 "venue": "ACL Findings 2023",
 "year": 2022,
 "url": "https://arxiv.org/abs/2212.09251",
-"theme": "Emergent behaviors / sycophancy"
+"theme": "Emergent behaviors / sycophancy",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 24,
@@ -223,7 +271,9 @@
 "venue": "ICLR 2024",
 "year": 2023,
 "url": "https://arxiv.org/abs/2310.13548",
-"theme": "Sycophancy"
+"theme": "Sycophancy",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 25,
@@ -232,7 +282,9 @@
 "venue": "arXiv 2023",
 "year": 2023,
 "url": "https://arxiv.org/abs/2307.15043",
-"theme": "Jailbreaks"
+"theme": "Jailbreaks",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 26,
@@ -241,7 +293,9 @@
 "venue": "arXiv 2022 (NeurIPS ML Safety WS)",
 "year": 2022,
 "url": "https://arxiv.org/abs/2211.09527",
-"theme": "Prompt injection"
+"theme": "Prompt injection",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 27,
@@ -250,7 +304,9 @@
 "venue": "ACL 2020",
 "year": 2020,
 "url": "https://aclanthology.org/2020.acl-main.173/",
-"theme": "Hallucination / faithfulness"
+"theme": "Hallucination / faithfulness",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 28,
@@ -259,7 +315,9 @@
 "venue": "ACM Computing Surveys 2023",
 "year": 2023,
 "url": "https://doi.org/10.1145/3571730",
-"theme": "Hallucination"
+"theme": "Hallucination",
+"orig": 3,
+"imp": 4
 },
 {
 "i": 29,
@@ -268,7 +326,9 @@
 "venue": "EMNLP Findings 2020",
 "year": 2020,
 "url": "https://aclanthology.org/2020.findings-emnlp.301/",
-"theme": "Toxicity"
+"theme": "Toxicity",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 30,
@@ -277,7 +337,9 @@
 "venue": "NeurIPS 2016",
 "year": 2016,
 "url": "https://arxiv.org/abs/1610.02413",
-"theme": "Fairness"
+"theme": "Fairness",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 31,
@@ -286,7 +348,9 @@
 "venue": "NeurIPS 2016",
 "year": 2016,
 "url": "https://arxiv.org/abs/1607.06520",
-"theme": "Bias in representations"
+"theme": "Bias in representations",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 32,
@@ -295,7 +359,9 @@
 "venue": "ACM FAccT 2018",
 "year": 2018,
 "url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
-"theme": "Disparate accuracy"
+"theme": "Disparate accuracy",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 33,
@@ -304,7 +370,9 @@
 "venue": "ACM FAccT 2021",
 "year": 2021,
 "url": "https://doi.org/10.1145/3442188.3445922",
-"theme": "LLM societal risks"
+"theme": "LLM societal risks",
+"orig": 5,
+"imp": 5
 },
 {
 "i": 34,
@@ -313,7 +381,9 @@
 "venue": "arXiv 2021",
 "year": 2021,
 "url": "https://arxiv.org/abs/2112.04359",
-"theme": "LLM harm taxonomy"
+"theme": "LLM harm taxonomy",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 35,
@@ -322,7 +392,9 @@
 "venue": "arXiv 2018",
 "year": 2018,
 "url": "https://arxiv.org/abs/1802.07228",
-"theme": "Malicious use"
+"theme": "Malicious use",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 36,
@@ -331,7 +403,9 @@
 "venue": "ICLR 2024",
 "year": 2022,
 "url": "https://arxiv.org/abs/2209.00626",
-"theme": "Alignment / deception"
+"theme": "Alignment / deception",
+"orig": 4,
+"imp": 4
 },
 {
 "i": 37,
@@ -340,7 +414,9 @@
 "venue": "arXiv 2020",
 "year": 2020,
 "url": "https://arxiv.org/abs/2012.08630",
-"theme": "Cooperative / multi-agent AI"
+"theme": "Cooperative / multi-agent AI",
+"orig": 5,
+"imp": 4
 },
 {
 "i": 38,
@@ -349,408 +425,857 @@
 "venue": "arXiv 2025",
 "year": 2025,
 "url": "https://arxiv.org/abs/2502.14143",
-"theme": "Multi-agent risks"
+"theme": "Multi-agent risks",
+"orig": 5,
+"imp": 4
 }
 ],
 "node_links": {
 "RISK-REF-1141": [
-0
+{
+"i": 0,
+"rel": 5
+}
 ],
 "RISK-REF-0045": [
-0
+{
+"i": 0,
+"rel": 5
+}
 ],
 "RISK-REF-0044": [
-0,
-1
+{
+"i": 0,
+"rel": 5
+},
+{
+"i": 1,
+"rel": 5
+}
 ],
 "RISK-REF-0043": [
-0
+{
+"i": 0,
+"rel": 5
+}
 ],
 "RISK-REF-0695": [
-1,
-3
+{
+"i": 1,
+"rel": 5
+},
+{
+"i": 3,
+"rel": 5
+}
 ],
 "RISK-REF-1359": [
-1,
-2,
-3
+{
+"i": 1,
+"rel": 5
+},
+{
+"i": 2,
+"rel": 5
+},
+{
+"i": 3,
+"rel": 5
+}
 ],
 "RISK-REF-0951": [
-1,
-2,
-3
+{
+"i": 1,
+"rel": 5
+},
+{
+"i": 2,
+"rel": 5
+},
+{
+"i": 3,
+"rel": 5
+}
 ],
 "RISK-REF-1142": [
-2
+{
+"i": 2,
+"rel": 5
+}
 ],
 "RISK-REF-1172": [
-2,
-3
+{
+"i": 2,
+"rel": 5
+},
+{
+"i": 3,
+"rel": 5
+}
 ],
 "PHYSBENCH-REF-0030": [
-4
+{
+"i": 4,
+"rel": 5
+}
 ],
 "PHYSRISK-REF-0027": [
-4
+{
+"i": 4,
+"rel": 5
+}
 ],
 "PHYSRISK-REF-0004": [
-4
+{
+"i": 4,
+"rel": 5
+}
 ],
 "PHYSRISK-REF-0002": [
-4
+{
+"i": 4,
+"rel": 5
+}
 ],
 "RISK-REF-0506": [
-5
+{
+"i": 5,
+"rel": 5
+}
 ],
 "RISK-REF-1360": [
-5
+{
+"i": 5,
+"rel": 5
+}
 ],
 "RISK-REF-1248": [
-5,
-33
+{
+"i": 5,
+"rel": 5
+},
+{
+"i": 33,
+"rel": 5
+}
 ],
 "RISK-REF-1243": [
-5
+{
+"i": 5,
+"rel": 5
+}
 ],
 "RISK-REF-0353": [
-6
+{
+"i": 6,
+"rel": 5
+}
 ],
 "RISK-REF-1351": [
-6,
-22
+{
+"i": 6,
+"rel": 5
+},
+{
+"i": 22,
+"rel": 5
+}
 ],
 "RISK-REF-0954": [
-6
+{
+"i": 6,
+"rel": 5
+}
 ],
 "PHYSBENCH-REF-0043": [
-6
+{
+"i": 6,
+"rel": 5
+}
 ],
 "RISK-REF-0333": [
-7
+{
+"i": 7,
+"rel": 5
+}
 ],
 "RISK-REF-0327": [
-7
+{
+"i": 7,
+"rel": 5
+}
 ],
 "RISK-REF-0347": [
-7
+{
+"i": 7,
+"rel": 3
+}
 ],
 "RISK-REF-0331": [
-8
+{
+"i": 8,
+"rel": 5
+}
 ],
 "RISK-REF-0309": [
-8
+{
+"i": 8,
+"rel": 5
+}
 ],
 "RISK-REF-1290": [
-9
+{
+"i": 9,
+"rel": 5
+}
 ],
 "RISK-REF-1289": [
-9
+{
+"i": 9,
+"rel": 5
+}
 ],
 "RISK-REF-1288": [
-9
+{
+"i": 9,
+"rel": 5
+}
 ],
 "RISK-REF-0871": [
-9
+{
+"i": 9,
+"rel": 5
+}
 ],
 "RISK-REF-0831": [
-10
+{
+"i": 10,
+"rel": 5
+}
 ],
 "RISK-REF-1372": [
-10,
-17
+{
+"i": 10,
+"rel": 5
+},
+{
+"i": 17,
+"rel": 5
+}
 ],
 "RISK-REF-1366": [
-10
+{
+"i": 10,
+"rel": 5
+}
 ],
 "AGENTBENCH-REF-0001": [
-10
+{
+"i": 10,
+"rel": 5
+}
 ],
 "PVMRISK-REF-0036": [
-11
+{
+"i": 11,
+"rel": 5
+}
 ],
 "RISK-REF-0835": [
-11
+{
+"i": 11,
+"rel": 5
+}
 ],
 "RISK-REF-0834": [
-11
+{
+"i": 11,
+"rel": 5
+}
 ],
 "PVMRISK-REF-0056": [
-11
+{
+"i": 11,
+"rel": 5
+}
 ],
 "RISK-REF-1347": [
-12
+{
+"i": 12,
+"rel": 5
+}
 ],
 "RISK-REF-1379": [
-12
+{
+"i": 12,
+"rel": 5
+}
 ],
 "RISK-REF-1377": [
-12
+{
+"i": 12,
+"rel": 5
+}
 ],
 "RISK-REF-1000": [
-12
+{
+"i": 12,
+"rel": 5
+}
 ],
 "RISK-REF-1312": [
-13
+{
+"i": 13,
+"rel": 5
+}
 ],
 "RISK-REF-1311": [
-13,
-23
+{
+"i": 13,
+"rel": 5
+},
+{
+"i": 23,
+"rel": 5
+}
 ],
 "RISK-REF-1021": [
-13
+{
+"i": 13,
+"rel": 5
+}
 ],
 "RISK-REF-0709": [
-13,
-23
+{
+"i": 13,
+"rel": 5
+},
+{
+"i": 23,
+"rel": 5
+}
 ],
 "RISK-REF-1365": [
-14,
-22
+{
+"i": 14,
+"rel": 5
+},
+{
+"i": 22,
+"rel": 5
+}
 ],
 "RISK-REF-1033": [
-14
+{
+"i": 14,
+"rel": 5
+}
 ],
 "RISK-REF-0842": [
-14
+{
+"i": 14,
+"rel": 5
+}
 ],
 "RISK-REF-0838": [
-14
+{
+"i": 14,
+"rel": 5
+}
 ],
 "RISK-REF-0832": [
-15,
-16
+{
+"i": 15,
+"rel": 5
+},
+{
+"i": 16,
+"rel": 5
+}
 ],
 "RISK-REF-1185": [
-15,
-16
+{
+"i": 15,
+"rel": 5
+},
+{
+"i": 16,
+"rel": 5
+}
 ],
 "RISK-REF-0048": [
-15,
-16
+{
+"i": 15,
+"rel": 5
+},
+{
+"i": 16,
+"rel": 5
+}
 ],
 "RISK-REF-0047": [
-15,
-16
+{
+"i": 15,
+"rel": 5
+},
+{
+"i": 16,
+"rel": 5
+}
 ],
 "RISK-REF-1375": [
-17
+{
+"i": 17,
+"rel": 5
+}
 ],
 "RISK-REF-1374": [
-17
+{
+"i": 17,
+"rel": 5
+}
 ],
 "RISK-REF-1373": [
-17
+{
+"i": 17,
+"rel": 5
+}
 ],
 "PHYSBENCH-REF-0100": [
-18
+{
+"i": 18,
+"rel": 5
+}
 ],
 "RISK-REF-1123": [
-18
+{
+"i": 18,
+"rel": 5
+}
 ],
 "RISK-REF-1121": [
-18
+{
+"i": 18,
+"rel": 5
+}
 ],
 "RISK-REF-1378": [
-18
+{
+"i": 18,
+"rel": 5
+}
 ],
 "RISK-REF-0565": [
-19
+{
+"i": 19,
+"rel": 5
+}
 ],
 "RISK-REF-1024": [
-19
+{
+"i": 19,
+"rel": 5
+}
 ],
 "RISK-REF-0992": [
-19
+{
+"i": 19,
+"rel": 5
+}
 ],
 "RISK-REF-0915": [
-19
+{
+"i": 19,
+"rel": 5
+}
 ],
 "RISK-REF-0703": [
-20
+{
+"i": 20,
+"rel": 5
+}
 ],
 "RISK-REF-0708": [
-20
+{
+"i": 20,
+"rel": 5
+}
 ],
 "RISK-REF-0475": [
-20
+{
+"i": 20,
+"rel": 5
+}
 ],
 "RISK-REF-1285": [
-20
+{
+"i": 20,
+"rel": 5
+}
 ],
 "RISK-REF-1191": [
-21,
-36
+{
+"i": 21,
+"rel": 5
+},
+{
+"i": 36,
+"rel": 5
+}
 ],
 "RISK-REF-1169": [
-21
+{
+"i": 21,
+"rel": 5
+}
 ],
 "RISK-REF-0940": [
-21
+{
+"i": 21,
+"rel": 5
+}
 ],
 "RISK-REF-0939": [
-21
+{
+"i": 21,
+"rel": 5
+}
 ],
 "RISK-REF-1340": [
-22
+{
+"i": 22,
+"rel": 5
+}
 ],
 "RISK-REF-1149": [
-22
+{
+"i": 22,
+"rel": 5
+}
 ],
 "RISK-REF-0630": [
-23
+{
+"i": 23,
+"rel": 5
+}
 ],
 "RISK-REF-0407": [
-23,
-24
+{
+"i": 23,
+"rel": 5
+},
+{
+"i": 24,
+"rel": 5
+}
 ],
 "RISK-REF-0422": [
-24
+{
+"i": 24,
+"rel": 5
+}
 ],
 "RISK-REF-0325": [
-25
+{
+"i": 25,
+"rel": 5
+}
 ],
 "RISK-REF-1349": [
-25
+{
+"i": 25,
+"rel": 5
+}
 ],
 "RISK-REF-1339": [
-25,
-26
+{
+"i": 25,
+"rel": 5
+},
+{
+"i": 26,
+"rel": 5
+}
 ],
 "RISK-REF-1338": [
-25
+{
+"i": 25,
+"rel": 5
+}
 ],
 "RISK-REF-0509": [
-26
+{
+"i": 26,
+"rel": 5
+}
 ],
 "RISK-REF-0338": [
-26
+{
+"i": 26,
+"rel": 5
+}
 ],
 "RISK-REF-1346": [
-26
+{
+"i": 26,
+"rel": 5
+}
 ],
 "RISK-REF-0375": [
-27
+{
+"i": 27,
+"rel": 5
+}
 ],
 "RISK-REF-0410": [
-27,
-28
+{
+"i": 27,
+"rel": 5
+},
+{
+"i": 28,
+"rel": 5
+}
 ],
 "RISK-REF-0392": [
-27
+{
+"i": 27,
+"rel": 5
+}
 ],
 "RISK-REF-0374": [
-27
+{
+"i": 27,
+"rel": 5
+}
 ],
 "RISK-REF-0380": [
-28
+{
+"i": 28,
+"rel": 5
+}
 ],
 "RISK-REF-0393": [
-28
+{
+"i": 28,
+"rel": 5
+}
 ],
 "RISK-REF-0388": [
-28
+{
+"i": 28,
+"rel": 5
+}
 ],
 "RISK-REF-0925": [
-29
+{
+"i": 29,
+"rel": 5
+}
 ],
 "RISK-REF-0655": [
-29
+{
+"i": 29,
+"rel": 5
+}
 ],
 "RISK-REF-0305": [
-29
+{
+"i": 29,
+"rel": 5
+}
 ],
 "RISK-REF-0269": [
-29,
-34
+{
+"i": 29,
+"rel": 5
+},
+{
+"i": 34,
+"rel": 5
+}
 ],
 "RISK-REF-0911": [
-30
+{
+"i": 30,
+"rel": 5
+}
 ],
 "RISK-REF-0575": [
-30
+{
+"i": 30,
+"rel": 5
+}
 ],
 "RISK-REF-0537": [
-30
+{
+"i": 30,
+"rel": 5
+}
 ],
 "RISK-REF-0518": [
-30
+{
+"i": 30,
+"rel": 5
+}
 ],
 "RISK-REF-0603": [
-31
+{
+"i": 31,
+"rel": 5
+}
 ],
 "RISK-REF-0581": [
-31
+{
+"i": 31,
+"rel": 5
+}
 ],
 "RISK-REF-0265": [
-31,
-34
+{
+"i": 31,
+"rel": 5
+},
+{
+"i": 34,
+"rel": 5
+}
 ],
 "RISK-REF-0003": [
-31
+{
+"i": 31,
+"rel": 5
+}
 ],
 "RISK-REF-1034": [
-32
+{
+"i": 32,
+"rel": 5
+}
 ],
 "RISK-REF-0639": [
-32
+{
+"i": 32,
+"rel": 3
+}
 ],
 "RISK-REF-1246": [
-33
+{
+"i": 33,
+"rel": 5
+}
 ],
 "RISK-REF-0651": [
-33
+{
+"i": 33,
+"rel": 5
+}
 ],
 "RISK-REF-1247": [
-33
+{
+"i": 33,
+"rel": 5
+}
 ],
 "RISK-REF-0667": [
-34
+{
+"i": 34,
+"rel": 5
+}
 ],
 "RISK-REF-0267": [
-34
+{
+"i": 34,
+"rel": 5
+}
 ],
 "RISK-REF-1329": [
-35
+{
+"i": 35,
+"rel": 5
+}
 ],
 "RISK-REF-1328": [
-35
+{
+"i": 35,
+"rel": 5
+}
 ],
 "RISK-REF-1327": [
-35
+{
+"i": 35,
+"rel": 5
+}
 ],
 "RISK-REF-1326": [
-35
+{
+"i": 35,
+"rel": 5
+}
 ],
 "RISK-REF-0840": [
-36
+{
+"i": 36,
+"rel": 5
+}
 ],
 "RISK-REF-1184": [
-36
+{
+"i": 36,
+"rel": 5
+}
 ],
 "RISK-REF-0851": [
-36
+{
+"i": 36,
+"rel": 5
+}
 ],
 "RISK-REF-0060": [
-37
+{
+"i": 37,
+"rel": 5
+}
 ],
 "RISK-REF-1319": [
-37
+{
+"i": 37,
+"rel": 5
+}
 ],
 "RISK-REF-1233": [
-37,
-38
+{
+"i": 37,
+"rel": 5
+},
+{
+"i": 38,
+"rel": 5
+}
 ],
 "RISK-REF-1229": [
-37
+{
+"i": 37,
+"rel": 5
+}
 ],
 "RISK-REF-1232": [
-38
+{
+"i": 38,
+"rel": 5
+}
 ],
 "RISK-REF-1322": [
-38
+{
+"i": 38,
+"rel": 5
+}
 ],
 "RISK-REF-1231": [
-38
+{
+"i": 38,
+"rel": 5
+}
 ]
 }
 }
