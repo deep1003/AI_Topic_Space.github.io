@@ -197,15 +197,6 @@
     line-height: 1.46;
     margin: 10px 0;
   }
-  .definition-note {
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.4;
-    background: var(--soft);
-    border-radius: 8px;
-    padding: 9px 10px;
-    margin: 10px 0;
-  }
   .meta {
     border-top: 1px solid var(--line);
     margin-top: 10px;
@@ -568,7 +559,7 @@ function indexText(card) {
     card.path.join(" "), card.evidenceTitle, card.evidenceUrl, card.samples.join(" ")
   ].join(" "));
 }
-function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote}) {
+function addGroupCard(out, {domain, level, ordinal, title, path, rows}) {
   const riskDef = domain === "Risks" && level === "L1" ? RISK_L1_DEFINITIONS[title] : null;
   const sourceLinks = groupSourceLinks(domain, riskDef);
   const riskStats = domain === "Risks" && ["L1","L2","L3"].includes(level) ? aggregateRiskStats(rows) : null;
@@ -578,7 +569,6 @@ function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote
     id: "",
     korean: "",
     definition: riskDef?.definition || groupDefinition({domain, level, title, rows}),
-    definitionNote: depthNote || "",
     source: groupSourceLabel(domain, riskDef),
     sourceLinks,
     scope: riskDef?.scope || groupScope({domain, level, rows}),
@@ -603,7 +593,6 @@ function addTopicCard(out, node, ordinal) {
     id: node.id,
     korean: node.korean || "",
     definition: node.definition || "",
-    definitionNote: "",
     source: node.source || "",
     childCount: 0,
     samples: [],
@@ -628,7 +617,6 @@ function addRiskCard(out, node, ordinal) {
     id: node.id,
     korean: "",
     definition: node.definition || "",
-    definitionNote: "",
     source: node.source || "",
     scope: node.scope || "",
     childCount: 0,
@@ -652,7 +640,7 @@ function buildCards() {
   for (const domain of ["Science", "Technology", "Policy"]) {
     const nodes = (payload.nodes || []).filter(n => (n.l0 || n.domain) === domain);
     const d = DOMAIN_LETTERS[domain];
-    addGroupCard(out, {domain, level:"L0", ordinal:d, title:domain, path:[domain], rows:nodes, depthNote:"L0 identifies one of the three reference knowledge domains in the existing STPI topic space."});
+    addGroupCard(out, {domain, level:"L0", ordinal:d, title:domain, path:[domain], rows:nodes});
     groupBy(nodes, n=>n.l1).forEach(([l1, l1Rows], i1) => {
       const o1 = `${d}.${i1+1}`;
       addGroupCard(out, {domain, level:"L1", ordinal:o1, title:l1, path:[domain,l1], rows:l1Rows});
@@ -666,7 +654,7 @@ function buildCards() {
     });
   }
   const risks = payload.risk_nodes || [];
-  addGroupCard(out, {domain:"Risks", level:"L0", ordinal:"D", title:"Risks", path:["Risk"], rows:risks, depthNote:"L0 identifies the global AI risk reference domain overlaid on the STPI topic space."});
+  addGroupCard(out, {domain:"Risks", level:"L0", ordinal:"D", title:"Risks", path:["Risk"], rows:risks});
   groupBy(risks, n=>n.l1).forEach(([l1, l1Rows], i1) => {
     const o1 = `D.${i1+1}`;
     addGroupCard(out, {domain:"Risks", level:"L1", ordinal:o1, title:l1, path:["Risk",l1], rows:l1Rows});
@@ -702,6 +690,13 @@ function renderTabs() {
     document.getElementById("level").value = state.level;
     render();
   }));
+}
+function fallbackDefinition(card) {
+  const path = (card.path || []).filter(Boolean).join(" › ");
+  if (card.domain === "Risks") {
+    return `${card.title} is a ${card.level} AI risk concept located under ${path}. It should be interpreted through the verified lower-level risk cards, evidence links, and descendant definitions assigned to this branch of the taxonomy.`;
+  }
+  return `${card.title} is a ${card.level} concept in the ${card.domain} reference taxonomy located under ${path}. It is used to organize AI-related topics for semantic mapping, activation measurement, and cross-domain comparison.`;
 }
 function filteredCards() {
   let rows = cards.filter(c => c.domain === state.domain);
@@ -760,7 +755,7 @@ function cardHtml(card) {
     ${card.korean ? `<p class="korean">${esc(card.korean)}</p>` : ""}
     <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
     <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
-    ${card.definition ? `<div class="definition"><b>Definition:</b> ${esc(card.definition)}</div>` : `<div class="definition-note">${esc(card.definitionNote)}</div>`}
+    <div class="definition"><b>Definition:</b> ${esc(card.definition || fallbackDefinition(card))}</div>
     ${samples}
     ${actions}
     <div class="meta">
