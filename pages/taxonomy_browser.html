@@ -525,6 +525,37 @@ function groupSourceLabel(domain, riskDef) {
   const links = groupSourceLinks(domain, riskDef);
   return links.length ? links.map(s => s.label).join("; ") : "AI Topic Space reference taxonomy";
 }
+function quantile(sortedAscending, q) {
+  if (!sortedAscending.length) return null;
+  const pos = (sortedAscending.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  if (sortedAscending[base + 1] === undefined) return sortedAscending[base];
+  return sortedAscending[base] + rest * (sortedAscending[base + 1] - sortedAscending[base]);
+}
+function aggregateRiskStats(rows) {
+  const scores = rows
+    .map(r => Number(r.risk_impact_score))
+    .filter(v => Number.isFinite(v) && v >= 0)
+    .sort((a, b) => a - b);
+  const n = scores.length;
+  if (!n) return null;
+  const descending = scores.slice().reverse();
+  const topN = Math.max(1, Math.ceil(n * 0.25));
+  const topScores = descending.slice(0, topN);
+  const sum = scores.reduce((a, b) => a + b, 0);
+  const topSum = topScores.reduce((a, b) => a + b, 0);
+  return {
+    method: "top-quartile mean of descendant L4 risk scores",
+    score: topSum / topScores.length,
+    mean: sum / n,
+    median: quantile(scores, 0.5),
+    p90: quantile(scores, 0.9),
+    max: scores[n - 1],
+    n,
+    topN
+  };
+}
 function pathKey(path) { return path.filter(Boolean).join("|||"); }
 function pathStartsWith(path, prefix) {
   if (!prefix || !prefix.length) return true;
@@ -540,6 +571,7 @@ function indexText(card) {
 function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote}) {
   const riskDef = domain === "Risks" && level === "L1" ? RISK_L1_DEFINITIONS[title] : null;
   const sourceLinks = groupSourceLinks(domain, riskDef);
+  const riskStats = domain === "Risks" && ["L1","L2","L3"].includes(level) ? aggregateRiskStats(rows) : null;
   out.push({
     kind: "group",
     domain, level, ordinal, title, path,
@@ -552,7 +584,8 @@ function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote
     scope: riskDef?.scope || groupScope({domain, level, rows}),
     childCount: rows.length,
     samples: representativeTerms(rows),
-    riskScore: null,
+    riskScore: riskStats ? riskStats.score : null,
+    riskStats,
     evidenceTitle: "",
     evidenceUrl: "",
     orderKey: ordinal,
@@ -601,6 +634,7 @@ function addRiskCard(out, node, ordinal) {
     childCount: 0,
     samples: [],
     riskScore: Number(node.risk_impact_score || 0),
+    riskStats: null,
     severity: node.risk_severity_1to5,
     probability: node.risk_probability_proxy_0to1,
     percentile: node.risk_impact_percentile,
@@ -696,8 +730,11 @@ function cardHtml(card) {
   const samples = card.samples.length
     ? `<ul class="sample-list">${card.samples.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`
     : "";
-  const score = card.level === "L4"
-    ? `<div><b>Risk score:</b> ${Number(card.riskScore || 0).toFixed(3)}${card.severity ? ` (severity ${esc(card.severity)} × probability ${esc(card.probability)})` : ""}</div>`
+  const score = card.domain === "Risks" && card.riskScore !== null && card.riskScore !== undefined
+    ? (card.level === "L4"
+      ? `<div><b>Risk score:</b> ${Number(card.riskScore || 0).toFixed(3)}${card.severity ? ` (severity ${esc(card.severity)} × probability ${esc(card.probability)})` : ""}</div>`
+      : `<div><b>Risk score:</b> ${Number(card.riskScore || 0).toFixed(3)} <span class="muted">(${esc(card.riskStats?.method || "aggregated from descendant L4 risk scores")})</span></div>
+         <div><b>Risk distribution:</b> mean ${Number(card.riskStats?.mean || 0).toFixed(3)}, median ${Number(card.riskStats?.median || 0).toFixed(3)}, p90 ${Number(card.riskStats?.p90 || 0).toFixed(3)}, max ${Number(card.riskStats?.max || 0).toFixed(3)}, n=${Number(card.riskStats?.n || 0).toLocaleString()}</div>`)
     : "";
   const evidence = card.evidenceUrl
     ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
@@ -765,7 +802,7 @@ function render() {
   document.getElementById("evidence").value = state.evidence;
   document.getElementById("sectionTitle").textContent = `${DOMAIN_LETTERS[state.domain]}. ${state.domain}`;
   document.getElementById("sectionNote").textContent = state.domain === "Risks"
-    ? "Risk L4 cards include existing definitions, evidence links, and calculated risk scores where available."
+    ? "Risk L4 cards include evidence links and calculated risk scores. L1-L3 cards report the top-quartile mean of descendant L4 scores, with mean, median, p90, max, and n shown as diagnostics."
     : "Reference topic cards show the existing STPI hierarchy; L3 cards carry stored definitions and source metadata.";
   const rows = filteredCards();
   renderStats(rows);
