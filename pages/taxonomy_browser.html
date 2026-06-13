@@ -226,6 +226,45 @@
     text-decoration: none;
   }
   .refs a:hover { text-decoration: underline; }
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0 4px;
+  }
+  .mini-button {
+    border: 1px solid #d7dbe2;
+    background: #fff;
+    border-radius: 999px;
+    padding: 6px 9px;
+    font-size: 12px;
+    font-weight: 780;
+    color: #202939;
+    cursor: pointer;
+  }
+  .mini-button:hover {
+    background: #f2f4f7;
+  }
+  .scope-banner {
+    display: none;
+    margin: 0 0 14px;
+    border: 1px solid #d9dde4;
+    background: rgba(255,255,255,0.86);
+    border-left: 5px solid #7a3b84;
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: 0 8px 26px rgba(16, 24, 40, 0.05);
+  }
+  .scope-banner.visible { display: block; }
+  .scope-banner strong { display: block; margin-bottom: 4px; }
+  .scope-banner .scope-path {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .scope-banner button {
+    margin-top: 9px;
+  }
   .sample-list {
     margin: 8px 0 0;
     padding-left: 18px;
@@ -252,7 +291,7 @@
 <header>
   <h1>AI Topic Taxonomy</h1>
   <div class="subtitle">
-    Science, Technology, Policy, and Risks taxonomy browser. Cards are generated from the existing AI Topic Space payload; no new labels, definitions, sources, or evidence links are created on this page.
+    Science, Technology, Policy, and Risks taxonomy browser. Cards are generated from the existing AI Topic Space payload; L1 risk cards add source-based scope definitions, while L4 risk cards retain their verified evidence links.
   </div>
   <div class="top-actions" id="domainTabs"></div>
 </header>
@@ -284,7 +323,7 @@
     <a class="button" href="../index.html">Back to AI Topic Space</a>
     <div class="stats" id="stats">Loading taxonomy...</div>
     <p class="note">
-      L0-L3 Science, Technology, and Policy cards summarize the reference topic taxonomy. L4 cards are available for Risks because risk cards carry lower-level definitions, scores, and evidence links.
+      Use the subtree buttons on any group card to inspect only the child L2, L3, or L4 cards under that hierarchy. Risk L1 cards provide source-based definitions; L4 risk cards provide leaf-level definitions, scores, and evidence links.
     </p>
   </aside>
   <section>
@@ -292,6 +331,7 @@
       <h2 id="sectionTitle">Science</h2>
       <p id="sectionNote"></p>
     </div>
+    <div class="scope-banner" id="scopeBanner"></div>
     <div class="cards" id="cards"></div>
   </section>
 </main>
@@ -301,9 +341,108 @@ const KEY_PAPERS_URL = "../data/key_papers.json";
 const DOMAIN_ORDER = ["Science", "Technology", "Policy", "Risks"];
 const DOMAIN_LETTERS = {Science: "A", Technology: "B", Policy: "C", Risks: "D"};
 const DOMAIN_COLORS = {Policy: "#c95662", Science: "#2f6fad", Technology: "#25864b", Risks: "#7a3b84"};
-const state = {domain: "Science", level: "all", query: "", sort: "hierarchy", evidence: "all"};
+const state = {domain: "Science", level: "all", query: "", sort: "hierarchy", evidence: "all", scopeKey: ""};
 let payload = null;
 let cards = [];
+const RISK_L1_DEFINITIONS = {
+  "Physical AI risks": {
+    definition: "Risks arising when AI systems are embedded in robots, autonomous machines, vehicles, smart infrastructure, or other cyber-physical systems that sense, decide, and act in the physical world. These risks include unsafe perception, planning, manipulation, human interaction, physical security, lifecycle assurance, and liability failures.",
+    scope: "Includes embodied AI, robotics, autonomous vehicles, humanoids, cyber-physical control, and physical-world safety benchmarks. It intentionally overlaps with security, governance, and human-agency risks when physical action is the relevant pathway.",
+    sources: [
+      {label: "NVIDIA, Physical AI", url: "https://www.nvidia.com/en-us/glossary/physical-ai/"},
+      {label: "NIST Cyber-Physical Systems Framework", url: "https://www.nist.gov/publications/framework-cyber-physical-systems-volume-1-overview"},
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"}
+    ]
+  },
+  "Agentic and multi-agent system failures": {
+    definition: "Risks caused by AI systems that pursue goals through multi-step planning, tool use, delegation, or interaction with other agents, including unsafe autonomy, poor oversight, coordination failure, tool misuse, and cascading multi-agent errors.",
+    scope: "Includes single-agent and multi-agent autonomy, agent tool use, indirect prompt injection, unsafe delegation, and failures of supervision or interruptibility.",
+    sources: [
+      {label: "OWASP Agentic AI Threats and Mitigations", url: "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"},
+      {label: "NIST AI RMF Generative AI Profile", url: "https://www.nist.gov/itl/ai-risk-management-framework"}
+    ]
+  },
+  "AI system safety, robustness, and control": {
+    definition: "Risks arising from unreliable, brittle, poorly controlled, or insufficiently monitored AI behavior, including robustness failures, unsafe optimization, loss of control, model drift, and failures under distribution shift.",
+    scope: "Includes technical safety, robustness, control, monitoring, evaluation, and assurance failures that affect system behavior across domains.",
+    sources: [
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"},
+      {label: "MIT AI Risk Repository", url: "https://airisk.mit.edu/"}
+    ]
+  },
+  "Cross-cutting harms and trustworthiness failures": {
+    definition: "General trustworthiness failures that cut across multiple AI applications, including reliability, validity, transparency, accountability, contestability, and institutional confidence.",
+    scope: "Used for risk cards that are not specific to a single application sector but affect the credibility and governance of AI systems broadly.",
+    sources: [
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"},
+      {label: "OECD AI Principles", url: "https://oecd.ai/en/ai-principles"}
+    ]
+  },
+  "Discrimination and toxic content": {
+    definition: "Risks that AI systems produce, amplify, or operationalize discrimination, stereotyping, exclusion, hate, harassment, or other toxic outputs against individuals or groups.",
+    scope: "Includes representational harms, allocative harms, hate speech, toxicity, bias, and unequal system performance across social groups.",
+    sources: [
+      {label: "IBM AI Risk Atlas: harmful output", url: "https://www.ibm.com/docs/en/watsonx/saas?topic=atlas-harmful-output"},
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"}
+    ]
+  },
+  "Governance and accountability failures": {
+    definition: "Risks caused by inadequate governance, weak accountability, poor documentation, unclear responsibility, insufficient auditability, or missing institutional controls over AI development and deployment.",
+    scope: "Includes compliance, audit, oversight, documentation, procurement, liability, and governance-process failures.",
+    sources: [
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"},
+      {label: "ISO/IEC 42001 overview", url: "https://www.iso.org/standard/81230.html"}
+    ]
+  },
+  "Human agency and interaction harms": {
+    definition: "Risks that AI systems undermine human agency, autonomy, consent, attention, decision-making, psychological welfare, or safe human-AI interaction.",
+    scope: "Includes overreliance, manipulation, loss of meaningful human control, interface harms, and interaction-level failures.",
+    sources: [
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"},
+      {label: "IBM AI Risk Atlas: over- or under-reliance", url: "https://www.ibm.com/docs/en/watsonx/saas?topic=atlas-over-under-reliance"}
+    ]
+  },
+  "Malicious use and weaponization": {
+    definition: "Risks that AI capabilities are intentionally used to cause harm, including cyber abuse, fraud, disinformation, surveillance abuse, weaponization, and other adversarial or criminal uses.",
+    scope: "Includes both direct misuse of AI systems and AI-enabled amplification of existing harmful activities.",
+    sources: [
+      {label: "OWASP Top 10 for LLM Applications", url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/"},
+      {label: "MITRE ATLAS", url: "https://atlas.mitre.org/"}
+    ]
+  },
+  "Misinformation and information-ecosystem harms": {
+    definition: "Risks that AI systems generate, personalize, amplify, or automate false, misleading, low-integrity, or manipulative information at scale.",
+    scope: "Includes hallucination, synthetic media, coordinated manipulation, information integrity failures, and erosion of public trust.",
+    sources: [
+      {label: "IBM AI Risk Atlas: hallucination", url: "https://www.ibm.com/docs/en/watsonx/saas?topic=atlas-hallucination"},
+      {label: "NIST AI Risk Management Framework", url: "https://www.nist.gov/itl/ai-risk-management-framework"}
+    ]
+  },
+  "Pluralistic value misalignment": {
+    definition: "Risks that AI systems encode, optimize, or enforce values that conflict with local, cultural, democratic, indigenous, or pluralistic norms and priorities.",
+    scope: "Includes value lock-in, cultural homogenization, coloniality, local-context mismatch, and failures to respect community-defined values.",
+    sources: [
+      {label: "MIT AI Risk Repository", url: "https://airisk.mit.edu/"},
+      {label: "UNESCO Recommendation on the Ethics of AI", url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"}
+    ]
+  },
+  "Privacy and security harms": {
+    definition: "Risks involving unauthorized access, leakage, inference, misuse, or compromise of personal, sensitive, proprietary, or security-relevant information through AI systems.",
+    scope: "Includes privacy leakage, data extraction, model inversion, prompt injection, supply-chain compromise, and security failures.",
+    sources: [
+      {label: "OWASP Top 10 for LLM Applications", url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/"},
+      {label: "IBM AI Risk Atlas: exposing personal information", url: "https://www.ibm.com/docs/en/watsonx/saas?topic=atlas-exposing-personal-information"}
+    ]
+  },
+  "Socioeconomic and environmental harms": {
+    definition: "Risks that AI systems reshape economic opportunity, labor, market power, resource use, environmental burden, or social welfare in harmful or inequitable ways.",
+    scope: "Includes labor displacement, concentration of power, unequal benefit distribution, energy use, environmental harm, and broader social costs.",
+    sources: [
+      {label: "MIT AI Risk Repository", url: "https://airisk.mit.edu/"},
+      {label: "OECD AI Policy Observatory", url: "https://oecd.ai/"}
+    ]
+  }
+};
 
 function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({
@@ -325,6 +464,12 @@ function groupBy(rows, fn) {
 function representativeTerms(rows, max=5) {
   return unique(rows.map(labelOf)).sort((a,b)=>a.localeCompare(b)).slice(0, max);
 }
+function pathKey(path) { return path.filter(Boolean).join("|||"); }
+function pathStartsWith(path, prefix) {
+  if (!prefix || !prefix.length) return true;
+  if (path.length < prefix.length) return false;
+  return prefix.every((v, i) => path[i] === v);
+}
 function indexText(card) {
   return norm([
     card.title, card.korean, card.definition, card.source, card.id,
@@ -332,20 +477,24 @@ function indexText(card) {
   ].join(" "));
 }
 function addGroupCard(out, {domain, level, ordinal, title, path, rows, depthNote}) {
+  const riskDef = domain === "Risks" && level === "L1" ? RISK_L1_DEFINITIONS[title] : null;
   out.push({
     kind: "group",
     domain, level, ordinal, title, path,
     id: "",
     korean: "",
-    definition: "",
-    definitionNote: depthNote || "No standalone definition field is stored for this hierarchy level; this card summarizes existing child nodes and their definitions.",
-    source: "Existing AI Topic Space taxonomy payload",
+    definition: riskDef?.definition || "",
+    definitionNote: depthNote || "This hierarchy card summarizes child nodes in the existing taxonomy. Use the subtree buttons to inspect the lower-level cards under this concept.",
+    source: riskDef ? riskDef.sources.map(s => s.label).join("; ") : "Existing AI Topic Space taxonomy payload",
+    sourceLinks: riskDef?.sources || [],
+    scope: riskDef?.scope || "",
     childCount: rows.length,
     samples: representativeTerms(rows),
     riskScore: null,
     evidenceTitle: "",
     evidenceUrl: "",
-    orderKey: ordinal
+    orderKey: ordinal,
+    pathKey: pathKey(path)
   });
 }
 function addTopicCard(out, node, ordinal) {
@@ -367,18 +516,20 @@ function addTopicCard(out, node, ordinal) {
     evidenceTitle: "",
     evidenceUrl: "",
     review: node.review || "",
-    orderKey: ordinal
+    orderKey: ordinal,
+    pathKey: pathKey([node.l0 || node.domain, node.l1, node.l2, node.l3_label || node.l3].filter(Boolean))
   });
 }
 function addRiskCard(out, node, ordinal) {
   const keyPapers = Array.isArray(node.key_papers) ? node.key_papers : [];
+  const riskPath = ["Risk", node.l1, node.l2, node.l3, node.l4_label || node.phrase].filter(Boolean);
   out.push({
     kind: "risk",
     domain: "Risks",
     level: "L4",
     ordinal,
     title: node.l4_label || node.phrase || node.id,
-    path: [node.l0, node.l1, node.l2, node.l3, node.l4_label || node.phrase].filter(Boolean),
+    path: riskPath,
     id: node.id,
     korean: "",
     definition: node.definition || "",
@@ -396,7 +547,8 @@ function addRiskCard(out, node, ordinal) {
     evidenceUrl: node.evidence_url || "",
     evidenceType: node.evidence_type || "",
     keyPapers,
-    orderKey: ordinal
+    orderKey: ordinal,
+    pathKey: pathKey(riskPath)
   });
 }
 function buildCards() {
@@ -454,6 +606,10 @@ function renderTabs() {
 }
 function filteredCards() {
   let rows = cards.filter(c => c.domain === state.domain);
+  if (state.scopeKey) {
+    const scoped = cards.find(c => c.pathKey === state.scopeKey);
+    if (scoped) rows = rows.filter(c => pathStartsWith(c.path, scoped.path));
+  }
   if (state.level !== "all") rows = rows.filter(c => c.level === state.level);
   if (state.evidence === "linked") rows = rows.filter(c => c.level === "L4" && c.evidenceUrl);
   if (state.query) rows = rows.filter(c => c._index.includes(state.query));
@@ -481,8 +637,20 @@ function cardHtml(card) {
   const evidence = card.evidenceUrl
     ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
     : "";
+  const sourceLinks = card.sourceLinks && card.sourceLinks.length
+    ? `<div class="refs"><b>Definition sources:</b><ul class="sample-list">${card.sourceLinks.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul></div>`
+    : "";
   const keyPapers = card.keyPapers && card.keyPapers.length
     ? `<div class="refs"><b>Additional linked papers:</b><ul class="sample-list">${card.keyPapers.slice(0,3).map(p=>`<li><a href="${esc(p.url || p.pdf_url || "#")}" target="_blank" rel="noopener">${esc(p.title || p.url || "linked paper")}</a></li>`).join("")}</ul></div>`
+    : "";
+  const childLevels = card.kind === "group"
+    ? ["L1","L2","L3","L4"].filter(l => Number(l.slice(1)) > Number(card.level.slice(1)) && cards.some(c => c.domain === card.domain && c.level === l && pathStartsWith(c.path, card.path)))
+    : [];
+  const actions = card.kind === "group"
+    ? `<div class="card-actions">
+        <button class="mini-button" data-action="scope" data-scope="${esc(card.pathKey)}" data-level="all">Show full subtree</button>
+        ${childLevels.map(l=>`<button class="mini-button" data-action="scope" data-scope="${esc(card.pathKey)}" data-level="${esc(l)}">Show ${esc(l)} cards</button>`).join("")}
+      </div>`
     : "";
   return `<article class="card" data-domain="${esc(card.domain)}">
     <div class="ordinal">${esc(card.ordinal)} · ${esc(card.level)}</div>
@@ -492,6 +660,7 @@ function cardHtml(card) {
     <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
     ${card.definition ? `<div class="definition"><b>Definition:</b> ${esc(card.definition)}</div>` : `<div class="definition-note">${esc(card.definitionNote)}</div>`}
     ${samples}
+    ${actions}
     <div class="meta">
       ${card.id ? `<div><b>ID:</b> ${esc(card.id)}</div>` : ""}
       ${card.source ? `<div><b>Source:</b> ${esc(card.source)}</div>` : ""}
@@ -499,9 +668,24 @@ function cardHtml(card) {
       ${card.evidenceStatus ? `<div><b>Evidence status:</b> ${esc(card.evidenceStatus)}</div>` : ""}
       ${score}
     </div>
+    ${sourceLinks}
     ${evidence}
     ${keyPapers}
   </article>`;
+}
+function renderScopeBanner() {
+  const el = document.getElementById("scopeBanner");
+  if (!el) return;
+  const scoped = state.scopeKey ? cards.find(c => c.pathKey === state.scopeKey) : null;
+  if (!scoped) {
+    el.className = "scope-banner";
+    el.innerHTML = "";
+    return;
+  }
+  el.className = "scope-banner visible";
+  el.innerHTML = `<strong>Scoped view: ${esc(scoped.title)}</strong>
+    <div class="scope-path">${scoped.path.map(esc).join(" › ")} · level filter: ${esc(state.level === "all" ? "all descendant levels" : state.level)}</div>
+    <button class="mini-button" data-action="clear-scope">Clear scoped view</button>`;
 }
 function renderStats(rows) {
   const s = domainStats(state.domain);
@@ -517,6 +701,7 @@ function render() {
     : "Reference topic cards show the existing STPI hierarchy; L3 cards carry stored definitions and source metadata.";
   const rows = filteredCards();
   renderStats(rows);
+  renderScopeBanner();
   const box = document.getElementById("cards");
   box.innerHTML = rows.length ? rows.map(cardHtml).join("") : `<div class="empty">No cards match the current filters.</div>`;
 }
@@ -542,6 +727,23 @@ async function load() {
       state[id === "query" ? "query" : id] = id === "query" ? norm(e.target.value) : e.target.value;
       render();
     });
+  });
+  document.getElementById("cards").addEventListener("click", e => {
+    const btn = e.target.closest("button[data-action='scope']");
+    if (!btn) return;
+    state.scopeKey = btn.dataset.scope || "";
+    state.level = btn.dataset.level || "all";
+    document.getElementById("level").value = state.level;
+    render();
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("button[data-action='clear-scope']");
+    if (!btn) return;
+    state.scopeKey = "";
+    state.level = "all";
+    document.getElementById("level").value = "all";
+    render();
   });
   render();
 }
