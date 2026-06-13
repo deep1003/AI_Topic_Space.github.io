@@ -1,0 +1,42 @@
+{
+ "_note": "Candidate failure_source -> harm_outcome links at the L1 axis level. These are hypotheses for expert review, NOT asserted causation. Co-occurrence alone is insufficient.",
+ "review_required": true,
+ "candidates": [
+  {
+   "source": "AI system safety, robustness, and control",
+   "target": "Physical AI risks",
+   "basis": "safety/control failures can manifest as physical harm",
+   "status": "candidate"
+  },
+  {
+   "source": "Agentic and multi-agent system failures",
+   "target": "AI system safety, robustness, and control",
+   "basis": "agentic coordination failures stress control mechanisms",
+   "status": "candidate"
+  },
+  {
+   "source": "Malicious use and weaponization",
+   "target": "Privacy and security harms",
+   "basis": "misuse can drive privacy/security harm",
+   "status": "candidate"
+  },
+  {
+   "source": "Malicious use and weaponization",
+   "target": "Misinformation and information-ecosystem harms",
+   "basis": "influence operations produce misinformation harm",
+   "status": "candidate"
+  },
+  {
+   "source": "Governance and accountability failures",
+   "target": "Socioeconomic and environmental harms",
+   "basis": "governance gaps can amplify socioeconomic harm",
+   "status": "candidate"
+  },
+  {
+   "source": "Pluralistic value misalignment",
+   "target": "Discrimination and toxic content",
+   "basis": "value misalignment can surface as discriminatory output",
+   "status": "candidate"
+  }
+ ]
+}
