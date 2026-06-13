@@ -663,6 +663,9 @@ function renderTabs() {
     `<a class="button" href="../index.html">Map view</a>`;
   tabs.querySelectorAll("button.tab").forEach(btn => btn.addEventListener("click", () => {
     state.domain = btn.dataset.domain;
+    state.scopeKey = "";
+    state.level = state.domain === "Risks" ? "L1" : "all";
+    document.getElementById("level").value = state.level;
     render();
   }));
 }
@@ -757,6 +760,9 @@ function renderStats(rows) {
 }
 function render() {
   renderTabs();
+  document.getElementById("level").value = state.level;
+  document.getElementById("sort").value = state.sort;
+  document.getElementById("evidence").value = state.evidence;
   document.getElementById("sectionTitle").textContent = `${DOMAIN_LETTERS[state.domain]}. ${state.domain}`;
   document.getElementById("sectionNote").textContent = state.domain === "Risks"
     ? "Risk L4 cards include existing definitions, evidence links, and calculated risk scores where available."
