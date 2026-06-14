@@ -801,9 +801,9 @@ function cardHtml(card) {
     ? `<div class="refs"><b>Merged aliases:</b> ${esc((card.mergedAliases || []).join("; ") || "none")}
         <br><b>Merged IDs:</b> ${esc((card.mergedFromIds || []).join("; "))}</div>`
     : "";
-  const koreanPolicyEvidence = card.koreanPolicyDefinition
+  const koreanPolicyEvidence = (card.koreanPolicyDefinition || card.koreanPolicyReference || card.koreanPolicyReferenceTitle || card.koreanPolicyQuote)
     ? `<div class="korean-policy-evidence">
-        <b>Korean policy definition:</b><br>${esc(card.koreanPolicyDefinition)}
+        ${card.koreanPolicyDefinition ? `<b>Korean policy definition:</b><br>${esc(card.koreanPolicyDefinition)}` : `<b>Korean policy reference</b>`}
         ${card.koreanPolicyQuote ? `<blockquote>“${esc(card.koreanPolicyQuote)}”</blockquote>` : ""}
         <div class="meta" style="border-top:none;margin-top:8px;padding-top:0;">
           <div><b>Korean policy reference:</b> ${
