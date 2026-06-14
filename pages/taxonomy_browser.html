@@ -176,6 +176,13 @@
     color: var(--muted);
     font-size: 0.82em;
   }
+  .crumb {
+    border: none; background: none; padding: 0;
+    color: #1f5e9f; font: inherit; cursor: pointer; text-decoration: none;
+  }
+  .crumb:hover { text-decoration: underline; }
+  .crumb-current { color: #475467; }
+  .crumb-sep { color: #98a2b3; margin: 0 6px; }
   .chips {
     display: flex;
     flex-wrap: wrap;
@@ -349,7 +356,7 @@
   </section>
 </main>
 <script>
-const BUILD = "20260614g";
+const BUILD = "20260614h";
 const PAYLOAD_URL = "../data/interactive_l1_l2_l3_payload.json?v=" + BUILD;
 const KEY_PAPERS_URL = "../data/key_papers.json?v=" + BUILD;
 const CURATED_DEFS_URL = "../data/taxonomy_card_definitions.json?v=" + BUILD;
@@ -846,10 +853,9 @@ function cardHtml(card) {
   return `<article class="card" data-domain="${esc(card.domain)}">
     <div class="ordinal">${esc(card.ordinal)} · ${esc(card.level)}</div>
     <h3>${esc(card.title)}${card.koreanLabel ? ` <span class="ko-label">(${esc(card.koreanLabel)})</span>` : ""}</h3>
-    ${card.korean ? `<p class="korean">${esc(card.korean)}</p>` : ""}
     <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
-    <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
-    <div class="definition"><b>Definition:</b> ${esc(card.definition || fallbackDefinition(card))}</div>
+    <div class="path"><b>Hierarchy:</b> ${crumbsHtml(card.path)}</div>
+    <div class="definition"><b>Definition:</b> ${esc(card.definition || fallbackDefinition(card))}${card.korean ? ` (${esc(card.korean)})` : ""}</div>
     ${koreanPolicyEvidence}
     ${samples}
     ${actions}
@@ -866,6 +872,16 @@ function cardHtml(card) {
     ${keyPapers}
   </article>`;
 }
+function crumbsHtml(path) {
+  const parts = (path || []).filter(Boolean);
+  return parts.map((name, i) => {
+    const key = parts.slice(0, i + 1).join("|||");
+    const last = i === parts.length - 1;
+    return last
+      ? `<span class="crumb crumb-current">${esc(name)}</span>`
+      : `<button type="button" class="crumb" data-action="scope" data-scope="${esc(key)}" data-level="all">${esc(name)}</button>`;
+  }).join(`<span class="crumb-sep">›</span>`);
+}
 function renderScopeBanner() {
   const el = document.getElementById("scopeBanner");
   if (!el) return;
@@ -877,7 +893,7 @@ function renderScopeBanner() {
   }
   el.className = "scope-banner visible";
   el.innerHTML = `<strong>Scoped view: ${esc(scoped.title)}</strong>
-    <div class="scope-path">${scoped.path.map(esc).join(" › ")} · level filter: ${esc(state.level === "all" ? "all descendant levels" : state.level)}</div>
+    <div class="scope-path">${crumbsHtml(scoped.path)} · level filter: ${esc(state.level === "all" ? "all descendant levels" : state.level)}</div>
     <button class="mini-button" data-action="clear-scope">Clear scoped view</button>`;
 }
 function renderStats(rows) {
