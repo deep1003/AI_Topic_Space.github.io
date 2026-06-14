@@ -1122,54 +1122,67 @@
       "korean_label": "합성미디어·기만"
     },
     "Risks|||L2|||Cyber-physical security and malicious use": {
-      "english": "Risks that embodied AI in cyber-physical systems is compromised or maliciously used to cause physical harm, including remote takeover, fleet compromise, and physical adversarial attacks.",
-      "korean": "사이버물리 시스템의 체화된 AI가 침해되거나 악용되어 물리적 해악(원격 탈취·플릿 침해·물리적 적대공격 등)을 야기하는 위험.",
-      "source": "NIST Framework for Cyber-Physical Systems (NIST SP 1500-201, 2017)",
-      "review": "curated_v1",
-      "korean_label": "사이버물리 보안·악용"
+      "english": "Cross-cutting risk spanning all pipeline stages. Compromise or malicious use of embodied AI in cyber-physical systems, including remote takeover, fleet compromise, sensor spoofing and signal injection, and physical adversarial attacks that cause physical harm.",
+      "korean": "전 파이프라인 단계에 걸친 교차적 위험. 사이버물리 시스템의 체화 AI가 침해·악용되어 원격 탈취·플릿 침해·센서 스푸핑·신호 인젝션·물리적 적대 공격으로 물리적 피해를 일으키는 위험.",
+      "korean_label": "(교차) 사이버물리 보안·악용",
+      "stage": "Cross-cutting (security and misuse)",
+      "pipeline_order": 5,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Governance, liability, and lifecycle assurance": {
-      "english": "Risks from inadequate governance, unclear liability allocation, and weak lifecycle safety assurance for physical AI systems.",
-      "korean": "물리 AI 시스템에 대한 거버넌스 미비·책임 배분 불명확·수명주기 안전보증 취약에서 비롯되는 위험.",
-      "source": "ISO/IEC 22989 and ISO 10218 robot safety standards",
-      "review": "curated_v1",
-      "note": "Multi-conjunction label; consider splitting.",
-      "korean_label": "거버넌스·책임·수명주기 보증"
+      "english": "Cross-cutting governance risk. Inadequate governance, unclear liability allocation, and weak lifecycle safety assurance for physical AI systems across their development, deployment, and operation.",
+      "korean": "교차적 거버넌스 위험. 물리 AI 시스템의 개발·배치·운영 전반에서 거버넌스 미비·책임 배분 불명확·수명주기 안전보증 취약에서 비롯되는 위험.",
+      "korean_label": "(교차) 거버넌스·책임·수명주기 보증",
+      "stage": "Cross-cutting (governance)",
+      "pipeline_order": 7,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Perception and situational-awareness failures": {
-      "english": "Risks from an embodied system failing to correctly sense, recognize, and understand its environment, including long-tail hazards and sensor degradation.",
-      "korean": "체화된 시스템이 환경을 올바르게 감지·인식·이해하지 못하는(롱테일 위험·센서 열화 포함) 위험.",
-      "source": "ISO/PAS 21448 Safety of the Intended Functionality (SOTIF)",
-      "review": "curated_v1",
-      "korean_label": "지각·상황인식 실패"
+      "english": "Sensing-stage risk. Failure of an embodied system to correctly sense, recognize, and understand its environment, including long-tail hazard recognition, sensor noise, occlusion, and adverse conditions, yielding an incorrect world model on which downstream decisions and actions then rely.",
+      "korean": "감지 단계 위험. 체화 시스템이 환경을 올바르게 감지·인식·이해하지 못해(롱테일 위험·센서 잡음·가림·악조건 포함) 잘못된 세계 모델을 만들고 후속 판단·행동이 이에 의존하게 되는 위험.",
+      "korean_label": "(감지) 지각·상황인식 실패",
+      "stage": "Sensing",
+      "pipeline_order": 1,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Planning and control failures in physical action": {
-      "english": "Risks from unsafe motion planning, manipulation, or low-level control during physical action by robots or autonomous machines.",
-      "korean": "로봇·자율기계의 물리적 행동 중 불안전한 동작계획·조작·저수준 제어에서 비롯되는 위험.",
-      "source": "Siciliano & Khatib, Springer Handbook of Robotics (2016)",
-      "review": "curated_v1",
-      "korean_label": "물리적 계획·제어 실패"
+      "english": "Decision- and action-stage risk. Unsafe motion planning, task planning, or low-level control during physical action by robots and autonomous machines, including constraint violations, collisions, unsafe trajectories, and failure to enter a safe state.",
+      "korean": "판단·행동 단계 위험. 로봇·자율기계의 물리적 행동 중 불안전한 동작·과제 계획 또는 저수준 제어로 제약 위반·충돌·위험 궤적·안전상태 진입 실패가 발생하는 위험.",
+      "korean_label": "(판단·행동) 계획·제어 실패",
+      "stage": "Decision and action",
+      "pipeline_order": 2,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Sector-specific physical deployment risks": {
-      "english": "Physical risks particular to deployment sectors such as industrial robotics, mobility and transport, and public-space service robots.",
-      "korean": "산업로봇·모빌리티/교통·공공공간 서비스로봇 등 배치 부문에 특유한 물리적 위험.",
-      "source": "ISO 10218 (industrial robots); UNECE WP.29 (automated vehicles)",
-      "review": "curated_v1",
-      "korean_label": "부문별 물리 배치 리스크"
+      "english": "Action-stage risk specific to deployment sectors. Physical harms particular to where embodied AI acts, including industrial and logistics robotics, mobility and transport, and public-space service robots.",
+      "korean": "행동 단계(배치 부문) 위험. 산업·물류 로봇, 모빌리티·교통, 공공공간 서비스 로봇 등 체화 AI가 행동하는 배치 부문에 특유한 물리적 피해 위험.",
+      "korean_label": "(행동·배치) 부문별 배치 리스크",
+      "stage": "Action (deployment context)",
+      "pipeline_order": 4,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Shared-space human-interaction harms": {
-      "english": "Risks of physical or psychological harm when robots and autonomous machines operate in spaces shared with people.",
-      "korean": "로봇·자율기계가 사람과 공유된 공간에서 작동할 때 발생하는 물리적·심리적 해악 위험.",
-      "source": "ISO/TS 15066 Collaborative Robots (2016)",
-      "review": "curated_v1",
-      "korean_label": "공유공간 상호작용 피해"
+      "english": "Action-stage risk in human-shared environments. Physical or psychological harm when robots and autonomous machines act in spaces shared with people, including proxemic violation, separation-distance breaches, overtrust, and heightened danger to vulnerable users.",
+      "korean": "행동 단계(인간 공유공간) 위험. 로봇·자율기계가 사람과 공유된 공간에서 행동할 때 근접공간 침해·분리거리 위반·과신·취약 사용자 위험 등 물리·심리적 피해가 발생하는 위험.",
+      "korean_label": "(행동·상호작용) 공유공간 피해",
+      "stage": "Action (human interaction)",
+      "pipeline_order": 3,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Sim-to-real validation and runtime adaptation": {
-      "english": "Risks that control policies validated in simulation fail, or adapt unsafely, when transferred to and operating in the real world.",
-      "korean": "시뮬레이션에서 검증된 제어정책이 실세계로 전이·작동할 때 실패하거나 불안전하게 적응하는 위험.",
-      "source": "Zhao, Queralta & Westerlund, Sim-to-Real Transfer in Deep RL for Robotics (2020)",
-      "review": "curated_v1",
-      "korean_label": "시뮬-실세계 전이 리스크"
+      "english": "Cross-cutting development-stage risk. Failures arising before and during deployment when policies validated in simulation transfer unsafely to the real world, or when runtime monitoring and adaptation fail under distribution shift.",
+      "korean": "개발·검증 단계의 교차적 위험. 시뮬레이션에서 검증된 정책이 실세계로 안전하지 않게 전이되거나 분포 변화에서 실행시 모니터링·적응이 실패하여 배치 전·중에 도입되는 위험.",
+      "korean_label": "(교차) 시뮬-실세계 전이·실행적응",
+      "stage": "Cross-cutting (development and validation)",
+      "pipeline_order": 6,
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2"
     },
     "Risks|||L2|||Cultural and linguistic harms": {
       "english": "Risks that AI systems underperform for, marginalize, or misrepresent particular cultures and languages, especially low-resource ones.",
@@ -1454,11 +1467,12 @@
       "review": "curated_v1"
     },
     "Risks|||L1|||Physical AI risks": {
-      "english": "Risks arising when AI is embedded in robots, vehicles, and other cyber-physical systems that sense, decide, and act in the physical world.",
-      "korean": "로봇·차량 등 물리세계에서 감지·판단·행동하는 사이버물리 시스템에 AI가 내장될 때 발생하는 위험.",
+      "english": "Physical AI risks are adverse outcomes that arise when AI is embodied in cyber-physical systems, robots, autonomous vehicles, drones, and other autonomous machines that perceive (sense), reason and decide, and act in the physical world; a failure, misuse, or compromise at any stage of this perception-decision-action loop can cause physical harm to people, property, or the environment. The scope follows NIST's cyber-physical systems framing, in which such systems integrate computation, communication, sensing, and actuation with the physical world (NIST SP 1500-201), and the 'Physical AI' framing of machines that perceive, reason, and act in real environments (NVIDIA). Subcategories are ordered by the pipeline stage at which the risk arises: sensing, decision, then action, followed by cross-cutting risks (security and malicious use, sim-to-real validation, and governance).",
+      "korean": "물리적 AI 리스크는 로봇·자율주행차·드론 등 물리세계에서 감지(sense)하고 판단(decide)하며 행동(act)하는 사이버물리 시스템에 AI가 체화될 때 발생하는 위해로, 이 지각-판단-행동 루프의 어느 단계에서든 실패·오용·침해가 사람·재산·환경에 물리적 피해를 줄 수 있다. 범위는 컴퓨팅·통신·감지·구동을 물리세계와 통합한다는 NIST의 사이버물리 시스템 정의(NIST SP 1500-201)와 실세계에서 지각·추론·행동하는 기계라는 'Physical AI' 개념(NVIDIA)을 따른다. 하위 범주는 위험이 발생하는 단계 순서(감지→판단→행동, 이후 교차적 위험)로 배열한다.",
       "korean_label": "물리적 AI 리스크",
-      "source": "MIT AI Risk Repository (Slattery et al., 2024)",
-      "review": "curated_v1"
+      "source": "NIST SP 1500-201, Framework for Cyber-Physical Systems; NVIDIA, What is Physical AI? (glossary)",
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-201.pdf",
+      "review": "curated_v2"
     },
     "Risks|||L1|||Pluralistic value misalignment": {
       "english": "Risks that AI encodes or enforces values conflicting with cultural, democratic, indigenous, or pluralistic norms.",
