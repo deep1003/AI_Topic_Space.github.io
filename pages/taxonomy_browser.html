@@ -171,6 +171,11 @@
     font-size: 14px;
     margin: 0 0 8px;
   }
+  .ko-label {
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.82em;
+  }
   .chips {
     display: flex;
     flex-wrap: wrap;
@@ -355,7 +360,8 @@ function curatedDefFor(domain, level, title) {
   const en = (d.english || "").trim();
   const ko = (d.korean || "").trim();
   return en ? { definition: en + (ko ? ` (${ko})` : ""), termRevised: d.term_revised || "", note: d.note || "",
-                sourceLabel: d.source || "", sourceUrl: d.source_url || "" } : null;
+                koreanLabel: d.korean_label || "",
+                sourceLabel: d.source || "", sourceUrl: d.source_url || "" } : (d.korean_label ? { definition:"", koreanLabel:d.korean_label } : null);
 }
 const DOMAIN_ORDER = ["Science", "Technology", "Policy", "Risks"];
 const DOMAIN_LETTERS = {Science: "A", Technology: "B", Policy: "C", Risks: "D"};
@@ -602,6 +608,7 @@ function addGroupCard(out, {domain, level, ordinal, title, path, rows}) {
     id: "",
     korean: "",
     definition: curated?.definition || riskDef?.definition || groupDefinition({domain, level, title, rows}),
+    koreanLabel: curated?.koreanLabel || "",
     termRevised: curated?.termRevised || "",
     curatedNote: curated?.note || "",
     curated: !!curated,
@@ -654,7 +661,8 @@ function addRiskCard(out, node, ordinal) {
     title: node.l4_label || node.phrase || node.id,
     path: riskPath,
     id: node.id,
-    korean: "",
+    korean: node.korean_definition || "",
+    koreanLabel: node.korean_label || "",
     definition: node.definition || "",
     source: node.source || "",
     scope: node.scope || "",
@@ -824,7 +832,7 @@ function cardHtml(card) {
     : "";
   return `<article class="card" data-domain="${esc(card.domain)}">
     <div class="ordinal">${esc(card.ordinal)} · ${esc(card.level)}</div>
-    <h3>${esc(card.title)}</h3>
+    <h3>${esc(card.title)}${card.koreanLabel ? ` <span class="ko-label">(${esc(card.koreanLabel)})</span>` : ""}</h3>
     ${card.korean ? `<p class="korean">${esc(card.korean)}</p>` : ""}
     <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
     <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
