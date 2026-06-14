@@ -106,6 +106,42 @@
       <div class="cv"><canvas id="cSeminal"></canvas></div>
     </div>
   </div>
+
+  <h2 style="margin:38px 0 2px;font-size:22px;font-weight:900;letter-spacing:-.4px">Physical AI risk data</h2>
+  <p class="sub" style="margin:0 0 16px;color:var(--muted);font-size:14px">Literature, sources, and institutions behind the Physical AI risk taxonomy (155 L4 risk cards organised along the perception &rarr; decision &rarr; action pipeline). Paper-corpus charts are computed from the 5,222-record Physical AI literature screen; framework and evidence charts are computed live from the published risk cards.</p>
+  <div class="kpis" id="physKpis"></div>
+  <div class="grid">
+    <div class="card wide">
+      <h2>Physical AI research collected, by year and type</h2>
+      <p class="sub">5,222 OpenAlex records screened for the Physical AI overlay (1994&ndash;2026), segmented by work type</p>
+      <div class="cv"><canvas id="pPapersYear"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Korea vs. international research</h2>
+      <p class="sub">Physical AI papers with affiliation metadata, by year (Korea-affiliated vs. international)</p>
+      <div class="cv"><canvas id="pKorea"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Leading research institutions</h2>
+      <p class="sub">Top affiliations among the collected Physical AI papers</p>
+      <div class="cv"><canvas id="pInst"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Leading affiliation countries</h2>
+      <p class="sub">Country of contributing institutions (Physical AI literature)</p>
+      <div class="cv"><canvas id="pCountry"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Standards &amp; frameworks grounding the taxonomy</h2>
+      <p class="sub">Institutional sources cited by the 155 Physical AI risk cards (live)</p>
+      <div class="cv"><canvas id="pFw"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Risk-card evidence by source type</h2>
+      <p class="sub">Document type backing each Physical AI risk card: benchmark, survey, framework, standard, report (live)</p>
+      <div class="cv"><canvas id="pSrcType"></canvas></div>
+    </div>
+  </div>
 </div>
 <footer>
   <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code>, consolidated to 1,930 L3 cards after within-branch duplicate-card merging. AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>, consolidated to 1,699 L4 risk cards after duplicate-card merging. Korean policy evidence has been attached to 518 L4 risk cards by matching 949 domestic AI-risk policy candidates to risk-card definitions with BGE-M3 cosine similarity (threshold 0.56); the match table is stored in <code>data/korean_policy_ai_risk_l4_matches.csv</code>. The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for source-link refinement or evidence-status review. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. The duplicate-card audit is stored in <code>data/taxonomy_card_deduplication_audit.csv</code>.</p>
@@ -187,6 +223,26 @@ bar("cRiskQuality",
   ["#b0556f","#d98e2b","#d98e2b","#8a8f98"],
   {horizontal:true});
 
+// ---- Physical AI paper-corpus charts (snapshot of 5,222-record screen) ----
+const physKpi=[["Physical AI papers screened","5,222"],["Curated benchmark / standard sources","23"],["L4 risk cards","155"],["L3 subfamilies","43"],["Pipeline stages (L2)","7"],["Korea-affiliated papers","174"]];
+document.getElementById("physKpis").innerHTML=physKpi.map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+const pYears=["≤2017","2018","2019","2020","2021","2022","2023","2024","2025","2026"];
+new Chart(document.getElementById("pPapersYear"),{type:'bar',
+  data:{labels:pYears,datasets:[
+    {label:"Article",data:[310,102,140,219,315,406,500,719,963,538],backgroundColor:C.tech,borderRadius:3},
+    {label:"Preprint",data:[17,21,25,39,39,31,57,98,193,258],backgroundColor:C.science,borderRadius:3},
+    {label:"Review",data:[2,3,9,13,19,21,39,56,70,0],backgroundColor:C.risk,borderRadius:3}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+fmt(c.parsed.y)}}},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
+new Chart(document.getElementById("pKorea"),{type:'bar',
+  data:{labels:pYears,datasets:[
+    {label:"International",data:[270,92,133,216,308,373,475,646,784,421],backgroundColor:"#9ec3e6",borderRadius:3},
+    {label:"Korea-affiliated",data:[6,3,5,8,12,25,27,30,37,21],backgroundColor:C.policy,borderRadius:3}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
+bar("pInst",["Carnegie Mellon (US)","TU Munich (DE)","Shanghai Jiao Tong (CN)","Tsinghua (CN)","U Virginia (US)","MIT (US)","UIUC (US)","Purdue (US)"],[20,16,14,11,10,9,9,9],PALETTE.concat(PALETTE),{horizontal:true});
+bar("pCountry",["United States","China","India","United Kingdom","Germany","Italy","Japan","Korea"],[1705,1229,670,516,408,308,263,240],PALETTE.concat(PALETTE),{horizontal:true});
+
 // ---- live AI-risk charts ----
 fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>{
   document.getElementById("riskN").textContent="("+fmt(R.length)+" L4 nodes)";
@@ -223,6 +279,15 @@ fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>
     return v;
   });
   bar("cStatus",status.map(x=>x[0]),status.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
+  // ---- Physical AI subset (live) ----
+  const phys=R.filter(n=>(""+(n.l1||"")).trim()==="Physical AI risks");
+  const pfws=["NIST","NVIDIA","ISO","MIT AI Risk Repository","ASIMOV","SOTIF","IEEE","NHTSA"];
+  const psrc=phys.map(n=>n.source||"").join(" || ");
+  const pf=pfws.map(f=>[f==="MIT AI Risk Repository"?"MIT AI Risk Repo":f,(psrc.split(f).length-1)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  bar("pFw",pf.map(x=>x[0]),pf.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
+  const pe={};for(const n of phys){let v=((n.evidence_type||"Unknown")+"").split(";")[0].trim()||"Unknown";pe[v]=(pe[v]||0)+1;}
+  const pee=Object.entries(pe).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  bar("pSrcType",pee.map(x=>x[0]),pee.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
 }).catch(e=>{document.getElementById("riskN").textContent="(risk data unavailable)";});
 
 fetch("../data/key_papers.json").then(r=>r.json()).then(kp=>{
