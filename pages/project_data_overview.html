@@ -108,12 +108,12 @@
   </div>
 
   <h2 style="margin:38px 0 2px;font-size:22px;font-weight:900;letter-spacing:-.4px">Physical AI risk data</h2>
-  <p class="sub" style="margin:0 0 16px;color:var(--muted);font-size:14px">Literature, sources, and institutions behind the Physical AI risk taxonomy (155 L4 risk cards organised along the perception &rarr; decision &rarr; action pipeline). Paper-corpus charts are computed from the 5,222-record Physical AI literature screen; framework and evidence charts are computed live from the published risk cards.</p>
+  <p class="sub" style="margin:0 0 16px;color:var(--muted);font-size:14px">Literature, sources, and institutions behind the Physical AI risk taxonomy (155 L4 risk cards organised along the perception &rarr; decision &rarr; action pipeline). Paper-corpus charts are computed from the relevance-screened Physical AI literature (5,168 records, after removing 54 off-topic records from an initial 5,222 by BGE-M3 semantic-similarity screening); framework and evidence charts are computed live from the published risk cards.</p>
   <div class="kpis" id="physKpis"></div>
   <div class="grid">
     <div class="card wide">
       <h2>Physical AI research collected, by year and type</h2>
-      <p class="sub">5,222 OpenAlex records screened for the Physical AI overlay (1994&ndash;2026), segmented by work type</p>
+      <p class="sub">5,168 relevance-screened OpenAlex records for the Physical AI overlay (1994&ndash;2026), segmented by work type</p>
       <div class="cv"><canvas id="pPapersYear"></canvas></div>
     </div>
     <div class="card">
@@ -224,24 +224,24 @@ bar("cRiskQuality",
   {horizontal:true});
 
 // ---- Physical AI paper-corpus charts (snapshot of 5,222-record screen) ----
-const physKpi=[["Physical AI papers screened","5,222"],["Curated benchmark / standard sources","23"],["L4 risk cards","155"],["L3 subfamilies","43"],["Pipeline stages (L2)","7"],["Korea-affiliated papers","174"]];
+const physKpi=[["Physical AI papers (screened)","5,168"],["Off-topic records removed","54"],["Curated benchmark / standard sources","23"],["L4 risk cards","155"],["L3 / L2 / stages","43 / 7 / 7"],["Korea-affiliated papers","173"]];
 document.getElementById("physKpis").innerHTML=physKpi.map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 const pYears=["≤2017","2018","2019","2020","2021","2022","2023","2024","2025","2026"];
 new Chart(document.getElementById("pPapersYear"),{type:'bar',
   data:{labels:pYears,datasets:[
-    {label:"Article",data:[310,102,140,219,315,406,500,719,963,538],backgroundColor:C.tech,borderRadius:3},
-    {label:"Preprint",data:[17,21,25,39,39,31,57,98,193,258],backgroundColor:C.science,borderRadius:3},
-    {label:"Review",data:[2,3,9,13,19,21,39,56,70,0],backgroundColor:C.risk,borderRadius:3}]},
+    {label:"Article",data:[306,102,140,216,310,399,495,711,954,532],backgroundColor:C.tech,borderRadius:3},
+    {label:"Preprint",data:[17,21,25,39,39,31,57,98,192,257],backgroundColor:C.science,borderRadius:3},
+    {label:"Review",data:[2,2,9,13,19,21,38,54,69,0],backgroundColor:C.risk,borderRadius:3}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+fmt(c.parsed.y)}}},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
 new Chart(document.getElementById("pKorea"),{type:'bar',
   data:{labels:pYears,datasets:[
-    {label:"International",data:[270,92,133,216,308,373,475,646,784,421],backgroundColor:"#9ec3e6",borderRadius:3},
-    {label:"Korea-affiliated",data:[6,3,5,8,12,25,27,30,37,21],backgroundColor:C.policy,borderRadius:3}]},
+    {label:"International",data:[267,91,133,214,303,367,469,636,776,419],backgroundColor:"#9ec3e6",borderRadius:3},
+    {label:"Korea-affiliated",data:[6,3,5,8,12,25,27,30,37,20],backgroundColor:C.policy,borderRadius:3}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
-bar("pInst",["Carnegie Mellon (US)","TU Munich (DE)","Shanghai Jiao Tong (CN)","Tsinghua (CN)","U Virginia (US)","MIT (US)","UIUC (US)","Purdue (US)"],[20,16,14,11,10,9,9,9],PALETTE.concat(PALETTE),{horizontal:true});
-bar("pCountry",["United States","China","India","United Kingdom","Germany","Italy","Japan","Korea"],[1705,1229,670,516,408,308,263,240],PALETTE.concat(PALETTE),{horizontal:true});
+bar("pInst",["Carnegie Mellon (US)","TU Munich (DE)","Tsinghua (CN)","Chinese Acad. of Sci. (CN)","Shanghai Jiao Tong (CN)","Georgia Tech (US)","Nanyang Tech (SG)","MIT (US)"],[48,48,42,37,36,29,27,27],PALETTE.concat(PALETTE),{horizontal:true});
+bar("pCountry",["United States","China","India","United Kingdom","Germany","Italy","Canada","Korea"],[1066,674,408,323,276,201,176,173],PALETTE.concat(PALETTE),{horizontal:true});
 
 // ---- live AI-risk charts ----
 fetch("../data/global_ai_risk_l4_overlay_nodes.json").then(r=>r.json()).then(R=>{
