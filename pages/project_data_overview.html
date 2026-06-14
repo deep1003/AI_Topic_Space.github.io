@@ -39,7 +39,7 @@
 <header>
   <a class="back" href="../index.html">&larr; Back to the interactive AI Topic Space / AI Risks Space</a>
   <h1>Project Data, Coverage &amp; Risk-Card Quality Overview</h1>
-  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Corpus figures are project totals; the AI-risk charts, evidence-status counts, risk-card quality audit, and seminal-reference list are computed from the published data.</p>
+  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Document accounting: <b>Total literature = Science + Patents + Policy + Risk materials</b>, where <b>Risk materials</b> = risk research papers + reports + simple sources (plus risk-related policy reports). Risk records that are academic papers and not already present in Science are deduplicated and folded into Science (26,760 added, so Science = 34,664 + 26,760 = 61,424); 3,491 risk-related policy reports are reassigned from Policy to Risk materials. The 1990&ndash;2026 STPI reference space itself is built from the 111,384 paper+patent+policy documents, with the AI-risk literature projected onto it as an overlay. The AI-risk charts, evidence-status counts, risk-card quality audit, and seminal-reference list are computed from the published data.</p>
 </header>
 <div class="wrap">
   <div class="kpis" id="kpis"></div>
@@ -58,7 +58,7 @@
 
     <div class="card wide">
       <h2>Policy documents by period <span style="color:var(--muted);font-weight:400;font-size:12px">(v5 collection)</span></h2>
-      <p class="sub">Domestic (Korean) vs. international policy documents across eight 5-year periods — temporal growth of the expanded v5 policy collection (the analysed core is 8,993)</p>
+      <p class="sub">Domestic (Korean) vs. international policy documents across eight 5-year periods — temporal growth of the policy collection (8,993 total; 3,491 risk-related reports reassigned to Risk materials, 5,502 remain as general policy)</p>
       <div class="cv"><canvas id="cPeriod"></canvas></div>
     </div>
 
@@ -92,7 +92,7 @@
 
     <div class="card">
       <h2>AI-risk literature screened, by risk domain</h2>
-      <p class="sub">Broad records retrieved for the risk overlay (26,937 total)</p>
+      <p class="sub">Broad records retrieved for the risk overlay (26,943 risk records: 26,936 academic papers + 7 reports/sources; risk materials incl. risk-related policy = 30,434)</p>
       <div class="cv"><canvas id="cLitDom"></canvas></div>
     </div>
     <div class="card">
@@ -124,8 +124,22 @@ function bar(id,labels,data,colors,opts={}){
               y:{grid:{display:opts.horizontal?false:true,color:"#eee"},ticks:{font:{size:11}}}},...(opts.o||{})}});
 }
 
-// ---- static project figures ----
-const papers=34664, patents=67727, policy=8993, totalCorpus=papers+patents+policy; // documents projected into the STPI space (m2 L3 activation manifest)
+// ---- static project figures (recomputed 2026-06-14 per unified document accounting) ----
+// Accounting: Total literature = Science papers + Patents + Policy + Risk materials.
+//  - Risk materials = risk research papers + reports + simple sources (+ risk-related policy reports).
+//  - Risk records that are academic papers and NOT already in Science (deduplicated by DOI/title)
+//    are folded INTO Science (Science = all AI research). 26,760 such papers were added.
+//  - Risk-related policy reports (broad keyword match, 3,491) are moved from Policy into Risk materials.
+const sciencePapersBase=34664;          // original AI research papers
+const newAcademicRisk=26760;            // risk academic papers newly folded into Science (dedup)
+const science=sciencePapersBase+newAcademicRisk;   // 61,424
+const patents=67727;
+const policyTotal=8993, policyRisk=3491, policy=policyTotal-policyRisk;  // 5,502 remaining
+const riskRecords=26943, riskNonAcademic=7;        // risk papers + 7 reports/simple sources
+const riskMaterials=riskRecords+policyRisk;         // 30,434 (papers + reports + risk policy)
+const newUniqueRisk=newAcademicRisk+riskNonAcademic; // 26,767 new unique documents from the risk set
+const totalCorpus=sciencePapersBase+patents+policyTotal+newUniqueRisk; // 138,151 unique union
+const refSpaceDocs=sciencePapersBase+patents+policyTotal;              // 111,384 STPI reference-space corpus
 const riskQuality={
   total_l4_cards:1712,
   cards_with_issues:190,
@@ -133,18 +147,18 @@ const riskQuality={
   curated_patched_node_ids:["AGENTBENCH-REF-0009"]
 };
 document.getElementById("kpis").innerHTML=[
-  ["Total documents",fmt(totalCorpus)],["AI research incl. risk (Science)",fmt(papers+26937)],
-  ["Patents (Technology)",fmt(patents)],["Policy / institutional",fmt(policy)],
-  ["AI-risk research papers",fmt(26937)],["AI-risk L4 cards",fmt(riskQuality.total_l4_cards)],
+  ["Total documents (unique)",fmt(totalCorpus)],["Science (AI research, incl. risk papers)",fmt(science)],
+  ["Patents (Technology)",fmt(patents)],["Policy / institutional (excl. risk)",fmt(policy)],
+  ["Risk materials (papers, reports, policy)",fmt(riskMaterials)],["AI-risk L4 cards",fmt(riskQuality.total_l4_cards)],
   ["Risk cards in review queue",fmt(riskQuality.cards_with_issues)],["Seminal top-venue refs","39"],
-  ["Reference L3 nodes",fmt(1938)],["Period","1990–2026"]
+  ["STPI reference-space docs",fmt(refSpaceDocs)],["Reference L3 nodes",fmt(1938)],["Period","1990–2026"]
 ].map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 
 new Chart(document.getElementById("cDomain"),{type:'bar',
   data:{labels:["Science (AI research)","Technology (patents)","Policy / institutional"],
     datasets:[
-      {label:"STPI core corpus",data:[papers,patents,policy],backgroundColor:[C.science,C.tech,C.policy],borderRadius:4},
-      {label:"AI-risk research literature",data:[26937,0,0],backgroundColor:"#9ec3e6",borderRadius:4}]},
+      {label:"Core corpus",data:[sciencePapersBase,patents,policy],backgroundColor:[C.science,C.tech,C.policy],borderRadius:4},
+      {label:"AI-risk papers folded into Science",data:[newAcademicRisk,0,0],backgroundColor:"#9ec3e6",borderRadius:4}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+fmt(c.parsed.y)}}},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
 
