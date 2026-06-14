@@ -1127,8 +1127,9 @@
       "korean_label": "(교차) 사이버물리 보안·악용",
       "stage": "Cross-cutting (security and misuse)",
       "pipeline_order": 5,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Governance, liability, and lifecycle assurance": {
       "english": "Cross-cutting governance risk. Inadequate governance, unclear liability allocation, and weak lifecycle safety assurance for physical AI systems across their development, deployment, and operation.",
@@ -1136,8 +1137,9 @@
       "korean_label": "(교차) 거버넌스·책임·수명주기 보증",
       "stage": "Cross-cutting (governance)",
       "pipeline_order": 7,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Perception and situational-awareness failures": {
       "english": "Sensing-stage risk. Failure of an embodied system to correctly sense, recognize, and understand its environment, including long-tail hazard recognition, sensor noise, occlusion, and adverse conditions, yielding an incorrect world model on which downstream decisions and actions then rely.",
@@ -1145,8 +1147,9 @@
       "korean_label": "(감지) 지각·상황인식 실패",
       "stage": "Sensing",
       "pipeline_order": 1,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Planning and control failures in physical action": {
       "english": "Decision- and action-stage risk. Unsafe motion planning, task planning, or low-level control during physical action by robots and autonomous machines, including constraint violations, collisions, unsafe trajectories, and failure to enter a safe state.",
@@ -1154,8 +1157,9 @@
       "korean_label": "(판단·행동) 계획·제어 실패",
       "stage": "Decision and action",
       "pipeline_order": 2,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Sector-specific physical deployment risks": {
       "english": "Action-stage risk specific to deployment sectors. Physical harms particular to where embodied AI acts, including industrial and logistics robotics, mobility and transport, and public-space service robots.",
@@ -1163,8 +1167,9 @@
       "korean_label": "(행동·배치) 부문별 배치 리스크",
       "stage": "Action (deployment context)",
       "pipeline_order": 4,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Shared-space human-interaction harms": {
       "english": "Action-stage risk in human-shared environments. Physical or psychological harm when robots and autonomous machines act in spaces shared with people, including proxemic violation, separation-distance breaches, overtrust, and heightened danger to vulnerable users.",
@@ -1172,8 +1177,9 @@
       "korean_label": "(행동·상호작용) 공유공간 피해",
       "stage": "Action (human interaction)",
       "pipeline_order": 3,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Sim-to-real validation and runtime adaptation": {
       "english": "Cross-cutting development-stage risk. Failures arising before and during deployment when policies validated in simulation transfer unsafely to the real world, or when runtime monitoring and adaptation fail under distribution shift.",
@@ -1181,8 +1187,9 @@
       "korean_label": "(교차) 시뮬-실세계 전이·실행적응",
       "stage": "Cross-cutting (development and validation)",
       "pipeline_order": 6,
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651); Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework (SP 1500-201); ISO 10218 / ISO 13482 robot safety; ISO/PAS 21448 (SOTIF)",
+      "review": "curated_v2",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L2|||Cultural and linguistic harms": {
       "english": "Risks that AI systems underperform for, marginalize, or misrepresent particular cultures and languages, especially low-resource ones.",
@@ -1467,12 +1474,12 @@
       "review": "curated_v1"
     },
     "Risks|||L1|||Physical AI risks": {
-      "english": "Physical AI risks are adverse outcomes that arise when AI is embodied in cyber-physical systems, robots, autonomous vehicles, drones, and other autonomous machines that perceive (sense), reason and decide, and act in the physical world; a failure, misuse, or compromise at any stage of this perception-decision-action loop can cause physical harm to people, property, or the environment. The scope follows NIST's cyber-physical systems framing, in which such systems integrate computation, communication, sensing, and actuation with the physical world (NIST SP 1500-201), and the 'Physical AI' framing of machines that perceive, reason, and act in real environments (NVIDIA). Subcategories are ordered by the pipeline stage at which the risk arises: sensing, decision, then action, followed by cross-cutting risks (security and malicious use, sim-to-real validation, and governance).",
-      "korean": "물리적 AI 리스크는 로봇·자율주행차·드론 등 물리세계에서 감지(sense)하고 판단(decide)하며 행동(act)하는 사이버물리 시스템에 AI가 체화될 때 발생하는 위해로, 이 지각-판단-행동 루프의 어느 단계에서든 실패·오용·침해가 사람·재산·환경에 물리적 피해를 줄 수 있다. 범위는 컴퓨팅·통신·감지·구동을 물리세계와 통합한다는 NIST의 사이버물리 시스템 정의(NIST SP 1500-201)와 실세계에서 지각·추론·행동하는 기계라는 'Physical AI' 개념(NVIDIA)을 따른다. 하위 범주는 위험이 발생하는 단계 순서(감지→판단→행동, 이후 교차적 위험)로 배열한다.",
+      "english": "Physical AI risks are adverse outcomes that arise when AI is embodied in cyber-physical systems, robots, autonomous vehicles, drones, and assistive agents that perceive physical danger, reason about safety, and act or intervene in the physical world; a failure, misuse, or compromise at any stage of this perception-reasoning-action loop can cause direct and immediate physical harm to people, property, or the environment. Following Google DeepMind's ASIMOV Benchmark, which evaluates whether embodied AI can perceive physical danger and intervene and which grounds risks in real-world injury narratives and operational, semantic safety constraints (Sermanet et al., 2025; Jindal et al., 2025), and the cyber-physical systems framing of NIST (computation, communication, sensing, and actuation integrated with the physical world; NIST SP 1500-201) and NVIDIA's Physical AI, subcategories are ordered by the pipeline stage at which the risk arises: sensing (perceiving danger), decision (reasoning about safety), then action (intervening), followed by cross-cutting risks (security and malicious use, sim-to-real validation, and governance, including robot constitutions).",
+      "korean": "물리적 AI 리스크는 로봇·자율주행차·드론·보조 에이전트 등 물리세계에서 물리적 위험을 지각하고(sense) 안전을 추론하며(decide) 행동·개입하는(act) 사이버물리 시스템에 AI가 체화될 때 발생하는 위해로, 이 지각-추론-행동 루프의 어느 단계에서든 실패·오용·침해가 사람·재산·환경에 직접적·즉각적 물리 피해를 줄 수 있다. 체화 AI가 물리적 위험을 지각·개입할 수 있는지를 실제 상해 사례와 운영적·의미적 안전 제약으로 평가하는 Google DeepMind의 ASIMOV Benchmark(Sermanet et al., 2025; Jindal et al., 2025)를 1차 근거로 하고, NIST 사이버물리 시스템 정의(NIST SP 1500-201)와 NVIDIA의 Physical AI 개념을 함께 따른다. 하위 범주는 위험이 발생하는 단계(감지=위험 지각 → 판단=안전 추론 → 행동=개입, 이후 교차적 위험)로 배열한다.",
       "korean_label": "물리적 AI 리스크",
-      "source": "NIST SP 1500-201, Framework for Cyber-Physical Systems; NVIDIA, What is Physical AI? (glossary)",
-      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-201.pdf",
-      "review": "curated_v2"
+      "source": "ASIMOV Benchmark, Google DeepMind & Princeton (Sermanet et al., CoRL 2025, arXiv:2503.08663; Jindal et al., 2025, arXiv:2509.21651); NIST SP 1500-201 Framework for Cyber-Physical Systems; NVIDIA, What is Physical AI?",
+      "source_url": "https://asimov-benchmark.github.io/v2/",
+      "review": "curated_v2_asimov"
     },
     "Risks|||L1|||Pluralistic value misalignment": {
       "english": "Risks that AI encodes or enforces values conflicting with cultural, democratic, indigenous, or pluralistic norms.",
@@ -1576,15 +1583,17 @@
       "english": "Risks that a robot's high-level safety rules omit important hazards or are too ambiguous to resolve concrete trade-offs.",
       "korean": "로봇의 상위 안전규칙이 중요한 위해를 누락하거나 구체적 상충을 해소하기에 너무 모호한 위험.",
       "korean_label": "로봇 헌법·의미적 안전 거버넌스",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Household unsafe-action detection": {
       "english": "Risks that a vision-language model fails to detect or correctly reason about unsafe household actions proposed by an embodied agent.",
       "korean": "체화 에이전트가 제안한 가정 내 위험 행동을 비전-언어 모델이 탐지·추론하지 못하는 위험.",
       "korean_label": "가정 위험행동 탐지 실패",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Humanoid world-model prediction risk": {
       "english": "Risks that a humanoid world model hallucinates or omits safety-relevant future states, leading to unsafe planning.",
@@ -1604,8 +1613,9 @@
       "english": "Failures to recognize rare but plausible physical hazards or to correctly assess injury severity before unsafe action.",
       "korean": "드물지만 일어날 수 있는 물리적 위해를 인식하거나 위험 행동 전 부상 심각도를 평가하지 못하는 실패.",
       "korean_label": "롱테일 위험 인식 실패",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Physical adversarial perception": {
       "english": "Risks that physical-world adversarial perturbations such as patches, signs, or stickers manipulate robotic perception into unsafe actions.",
@@ -1618,8 +1628,9 @@
       "english": "Risks that a model acting under an embodiment persona fails to translate that role into correct, safe physical behavior.",
       "korean": "체화 페르소나로 작동하는 모델이 그 역할을 올바르고 안전한 물리 행동으로 변환하지 못하는 위험.",
       "korean_label": "체화·역할 정합 안전",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Sensor uncertainty and occlusion": {
       "english": "Risks from sensor noise, occlusion, adverse weather, modality conflict, or fusion errors that degrade safe perception.",
@@ -1674,8 +1685,9 @@
       "english": "Risks that a system recognizes a hazard but fails to produce a timely, appropriate physical intervention or safe state.",
       "korean": "위해를 인식하고도 적시에 적절한 물리적 개입·안전상태를 만들지 못하는 위험.",
       "korean_label": "물리 개입·안전상태 대응",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Safe reinforcement learning constraints": {
       "english": "Risks that a learned control policy maximizes task reward while violating explicit safety constraints.",
@@ -1688,8 +1700,9 @@
       "english": "Risks that an embodied agent generates or approves plans containing explicit or implicit physical hazards.",
       "korean": "체화 에이전트가 명시적·암묵적 물리 위해가 포함된 계획을 생성·승인하는 위험.",
       "korean_label": "안전 과제계획·위해 회피",
-      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
-      "review": "curated_v1"
+      "source": "ASIMOV Benchmark (Google DeepMind; arXiv:2503.08663, arXiv:2509.21651)",
+      "review": "curated_v1",
+      "source_url": "https://asimov-benchmark.github.io/v2/"
     },
     "Risks|||L3|||Industrial and logistics robotics": {
       "english": "Risks of collision, congestion, or process damage from mobile and industrial robots in warehouses, factories, and facilities.",
