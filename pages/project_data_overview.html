@@ -52,7 +52,7 @@
     </div>
     <div class="card">
       <h2>Reference space hierarchy</h2>
-      <p class="sub">L2 clusters and L3 key-phrase nodes per domain (1,938 L3 total)</p>
+      <p class="sub">L2 clusters and L3 key-phrase nodes per domain (1,930 L3 total after card deduplication)</p>
       <div class="cv"><canvas id="cHier"></canvas></div>
     </div>
 
@@ -108,7 +108,7 @@
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code> (1,938 L3). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code> (1,712 L4 risk cards). Korean policy evidence has been attached to 518 L4 risk cards by matching 949 domestic AI-risk policy candidates to risk-card definitions with BGE-M3 cosine similarity (threshold 0.56); the match table is stored in <code>data/korean_policy_ai_risk_l4_matches.csv</code>. The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for source-link refinement or evidence-status review. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. Figures may differ slightly as the overlay is updated.</p>
+  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code>, consolidated to 1,930 L3 cards after within-branch duplicate-card merging. AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>, consolidated to 1,699 L4 risk cards after duplicate-card merging. Korean policy evidence has been attached to 518 L4 risk cards by matching 949 domestic AI-risk policy candidates to risk-card definitions with BGE-M3 cosine similarity (threshold 0.56); the match table is stored in <code>data/korean_policy_ai_risk_l4_matches.csv</code>. The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for source-link refinement or evidence-status review. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. The duplicate-card audit is stored in <code>data/taxonomy_card_deduplication_audit.csv</code>.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -141,7 +141,7 @@ const newUniqueRisk=newAcademicRisk+riskNonAcademic; // 26,767 new unique docume
 const totalCorpus=sciencePapersBase+patents+policyTotal+newUniqueRisk; // 138,151 unique union
 const refSpaceDocs=sciencePapersBase+patents+policyTotal;              // 111,384 STPI reference-space corpus
 const riskQuality={
-  total_l4_cards:1712,
+  total_l4_cards:1699,
   cards_with_issues:190,
   issue_counts:{definition_under_3_sentences:0,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},
   curated_patched_node_ids:["AGENTBENCH-REF-0009"]
@@ -151,7 +151,7 @@ document.getElementById("kpis").innerHTML=[
   ["Patents (Technology)",fmt(patents)],["Policy / institutional (excl. risk)",fmt(policy)],
   ["Risk materials (papers, reports, policy)",fmt(riskMaterials)],["AI-risk L4 cards",fmt(riskQuality.total_l4_cards)],
   ["Risk cards in review queue",fmt(riskQuality.cards_with_issues)],["Seminal top-venue refs","39"],
-  ["STPI reference-space docs",fmt(refSpaceDocs)],["Reference L3 nodes",fmt(1938)],["Period","1990–2026"]
+  ["STPI reference-space docs",fmt(refSpaceDocs)],["Reference L3 nodes",fmt(1930)],["Period","1990–2026"]
 ].map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 
 new Chart(document.getElementById("cDomain"),{type:'bar',

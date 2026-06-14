@@ -1,0 +1,13 @@
+branch,card_type,decision,id_a,id_b,label_a,label_b,sequence_ratio,token_jaccard
+AI science and research › STS and algorithmic governance,topic_l3,not_auto_merged_review_required,SCIENCE-REF-1228,SCIENCE-REF-1229,Socio-Technical Systems,sociotechnical system,0.9767,0.25
+AI technology and invention › Unsupervised and swarm methods,topic_l3,not_auto_merged_review_required,TECHNOLOGY-REF-1844,TECHNOLOGY-REF-1845,Simultaneous localisation and mapping,simultaneous localization and mapping,0.9722,0.6
+AI science and research › Representation learning and embedding methods,topic_l3,not_auto_merged_review_required,SCIENCE-REF-1254,SCIENCE-REF-1308,supervised learning,unsupervised learning,0.95,0.3333
+"AI science and research › Optimization, inference, and evaluation methods",topic_l3,not_auto_merged_review_required,SCIENCE-REF-0476,SCIENCE-REF-1185,A* search algorithm,Search Algorithm,0.9412,0.6667
+AI policy and governance › AI ethics and human-centered governance,topic_l3,not_auto_merged_review_required,POLICY-REF-0249,POLICY-REF-0250,human-in-the-loop,human-on-the-loop,0.9412,0.6
+AI policy and governance › Data protection and privacy,topic_l3,not_auto_merged_review_required,POLICY-REF-0123,POLICY-REF-0124,Data minimisation,data minimization,0.9412,0.3333
+AI science and research › Language models and generative NLP,topic_l3,not_auto_merged_review_required,SCIENCE-REF-0785,SCIENCE-REF-0786,Foundation Models,Foundational Model,0.9412,0.3333
+AI policy and governance › Participatory and inclusive AI governance,topic_l3,not_auto_merged_review_required,POLICY-REF-0051,POLICY-REF-0326,anticipatory governance,participatory governance,0.9362,0.3333
+AI technology and invention › Generative AI and content generation,topic_l3,not_auto_merged_review_required,TECHNOLOGY-REF-1596,TECHNOLOGY-REF-1889,Image-to-text generation,Text-to-image generation,0.6667,1.0
+AI science and research › Model training pathologies,topic_l3,not_auto_merged_review_required,SCIENCE-REF-0810,SCIENCE-REF-1318,Gradient Vanishing,Vanishing Gradient,0.5,1.0
+AI technology and invention › Language and summarization technologies,topic_l3,not_auto_merged_review_required,TECHNOLOGY-REF-1859,TECHNOLOGY-REF-1891,Speech-to-text,Text-to-speech,0.4286,1.0
+"AI system safety, robustness, and control › Lack of transparency or interpretability › Transparency, lack, lack transparency",risk_l4,not_auto_merged_review_required,RISK-REF-0530,RISK-REF-0864,Transparency - explainability,Transparency and explainability,0.931,0.6667

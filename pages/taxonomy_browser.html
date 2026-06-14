@@ -573,6 +573,7 @@ function pathStartsWith(path, prefix) {
 function indexText(card) {
   return norm([
     card.title, card.korean, card.definition, card.source, card.id,
+    (card.mergedAliases || []).join(" "), (card.mergedFromIds || []).join(" "),
     card.koreanPolicyDefinition, card.koreanPolicyQuote, card.koreanPolicyReference,
     card.koreanPolicyReferenceTitle, card.koreanPolicyReferenceInstitution,
     card.path.join(" "), card.evidenceTitle, card.evidenceUrl, card.samples.join(" ")
@@ -613,6 +614,9 @@ function addTopicCard(out, node, ordinal) {
     korean: node.korean || "",
     definition: node.definition || "",
     source: node.source || "",
+    mergedAliases: node.merged_aliases || [],
+    mergedFromIds: node.merged_from_ids || [],
+    mergedRecordCount: node.merged_record_count || 0,
     childCount: 0,
     samples: [],
     riskScore: null,
@@ -638,6 +642,9 @@ function addRiskCard(out, node, ordinal) {
     definition: node.definition || "",
     source: node.source || "",
     scope: node.scope || "",
+    mergedAliases: node.merged_aliases || [],
+    mergedFromIds: node.merged_from_ids || [],
+    mergedRecordCount: node.merged_record_count || 0,
     childCount: 0,
     samples: [],
     riskScore: Number(node.risk_impact_score || 0),
@@ -765,6 +772,10 @@ function cardHtml(card) {
   const evidence = card.evidenceUrl
     ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
     : "";
+  const mergedNotice = card.mergedRecordCount
+    ? `<div class="refs"><b>Merged aliases:</b> ${esc((card.mergedAliases || []).join("; ") || "none")}
+        <br><b>Merged IDs:</b> ${esc((card.mergedFromIds || []).join("; "))}</div>`
+    : "";
   const koreanPolicyEvidence = card.koreanPolicyDefinition
     ? `<div class="korean-policy-evidence">
         <b>Korean policy definition:</b><br>${esc(card.koreanPolicyDefinition)}
@@ -813,6 +824,7 @@ function cardHtml(card) {
       ${score}
     </div>
     ${sourceLinks}
+    ${mergedNotice}
     ${evidence}
     ${keyPapers}
   </article>`;
