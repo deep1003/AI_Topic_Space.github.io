@@ -349,7 +349,7 @@
   </section>
 </main>
 <script>
-const BUILD = "20260614e";
+const BUILD = "20260614f";
 const PAYLOAD_URL = "../data/interactive_l1_l2_l3_payload.json?v=" + BUILD;
 const KEY_PAPERS_URL = "../data/key_papers.json?v=" + BUILD;
 const CURATED_DEFS_URL = "../data/taxonomy_card_definitions.json?v=" + BUILD;
@@ -721,7 +721,13 @@ function buildCards() {
   groupBy(risks, n=>n.l1).forEach(([l1, l1Rows], i1) => {
     const o1 = `D.${i1+1}`;
     addGroupCard(out, {domain:"Risks", level:"L1", ordinal:o1, title:l1, path:["Risk",l1], rows:l1Rows});
-    groupBy(l1Rows, n=>n.l2).forEach(([l2, l2Rows], i2) => {
+    const _l2groups = groupBy(l1Rows, n=>n.l2);
+    _l2groups.sort((a,b)=>{
+      const pa=(curatedDefs[`Risks|||L2|||${a[0]}`]||{}).pipeline_order||999;
+      const pb=(curatedDefs[`Risks|||L2|||${b[0]}`]||{}).pipeline_order||999;
+      return pa-pb || String(a[0]).localeCompare(String(b[0]));
+    });
+    _l2groups.forEach(([l2, l2Rows], i2) => {
       const o2 = `${o1}.${i2+1}`;
       addGroupCard(out, {domain:"Risks", level:"L2", ordinal:o2, title:l2, path:["Risk",l1,l2], rows:l2Rows});
       groupBy(l2Rows, n=>n.l3).forEach(([l3, l3Rows], i3) => {
