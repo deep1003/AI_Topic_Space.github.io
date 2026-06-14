@@ -1,0 +1,507 @@
+{
+  "_meta": {
+    "purpose": "Curated academic definitions for taxonomy group cards (L0/L1/L2/L3). Keyed by 'Domain|||Level|||Title'. The taxonomy browser prefers these over auto-generated templates. English definitions use genus-differentia form with a boundary clause; Korean gives a concise scholarly gloss. 'term_revised' proposes a clearer label; 'note' records MECE/placement issues; 'source' cites a reputable reference.",
+    "schema": ["english", "korean", "term_revised", "note", "source", "source_url", "review"],
+    "version": "v1 (reference-domain backbone: Science/Technology/Policy L1+L2)",
+    "generated": "2026-06-14"
+  },
+  "defs": {
+    "Science|||L1|||AI science and research": {
+      "english": "The reference domain comprising scientific inquiry into artificial intelligence: the formulation of learning problems, the design and analysis of models and algorithms, empirical evaluation, and the theoretical and cognitive foundations of intelligent behavior. It denotes AI as a body of knowledge and method, distinct from its engineering implementation (Technology) and its public regulation (Policy).",
+      "korean": "인공지능을 과학적 탐구 대상으로 다루는 참조 영역으로, 학습 문제의 정식화, 모델·알고리즘의 설계와 분석, 실증적 평가, 지능 행동의 이론적·인지적 기초를 포괄한다. 공학적 구현(Technology) 및 공공 규제(Policy)와 구별된다.",
+      "source": "Russell & Norvig, Artificial Intelligence: A Modern Approach (4th ed., 2021)",
+      "review": "curated_v1"
+    },
+    "Technology|||L1|||AI technology and invention": {
+      "english": "The reference domain comprising AI as engineered, application-enabling capability: inventive functions, system architectures, hardware and software components, and deployable technical methods. It treats AI as a patentable artifact and operational technology, distinct from scientific claims (Science) and governance discourse (Policy).",
+      "korean": "인공지능을 응용을 가능케 하는 공학적 산물로 다루는 참조 영역으로, 발명적 기능, 시스템 아키텍처, 하드웨어·소프트웨어 구성요소, 배치 가능한 기술적 방법을 포괄한다. 과학적 주장(Science) 및 거버넌스 담론(Policy)과 구별된다.",
+      "source": "Hennessy & Patterson, Computer Architecture: A Quantitative Approach (6th ed., 2019)",
+      "review": "curated_v1"
+    },
+    "Policy|||L1|||AI policy and governance": {
+      "english": "The reference domain comprising public action and institutional design through which states, agencies, and international bodies frame AI as an object of regulation, coordination, and accountability. It encompasses governance instruments, regulatory choices, and socioeconomic agenda-setting, distinct from scientific (Science) and engineering (Technology) framings.",
+      "korean": "국가·기관·국제기구가 인공지능을 규제·조정·책무성의 대상으로 구성하는 공공 행위와 제도 설계의 참조 영역으로, 거버넌스 수단·규제 선택·사회경제적 의제설정을 포괄한다. 과학(Science)·공학(Technology) 틀과 구별된다.",
+      "source": "OECD AI Principles (2019; updated 2024)",
+      "source_url": "https://oecd.ai/en/ai-principles",
+      "review": "curated_v1"
+    },
+
+    "Science|||L2|||AI alignment and control": {
+      "english": "Research on ensuring that capable AI systems pursue intended human objectives and remain correctable and supervisable, including value alignment, corrigibility, scalable oversight, and avoidance of specification gaming. Bounded to the technical control problem rather than fairness or legal liability.",
+      "korean": "유능한 AI가 의도된 인간 목표를 추구하고 교정·감독 가능하도록 보장하는 연구로, 가치 정렬, 교정가능성, 확장가능 감독, 명세 악용 회피를 포함한다. 공정성·법적 책임이 아닌 기술적 통제 문제로 한정된다.",
+      "source": "Russell, Human Compatible (2019); Amodei et al., Concrete Problems in AI Safety (2016, arXiv:1606.06565)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI alignment, fairness, and liability": {
+      "english": "Cross-cutting normative research that links technical alignment with fairness guarantees and the allocation of legal responsibility for AI behavior. Distinguished from pure alignment by its joint treatment of distributive fairness and liability.",
+      "korean": "기술적 정렬을 공정성 보장 및 AI 행위에 대한 법적 책임 배분과 연결하는 교차적 규범 연구. 분배적 공정성과 책임을 함께 다룬다는 점에서 순수 정렬 연구와 구별된다.",
+      "term_revised": "Alignment, fairness, and accountability research",
+      "note": "Overlaps with 'AI alignment and control' and the fairness clusters; merge-review candidate.",
+      "source": "Barocas, Hardt & Narayanan, Fairness and Machine Learning (2019)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI education and learning systems": {
+      "english": "Research on AI applied to education, including intelligent tutoring systems and learning analytics, and on the cultivation of AI competence. A single-node cluster that sits uneasily within the science reference space.",
+      "korean": "지능형 튜터링 시스템·학습분석 등 교육에 적용된 AI와 AI 역량 함양에 관한 연구. 과학 참조공간 내 단일 노드 군집으로 위치가 불안정하다.",
+      "note": "Singleton (1 node); placement review / merge candidate (e.g., into applications cluster).",
+      "source": "Holmes et al., Artificial Intelligence in Education (2019)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI governance, assurance, and applications": {
+      "english": "Heterogeneous research linking AI governance mechanisms, assurance and audit methods, and applied deployments across sectors. The broadest science cluster; its internal heterogeneity limits definitional sharpness.",
+      "korean": "AI 거버넌스 기제, 보증·감사 방법, 부문별 응용 배치를 아우르는 이질적 연구. 가장 광범위한 과학 군집으로 내부 이질성이 정의의 예리함을 제한한다.",
+      "note": "Very broad/heterogeneous (52 nodes); split-review candidate.",
+      "source": "Floridi et al., AI4People (2018, Minds & Machines)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI innovation and economic institutions": {
+      "english": "Study of the dynamics of AI-driven innovation and the economic and institutional structures that shape AI research and diffusion.",
+      "korean": "AI 주도 혁신의 동학과 AI 연구·확산을 형성하는 경제적·제도적 구조에 관한 연구.",
+      "note": "Small cluster (2 nodes).",
+      "source": "Agrawal, Gans & Goldfarb, Prediction Machines (2018)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI law, liability, and intellectual property": {
+      "english": "Legal scholarship on AI, covering liability for autonomous-system harms, regulatory classification, and intellectual-property questions such as authorship and patentability of AI-generated outputs.",
+      "korean": "자율시스템 피해 책임, 규제 분류, AI 산출물의 저작·특허 가능성 등 지식재산 문제를 다루는 AI 법학 연구.",
+      "source": "Calo, Artificial Intelligence Policy: A Primer and Roadmap (2017, UC Davis Law Review)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI safety and security": {
+      "english": "Research on preventing unintended harmful behavior of AI systems (safety) and on protecting them from adversarial or malicious compromise (security), including robustness, monitoring, and threat modeling.",
+      "korean": "AI의 의도치 않은 유해 행동을 예방하는 안전(safety)과 적대적·악의적 침해로부터 보호하는 보안(security) 연구로, 강건성·모니터링·위협모델링을 포함한다.",
+      "source": "Hendrycks et al., Unsolved Problems in ML Safety (2021, arXiv:2109.13916)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||AI, rights, and biometrics": {
+      "english": "Research on biometric AI and its implications for fundamental rights such as privacy and non-discrimination. As a single-node science cluster it overlaps the policy domain's larger rights-and-biometrics cluster.",
+      "korean": "생체인식 AI와 프라이버시·비차별 등 기본권 함의에 관한 연구. 과학 영역의 단일 노드로, 정책 영역의 동명 대형 군집과 중복된다.",
+      "note": "Singleton (1 node); likely belongs in Policy; cross-domain duplication.",
+      "source": "European Union Agency for Fundamental Rights, Facial Recognition Technology (2019)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Adversarial ML and information harms": {
+      "english": "Study of adversarial attacks on and defenses for machine-learning models (evasion, poisoning, extraction) together with information-level harms such as manipulation enabled by ML.",
+      "korean": "기계학습 모델에 대한 적대적 공격·방어(회피·오염·추출)와 ML이 가능케 하는 조작 등 정보 차원의 해악을 연구한다.",
+      "source": "Biggio & Roli, Wild Patterns (2018, Pattern Recognition); Goodfellow et al., Explaining and Harnessing Adversarial Examples (2015, arXiv:1412.6572)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Algorithmic fairness and accountability": {
+      "english": "Research on defining, measuring, and mitigating unfair disparate treatment or impact in algorithmic decisions, and on mechanisms (audits, recourse) that establish accountability for those decisions.",
+      "korean": "알고리즘 의사결정의 불공정한 차별적 처우·영향을 정의·측정·완화하고, 감사·시정 등 책무성 기제를 다루는 연구.",
+      "source": "Barocas, Hardt & Narayanan, Fairness and Machine Learning (2019)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Algorithmic fairness and bias mitigation": {
+      "english": "Methods for detecting and reducing bias in algorithmic systems through pre-, in-, and post-processing interventions. A single-node cluster nearly duplicating 'Algorithmic fairness and accountability'.",
+      "korean": "전처리·학습중·후처리 개입으로 알고리즘 시스템의 편향을 탐지·저감하는 방법. 'Algorithmic fairness and accountability'와 거의 중복되는 단일 노드 군집.",
+      "term_revised": "Bias detection and mitigation methods",
+      "note": "Near-duplicate singleton; merge into 'Algorithmic fairness and accountability'.",
+      "source": "Mehrabi et al., A Survey on Bias and Fairness in ML (2021, ACM CSUR)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Automated decision-making and agent systems": {
+      "english": "Study of systems that make or materially support consequential decisions with limited human intervention, including agent architectures and decision pipelines.",
+      "korean": "제한된 인간 개입으로 중대한 의사결정을 수행·보조하는 시스템 연구로, 에이전트 아키텍처와 의사결정 파이프라인을 포함한다.",
+      "source": "Russell & Norvig, AIMA (4th ed., 2021), ch. on intelligent agents",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Autonomous agents and formal decision systems": {
+      "english": "Research on autonomous agents and the formal mathematics of sequential decision-making, including Markov decision processes, planning, and game-theoretic models.",
+      "korean": "자율 에이전트와 순차적 의사결정의 형식 수학(마르코프 결정과정·계획수립·게임이론 모델)에 관한 연구.",
+      "source": "Sutton & Barto, Reinforcement Learning (2nd ed., 2018)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Cognitive biases and decision theory": {
+      "english": "Study of human judgment under uncertainty (heuristics and systematic biases) and of normative and descriptive decision theory relevant to modeling and evaluating intelligent choice.",
+      "korean": "불확실성하 인간 판단(휴리스틱·체계적 편향)과 지능적 선택을 모델링·평가하는 데 관련된 규범적·기술적 의사결정 이론에 관한 연구.",
+      "source": "Kahneman, Thinking, Fast and Slow (2011); Tversky & Kahneman (1974, Science)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Cognitive science and philosophy of mind": {
+      "english": "Interdisciplinary study of cognition, mental representation, and consciousness, and the philosophical foundations of mind that inform conceptions of machine intelligence.",
+      "korean": "인지, 정신적 표상, 의식에 관한 학제적 연구와 기계지능 개념에 영향을 주는 심리철학적 기초.",
+      "source": "Thagard, Mind: Introduction to Cognitive Science (2nd ed., 2005)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Complexity and bio-inspired computation": {
+      "english": "Study of complex adaptive systems and nature-inspired computation, including evolutionary algorithms, swarm intelligence, and other biologically motivated methods.",
+      "korean": "복잡 적응계와 진화 알고리즘·군집지능 등 자연에서 영감을 받은 계산을 연구한다.",
+      "source": "Mitchell, Complexity: A Guided Tour (2009)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Computational science and modeling": {
+      "english": "Use of computation, numerical methods, and simulation to model and study scientific phenomena. Appears in both Science and Technology, blurring the domain boundary.",
+      "korean": "과학 현상을 모델링·연구하기 위한 계산·수치해석·시뮬레이션의 사용. 과학과 기술 양 영역에 등장하여 영역 경계를 흐린다.",
+      "note": "Cross-domain duplicate (also in Technology); decide canonical home.",
+      "source": "Strang, Computational Science and Engineering (2007)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Computer vision and multimodal perception": {
+      "english": "Research on machine perception of images, video, and combined modalities, including recognition, reconstruction, and multimodal representation.",
+      "korean": "이미지·비디오 및 복합 모달리티의 기계 지각에 관한 연구로, 인식·복원·멀티모달 표현을 포함한다.",
+      "source": "Szeliski, Computer Vision: Algorithms and Applications (2nd ed., 2022)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Computing systems and infrastructure": {
+      "english": "Study of the hardware and software systems and infrastructure that enable computation, including architectures, operating systems, and distributed systems.",
+      "korean": "계산을 가능케 하는 하드웨어·소프트웨어 시스템과 인프라(아키텍처·운영체제·분산시스템)에 관한 연구.",
+      "source": "Hennessy & Patterson, Computer Architecture (6th ed., 2019)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Data governance and law": {
+      "english": "Research on the legal and institutional frameworks governing data collection, sharing, ownership, and protection as they bear on AI research.",
+      "korean": "AI 연구와 관련된 데이터 수집·공유·소유·보호를 규율하는 법적·제도적 틀에 관한 연구.",
+      "note": "Borders the Policy cluster 'Data governance and digital sovereignty'.",
+      "source": "OECD, Data Governance (2021)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Ethics and normative AI theory": {
+      "english": "Normative inquiry into the moral principles that should govern the design, deployment, and use of AI, including frameworks of beneficence, non-maleficence, autonomy, and justice.",
+      "korean": "AI의 설계·배치·사용을 규율해야 할 도덕 원칙(선행·악행금지·자율성·정의)에 관한 규범적 탐구.",
+      "source": "Floridi & Cowls, A Unified Framework of Five Principles for AI in Society (2019, HDSR)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Foundations of complex systems and physical theory": {
+      "english": "Theoretical foundations drawn from complex-systems science and physical theory that underpin models of computation and emergent behavior.",
+      "korean": "계산과 창발 행동의 모델을 뒷받침하는 복잡계 과학·물리 이론의 이론적 기초.",
+      "note": "Small cluster (2 nodes).",
+      "source": "Mitchell, Complexity: A Guided Tour (2009)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Language modeling and NLP": {
+      "english": "Research on the computational modeling of natural language, including syntax, semantics, and statistical and neural language models for understanding and generation.",
+      "korean": "구문·의미 및 이해·생성을 위한 통계·신경 언어모델을 포함한 자연어의 계산적 모델링 연구.",
+      "note": "Near-duplicate of 'Language models and generative NLP'; merge-review.",
+      "source": "Jurafsky & Martin, Speech and Language Processing (3rd ed. draft, 2023)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Language models and generative NLP": {
+      "english": "Research on large language models and generative natural-language processing, including pretraining, in-context learning, and text generation.",
+      "korean": "대형 언어모델과 생성형 자연어처리(사전학습·문맥내 학습·텍스트 생성)에 관한 연구.",
+      "term_revised": "Large language models and generative NLP",
+      "note": "Near-duplicate of 'Language modeling and NLP'; consolidate.",
+      "source": "Brown et al., Language Models are Few-Shot Learners (2020, NeurIPS)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Machine learning methods and tasks": {
+      "english": "Study of algorithms that improve at tasks by learning from data, spanning supervised, unsupervised, and reinforcement paradigms and their canonical task formulations.",
+      "korean": "데이터로부터 학습하여 과제 수행을 개선하는 알고리즘 연구로, 지도·비지도·강화 패러다임과 표준 과제 정식화를 아우른다.",
+      "source": "Murphy, Probabilistic Machine Learning: An Introduction (2022)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Mathematical and information-theoretic foundations": {
+      "english": "The mathematical and information-theoretic basis of learning and inference, including probability, statistics, information theory, and statistical learning theory.",
+      "korean": "확률·통계·정보이론·통계적 학습이론 등 학습과 추론의 수학적·정보이론적 기초.",
+      "source": "Cover & Thomas, Elements of Information Theory (2nd ed., 2006); Shalev-Shwartz & Ben-David, Understanding Machine Learning (2014)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Model training pathologies": {
+      "english": "Study of failure modes that arise during model training, such as overfitting, optimization instability, vanishing or exploding gradients, and shortcut or spurious-correlation learning.",
+      "korean": "과적합, 최적화 불안정, 기울기 소실·폭주, 지름길·허위상관 학습 등 모델 훈련 중 발생하는 실패 양식에 관한 연구.",
+      "source": "Goodfellow, Bengio & Courville, Deep Learning (2016), ch. 7-8",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Moral philosophy and economic theory": {
+      "english": "Foundations in moral philosophy and economic theory that bear on AI's normative status and welfare consequences, including consequentialist, deontological, and welfare-economic frameworks.",
+      "korean": "결과주의·의무론·후생경제 등 AI의 규범적 지위와 후생 결과에 관련된 도덕철학·경제이론의 기초.",
+      "source": "Parfit, Reasons and Persons (1984); Sen, Collective Choice and Social Welfare (1970)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Neural networks and deep learning": {
+      "english": "Research on multilayer neural network models and the methods for training them, encompassing architectures, optimization, and representation learning under the deep-learning paradigm.",
+      "korean": "다층 신경망 모델과 그 훈련 방법에 관한 연구로, 심층학습 패러다임 하의 아키텍처·최적화·표현학습을 포괄한다.",
+      "source": "Goodfellow, Bengio & Courville, Deep Learning (2016)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Optimization, inference, and evaluation methods": {
+      "english": "Methods for optimizing model parameters, performing probabilistic inference, and evaluating model performance, including convex and stochastic optimization and statistical evaluation protocols.",
+      "korean": "모델 매개변수 최적화, 확률적 추론, 성능 평가 방법으로, 볼록·확률적 최적화와 통계적 평가 프로토콜을 포함한다.",
+      "source": "Boyd & Vandenberghe, Convex Optimization (2004); Bishop, Pattern Recognition and Machine Learning (2006)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Representation learning and embedding methods": {
+      "english": "Study of methods that learn informative, often low-dimensional representations or embeddings of data that support downstream learning and transfer.",
+      "korean": "하류 학습·전이를 지원하는 정보성 있는(흔히 저차원) 데이터 표현·임베딩을 학습하는 방법에 관한 연구.",
+      "source": "Bengio, Courville & Vincent, Representation Learning: A Review (2013, IEEE TPAMI)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Robotics, embodied AI, and bio-inspired systems": {
+      "english": "Research on physically embodied intelligence, including robotics, sensorimotor control, and bio-inspired systems that perceive and act in the physical world.",
+      "korean": "로보틱스·감각운동 제어 및 물리세계에서 지각·행동하는 생체모방 시스템 등 물리적으로 체화된 지능에 관한 연구.",
+      "source": "Siciliano & Khatib (eds.), Springer Handbook of Robotics (2nd ed., 2016)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||STS and algorithmic governance": {
+      "english": "Science-and-technology-studies scholarship analyzing how algorithmic systems are produced, contested, and governed, and how they become embedded in social and institutional practice.",
+      "korean": "알고리즘 시스템이 어떻게 생산·경합·통치되고 사회·제도적 실천에 착근되는지를 분석하는 과학기술학(STS) 연구.",
+      "source": "Jasanoff, States of Knowledge (2004); Seaver, Algorithms as Culture (2017, Big Data & Society)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Statistical modeling and data mining": {
+      "english": "Statistical models and data-mining methods for discovering structure in and making predictions from data, including regression, classification, clustering, and pattern discovery.",
+      "korean": "회귀·분류·군집·패턴 발견 등 데이터에서 구조를 찾고 예측하는 통계 모델·데이터마이닝 방법.",
+      "source": "Hastie, Tibshirani & Friedman, The Elements of Statistical Learning (2nd ed., 2009)",
+      "review": "curated_v1"
+    },
+    "Science|||L2|||Symbolic reasoning and knowledge representation": {
+      "english": "Research on representing knowledge in explicit symbolic form and reasoning over it, including logic, ontologies, knowledge graphs, and automated inference.",
+      "korean": "지식을 명시적 기호 형태로 표상하고 추론하는 연구로, 논리·온톨로지·지식그래프·자동추론을 포함한다.",
+      "source": "Brachman & Levesque, Knowledge Representation and Reasoning (2004)",
+      "review": "curated_v1"
+    },
+
+    "Technology|||L2|||AI hardware and accelerators": {
+      "english": "Specialized computing hardware for AI workloads, including GPUs, TPUs, neural processing units, and accelerator architectures optimized for training and inference.",
+      "korean": "학습·추론에 최적화된 GPU·TPU·NPU 및 가속기 아키텍처 등 AI 워크로드를 위한 특화 컴퓨팅 하드웨어.",
+      "source": "Sze et al., Efficient Processing of Deep Neural Networks (2017, Proc. IEEE)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||AI security and threat detection": {
+      "english": "Technologies that detect, prevent, and respond to security threats either using AI (e.g., intrusion detection) or directed at AI systems themselves.",
+      "korean": "AI를 활용하거나(예: 침입탐지) AI 시스템 자체를 겨냥한 보안 위협을 탐지·예방·대응하는 기술.",
+      "source": "Apruzzese et al., The Role of ML in Cybersecurity (2023, Digital Threats)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Agentic and multimodal AI systems": {
+      "english": "Engineered systems that combine autonomous, tool-using agents with multimodal models to perceive, plan, and act across text, vision, and other modalities.",
+      "korean": "자율적·도구사용 에이전트와 멀티모달 모델을 결합하여 텍스트·비전 등 여러 양식에서 지각·계획·행동하는 공학 시스템.",
+      "source": "Yao et al., ReAct: Synergizing Reasoning and Acting in LLMs (2023, ICLR)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Computational science and modeling": {
+      "english": "Computational modeling and simulation methods applied as enabling technology. A single-node technology cluster duplicating the science cluster of the same name.",
+      "korean": "지원 기술로 적용되는 계산 모델링·시뮬레이션 방법. 동명 과학 군집과 중복되는 단일 노드 기술 군집.",
+      "note": "Singleton; cross-domain duplicate of Science cluster.",
+      "source": "Strang, Computational Science and Engineering (2007)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Computer vision and image understanding": {
+      "english": "Technologies for analyzing and interpreting images and video, including detection, segmentation, recognition, and scene understanding for deployed applications.",
+      "korean": "탐지·분할·인식·장면이해 등 배치 응용을 위한 이미지·비디오 분석·해석 기술.",
+      "source": "Szeliski, Computer Vision (2nd ed., 2022)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Document, language, and decision intelligence": {
+      "english": "Applied technologies for processing documents, understanding language, and supporting decisions, such as information extraction and business decision systems.",
+      "korean": "정보추출·비즈니스 의사결정 시스템 등 문서 처리·언어 이해·의사결정 지원을 위한 응용 기술.",
+      "note": "Small cluster (6 nodes).",
+      "source": "Jurafsky & Martin, Speech and Language Processing (3rd ed. draft, 2023)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Edge AI and distributed inference": {
+      "english": "Deployment of AI inference on edge and distributed devices under tight compute, memory, and energy constraints, including model compression and federated approaches.",
+      "korean": "모델 압축·연합학습 등 제한된 연산·메모리·에너지 조건에서 엣지·분산 장치에 AI 추론을 배치하는 기술.",
+      "source": "Chen & Ran, Deep Learning With Edge Computing (2019, Proc. IEEE)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Generative AI and content generation": {
+      "english": "Technologies that synthesize novel content (text, images, audio, video, code) using generative models such as diffusion models and generative transformers.",
+      "korean": "확산모델·생성 트랜스포머 등 생성모델로 텍스트·이미지·오디오·영상·코드를 합성하는 기술.",
+      "source": "Ho et al., Denoising Diffusion Probabilistic Models (2020, NeurIPS); Goodfellow et al., GANs (2014, NeurIPS)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Language and summarization technologies": {
+      "english": "Applied natural-language technologies for understanding, translation, question answering, and summarization in deployed products and pipelines.",
+      "korean": "배치된 제품·파이프라인에서의 이해·번역·질의응답·요약을 위한 응용 자연어 기술.",
+      "source": "Jurafsky & Martin, Speech and Language Processing (3rd ed. draft, 2023)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||MLOps and model lifecycle": {
+      "english": "Engineering practices and tooling for deploying, serving, monitoring, versioning, and maintaining machine-learning models in production.",
+      "korean": "운영 환경에서 기계학습 모델을 배포·서빙·모니터링·버전관리·유지하는 공학 실천과 도구(MLOps).",
+      "source": "Sculley et al., Hidden Technical Debt in ML Systems (2015, NeurIPS)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Machine learning and model training techniques": {
+      "english": "Technical methods for training machine-learning models effectively and at scale, including optimization techniques, regularization, and distributed training.",
+      "korean": "최적화 기법·정규화·분산학습 등 기계학습 모델을 효과적·대규모로 훈련하는 기술적 방법.",
+      "source": "Goodfellow, Bengio & Courville, Deep Learning (2016)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Neural network architectures and deep learning": {
+      "english": "Concrete neural network architectures and their deep-learning implementations, including convolutional networks, transformers, and recurrent models.",
+      "korean": "합성곱망·트랜스포머·순환망 등 구체적 신경망 아키텍처와 그 심층학습 구현.",
+      "source": "Vaswani et al., Attention Is All You Need (2017, NeurIPS)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Predictive modeling and forecasting": {
+      "english": "Technologies for predictive analytics and time-series forecasting that estimate future or unknown quantities from historical data.",
+      "korean": "과거 데이터로 미래·미지의 값을 추정하는 예측분석·시계열 예측 기술.",
+      "source": "Hyndman & Athanasopoulos, Forecasting: Principles and Practice (3rd ed., 2021)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Reasoning, search, and inference technologies": {
+      "english": "Technologies that implement search, planning, constraint solving, and logical or probabilistic inference, including solvers and reasoning engines.",
+      "korean": "탐색·계획·제약충족 및 논리·확률 추론을 구현하는 기술(솔버·추론엔진 등).",
+      "source": "Russell & Norvig, AIMA (4th ed., 2021)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Robotics and autonomous navigation": {
+      "english": "Robotic systems and the technologies enabling autonomous navigation, including localization, mapping, motion planning, and control.",
+      "korean": "위치추정·지도작성·동작계획·제어 등 자율 항법을 가능케 하는 로봇 시스템과 기술.",
+      "source": "Thrun, Burgard & Fox, Probabilistic Robotics (2005)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Speech and audio AI technologies": {
+      "english": "Technologies for automatic speech recognition, speech synthesis, speaker analysis, and general audio signal processing.",
+      "korean": "자동음성인식·음성합성·화자분석 및 일반 오디오 신호처리 기술.",
+      "source": "Jurafsky & Martin, Speech and Language Processing (3rd ed. draft, 2023)",
+      "review": "curated_v1"
+    },
+    "Technology|||L2|||Unsupervised and swarm methods": {
+      "english": "Unsupervised learning techniques (clustering, dimensionality reduction) together with swarm and collective-intelligence methods for optimization and coordination.",
+      "korean": "군집화·차원축소 등 비지도 학습과 최적화·협응을 위한 군집·집단지능 방법.",
+      "source": "Bonabeau, Dorigo & Theraulaz, Swarm Intelligence (1999)",
+      "review": "curated_v1"
+    },
+
+    "Policy|||L2|||AI cybersecurity and resilience": {
+      "english": "Policy on securing AI systems and the digital infrastructure they depend on, and on ensuring operational resilience against AI-related cyber threats.",
+      "korean": "AI 시스템과 그것이 의존하는 디지털 인프라를 보호하고 AI 관련 사이버 위협에 대한 운영 회복력을 확보하는 정책.",
+      "source": "NIST Cybersecurity Framework 2.0 (2024)",
+      "source_url": "https://www.nist.gov/cyberframework",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||AI economy, labor, and industrial policy": {
+      "english": "Policy addressing AI's effects on economic productivity, labor markets and skills, and national industrial strategy for AI development and adoption.",
+      "korean": "AI가 경제 생산성·노동시장·숙련에 미치는 영향과 AI 개발·도입을 위한 국가 산업전략을 다루는 정책.",
+      "source": "OECD Employment Outlook: AI and the Labour Market (2023)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||AI ethics and human-centered governance": {
+      "english": "Governance frameworks that place human rights, dignity, and ethical principles at the center of AI policy, translating values into institutional commitments.",
+      "korean": "인권·존엄·윤리 원칙을 AI 정책의 중심에 두고 가치를 제도적 약속으로 옮기는 거버넌스 틀.",
+      "source": "UNESCO Recommendation on the Ethics of AI (2021)",
+      "source_url": "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||AI safety and risk management": {
+      "english": "Policy instruments and management frameworks for identifying, assessing, and mitigating AI safety risks across the system lifecycle.",
+      "korean": "시스템 수명주기 전반에서 AI 안전 위험을 식별·평가·완화하는 정책 수단과 관리 틀.",
+      "source": "NIST AI Risk Management Framework 1.0 (2023)",
+      "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||AI security and critical infrastructure": {
+      "english": "Policy protecting critical national infrastructure from AI-related security risks and governing AI use in defense and essential services.",
+      "korean": "국가 핵심 인프라를 AI 관련 보안 위험으로부터 보호하고 국방·필수서비스에서의 AI 사용을 규율하는 정책.",
+      "source": "CISA, Roadmap for Artificial Intelligence (2023)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||AI, rights, and biometrics": {
+      "english": "Policy on AI applications that affect fundamental rights, with particular attention to biometric identification, facial recognition, and surveillance.",
+      "korean": "기본권에 영향을 주는 AI 응용, 특히 생체인식·얼굴인식·감시를 중점적으로 다루는 정책.",
+      "source": "EU AI Act, Regulation (EU) 2024/1689",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Algorithmic fairness and bias governance": {
+      "english": "Policy mechanisms to prevent, detect, and remedy algorithmic discrimination in consequential decisions such as hiring, credit, and public services.",
+      "korean": "채용·신용·공공서비스 등 중대한 의사결정에서 알고리즘 차별을 예방·탐지·시정하는 정책 기제.",
+      "source": "U.S. EEOC, The ADA and the Use of AI to Assess Job Applicants (2022)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Algorithmic fairness and bias mitigation": {
+      "english": "Policy guidance on technical bias-mitigation expectations for deployed algorithmic systems. A single-node cluster nearly duplicating 'Algorithmic fairness and bias governance'.",
+      "korean": "배치된 알고리즘 시스템에 대한 기술적 편향 완화 기대를 다루는 정책 지침. 'Algorithmic fairness and bias governance'와 거의 중복되는 단일 노드 군집.",
+      "note": "Near-duplicate singleton; merge into 'Algorithmic fairness and bias governance'.",
+      "source": "OECD, Tools for Trustworthy AI (2021)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Algorithmic transparency and accountability": {
+      "english": "Policy requiring explainability, documentation, disclosure, and accountability for automated decision systems used by public and private actors.",
+      "korean": "공공·민간이 사용하는 자동 의사결정 시스템에 대해 설명가능성·문서화·공개·책무성을 요구하는 정책.",
+      "source": "Council of Europe, Framework Convention on AI (2024)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Data governance and digital sovereignty": {
+      "english": "Frameworks governing data control, access, localization, and cross-border flows, including assertions of national digital sovereignty.",
+      "korean": "데이터 통제·접근·현지화·국경간 이동을 규율하는 틀로, 국가 디지털 주권 주장을 포함한다.",
+      "source": "OECD, Mapping Data Governance (2022)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Data protection and privacy": {
+      "english": "Legal protection of personal data and informational privacy, establishing rights of data subjects and obligations of controllers and processors.",
+      "korean": "개인정보와 정보 프라이버시의 법적 보호로, 정보주체의 권리와 관리자·처리자의 의무를 규정한다.",
+      "source": "General Data Protection Regulation (EU) 2016/679",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Digital rights and legal frameworks": {
+      "english": "Legal frameworks articulating and protecting rights in digital contexts, including expression, access, due process, and remedy.",
+      "korean": "표현·접근·적법절차·구제 등 디지털 맥락에서의 권리를 규정·보호하는 법적 틀.",
+      "source": "Council of Europe, Guide to Human Rights for Internet Users (2014)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Disinformation and information integrity": {
+      "english": "Policy responses to AI-enabled disinformation, synthetic media, and other threats to the integrity of the public information environment.",
+      "korean": "AI 기반 허위정보·합성미디어 등 공공 정보환경의 무결성에 대한 위협에 대응하는 정책.",
+      "source": "European Commission, Strengthened Code of Practice on Disinformation (2022)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Institutional AI governance": {
+      "english": "The design of institutions, oversight bodies, and administrative arrangements that implement and enforce AI governance.",
+      "korean": "AI 거버넌스를 집행·시행하는 기관·감독기구·행정 장치의 설계.",
+      "source": "OECD, The State of Implementation of the OECD AI Principles (2021)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||International AI governance coordination": {
+      "english": "Cross-border coordination, agreements, and standard-setting on AI among states and international organizations.",
+      "korean": "국가·국제기구 간 AI에 관한 국경간 조정·합의·표준설정.",
+      "source": "G7 Hiroshima AI Process (2023); GPAI",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Language modeling and NLP": {
+      "english": "A misfiled single-node cluster whose content concerns language technology rather than policy; retained pending reclassification.",
+      "korean": "정책이 아니라 언어기술에 해당하는 잘못 분류된 단일 노드 군집으로, 재분류 전까지 보류한다.",
+      "note": "Misclassified into Policy; reassign to Science/Technology.",
+      "source": "n/a (reclassification pending)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Liability and fundamental rights": {
+      "english": "Policy allocating legal liability for harms caused by AI systems and safeguarding fundamental rights affected by their use.",
+      "korean": "AI 시스템이 야기한 피해에 대한 법적 책임을 배분하고 그 사용으로 영향받는 기본권을 보호하는 정책.",
+      "source": "European Commission, AI Liability Directive proposal (2022)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Participatory and inclusive AI governance": {
+      "english": "Governance approaches that emphasize public participation, stakeholder deliberation, and inclusion of affected communities in AI decision-making.",
+      "korean": "AI 의사결정에 공중 참여·이해관계자 숙의·영향받는 공동체의 포용을 강조하는 거버넌스 접근.",
+      "source": "Sloane et al., Participation Is Not a Design Fix for ML (2022, EAAMO)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Responsible AI and compliance": {
+      "english": "Organizational frameworks, standards, and compliance regimes operationalizing responsible AI within developers and deployers.",
+      "korean": "개발자·배치자 내에서 책임 있는 AI를 운영화하는 조직 틀·표준·준수 체계.",
+      "source": "ISO/IEC 42001:2023, AI Management System",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Risk-based AI regulation and oversight": {
+      "english": "Regulation that scales legal obligations to the assessed risk level of an AI system, with tiered requirements and oversight for higher-risk uses.",
+      "korean": "AI 시스템의 평가된 위험 수준에 따라 법적 의무를 차등화하고 고위험 용도에 강화된 요건·감독을 부과하는 규제.",
+      "source": "EU AI Act, Regulation (EU) 2024/1689",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||STS and philosophy of AI": {
+      "english": "Science-and-technology-studies and philosophical analysis of how AI policy is framed, justified, and contested.",
+      "korean": "AI 정책이 어떻게 틀지어지고 정당화되며 경합되는지를 분석하는 과학기술학·철학적 연구.",
+      "source": "Jasanoff, The Ethics of Invention (2016)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Sustainability and environmental impact of AI": {
+      "english": "Policy addressing the energy consumption, carbon footprint, and broader environmental effects of AI systems and computing infrastructure.",
+      "korean": "AI 시스템과 컴퓨팅 인프라의 에너지 소비·탄소발자국 및 광범위한 환경 영향을 다루는 정책.",
+      "source": "Strubell, Ganesh & McCallum, Energy and Policy Considerations for Deep Learning in NLP (2019, ACL)",
+      "review": "curated_v1"
+    },
+    "Policy|||L2|||Symbolic reasoning and knowledge representation": {
+      "english": "A misfiled single-node cluster whose content concerns symbolic AI methods rather than policy; retained pending reclassification.",
+      "korean": "정책이 아니라 기호주의 AI 방법에 해당하는 잘못 분류된 단일 노드 군집으로, 재분류 전까지 보류한다.",
+      "note": "Misclassified into Policy; reassign to Science.",
+      "source": "n/a (reclassification pending)",
+      "review": "curated_v1"
+    }
+  }
+}
