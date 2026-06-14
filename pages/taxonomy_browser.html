@@ -217,6 +217,23 @@
     text-decoration: none;
   }
   .refs a:hover { text-decoration: underline; }
+  .korean-policy-evidence {
+    background: #fbfcff;
+    border: 1px solid #dfe5ef;
+    border-left: 4px solid #c95662;
+    border-radius: 10px;
+    padding: 11px 12px;
+    margin-top: 12px;
+  }
+  .korean-policy-evidence blockquote {
+    margin: 8px 0 0;
+    padding: 8px 10px;
+    border-left: 3px solid #98a2b3;
+    background: #fff;
+    color: #344054;
+    font-size: 13px;
+    line-height: 1.45;
+  }
   .card-actions {
     display: flex;
     flex-wrap: wrap;
@@ -556,6 +573,8 @@ function pathStartsWith(path, prefix) {
 function indexText(card) {
   return norm([
     card.title, card.korean, card.definition, card.source, card.id,
+    card.koreanPolicyDefinition, card.koreanPolicyQuote, card.koreanPolicyReference,
+    card.koreanPolicyReferenceTitle, card.koreanPolicyReferenceInstitution,
     card.path.join(" "), card.evidenceTitle, card.evidenceUrl, card.samples.join(" ")
   ].join(" "));
 }
@@ -630,6 +649,18 @@ function addRiskCard(out, node, ordinal) {
     evidenceTitle: node.evidence_title || "",
     evidenceUrl: node.evidence_url || "",
     evidenceType: node.evidence_type || "",
+    koreanPolicyDefinition: node.korean_policy_definition || "",
+    koreanPolicyQuote: node.korean_policy_quote || "",
+    koreanPolicyQuoteType: node.korean_policy_quote_type || "",
+    koreanPolicyReference: node.korean_policy_reference || "",
+    koreanPolicyReferenceTitle: node.korean_policy_reference_title || "",
+    koreanPolicyReferenceYear: node.korean_policy_reference_year || "",
+    koreanPolicyReferenceInstitution: node.korean_policy_reference_institution || "",
+    koreanPolicyReferenceUrl: node.korean_policy_reference_url || "",
+    koreanPolicyReferenceDocumentId: node.korean_policy_reference_document_id || "",
+    koreanPolicySimilarity: node.korean_policy_similarity,
+    koreanPolicyEvidenceCount: node.korean_policy_evidence_count,
+    koreanPolicyDefinitionStatus: node.korean_policy_definition_status || "",
     keyPapers,
     orderKey: ordinal,
     pathKey: pathKey(riskPath)
@@ -734,6 +765,21 @@ function cardHtml(card) {
   const evidence = card.evidenceUrl
     ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
     : "";
+  const koreanPolicyEvidence = card.koreanPolicyDefinition
+    ? `<div class="korean-policy-evidence">
+        <b>Korean policy definition:</b><br>${esc(card.koreanPolicyDefinition)}
+        ${card.koreanPolicyQuote ? `<blockquote>“${esc(card.koreanPolicyQuote)}”</blockquote>` : ""}
+        <div class="meta" style="border-top:none;margin-top:8px;padding-top:0;">
+          <div><b>Korean policy reference:</b> ${
+            card.koreanPolicyReferenceUrl
+              ? `<a href="${esc(card.koreanPolicyReferenceUrl)}" target="_blank" rel="noopener">${esc(card.koreanPolicyReference || card.koreanPolicyReferenceTitle || card.koreanPolicyReferenceUrl)}</a>`
+              : esc(card.koreanPolicyReference || card.koreanPolicyReferenceTitle || "")
+          }</div>
+          ${card.koreanPolicySimilarity ? `<div><b>Semantic match:</b> ${Number(card.koreanPolicySimilarity).toFixed(3)}; evidence documents: ${Number(card.koreanPolicyEvidenceCount || 1).toLocaleString()}</div>` : ""}
+          ${card.koreanPolicyQuoteType ? `<div><b>Quote basis:</b> ${esc(card.koreanPolicyQuoteType)}</div>` : ""}
+        </div>
+      </div>`
+    : "";
   const sourceLinks = card.sourceLinks && card.sourceLinks.length
     ? `<div class="refs"><b>Definition sources:</b><ul class="sample-list">${card.sourceLinks.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul></div>`
     : "";
@@ -756,6 +802,7 @@ function cardHtml(card) {
     <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
     <div class="path"><b>Hierarchy:</b> ${card.path.map(esc).join(" › ")}</div>
     <div class="definition"><b>Definition:</b> ${esc(card.definition || fallbackDefinition(card))}</div>
+    ${koreanPolicyEvidence}
     ${samples}
     ${actions}
     <div class="meta">
