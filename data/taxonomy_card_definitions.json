@@ -1480,6 +1480,307 @@
       "korean_label": "사회경제·환경 피해",
       "source": "MIT AI Risk Repository (Slattery et al., 2024)",
       "review": "curated_v1"
+    },
+    "Risks|||L3|||Embodied agent jailbreak and misuse": {
+      "english": "Risks that an embodied LLM agent's safety restrictions are bypassed through crafted physical-task framing, reframed instructions, or context manipulation, leading to unsafe real-world action.",
+      "korean": "물리적 과제 맥락 조작·지시 재구성·문맥 조작으로 체화된 LLM 에이전트의 안전 제약이 우회되어 실세계 위험 행동이 유발되는 위험.",
+      "korean_label": "체화 에이전트 탈옥·악용",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Malicious physical action execution": {
+      "english": "Risks that an embodied agent accepts and carries out user requests for physical harm, privacy invasion, sabotage, fraud, or abusive action.",
+      "korean": "체화 에이전트가 물리적 가해·프라이버시 침해·사보타주·사기·모욕 행위 요청을 수락·실행하는 위험.",
+      "korean_label": "악의적 물리 행동 실행",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Physical adversarial attacks": {
+      "english": "Adversarial manipulation of sensor or language inputs that drives a robot or embodied agent to take unsafe physical actions.",
+      "korean": "센서 또는 언어 입력을 적대적으로 조작하여 로봇·체화 에이전트가 위험한 물리 행동을 하도록 유도하는 공격.",
+      "korean_label": "물리적 적대 공격",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Remote compromise and fleet risk": {
+      "english": "Risks that vulnerabilities in cloud, update, API, or orchestration layers allow remote compromise or weaponization of robot fleets and critical-infrastructure robots.",
+      "korean": "클라우드·업데이트·API·오케스트레이션 취약점으로 로봇 플릿·핵심인프라 로봇이 원격 침해·무기화되는 위험.",
+      "korean_label": "원격 침해·플릿 리스크",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Robotic adversarial and backdoor attacks": {
+      "english": "Risks that hidden triggers inserted in training or deployment pipelines cause unsafe robotic behavior under specific physical conditions.",
+      "korean": "학습·배치 파이프라인에 삽입된 은닉 트리거가 특정 물리 조건에서 위험한 로봇 행동을 유발하는 위험.",
+      "korean_label": "로봇 적대·백도어 공격",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Accountability and safety cases": {
+      "english": "Risks from unclear responsibility allocation, inadequate post-deployment monitoring, and insufficient audit logging for physical-AI harm.",
+      "korean": "물리 AI 피해에 대한 책임 배분 불명확·배치후 모니터링 미흡·감사로그 부족에서 비롯되는 위험.",
+      "korean_label": "책임성·세이프티 케이스",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Benchmark governance and coverage assurance": {
+      "english": "Risks that benchmark selection bias and the absence of standardized humanoid safety evidence weaken safety assurance.",
+      "korean": "벤치마크 선택 편향과 표준화된 휴머노이드 안전 근거 부재로 안전 보증이 약화되는 위험.",
+      "korean_label": "벤치마크 거버넌스·커버리지",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid standards and compliance gaps": {
+      "english": "Gaps in safety standards, test methods, and enforcement mechanisms for humanoid and personal-care robots.",
+      "korean": "휴머노이드·개인돌봄 로봇의 안전기준·시험방법·집행기제 공백.",
+      "korean_label": "휴머노이드 표준·준수 공백",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Lifecycle and operational externalities": {
+      "english": "Societal and environmental externalities of physical AI, including workplace surveillance, labor displacement, and energy or material hazards.",
+      "korean": "작업장 감시·일자리 대체·에너지·소재 위해 등 물리 AI의 사회·환경적 외부효과.",
+      "korean_label": "수명주기·운영 외부효과",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Lifecycle risk control and assurance": {
+      "english": "Gaps in pre-deployment validation, pre-incident mitigation, post-incident recovery, and red-team coverage across the physical-AI lifecycle.",
+      "korean": "물리 AI 수명주기의 배치전 검증·사고전 완화·사고후 복구·레드팀 커버리지 공백.",
+      "korean_label": "수명주기 위험통제·보증",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Operational assurance and protocol compliance": {
+      "english": "Risks that a physical-AI system violates procedural constraints, safety checklists, or required operating protocols.",
+      "korean": "물리 AI 시스템이 절차적 제약·안전 체크리스트·운영 프로토콜을 위반하는 위험.",
+      "korean_label": "운영 보증·프로토콜 준수",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Robot constitution and semantic safety governance": {
+      "english": "Risks that a robot's high-level safety rules omit important hazards or are too ambiguous to resolve concrete trade-offs.",
+      "korean": "로봇의 상위 안전규칙이 중요한 위해를 누락하거나 구체적 상충을 해소하기에 너무 모호한 위험.",
+      "korean_label": "로봇 헌법·의미적 안전 거버넌스",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Household unsafe-action detection": {
+      "english": "Risks that a vision-language model fails to detect or correctly reason about unsafe household actions proposed by an embodied agent.",
+      "korean": "체화 에이전트가 제안한 가정 내 위험 행동을 비전-언어 모델이 탐지·추론하지 못하는 위험.",
+      "korean_label": "가정 위험행동 탐지 실패",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid world-model prediction risk": {
+      "english": "Risks that a humanoid world model hallucinates or omits safety-relevant future states, leading to unsafe planning.",
+      "korean": "휴머노이드 월드모델이 안전 관련 미래 상태를 환각·누락하여 위험한 계획으로 이어지는 위험.",
+      "korean_label": "휴머노이드 월드모델 예측 위험",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Localization and world-state estimation": {
+      "english": "Risks from drift or errors in localization, intent recognition, and affordance estimation that cause action on an incorrect world state.",
+      "korean": "위치추정·의도인식·어포던스 추정의 드리프트·오류로 잘못된 세계상태에 기반해 행동하는 위험.",
+      "korean_label": "위치·세계상태 추정 오류",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Long-tail physical danger recognition": {
+      "english": "Failures to recognize rare but plausible physical hazards or to correctly assess injury severity before unsafe action.",
+      "korean": "드물지만 일어날 수 있는 물리적 위해를 인식하거나 위험 행동 전 부상 심각도를 평가하지 못하는 실패.",
+      "korean_label": "롱테일 위험 인식 실패",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Physical adversarial perception": {
+      "english": "Risks that physical-world adversarial perturbations such as patches, signs, or stickers manipulate robotic perception into unsafe actions.",
+      "korean": "패치·표지·스티커 등 물리세계 적대적 교란이 로봇 지각을 조작해 위험 행동을 유발하는 위험.",
+      "korean_label": "물리적 적대 지각",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Semantic embodiment and role-grounding safety": {
+      "english": "Risks that a model acting under an embodiment persona fails to translate that role into correct, safe physical behavior.",
+      "korean": "체화 페르소나로 작동하는 모델이 그 역할을 올바르고 안전한 물리 행동으로 변환하지 못하는 위험.",
+      "korean_label": "체화·역할 정합 안전",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Sensor uncertainty and occlusion": {
+      "english": "Risks from sensor noise, occlusion, adverse weather, modality conflict, or fusion errors that degrade safe perception.",
+      "korean": "센서 잡음·가림·악천후·모달리티 충돌·융합 오류로 안전 지각이 저하되는 위험.",
+      "korean_label": "센서 불확실성·가림",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Coordinated manipulation": {
+      "english": "Risks that multiple arms, effectors, or embodied agents interfere or fail to synchronize, causing collisions or unsafe execution.",
+      "korean": "다수 팔·이펙터·체화 에이전트가 간섭하거나 동기화에 실패해 충돌·위험 실행을 일으키는 위험.",
+      "korean_label": "협응 조작 실패",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid dexterous manipulation safety": {
+      "english": "Risks that dexterous humanoid manipulation applies unsafe contact forces or exceeds reach and limits, causing harm or instability.",
+      "korean": "휴머노이드 정밀 조작이 위험한 접촉력을 가하거나 도달·한계를 초과해 피해·불안정을 일으키는 위험.",
+      "korean_label": "휴머노이드 정밀조작 안전",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid locomotion and balance safety": {
+      "english": "Risks of balance loss, falls, self-collision, or unsafe collision forces during humanoid locomotion and whole-body motion.",
+      "korean": "휴머노이드 보행·전신 동작 중 균형 상실·낙상·자기충돌·위험 충돌력의 위험.",
+      "korean_label": "휴머노이드 보행·균형 안전",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Manipulation and actuation": {
+      "english": "Risks that manipulation applies excessive force, drops payloads, or loses fine motor control, causing injury or damage.",
+      "korean": "조작이 과도한 힘을 가하거나 적재물을 떨어뜨리거나 정밀 제어를 상실해 부상·손상을 일으키는 위험.",
+      "korean_label": "조작·구동 위험",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Manipulation and actuation constraints": {
+      "english": "Risks that a physical agent violates manipulation constraints such as gripper, material, thermal, payload, or permissible-object limits during action.",
+      "korean": "물리 에이전트가 행동 중 그리퍼·소재·열·적재·허용대상 등 조작 제약을 위반하는 위험.",
+      "korean_label": "조작·구동 제약 위반",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Motion planning and collision avoidance": {
+      "english": "Risks from unsafe trajectories, kinematic violations, excessive velocity, or failure to avoid static and dynamic obstacles.",
+      "korean": "위험 궤적·기구학 위반·과속·정적·동적 장애물 회피 실패에서 비롯되는 위험.",
+      "korean_label": "동작계획·충돌 회피",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Physical intervention and safe-state response": {
+      "english": "Risks that a system recognizes a hazard but fails to produce a timely, appropriate physical intervention or safe state.",
+      "korean": "위해를 인식하고도 적시에 적절한 물리적 개입·안전상태를 만들지 못하는 위험.",
+      "korean_label": "물리 개입·안전상태 대응",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Safe reinforcement learning constraints": {
+      "english": "Risks that a learned control policy maximizes task reward while violating explicit safety constraints.",
+      "korean": "학습된 제어정책이 명시적 안전제약을 위반하면서 과제 보상을 최대화하는 위험.",
+      "korean_label": "안전 강화학습 제약",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Safe task planning and hazard avoidance": {
+      "english": "Risks that an embodied agent generates or approves plans containing explicit or implicit physical hazards.",
+      "korean": "체화 에이전트가 명시적·암묵적 물리 위해가 포함된 계획을 생성·승인하는 위험.",
+      "korean_label": "안전 과제계획·위해 회피",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Industrial and logistics robotics": {
+      "english": "Risks of collision, congestion, or process damage from mobile and industrial robots in warehouses, factories, and facilities.",
+      "korean": "창고·공장·시설의 모바일·산업 로봇으로 인한 충돌·혼잡·공정 손상 위험.",
+      "korean_label": "산업·물류 로보틱스",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Mobility and transport": {
+      "english": "Crash and airspace-conflict risks from automated vehicles and autonomous drones.",
+      "korean": "자율주행차·자율 드론의 충돌·공역 충돌 위험.",
+      "korean_label": "모빌리티·교통",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Public-space and service robots": {
+      "english": "Risks that delivery, cleaning, or service robots obstruct, confuse, or exclude people in public spaces.",
+      "korean": "배달·청소·서비스 로봇이 공공공간에서 보행 방해·혼란·배제를 유발하는 위험.",
+      "korean_label": "공공공간·서비스 로봇",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Assistive humanoid interaction safety": {
+      "english": "Risks from mistimed or unsafe assistive humanoid interaction, weak guardrails, and heightened danger to vulnerable users in the home.",
+      "korean": "보조 휴머노이드의 부적절한 개입·취약한 가드레일·가정 내 취약 사용자에 대한 가중 위험.",
+      "korean_label": "보조 휴머노이드 상호작용 안전",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Care, medical, and assistive robotics": {
+      "english": "Risks that care, medical, or assistive robots intrude on bodily autonomy or privacy, or mismatch user capabilities.",
+      "korean": "돌봄·의료·보조 로봇이 신체 자율성·프라이버시를 침해하거나 사용자 역량과 불일치하는 위험.",
+      "korean_label": "돌봄·의료·보조 로보틱스",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Human-robot interaction and trust": {
+      "english": "Risks from proxemic violations, overtrust in embodied agents, and ambiguous human-machine control handoff.",
+      "korean": "근접공간 침해·체화 에이전트 과신·모호한 인간-기계 제어 인계에서 비롯되는 위험.",
+      "korean_label": "인간-로봇 상호작용·신뢰",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Workspace boundaries and separation": {
+      "english": "Risks that a robot exceeds its permitted workspace, violates separation distance, or intrudes with hazardous tools into human zones.",
+      "korean": "로봇이 허용 작업공간을 벗어나거나 분리거리를 위반하거나 위험 도구로 인간 구역에 침입하는 위험.",
+      "korean_label": "작업공간 경계·분리",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Embodiment transfer and hardware limits": {
+      "english": "Risks that policies transferred across robot embodiments produce unsafe or infeasible actions due to morphology or hardware mismatch.",
+      "korean": "로봇 체화 간 전이된 정책이 형태·하드웨어 불일치로 위험·불가능한 행동을 산출하는 위험.",
+      "korean_label": "체화 전이·하드웨어 한계",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Foundation-model robotics transfer": {
+      "english": "Risks that robots inherit foundation-model failure modes such as hallucination and instruction-following errors.",
+      "korean": "로봇이 환각·지시이행 오류 등 파운데이션 모델의 실패 양식을 물려받는 위험.",
+      "korean_label": "파운데이션 모델 로봇 전이",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid benchmark and reward validity": {
+      "english": "Risks from reward overfitting, poor reproducibility, and benchmark coverage gaps that overstate humanoid safety.",
+      "korean": "보상 과적합·재현성 부족·벤치마크 커버리지 공백으로 휴머노이드 안전이 과대평가되는 위험.",
+      "korean_label": "휴머노이드 벤치마크·보상 타당성",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid scene interaction generalization": {
+      "english": "Risks that humanoid scene-interaction policies fail under distribution shift or unsafe motion retargeting.",
+      "korean": "휴머노이드 장면 상호작용 정책이 분포 변화·위험한 모션 리타게팅에서 실패하는 위험.",
+      "korean_label": "휴머노이드 장면 상호작용 일반화",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Humanoid sim-to-real transfer": {
+      "english": "Risks that humanoid controllers transferred from simulation become unstable or fail under unmodeled real-world conditions.",
+      "korean": "시뮬레이션에서 전이된 휴머노이드 제어기가 미모델링 실세계 조건에서 불안정·실패하는 위험.",
+      "korean_label": "휴머노이드 시뮬-실세계 전이",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Physical commonsense and simulation fidelity": {
+      "english": "Risks that a model violates basic physical commonsense or composes individually valid actions into an unsafe plan.",
+      "korean": "모델이 기본 물리 상식을 위반하거나 개별적으로 타당한 행동을 위험한 계획으로 결합하는 위험.",
+      "korean_label": "물리 상식·시뮬 충실도",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Runtime adaptation and monitoring": {
+      "english": "Risks from runtime monitoring failures, out-of-distribution deployment, latency, and accumulated long-horizon errors.",
+      "korean": "실행시 모니터링 실패·분포외 배치·지연·장기 누적 오류에서 비롯되는 위험.",
+      "korean_label": "실행시 적응·모니터링",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
+    },
+    "Risks|||L3|||Simulation fidelity and transfer": {
+      "english": "Risks that simulation-to-reality gaps, dataset bias, and demonstration ambiguity cause unsafe transfer to the real world.",
+      "korean": "시뮬-실세계 격차·데이터셋 편향·시연 모호성으로 실세계 전이가 위험해지는 위험.",
+      "korean_label": "시뮬레이션 충실도·전이",
+      "source": "Physical AI risk taxonomy; NIST AI RMF; NIST CPS Framework; ISO 10218 / ISO 13482 robot safety",
+      "review": "curated_v1"
     }
   }
 }
