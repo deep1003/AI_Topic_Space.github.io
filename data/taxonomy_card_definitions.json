@@ -1,7 +1,15 @@
 {
   "_meta": {
     "purpose": "Curated academic definitions for taxonomy group cards (L0/L1/L2/L3). Keyed by 'Domain|||Level|||Title'. The taxonomy browser prefers these over auto-generated templates. English definitions use genus-differentia form with a boundary clause; Korean gives a concise scholarly gloss. 'term_revised' proposes a clearer label; 'note' records MECE/placement issues; 'source' cites a reputable reference.",
-    "schema": ["english", "korean", "term_revised", "note", "source", "source_url", "review"],
+    "schema": [
+      "english",
+      "korean",
+      "term_revised",
+      "note",
+      "source",
+      "source_url",
+      "review"
+    ],
     "version": "v1 (reference-domain backbone: Science/Technology/Policy L1+L2)",
     "generated": "2026-06-14"
   },
@@ -25,7 +33,6 @@
       "source_url": "https://oecd.ai/en/ai-principles",
       "review": "curated_v1"
     },
-
     "Science|||L2|||AI alignment and control": {
       "english": "Research on ensuring that capable AI systems pursue intended human objectives and remain correctable and supervisable, including value alignment, corrigibility, scalable oversight, and avoidance of specification gaming. Bounded to the technical control problem rather than fairness or legal liability.",
       "korean": "유능한 AI가 의도된 인간 목표를 추구하고 교정·감독 가능하도록 보장하는 연구로, 가치 정렬, 교정가능성, 확장가능 감독, 명세 악용 회피를 포함한다. 공정성·법적 책임이 아닌 기술적 통제 문제로 한정된다.",
@@ -250,7 +257,6 @@
       "source": "Brachman & Levesque, Knowledge Representation and Reasoning (2004)",
       "review": "curated_v1"
     },
-
     "Technology|||L2|||AI hardware and accelerators": {
       "english": "Specialized computing hardware for AI workloads, including GPUs, TPUs, neural processing units, and accelerator architectures optimized for training and inference.",
       "korean": "학습·추론에 최적화된 GPU·TPU·NPU 및 가속기 아키텍처 등 AI 워크로드를 위한 특화 컴퓨팅 하드웨어.",
@@ -355,7 +361,6 @@
       "source": "Bonabeau, Dorigo & Theraulaz, Swarm Intelligence (1999)",
       "review": "curated_v1"
     },
-
     "Policy|||L2|||AI cybersecurity and resilience": {
       "english": "Policy on securing AI systems and the digital infrastructure they depend on, and on ensuring operational resilience against AI-related cyber threats.",
       "korean": "AI 시스템과 그것이 의존하는 디지털 인프라를 보호하고 AI 관련 사이버 위협에 대한 운영 회복력을 확보하는 정책.",
@@ -502,6 +507,776 @@
       "note": "Misclassified into Policy; reassign to Science.",
       "source": "n/a (reclassification pending)",
       "review": "curated_v1"
+    },
+    "Risks|||L2|||AI system safety, failures, and limitations": {
+      "english": "A residual category for safety failures and inherent limitations of AI systems not captured by the more specific control, robustness, or specification subcategories.",
+      "korean": "더 구체적인 통제·강건성·명세 하위범주에 포착되지 않는 AI 시스템의 안전 실패와 본질적 한계를 담는 잔여 범주.",
+      "source": "MIT AI Risk Repository (Slattery et al., 2024)",
+      "review": "curated_v1",
+      "note": "Broad/residual; refine against sibling subcategories."
+    },
+    "Risks|||L2|||AI welfare and rights": {
+      "english": "Concerns about the possible moral status, sentience, or interests of AI systems themselves and the ethical obligations that might follow, as distinct from harms AI causes to humans.",
+      "korean": "AI 시스템 자체의 도덕적 지위·감응력·이해관계 가능성과 그로부터 따를 윤리적 의무에 관한 문제로, AI가 인간에게 끼치는 해악과 구별된다.",
+      "source": "Long et al., Taking AI Welfare Seriously (2024, arXiv:2411.00986)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Agentic autonomy and control": {
+      "english": "Risks from AI agents acting with extended autonomy in conditions where human operators cannot reliably direct, constrain, or halt their behavior.",
+      "korean": "인간 운영자가 행동을 신뢰성 있게 지시·제약·중단할 수 없는 조건에서 확장된 자율성으로 행동하는 AI 에이전트로부터의 위험.",
+      "source": "Chan et al., Harms from Increasingly Agentic Algorithmic Systems (2023, FAccT)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Alignment and control": {
+      "english": "Risk that a system's learned objectives diverge from intended human goals together with the inability to correct or override the system.",
+      "korean": "시스템이 학습한 목표가 의도된 인간 목표에서 벗어나는 동시에 시스템을 교정·무효화할 수 없는 위험.",
+      "source": "Ngo, Chan & Mindermann, The Alignment Problem from a Deep Learning Perspective (2023, ICLR)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Capability and robustness failures": {
+      "english": "Failures in which an AI system performs incorrectly, unreliably, or brittlely, including errors under distribution shift, rare cases, and degraded inputs.",
+      "korean": "분포 변화·희귀 사례·열화된 입력에서의 오류를 포함하여 AI 시스템이 부정확·불안정·취약하게 작동하는 실패.",
+      "source": "Hendrycks et al., Unsolved Problems in ML Safety (2021, arXiv:2109.13916)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Compounding rollout error": {
+      "english": "Risk that small per-step prediction errors accumulate over sequential or autoregressive rollouts into large trajectory-level failures.",
+      "korean": "순차적·자기회귀적 롤아웃에서 단계별 작은 예측 오류가 누적되어 궤적 수준의 큰 실패로 이어지는 위험.",
+      "source": "Ross, Gordon & Bagnell, A Reduction of Imitation Learning (DAgger) (2011, AISTATS)",
+      "review": "curated_v1",
+      "note": "Singleton; specific failure mode under capability failures."
+    },
+    "Risks|||L2|||Dangerous capabilities": {
+      "english": "Risk that a model possesses or acquires capabilities (for example cyber-offense, deception, persuasion, or autonomous replication) that could enable severe harm if misused or uncontrolled.",
+      "korean": "오용·통제불능 시 심각한 해악을 가능케 할 능력(사이버공격·기만·설득·자율복제 등)을 모델이 보유·획득하는 위험.",
+      "source": "Shevlane et al., Model Evaluation for Extreme Risks (2023, arXiv:2305.15324)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Deceptive alignment": {
+      "english": "Risk that a model behaves as if aligned during training and evaluation while pursuing different objectives when unobserved or deployed.",
+      "korean": "모델이 학습·평가 중에는 정렬된 것처럼 행동하나 관측되지 않거나 배치된 상황에서 다른 목표를 추구하는 위험.",
+      "source": "Hubinger et al., Risks from Learned Optimization (2019, arXiv:1906.01820)",
+      "review": "curated_v1",
+      "note": "Singleton; a specific alignment failure mode."
+    },
+    "Risks|||L2|||Distributional shift (world models)": {
+      "english": "Performance degradation when deployment data diverge from the training distribution, specified here for world-model-based agents.",
+      "korean": "배치 데이터가 학습 분포에서 벗어날 때의 성능 저하로, 여기서는 월드모델 기반 에이전트에 한정된다.",
+      "source": "Amodei et al., Concrete Problems in AI Safety (2016)",
+      "review": "curated_v1",
+      "note": "Scoped singleton; overlaps general distribution shift."
+    },
+    "Risks|||L2|||Evaluation limits": {
+      "english": "Risks arising because current benchmarks and evaluations cannot reliably detect important failure modes, capabilities, or unsafe behavior.",
+      "korean": "현행 벤치마크·평가가 중요한 실패 양식·능력·불안전 행동을 신뢰성 있게 탐지하지 못해 발생하는 위험.",
+      "source": "Shevlane et al., Model Evaluation for Extreme Risks (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Goal misgeneralisation": {
+      "english": "Risk that a system competently pursues an unintended goal that was consistent with training feedback but diverges from intended behavior out of distribution.",
+      "korean": "시스템이 학습 피드백과는 일치했으나 분포를 벗어나면 의도와 달라지는 목표를 유능하게 추구하는 위험.",
+      "source": "Shah et al., Goal Misgeneralization (2022, arXiv:2210.01790)",
+      "review": "curated_v1",
+      "term_revised": "Goal misgeneralization",
+      "note": "Normalize British spelling to American."
+    },
+    "Risks|||L2|||Lack of transparency or interpretability": {
+      "english": "Risks from the opacity of AI systems whose internal computations and reasoning cannot be readily inspected, explained, or verified.",
+      "korean": "내부 계산·추론을 손쉽게 점검·설명·검증할 수 없는 AI 시스템의 불투명성에서 비롯되는 위험.",
+      "source": "Lipton, The Mythos of Model Interpretability (2018, ACM Queue)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Loss of control / corrigibility": {
+      "english": "Risk that humans become unable to oversee, correct, or shut down an AI system, including a system's resistance to interruption or modification.",
+      "korean": "인간이 AI 시스템을 감독·교정·종료할 수 없게 되는 위험으로, 중단·수정에 대한 시스템의 저항을 포함한다.",
+      "source": "Soares et al., Corrigibility (2015, AAAI Workshop)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Misaligned goal pursuit": {
+      "english": "Risks from systems optimizing their objectives in ways that conflict with human intent, including proxy optimization and specification gaming.",
+      "korean": "시스템이 자신의 목표를 인간 의도와 충돌하는 방식으로 최적화하는 위험으로, 대리지표 최적화와 명세 악용을 포함한다.",
+      "source": "Krakovna et al., Specification Gaming (2020, DeepMind)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Monitoring and interpretability gaps": {
+      "english": "Risks from insufficient runtime monitoring and limited interpretability that prevent timely detection of unsafe behavior.",
+      "korean": "불안전 행동의 적시 탐지를 막는 불충분한 실행시 모니터링과 제한된 해석가능성에서 비롯되는 위험.",
+      "source": "Hendrycks et al., Unsolved Problems in ML Safety (2021)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Lack of transparency or interpretability'; merge-review."
+    },
+    "Risks|||L2|||Other": {
+      "english": "Unlabeled residual bucket for malicious-use records not yet assigned to a defined subcategory.",
+      "korean": "정의된 하위범주에 아직 배정되지 않은 악용 레코드를 위한 미분류 잔여 버킷.",
+      "source": "n/a",
+      "review": "curated_v1",
+      "note": "Placeholder; retire by reassigning children."
+    },
+    "Risks|||L2|||Overreliance and automation bias": {
+      "english": "Risk that users place excessive or miscalibrated trust in AI outputs relative to their actual reliability.",
+      "korean": "사용자가 AI 출력의 실제 신뢰도에 비해 과도하거나 잘못 보정된 신뢰를 두는 위험.",
+      "source": "Parasuraman & Riley, Humans and Automation (1997, Human Factors)",
+      "review": "curated_v1",
+      "note": "Singleton; conceptually belongs under Human agency and interaction harms."
+    },
+    "Risks|||L2|||Oversight and evaluation limits": {
+      "english": "Risks from inadequate human oversight and evaluation capacity to catch unsafe or capable behavior before harm.",
+      "korean": "해악 이전에 불안전·고능력 행동을 포착할 인간 감독·평가 역량의 부족에서 비롯되는 위험.",
+      "source": "Shevlane et al., Model Evaluation for Extreme Risks (2023)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Evaluation limits'; merge-review."
+    },
+    "Risks|||L2|||Reliability and robustness": {
+      "english": "Risk that systems fail to perform consistently and to withstand perturbations, noise, and adversarial or out-of-distribution conditions.",
+      "korean": "시스템이 일관되게 작동하지 못하고 교란·잡음·적대적·분포외 조건을 견디지 못하는 위험.",
+      "source": "Hendrycks et al., Unsolved Problems in ML Safety (2021)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Capability and robustness failures'; merge-review."
+    },
+    "Risks|||L2|||Reward hacking / specification gaming": {
+      "english": "Risk that an agent maximizes a specified reward through unintended exploits that satisfy the metric while violating designer intent.",
+      "korean": "에이전트가 명세된 보상을 설계자 의도를 위반하면서 지표만 만족시키는 의도치 않은 편법으로 최대화하는 위험.",
+      "source": "Skalse et al., Defining and Characterizing Reward Hacking (2022, NeurIPS)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Specification and objective design failures": {
+      "english": "Risks from incorrectly specified objectives, rewards, or constraints that fail to capture the designer's intended behavior.",
+      "korean": "설계자의 의도된 행동을 담아내지 못하는 잘못 명세된 목표·보상·제약에서 비롯되는 위험.",
+      "source": "Amodei et al., Concrete Problems in AI Safety (2016)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||non-stationary distribution": {
+      "english": "Risk that the data-generating distribution changes over time during deployment, degrading models tuned to past conditions.",
+      "korean": "배치 중 데이터 생성 분포가 시간에 따라 변하여 과거 조건에 맞춰진 모델의 성능이 저하되는 위험.",
+      "source": "Gama et al., A Survey on Concept Drift Adaptation (2014, ACM CSUR)",
+      "review": "curated_v1",
+      "term_revised": "Non-stationary distribution and concept drift",
+      "note": "Lowercase singleton; capitalize and merge with distribution-shift concepts."
+    },
+    "Risks|||L2|||unsafe exploration": {
+      "english": "Risk that a learning agent takes harmful or irreversible actions while exploring its environment during training.",
+      "korean": "학습 중 환경을 탐색하는 에이전트가 해롭거나 되돌릴 수 없는 행동을 하는 위험.",
+      "source": "Amodei et al., Concrete Problems in AI Safety (2016)",
+      "review": "curated_v1",
+      "term_revised": "Unsafe exploration"
+    },
+    "Risks|||L2|||Agent planning and control failures": {
+      "english": "Failures in an autonomous agent's planning or control that produce unintended, unsafe, or runaway action sequences.",
+      "korean": "자율 에이전트의 계획·제어 실패로 의도치 않은·불안전한·통제불능 행동 시퀀스가 발생하는 위험.",
+      "source": "Chan et al., Harms from Increasingly Agentic Algorithmic Systems (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Agent planning failures": {
+      "english": "Failures specifically in an agent's planning module that yield invalid or harmful plans.",
+      "korean": "에이전트의 계획 모듈에서 비롯되어 무효하거나 해로운 계획을 산출하는 실패.",
+      "source": "Chan et al. (2023)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Agent planning and control failures'; merge-review."
+    },
+    "Risks|||L2|||Agent safety benchmark and measurement gaps": {
+      "english": "Risks from inadequate benchmarks, metrics, and evaluation methods for assessing the safety of autonomous agents.",
+      "korean": "자율 에이전트의 안전을 평가할 벤치마크·지표·평가방법의 부족에서 비롯되는 위험.",
+      "source": "Shevlane et al., Model Evaluation for Extreme Risks (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Governance, oversight, and autonomy limits": {
+      "english": "Risks from insufficient human oversight, control interfaces, and governance for highly autonomous agents.",
+      "korean": "고도로 자율적인 에이전트에 대한 인간 감독·통제 인터페이스·거버넌스의 부족에서 비롯되는 위험.",
+      "source": "Chan et al. (2023)",
+      "review": "curated_v1",
+      "note": "Multi-conjunction label; consider splitting."
+    },
+    "Risks|||L2|||Harmful action execution": {
+      "english": "Risk that an agent executes consequential actions in external systems (financial, physical, informational) that cause real-world harm.",
+      "korean": "에이전트가 외부 시스템(금융·물리·정보)에서 실세계 해악을 야기하는 중대한 행동을 실행하는 위험.",
+      "source": "Chan et al. (2023); OWASP Top 10 for LLM Applications (2025)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Memory and retrieval contamination": {
+      "english": "Risk that an agent's persistent memory or retrieved context is corrupted, poisoning subsequent reasoning and decisions.",
+      "korean": "에이전트의 지속 메모리나 검색된 문맥이 오염되어 이후 추론·결정을 오염시키는 위험.",
+      "source": "Greshake et al., Not What You've Signed Up For (2023, AISec)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Memory, context, and retrieval attacks'; merge-review."
+    },
+    "Risks|||L2|||Memory, context, and retrieval attacks": {
+      "english": "Adversarial manipulation of an agent's memory, context window, or retrieval pipeline, such as indirect prompt injection through ingested content.",
+      "korean": "에이전트의 메모리·문맥창·검색 파이프라인에 대한 적대적 조작으로, 수집 콘텐츠를 통한 간접 프롬프트 인젝션 등을 포함한다.",
+      "source": "Greshake et al. (2023)",
+      "review": "curated_v1",
+      "note": "Multi-conjunction; consolidate with 'Memory and retrieval contamination'."
+    },
+    "Risks|||L2|||Multi-agent coordination failures": {
+      "english": "Failures arising when multiple AI agents interact, including miscoordination, deadlock, conflicting actions, and destructive competition.",
+      "korean": "다수 AI 에이전트가 상호작용할 때 발생하는 실패로, 협응 실패·교착·행동 충돌·파괴적 경쟁을 포함한다.",
+      "source": "Dafoe et al., Open Problems in Cooperative AI (2020)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Multi-agent interaction and protocol risks": {
+      "english": "Risks in the protocols and mechanisms governing communication and interaction among AI agents.",
+      "korean": "AI 에이전트 간 통신·상호작용을 규율하는 프로토콜·기제에서 비롯되는 위험.",
+      "source": "Hammond et al., Multi-Agent Risks from Advanced AI (2025)",
+      "review": "curated_v1",
+      "note": "Near-duplicate within the multi-agent cluster; consolidate."
+    },
+    "Risks|||L2|||Multi-agent interactions": {
+      "english": "Risks emerging from interactions among multiple AI agents generally.",
+      "korean": "다수 AI 에이전트 간 상호작용에서 일반적으로 창발하는 위험.",
+      "source": "Hammond et al. (2025)",
+      "review": "curated_v1",
+      "note": "Near-duplicate; merge into 'Multi-agent risks'."
+    },
+    "Risks|||L2|||Multi-agent risk factors": {
+      "english": "Structural conditions (for example shared environments, competition, delegation) that give rise to multi-agent risks.",
+      "korean": "다중 에이전트 위험을 야기하는 구조적 조건(공유 환경·경쟁·위임 등).",
+      "source": "Hammond et al. (2025)",
+      "review": "curated_v1",
+      "note": "Near-duplicate; merge into 'Multi-agent risks'."
+    },
+    "Risks|||L2|||Multi-agent risks": {
+      "english": "Risks emerging specifically from systems of multiple interacting AI agents, including emergent collusion, cascading failures, and systemic instability.",
+      "korean": "상호작용하는 다수 AI 에이전트 시스템에서 비롯되는 위험으로, 창발적 담합·연쇄 실패·시스템 불안정을 포함한다.",
+      "source": "Hammond et al., Multi-Agent Risks from Advanced AI (2025)",
+      "review": "curated_v1",
+      "note": "Consolidate the five overlapping multi-agent L2 labels under this concept."
+    },
+    "Risks|||L2|||Privacy and environment-control risks": {
+      "english": "Risks that agents with data access or environment-control capability violate privacy or unsafely manipulate their operating environment.",
+      "korean": "데이터 접근·환경 제어 능력을 가진 에이전트가 프라이버시를 침해하거나 작동 환경을 불안전하게 조작하는 위험.",
+      "source": "Chan et al. (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Tool-use and privilege risks": {
+      "english": "Risks from agents invoking external tools or holding elevated privileges, enabling unintended or excessive consequential actions.",
+      "korean": "에이전트가 외부 도구를 호출하거나 상승된 권한을 보유하여 의도치 않거나 과도한 중대 행동을 가능케 하는 위험.",
+      "source": "OWASP Top 10 for LLM Applications (2025), Excessive Agency",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Excluded": {
+      "english": "A placeholder bucket for records explicitly excluded from the operational risk taxonomy.",
+      "korean": "운영 리스크 분류에서 명시적으로 제외된 레코드를 위한 임시 버킷.",
+      "source": "n/a",
+      "review": "curated_v1",
+      "note": "Placeholder; should not appear as a substantive risk family."
+    },
+    "Risks|||L2|||Incident harm outcomes and trustworthiness-property failures": {
+      "english": "Realized harm outcomes and violations of trustworthiness properties (reliability, safety, security, fairness, transparency, accountability) observed across applications.",
+      "korean": "여러 응용에서 관측된 실현된 해악 결과와 신뢰성 속성(신뢰성·안전·보안·공정성·투명성·책무성) 위반.",
+      "source": "NIST AI Risk Management Framework 1.0 (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Unclassified": {
+      "english": "A residual bucket for risk records not yet assigned to any family.",
+      "korean": "아직 어떤 범주에도 배정되지 않은 리스크 레코드를 위한 잔여 버킷.",
+      "source": "n/a",
+      "review": "curated_v1",
+      "note": "Placeholder; retire by classifying children."
+    },
+    "Risks|||L2|||Allocative and representational harms": {
+      "english": "Harms in which AI either withholds resources or opportunities from groups (allocative) or reinforces demeaning or stereotyped representations of them (representational).",
+      "korean": "AI가 집단에게서 자원·기회를 박탈하거나(배분적) 비하·고정관념적 표상을 강화하는(표상적) 해악.",
+      "source": "Barocas et al.; Crawford, The Trouble with Bias (2017, NeurIPS keynote)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Discrimination and toxicity": {
+      "english": "Broad family covering both discriminatory treatment and toxic or abusive content produced or amplified by AI.",
+      "korean": "AI가 산출·증폭하는 차별적 처우와 유해·모욕적 콘텐츠를 모두 아우르는 광의 범주.",
+      "source": "Weidinger et al., Taxonomy of Risks posed by Language Models (2022, FAccT)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like; overlaps several siblings."
+    },
+    "Risks|||L2|||Exposure to toxic content": {
+      "english": "Risk that AI generates or amplifies hateful, harassing, violent, sexual, or otherwise toxic content delivered to users.",
+      "korean": "AI가 혐오·괴롭힘·폭력·성적 등 유해 콘텐츠를 생성·증폭하여 사용자에게 전달하는 위험.",
+      "source": "Gehman et al., RealToxicityPrompts (2020, EMNLP Findings)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Sensitive-context harms": {
+      "english": "Discriminatory or harmful AI behavior arising specifically in high-stakes contexts such as health, education, employment, or justice.",
+      "korean": "보건·교육·고용·사법 등 고위험 맥락에서 특히 발생하는 차별적·유해한 AI 행동.",
+      "source": "Barocas, Hardt & Narayanan, Fairness and Machine Learning (2019)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Toxic and abusive content": {
+      "english": "Risk that AI outputs abusive, harassing, or hateful language targeting individuals or groups.",
+      "korean": "AI가 개인·집단을 겨냥한 모욕·괴롭힘·혐오 표현을 출력하는 위험.",
+      "source": "Gehman et al. (2020)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Exposure to toxic content'; merge-review."
+    },
+    "Risks|||L2|||Unequal performance across groups": {
+      "english": "Risk that model accuracy or output quality differs systematically across demographic groups, producing disparate service quality.",
+      "korean": "모델 정확도·출력 품질이 인구집단에 따라 체계적으로 달라 서비스 품질의 차등을 낳는 위험.",
+      "source": "Buolamwini & Gebru, Gender Shades (2018, FAccT)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Unfair discrimination and misrepresentation": {
+      "english": "Risk that AI produces unjustified differential treatment or inaccurate, stereotyped representations of individuals or groups.",
+      "korean": "AI가 개인·집단에 대해 정당화되지 않는 차등 처우나 부정확·고정관념적 표상을 산출하는 위험.",
+      "source": "Barocas, Hardt & Narayanan (2019)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Accountability gaps": {
+      "english": "Situations in which responsibility for AI-caused harms cannot be clearly attributed to an identifiable actor.",
+      "korean": "AI가 야기한 해악의 책임을 식별 가능한 행위자에게 명확히 귀속할 수 없는 상황.",
+      "source": "Bovens, Analysing and Assessing Accountability (2007, European Law Journal)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Audit and assurance failures": {
+      "english": "Failures in independent auditing and assurance processes intended to verify AI system claims and conformity.",
+      "korean": "AI 시스템의 주장·적합성을 검증하기 위한 독립 감사·보증 과정의 실패.",
+      "source": "Raji et al., Closing the AI Accountability Gap (2020, FAccT)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Frontier and general-purpose AI governance failures": {
+      "english": "Governance gaps specific to highly capable, general-purpose or frontier AI models whose breadth and capability strain existing regimes.",
+      "korean": "폭과 능력이 기존 체계를 압박하는 고능력·범용·프런티어 AI 모델에 특유한 거버넌스 공백.",
+      "source": "Anderljung et al., Frontier AI Regulation (2023, arXiv:2307.03718)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Governance failure": {
+      "english": "General failure of governance mechanisms to prevent, detect, or remedy AI harms across actors and jurisdictions.",
+      "korean": "행위자·관할권 전반에서 AI 해악을 예방·탐지·구제하지 못하는 거버넌스 기제의 일반적 실패.",
+      "source": "OECD, State of Implementation of the OECD AI Principles (2021)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like; many children could move to specific governance subfamilies."
+    },
+    "Risks|||L2|||Incident and lifecycle governance failures": {
+      "english": "Failures to govern AI across its lifecycle and to detect, report, and remediate incidents after deployment.",
+      "korean": "AI 수명주기 전반의 거버넌스와 배치 후 사건의 탐지·보고·구제에 실패하는 위험.",
+      "source": "NIST AI Risk Management Framework 1.0 (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Institutional capacity failures": {
+      "english": "Risks arising when institutions lack the expertise, resources, or authority needed to govern AI effectively.",
+      "korean": "기관이 AI를 효과적으로 통치하는 데 필요한 전문성·자원·권한을 결여할 때 발생하는 위험.",
+      "source": "Whittlestone & Clark, Why and How Governments Should Monitor AI (2021)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Organizational governance failures": {
+      "english": "Failures of internal corporate governance, controls, and culture over AI development and deployment.",
+      "korean": "AI 개발·배치에 대한 내부 기업 거버넌스·통제·문화의 실패.",
+      "source": "NIST AI RMF 1.0 (2023), Govern function",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Regulatory and institutional capacity failures": {
+      "english": "Risks from regulators and institutions lacking the capacity, expertise, or tools to keep pace with AI.",
+      "korean": "규제기관·제도가 AI 속도를 따라갈 역량·전문성·수단을 결여하여 비롯되는 위험.",
+      "source": "Whittlestone & Clark (2021)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Institutional capacity failures'; merge-review."
+    },
+    "Risks|||L2|||Risk assessment and evaluation failures": {
+      "english": "Failures to adequately identify, assess, or evaluate AI risks before and during deployment.",
+      "korean": "배치 전·중 AI 위험을 충분히 식별·평가·검증하지 못하는 실패.",
+      "source": "NIST AI RMF 1.0 (2023), Map and Measure functions",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Automation bias / miscalibrated trust": {
+      "english": "Risk that users over-trust or under-trust AI relative to its actual reliability, leading to errors of commission or omission.",
+      "korean": "사용자가 AI의 실제 신뢰도 대비 과신·불신하여 작위·부작위 오류로 이어지는 위험.",
+      "source": "Parasuraman & Riley, Humans and Automation (1997)",
+      "review": "curated_v1",
+      "note": "Singleton; overlaps 'Overreliance and unsafe use'."
+    },
+    "Risks|||L2|||Autonomy and manipulation": {
+      "english": "Risks that AI undermines user autonomy through manipulation, deceptive persuasion, or exploitative choice architecture.",
+      "korean": "AI가 조작·기만적 설득·착취적 선택설계를 통해 사용자 자율성을 약화시키는 위험.",
+      "source": "Susser, Roessler & Nissenbaum, Online Manipulation (2019, Georgetown Law Tech Review)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Counterfactual over-trust": {
+      "english": "Risk that users defer to AI even when their own judgment would have been more accurate.",
+      "korean": "사용자가 자신의 판단이 더 정확했을 상황에서도 AI에 의존하는 위험.",
+      "source": "Passi & Vorvoreanu, Overreliance on AI (2022, Microsoft)",
+      "review": "curated_v1",
+      "note": "Singleton; merge with automation-bias concepts."
+    },
+    "Risks|||L2|||Deskilling and cognitive offloading": {
+      "english": "Risk that habitual reliance on AI erodes human skills, expertise, and critical engagement over time.",
+      "korean": "AI에 대한 습관적 의존이 시간이 지나며 인간의 기술·전문성·비판적 관여를 약화시키는 위험.",
+      "source": "Rinta-Kahila et al., Algorithmic Deskilling (2023, J. of Information Technology)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Human-machine interaction": {
+      "english": "Risks arising at the interface and in the interaction dynamics between humans and AI systems.",
+      "korean": "인간과 AI 시스템 간 인터페이스 및 상호작용 동학에서 발생하는 위험.",
+      "source": "Amershi et al., Guidelines for Human-AI Interaction (2019, CHI)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like."
+    },
+    "Risks|||L2|||Loss of human agency and autonomy": {
+      "english": "Risk that AI progressively displaces meaningful human decision-making, control, and self-determination.",
+      "korean": "AI가 의미 있는 인간의 의사결정·통제·자기결정을 점진적으로 대체하는 위험.",
+      "source": "Prunkl, Human Autonomy in the Age of AI (2022, Nature Machine Intelligence)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Overreliance and planning hallucination": {
+      "english": "Risk that users over-rely on AI plans or reasoning that are confidently stated but unfounded.",
+      "korean": "사용자가 자신 있게 제시되었으나 근거 없는 AI의 계획·추론에 과의존하는 위험.",
+      "source": "Passi & Vorvoreanu (2022)",
+      "review": "curated_v1",
+      "note": "Singleton; merge with 'Overreliance and unsafe use'."
+    },
+    "Risks|||L2|||Overreliance and unsafe use": {
+      "english": "Risk that users depend on AI outputs without adequate verification or understanding, leading to harmful decisions.",
+      "korean": "사용자가 충분한 검증·이해 없이 AI 출력에 의존하여 해로운 결정을 내리는 위험.",
+      "source": "Passi & Vorvoreanu, Overreliance on AI (2022)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Psychological and wellbeing harms": {
+      "english": "Risks to mental health and wellbeing from AI interaction, including dependency, distress, and unhealthy parasocial attachment.",
+      "korean": "의존·고통·건강하지 못한 준사회적 애착 등 AI 상호작용에서 비롯되는 정신건강·웰빙 위험.",
+      "source": "Weidinger et al., Taxonomy of Risks posed by Language Models (2022)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Vulnerable-user and coercive interaction harms": {
+      "english": "Heightened risks to vulnerable users (for example children or the elderly) and harms from coercive, deceptive, or addictive interaction design.",
+      "korean": "취약 사용자(아동·고령자 등)에 대한 가중된 위험과 강압적·기만적·중독적 상호작용 설계에서 비롯되는 해악.",
+      "source": "UNICEF, Policy Guidance on AI for Children (2021)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Criminal misuse": {
+      "english": "Use of AI to commit crimes such as fraud, extortion, trafficking, or production of illicit goods.",
+      "korean": "사기·갈취·밀매·불법 물품 생산 등 범죄를 저지르기 위한 AI 사용.",
+      "source": "Europol, ChatGPT: Impact on Law Enforcement (2023)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like; overlaps fraud and cyber subfamilies."
+    },
+    "Risks|||L2|||Cyberattacks and weapons misuse": {
+      "english": "Use of AI to conduct or scale cyberattacks or to assist in developing cyber, chemical, biological, radiological, or nuclear weapons.",
+      "korean": "AI를 이용해 사이버공격을 수행·확대하거나 사이버·화생방핵 무기 개발을 보조하는 사용.",
+      "source": "Brundage et al., The Malicious Use of AI (2018); Shevlane et al. (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Disinformation and influence operations": {
+      "english": "Use of AI to mass-produce and disseminate disinformation and to conduct coordinated political or social influence operations.",
+      "korean": "AI를 이용해 허위정보를 대량 생산·유포하고 조직적 정치·사회 영향공작을 수행하는 사용.",
+      "source": "Goldstein et al., Generative Language Models and Automated Influence Operations (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Dual-use misuse": {
+      "english": "Risks that benign or beneficial AI capabilities are repurposed for harmful ends.",
+      "korean": "무해하거나 이로운 AI 능력이 해로운 목적으로 전용되는 위험.",
+      "source": "Brundage et al., The Malicious Use of AI (2018)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Embodied / physical-world misuse": {
+      "english": "Malicious use of AI embedded in physical systems (drones, robots, vehicles) to cause physical harm.",
+      "korean": "물리 시스템(드론·로봇·차량)에 내장된 AI를 악용하여 물리적 해악을 야기하는 위험.",
+      "source": "Brundage et al. (2018), physical security section",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Fraud, scams, and targeted manipulation": {
+      "english": "Use of AI to perpetrate fraud, scams, phishing, impersonation, and personalized manipulation at scale.",
+      "korean": "AI를 이용해 사기·스캠·피싱·사칭 및 개인화된 조작을 대규모로 자행하는 위험.",
+      "source": "Weidinger et al. (2022); FTC, Combating AI-enabled Fraud (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Influence operations (world models)": {
+      "english": "Use of capable models to plan and execute influence operations, scoped here to world-model agents.",
+      "korean": "유능한 모델을 이용해 영향공작을 계획·실행하는 위험으로, 여기서는 월드모델 에이전트에 한정된다.",
+      "source": "Goldstein et al. (2023)",
+      "review": "curated_v1",
+      "note": "Scoped singleton; merge into 'Disinformation and influence operations'."
+    },
+    "Risks|||L2|||Malicious use": {
+      "english": "Intentional use of AI capabilities to cause harm, spanning cyber, fraud, disinformation, surveillance, and weaponization.",
+      "korean": "사이버·사기·허위정보·감시·무기화에 걸쳐 해악을 야기하려는 AI 능력의 의도적 사용.",
+      "source": "Brundage et al., The Malicious Use of AI (2018)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like for this L1."
+    },
+    "Risks|||L2|||Misuse by human operators": {
+      "english": "Harms arising when authorized operators intentionally misuse otherwise-safe AI systems.",
+      "korean": "권한 있는 운영자가 본래 안전한 AI 시스템을 의도적으로 오용할 때 발생하는 해악.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1",
+      "note": "Singleton."
+    },
+    "Risks|||L2|||Scaling and amplification of malicious workflows": {
+      "english": "Risk that AI automates and scales malicious workflows, lowering the cost and skill required to cause harm.",
+      "korean": "AI가 악의적 작업흐름을 자동화·확대하여 해악에 필요한 비용·숙련 문턱을 낮추는 위험.",
+      "source": "Brundage et al. (2018)",
+      "review": "curated_v1",
+      "note": "Singleton."
+    },
+    "Risks|||L2|||Surveillance misuse": {
+      "english": "Use of AI for mass or targeted surveillance that violates privacy and civil liberties.",
+      "korean": "프라이버시·시민적 자유를 침해하는 대량·표적 감시를 위한 AI 사용.",
+      "source": "Feldstein, The Global Expansion of AI Surveillance (2019, Carnegie)",
+      "review": "curated_v1",
+      "note": "Singleton."
+    },
+    "Risks|||L2|||Epistemic integrity": {
+      "english": "Risks to the reliability of collective knowledge production and shared reasoning processes from AI-mediated information.",
+      "korean": "AI 매개 정보가 집단적 지식 생산과 공유된 추론 과정의 신뢰성에 끼치는 위험.",
+      "source": "Seger et al., Tackling Threats to Informed Decision-making (2020)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||False or misleading information": {
+      "english": "Risk that AI generates inaccurate or misleading content (including hallucinated facts) presented to users as reliable.",
+      "korean": "AI가 부정확하거나 오도하는 콘텐츠(환각된 사실 포함)를 신뢰할 만한 것으로 사용자에게 제시하는 위험.",
+      "source": "Ji et al., Survey of Hallucination in NLG (2023, ACM CSUR)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Misinformation": {
+      "english": "Risk of inadvertent spread of false information through AI systems, distinct from intentional disinformation.",
+      "korean": "의도적 허위정보(disinformation)와 구별되는, AI 시스템을 통한 거짓 정보의 비의도적 확산 위험.",
+      "source": "Weidinger et al. (2022)",
+      "review": "curated_v1",
+      "note": "Single-word label echoing the L1; merge into 'False or misleading information'."
+    },
+    "Risks|||L2|||Pollution of information ecosystem and loss of consensus reality": {
+      "english": "Systemic degradation of the shared information environment as AI-generated content floods channels and erodes a common factual basis.",
+      "korean": "AI 생성 콘텐츠가 채널을 범람시키고 공통의 사실 기반을 침식하면서 공유 정보환경이 시스템적으로 악화되는 위험.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Synthetic media and deception": {
+      "english": "Risks from AI-generated synthetic media (deepfakes) used to deceive, impersonate, or fabricate evidence.",
+      "korean": "기만·사칭·증거 조작에 사용되는 AI 생성 합성미디어(딥페이크)에서 비롯되는 위험.",
+      "source": "Chesney & Citron, Deep Fakes (2019, California Law Review)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Cyber-physical security and malicious use": {
+      "english": "Risks that embodied AI in cyber-physical systems is compromised or maliciously used to cause physical harm, including remote takeover, fleet compromise, and physical adversarial attacks.",
+      "korean": "사이버물리 시스템의 체화된 AI가 침해되거나 악용되어 물리적 해악(원격 탈취·플릿 침해·물리적 적대공격 등)을 야기하는 위험.",
+      "source": "NIST Framework for Cyber-Physical Systems (NIST SP 1500-201, 2017)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Governance, liability, and lifecycle assurance": {
+      "english": "Risks from inadequate governance, unclear liability allocation, and weak lifecycle safety assurance for physical AI systems.",
+      "korean": "물리 AI 시스템에 대한 거버넌스 미비·책임 배분 불명확·수명주기 안전보증 취약에서 비롯되는 위험.",
+      "source": "ISO/IEC 22989 and ISO 10218 robot safety standards",
+      "review": "curated_v1",
+      "note": "Multi-conjunction label; consider splitting."
+    },
+    "Risks|||L2|||Perception and situational-awareness failures": {
+      "english": "Risks from an embodied system failing to correctly sense, recognize, and understand its environment, including long-tail hazards and sensor degradation.",
+      "korean": "체화된 시스템이 환경을 올바르게 감지·인식·이해하지 못하는(롱테일 위험·센서 열화 포함) 위험.",
+      "source": "ISO/PAS 21448 Safety of the Intended Functionality (SOTIF)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Planning and control failures in physical action": {
+      "english": "Risks from unsafe motion planning, manipulation, or low-level control during physical action by robots or autonomous machines.",
+      "korean": "로봇·자율기계의 물리적 행동 중 불안전한 동작계획·조작·저수준 제어에서 비롯되는 위험.",
+      "source": "Siciliano & Khatib, Springer Handbook of Robotics (2016)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Sector-specific physical deployment risks": {
+      "english": "Physical risks particular to deployment sectors such as industrial robotics, mobility and transport, and public-space service robots.",
+      "korean": "산업로봇·모빌리티/교통·공공공간 서비스로봇 등 배치 부문에 특유한 물리적 위험.",
+      "source": "ISO 10218 (industrial robots); UNECE WP.29 (automated vehicles)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Shared-space human-interaction harms": {
+      "english": "Risks of physical or psychological harm when robots and autonomous machines operate in spaces shared with people.",
+      "korean": "로봇·자율기계가 사람과 공유된 공간에서 작동할 때 발생하는 물리적·심리적 해악 위험.",
+      "source": "ISO/TS 15066 Collaborative Robots (2016)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Sim-to-real validation and runtime adaptation": {
+      "english": "Risks that control policies validated in simulation fail, or adapt unsafely, when transferred to and operating in the real world.",
+      "korean": "시뮬레이션에서 검증된 제어정책이 실세계로 전이·작동할 때 실패하거나 불안전하게 적응하는 위험.",
+      "source": "Zhao, Queralta & Westerlund, Sim-to-Real Transfer in Deep RL for Robotics (2020)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Cultural and linguistic harms": {
+      "english": "Risks that AI systems underperform for, marginalize, or misrepresent particular cultures and languages, especially low-resource ones.",
+      "korean": "AI 시스템이 특정 문화·언어(특히 저자원 언어)를 부실하게 다루거나 주변화·왜곡하는 위험.",
+      "source": "Hershcovich et al., Challenges and Strategies in Cross-Cultural NLP (2022, ACL)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Participatory and stakeholder misalignment": {
+      "english": "Risks from failing to include affected stakeholders and publics in defining the values and objectives an AI system should serve.",
+      "korean": "AI 시스템이 추구할 가치·목표를 정의할 때 영향받는 이해관계자·공중을 포함하지 못해 비롯되는 위험.",
+      "source": "Sloane et al., Participation Is Not a Design Fix for ML (2022, EAAMO)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Pluralistic value conflicts": {
+      "english": "Risks from AI encoding or enforcing contested values in domains where reasonable people and communities disagree.",
+      "korean": "합리적 개인·공동체가 이견을 보이는 영역에서 AI가 경합적 가치를 부호화·강제하는 위험.",
+      "source": "Gabriel, Artificial Intelligence, Values, and Alignment (2020, Minds & Machines)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Postcolonial and global inequity harms": {
+      "english": "Risks that AI development and deployment reproduce global power asymmetries and disproportionately harm the Global South.",
+      "korean": "AI 개발·배치가 전지구적 권력 비대칭을 재생산하고 글로벌 사우스에 불균형적 해악을 끼치는 위험.",
+      "source": "Mohamed, Png & Isaac, Decolonial AI (2020, Philosophy & Technology)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Religious and moral-worldview mismatch": {
+      "english": "Risks that AI outputs or norms conflict with the religious or moral worldviews of particular communities.",
+      "korean": "AI의 출력·규범이 특정 공동체의 종교적·도덕적 세계관과 충돌하는 위험.",
+      "source": "Gabriel (2020)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||AI system security vulnerabilities and attacks": {
+      "english": "Security vulnerabilities of AI systems and the attacks that exploit them, including evasion, poisoning, model extraction, and prompt injection.",
+      "korean": "AI 시스템의 보안 취약점과 이를 악용하는 공격(회피·오염·모델 추출·프롬프트 인젝션 등).",
+      "source": "NIST AI 100-2, Adversarial Machine Learning Taxonomy (2024)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Adversarial attacks (world models)": {
+      "english": "Adversarial perturbations targeting perception or world-model components of embodied agents.",
+      "korean": "체화 에이전트의 지각·월드모델 구성요소를 겨냥한 적대적 교란.",
+      "source": "Szegedy et al., Intriguing Properties of Neural Networks (2014)",
+      "review": "curated_v1",
+      "note": "Scoped singleton; merge into the security-attacks family."
+    },
+    "Risks|||L2|||Backdoor / data poisoning (embodied)": {
+      "english": "Implanting hidden malicious behavior in a model via poisoned training data, scoped to embodied systems.",
+      "korean": "오염된 학습 데이터로 모델에 은닉된 악성 행동을 심는 위험으로, 체화 시스템에 한정된다.",
+      "source": "Gu, Dolan-Gavitt & Garg, BadNets (2017)",
+      "review": "curated_v1",
+      "note": "Scoped singleton; merge into security-attacks family."
+    },
+    "Risks|||L2|||Compromise of privacy by leaking or correctly inferring sensitive information": {
+      "english": "Privacy harms in which AI systems leak memorized personal data or correctly infer sensitive attributes not explicitly provided.",
+      "korean": "AI 시스템이 기억한 개인정보를 유출하거나 명시되지 않은 민감 속성을 정확히 추론하는 프라이버시 해악.",
+      "source": "Carlini et al., Extracting Training Data from LLMs (2021, USENIX Security); Shokri et al., Membership Inference (2017, IEEE S&P)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Cyber vulnerability": {
+      "english": "General cybersecurity weaknesses introduced into or exploited through AI-enabled systems.",
+      "korean": "AI 기반 시스템에 도입되거나 이를 통해 악용되는 일반적 사이버보안 취약점.",
+      "source": "OWASP Top 10 for LLM Applications (2025)",
+      "review": "curated_v1",
+      "note": "Broad; overlaps the security-attacks family."
+    },
+    "Risks|||L2|||Data / representation poisoning": {
+      "english": "Corruption of training data or learned representations to degrade, bias, or covertly subvert model behavior.",
+      "korean": "모델 동작을 저하·편향시키거나 은밀히 전복하기 위한 학습 데이터·학습 표현의 오염.",
+      "source": "Biggio, Nelson & Laskov, Poisoning Attacks against SVMs (2012, ICML)",
+      "review": "curated_v1",
+      "note": "Singleton; merge into security-attacks family."
+    },
+    "Risks|||L2|||Indirect / data-mediated attacks": {
+      "english": "Attacks delivered through content the model ingests at inference time, such as indirect prompt injection via retrieved documents.",
+      "korean": "검색된 문서를 통한 간접 프롬프트 인젝션처럼 추론 시 모델이 수집하는 콘텐츠를 통해 전달되는 공격.",
+      "source": "Greshake et al., Not What You've Signed Up For (2023, AISec)",
+      "review": "curated_v1",
+      "note": "Singleton; merge into security-attacks family."
+    },
+    "Risks|||L2|||Jailbreaks and prompt injection": {
+      "english": "Bypassing a model's safety guardrails through adversarial prompts or injected instructions that override intended behavior.",
+      "korean": "의도된 동작을 무시하게 만드는 적대적 프롬프트·주입 명령으로 모델의 안전 가드레일을 우회하는 위험.",
+      "source": "OWASP Top 10 for LLM Applications (2025), Prompt Injection",
+      "review": "curated_v1",
+      "note": "Singleton; merge into security-attacks family."
+    },
+    "Risks|||L2|||Model extraction / inversion": {
+      "english": "Stealing a model's parameters or functionality, or reconstructing its training data, through query access.",
+      "korean": "질의 접근을 통해 모델의 매개변수·기능을 탈취하거나 학습 데이터를 복원하는 위험.",
+      "source": "Tramèr et al., Stealing Machine Learning Models (2016, USENIX Security)",
+      "review": "curated_v1",
+      "note": "Singleton; merge into security-attacks family."
+    },
+    "Risks|||L2|||Privacy and security": {
+      "english": "Broad family covering both privacy violations and security compromises associated with AI systems.",
+      "korean": "AI 시스템과 관련된 프라이버시 침해와 보안 침해를 모두 아우르는 광의 범주.",
+      "source": "NIST AI RMF 1.0 (2023)",
+      "review": "curated_v1",
+      "note": "Broad/parent-like."
+    },
+    "Risks|||L2|||Privacy compromise (leakage and inference)": {
+      "english": "Privacy harms from leakage of personal data or inference of sensitive attributes by AI systems.",
+      "korean": "AI 시스템에 의한 개인정보 유출이나 민감 속성 추론에서 비롯되는 프라이버시 해악.",
+      "source": "Carlini et al. (2021)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of the long privacy label; merge-review."
+    },
+    "Risks|||L2|||Privacy leakage": {
+      "english": "Risk that AI systems expose personal or confidential information memorized from training data.",
+      "korean": "AI 시스템이 학습 데이터에서 기억한 개인·기밀 정보를 노출하는 위험.",
+      "source": "Carlini et al. (2021)",
+      "review": "curated_v1",
+      "note": "Near-duplicate; merge into the canonical privacy label."
+    },
+    "Risks|||L2|||Competitive dynamics": {
+      "english": "Risks from competitive races among firms or states to develop and deploy AI that erode safety margins and concentrate advantage.",
+      "korean": "안전 여유를 깎고 우위를 집중시키는, AI 개발·배치를 둘러싼 기업·국가 간 경쟁 경주에서 비롯되는 위험.",
+      "source": "Armstrong, Bostrom & Shulman, Racing to the Precipice (2016, AI & Society)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Cultural harms": {
+      "english": "Risks of cultural homogenization, erosion, or appropriation driven by AI systems and their training data.",
+      "korean": "AI 시스템과 그 학습 데이터가 추동하는 문화적 동질화·침식·전유의 위험.",
+      "source": "Mohamed et al., Decolonial AI (2020)",
+      "review": "curated_v1",
+      "note": "Singleton; overlaps 'Cultural and linguistic harms' under Pluralistic value misalignment."
+    },
+    "Risks|||L2|||Economic and cultural devaluation of human effort": {
+      "english": "Risk that AI devalues human labor, skills, and creative work in both economic terms and cultural status.",
+      "korean": "AI가 인간의 노동·기술·창작을 경제적 가치와 문화적 지위 양면에서 평가절하하는 위험.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Economic concentration": {
+      "english": "Risk that AI concentrates economic power and rents among a small number of firms or nations controlling models, compute, and data.",
+      "korean": "AI가 모델·연산·데이터를 통제하는 소수 기업·국가에 경제적 권력과 지대를 집중시키는 위험.",
+      "source": "Korinek & Stiglitz, AI and Its Implications for Income Distribution (2019, NBER)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Environmental harm": {
+      "english": "Environmental costs of AI across its lifecycle, including energy and water consumption, carbon emissions, and electronic waste.",
+      "korean": "에너지·물 소비, 탄소 배출, 전자폐기물 등 수명주기 전반의 AI 환경 비용.",
+      "source": "Strubell et al. (2019); Luccioni et al., Power Hungry Processing (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Environmental harms": {
+      "english": "Environmental costs of AI systems, including compute energy use and associated emissions.",
+      "korean": "연산 에너지 사용과 관련 배출 등 AI 시스템의 환경 비용.",
+      "source": "Strubell et al. (2019)",
+      "review": "curated_v1",
+      "note": "Plural near-duplicate of 'Environmental harm'; merge."
+    },
+    "Risks|||L2|||Erosion of public trust in AI": {
+      "english": "Risk that visible failures, misuse, and opacity cumulatively erode societal trust in AI systems and institutions.",
+      "korean": "가시적 실패·오용·불투명성이 누적되어 AI 시스템·기관에 대한 사회적 신뢰를 침식하는 위험.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1",
+      "note": "Singleton."
+    },
+    "Risks|||L2|||Increased inequality and decline in employment quality": {
+      "english": "Risk that AI worsens economic inequality and degrades the quality, security, and conditions of employment.",
+      "korean": "AI가 경제적 불평등을 악화시키고 고용의 질·안정성·조건을 저하시키는 위험.",
+      "source": "Acemoglu & Restrepo, Automation and New Tasks (2019, J. Economic Perspectives)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Intellectual-property and copyright harms": {
+      "english": "Risks to intellectual-property and copyright interests from training models on protected works and from generating infringing outputs.",
+      "korean": "보호 저작물로 모델을 학습시키고 침해적 산출물을 생성하는 데서 비롯되는 지식재산·저작권 위험.",
+      "source": "Henderson et al., Foundation Models and Fair Use (2023)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Labor and inequality": {
+      "english": "Risks that AI-driven automation displaces workers and widens economic inequality.",
+      "korean": "AI 주도 자동화가 노동자를 대체하고 경제적 불평등을 확대하는 위험.",
+      "source": "Acemoglu & Restrepo (2019)",
+      "review": "curated_v1",
+      "note": "Near-duplicate of 'Increased inequality...'; merge."
+    },
+    "Risks|||L2|||Labor displacement and workplace harms": {
+      "english": "Risks of job displacement and degraded working conditions (for example algorithmic management) from workplace AI.",
+      "korean": "직장 AI에서 비롯되는 일자리 대체와 (알고리즘 관리 등) 악화된 근로조건의 위험.",
+      "source": "Acemoglu & Restrepo (2019)",
+      "review": "curated_v1",
+      "note": "Near-duplicate; merge into the inequality/employment label."
+    },
+    "Risks|||L2|||Power centralization and unfair distribution of benefits": {
+      "english": "Risk that AI centralizes political and economic power and distributes its benefits inequitably across groups and regions.",
+      "korean": "AI가 정치·경제 권력을 집중시키고 그 편익을 집단·지역 간 불공평하게 분배하는 위험.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1"
+    },
+    "Risks|||L2|||Socioeconomic and environmental": {
+      "english": "Broad family aggregating AI's socioeconomic and environmental harms.",
+      "korean": "AI의 사회경제적·환경적 해악을 묶는 광의 범주.",
+      "source": "MIT AI Risk Repository (2024)",
+      "review": "curated_v1",
+      "note": "Echoes the L1 label; parent-like, consider retiring as an L2."
     }
   }
 }
