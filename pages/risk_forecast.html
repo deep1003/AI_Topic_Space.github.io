@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Topic Space — Risk Emergence Forecast (TimesFM 2.5 + BGE-M3)</title>
+<link rel="icon" href="data:,"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#f6f6f2;--panel:#ffffff;--ink:#1a1a1a;--muted:#6b7078;--line:#e6e6e0;
+        --policy:#c95662;--science:#2f6fad;--tech:#25864b;--risk:#7a3b84;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Roboto,system-ui,sans-serif;line-height:1.55}
+  header{padding:28px 32px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header h1{margin:0;font-size:26px;font-weight:900;letter-spacing:-.4px}
+  header p{margin:8px 0 0;color:var(--muted);max-width:960px;font-size:14px}
+  .back{display:inline-block;margin-bottom:10px;font-size:13px;color:var(--science);text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 24px 60px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:8px 0 26px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .kpi .v{font-size:24px;font-weight:900;letter-spacing:-.5px}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:18px}
+  .card h2{margin:0 0 2px;font-size:17px;font-weight:900;letter-spacing:-.2px}
+  .card h3{margin:18px 0 4px;font-size:14px;font-weight:700}
+  .card .sub{margin:0 0 12px;font-size:12px;color:var(--muted)}
+  .card p{font-size:14px;margin:8px 0}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.twocol{grid-template-columns:1fr}}
+  .step{background:#fbfbf8;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .step .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#fff;border-radius:20px;padding:2px 10px;margin-bottom:8px}
+  img.fig{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;margin:6px 0 2px;background:#fff}
+  .cap{font-size:12px;color:var(--muted);margin:2px 0 6px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 4px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:700;color:#333;background:#faf9f6}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  .up{color:#c0392b;font-weight:700}.down{color:#2f6fad;font-weight:700}.flat{color:#6b7078;font-weight:700}
+  .chip{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .note{font-size:13px;color:var(--muted)}
+  ul.tight{margin:6px 0 6px 18px;padding:0}ul.tight li{margin:4px 0;font-size:13.5px}
+  code{background:#eef0ee;padding:1px 5px;border-radius:4px;font-size:12px}
+  footer{max-width:1180px;margin:0 auto;padding:0 24px 50px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../index.html">&larr; Back to the interactive AI Topic Space / AI Risks Space</a>
+  <h1>AI Risk Emergence Forecast <span style="font-weight:500;color:var(--muted);font-size:18px">— where &amp; in what form new risks appear</span></h1>
+  <p>An exploratory two-method pipeline over the project's 1990&ndash;2026 AI-risk corpus (26,943 records across five collected risk domains). <b>Method&nbsp;1 (TimesFM&nbsp;2.5)</b> forecasts <i>where</i> research-and-incident activity is heading by extrapolating per-domain quarterly volume. <b>Method&nbsp;2 (BGE-M3 novelty detection)</b> surfaces candidate <i>new forms</i> &mdash; recent papers that sit far from every catalogued risk node. The two are complementary: forecasting handles magnitude and timing of <i>known</i> domains; novelty detection flags <i>under-catalogued</i> shapes a forecaster cannot invent.</p>
+</header>
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">26,943</div><div class="l">risk records (1990&ndash;2026)</div></div>
+    <div class="kpi"><div class="v">5</div><div class="l">collected risk domains</div></div>
+    <div class="kpi"><div class="v">8 q</div><div class="l">forecast horizon (2026Q2&ndash;2028Q1)</div></div>
+    <div class="kpi"><div class="v">14,817</div><div class="l">recent papers scored (2024&ndash;26)</div></div>
+    <div class="kpi"><div class="v">1,794</div><div class="l">existing L4 risk nodes</div></div>
+    <div class="kpi"><div class="v">2,223</div><div class="l">off-distribution candidates</div></div>
+  </div>
+
+  <!-- METHOD -->
+  <div class="card">
+    <h2>How the prediction works</h2>
+    <p class="sub">Two passes over the same corpus, then read together.</p>
+    <div class="twocol">
+      <div class="step">
+        <span class="tag" style="background:var(--risk)">Method 1 · WHERE</span>
+        <h3 style="margin-top:2px">TimesFM 2.5 — zero-shot time-series forecast</h3>
+        <p>Each risk domain becomes a quarterly count series (papers per quarter, 1990Q1&ndash;2026Q1). Google's <b>TimesFM&nbsp;2.5</b> (a 200M-parameter decoder-only time-series foundation model) forecasts the next 8 quarters <b>zero-shot</b> &mdash; no task-specific training &mdash; with P10&ndash;P90 quantile bands. The partial 2026Q2 quarter is held out of history. This answers <i>which existing domains intensify or cool.</i></p>
+      </div>
+      <div class="step">
+        <span class="tag" style="background:var(--science)">Method 2 · WHAT FORM</span>
+        <h3 style="margin-top:2px">BGE-M3 — embedding novelty detection</h3>
+        <p>Every 2024&ndash;26 paper is embedded with multilingual <b>BGE-M3</b> and scored by its maximum cosine similarity to all 1,794 catalogued L4 risk nodes. A <b>low</b> max-similarity means the paper fits no existing risk &mdash; a candidate <i>new form</i>. The off-distribution tail is clustered (k-means) and labelled by TF-IDF keywords. This answers <i>what shapes are not yet in the taxonomy.</i></p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:12px">Stack: <code>timesfm 2.5 (torch)</code> · <code>BAAI/bge-m3</code> sentence-embeddings · <code>scikit-learn</code> k-means/TF-IDF. Corpus: <code>integrated_ai_risk_papers_all_domains_broad.csv</code>.</p>
+  </div>
+
+  <!-- WHERE -->
+  <div class="card">
+    <h2>1 · WHERE — TimesFM 2.5 quarterly forecast</h2>
+    <p class="sub">History through 2026Q1 (solid); forecast 2026Q2&ndash;2028Q1 (dashed); shaded band = P10&ndash;P90.</p>
+    <img class="fig" src="assets/forecast_domains.png" alt="TimesFM 2.5 quarterly forecast for five AI-risk domains"/>
+    <div class="cap">Fig 1. Per-domain quarterly publication volume with TimesFM 2.5 zero-shot forecast and P10&ndash;P90 uncertainty bands.</div>
+
+    <table>
+      <thead><tr>
+        <th>Risk domain</th>
+        <th class="n">Run-rate<br><span class="note">(last 4q avg)</span></th>
+        <th class="n">Forecast<br>2026Q2</th>
+        <th class="n">P10&ndash;P90<br>2026Q2</th>
+        <th class="n">Forecast<br>2028Q1</th>
+        <th>Trajectory</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="chip" style="background:#c0392b"></span>Agentic / multi-agent failures</td>
+          <td class="n">589</td><td class="n">930</td><td class="n">702&ndash;1217</td><td class="n">526</td>
+          <td><span class="up">&#9650; accelerating</span> (steepest; widest band)</td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:#2f6fad"></span>Physical AI</td>
+          <td class="n">338</td><td class="n">363</td><td class="n">290&ndash;458</td><td class="n">468</td>
+          <td><span class="up">&#9650; steady growth</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:#d98e2b"></span>Hate speech</td>
+          <td class="n">186</td><td class="n">198</td><td class="n">158&ndash;260</td><td class="n">224</td>
+          <td><span class="flat">&#8594; stable</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:#25864b"></span>Fairness</td>
+          <td class="n">504</td><td class="n">398</td><td class="n">306&ndash;532</td><td class="n">302</td>
+          <td><span class="down">&#9660; cooling</span> (off its peak)</td>
+        </tr>
+        <tr>
+          <td><span class="chip" style="background:#8e44ad"></span>Value / cultural misalignment</td>
+          <td class="n">283</td><td class="n">286</td><td class="n">198&ndash;398</td><td class="n">77</td>
+          <td><span class="down">&#9660; declining</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><b>Read:</b> the clearest signal is <b>agentic / multi-agent failures</b> &mdash; the only domain forecast well above its own recent run-rate (~930 vs 589 papers/quarter), after a 123&rarr;977 surge over the last eight quarters. <b>Physical AI</b> grows steadily; <b>fairness</b> and <b>value/cultural</b> work is past its peak in this corpus. The agentic band is also the widest, so the <i>level</i> is uncertain even though the <i>direction</i> is clear.</p>
+  </div>
+
+  <!-- WHAT FORM -->
+  <div class="card">
+    <h2>2 · WHAT FORM — embedding novelty detection</h2>
+    <p class="sub">Recent papers (n=14,817) ranked by distance from all 1,794 existing risk nodes; off-distribution tail clustered into candidate emerging forms.</p>
+    <img class="fig" src="assets/forecast_novelty.png" alt="Emerging new-form clusters far from existing risk nodes"/>
+    <div class="cap">Fig 2. The 2,223 most off-distribution recent papers, grouped into ten candidate &ldquo;new-form&rdquo; clusters (keywords from TF-IDF).</div>
+
+    <p><b>Honest baseline:</b> the taxonomy already covers recent literature well &mdash; median max-similarity is <b>0.669</b> and only <b>18 of 14,817</b> papers fall below 0.50. Truly novel forms are therefore <i>rare</i>; the clusters below are the <i>relatively</i> least-covered shapes (max-similarity ~0.57&ndash;0.59), ordered by how far they sit from the catalogue.</p>
+
+    <table>
+      <thead><tr>
+        <th>Cluster (keywords)</th>
+        <th class="n">n</th>
+        <th class="n">avg<br>sim</th>
+        <th>Nearest existing L1</th>
+        <th>Reading</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><b>Healthcare AI risk</b> &middot; health, healthcare, clinical</td><td class="n">174</td><td class="n">0.573</td><td>AI system safety, robustness &amp; control</td><td>Most off-distribution &mdash; clinical/health deployment harms thinly catalogued.</td></tr>
+        <tr><td><b>Digital / global / cultural governance</b></td><td class="n">239</td><td class="n">0.578</td><td>Socioeconomic, labor, cultural &amp; environmental harms</td><td>Global-South, cultural &amp; digital-divide framings.</td></tr>
+        <tr><td><b>ML-method-as-risk-surface</b> &middot; machine learning, models, data</td><td class="n">282</td><td class="n">0.583</td><td>AI system safety, robustness &amp; control</td><td>Method papers treated as risk vectors.</td></tr>
+        <tr><td><b>Robot navigation / RL</b></td><td class="n">247</td><td class="n">0.584</td><td>Physical AI Risk</td><td>Embodied-control edge of Physical AI.</td></tr>
+        <tr><td><b>Drone / autonomous-vehicle safety</b></td><td class="n">250</td><td class="n">0.584</td><td>AI system safety, robustness &amp; control</td><td>UAV &amp; AV detection/inspection safety.</td></tr>
+        <tr><td><b>AI frameworks / governance scaffolding</b></td><td class="n">259</td><td class="n">0.586</td><td>AI system safety, robustness &amp; control</td><td>Cross-domain framework papers.</td></tr>
+        <tr><td><b>Multi-agent RL coordination</b></td><td class="n">209</td><td class="n">0.586</td><td>AI system safety, robustness &amp; control</td><td>Echoes the agentic forecast signal.</td></tr>
+        <tr><td><b>LLM-specific harms</b> &middot; large language models</td><td class="n">175</td><td class="n">0.593</td><td>AI system safety, robustness &amp; control</td><td>LLM-native failure modes.</td></tr>
+        <tr><td><b>Agentic / LLM agents</b> &middot; agents, multi-agent, llm</td><td class="n">218</td><td class="n">0.593</td><td>AI system safety, robustness &amp; control</td><td>Reinforces agentic as the frontier.</td></tr>
+        <tr><td><b>Hate-speech / social-media detection</b></td><td class="n">170</td><td class="n">0.592</td><td>Discrimination and harmful content</td><td>Mostly catalogued; near the cut.</td></tr>
+      </tbody>
+    </table>
+    <p><b>Read:</b> the agentic / LLM-agent clusters recur here, agreeing with Method&nbsp;1's signal. Beyond that, the two <i>furthest</i> shapes are <b>healthcare-AI risk</b> and <b>digital/global/cultural governance</b> &mdash; the strongest candidates for new taxonomy nodes.</p>
+  </div>
+
+  <!-- SYNTHESIS -->
+  <div class="card">
+    <h2>Synthesis</h2>
+    <ul class="tight">
+      <li>Both methods converge on <b>agentic &amp; multi-agent / LLM-agent</b> risk as the growth frontier &mdash; rising fastest (Method&nbsp;1) and recurring among off-distribution clusters (Method&nbsp;2).</li>
+      <li><b>Physical AI</b> is a steady secondary growth area; its embodied-control and drone/AV edges are the least-catalogued within it.</li>
+      <li>Novelty detection adds <b>healthcare AI</b> and <b>global / cultural governance</b> as under-represented <i>forms</i> a volume forecast would miss.</li>
+      <li><b>Fairness</b> and <b>value/cultural-misalignment</b> volume is past its peak in this corpus.</li>
+    </ul>
+  </div>
+
+  <!-- CAVEATS -->
+  <div class="card">
+    <h2>Caveats &amp; scope</h2>
+    <ul class="tight">
+      <li>TimesFM extrapolates the <b>magnitude and timing</b> of <i>known</i> domains; it cannot invent a novel category. Treat point forecasts as central tendencies within the P10&ndash;P90 band.</li>
+      <li>Series reflect <b>research-and-collection volume</b>, not real-world incident counts; collection effort and indexing lag bias the signal. 2026Q2 was excluded as a partial quarter (data to Jun&nbsp;10).</li>
+      <li>Novelty clusters are <b>candidates</b>: low similarity can mean a genuinely new risk form <i>or</i> a cross-domain / methods paper. Human review is required before promoting any cluster to a taxonomy node.</li>
+      <li>Only five risk domains were collected as full time series; the full 14-group L1 taxonomy is broader than what is forecast here.</li>
+    </ul>
+  </div>
+
+</div>
+<footer>
+  AI Topic Space / AI Risks Space &mdash; Risk Emergence Forecast. Methods: TimesFM 2.5 (zero-shot quarterly forecast) + BGE-M3 embedding novelty detection. Exploratory; for research prioritisation, not operational risk assessment.
+</footer>
+</body>
+</html>
