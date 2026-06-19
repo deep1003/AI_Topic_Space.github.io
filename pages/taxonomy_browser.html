@@ -652,6 +652,7 @@ function addTopicCard(out, node, ordinal) {
     samples: [],
     riskScore: null,
     nodeType: node.node_type || "",
+    authoritative: node.authoritative || null,
     evidenceTitle: "",
     evidenceUrl: "",
     review: node.review || "",
@@ -672,6 +673,7 @@ function addRiskCard(out, node, ordinal) {
     id: node.id,
     korean: node.korean_definition || "",
     koreanLabel: node.korean_label || "",
+    authoritative: node.authoritative || null,
     definition: node.definition || "",
     source: node.source || "",
     scope: node.scope || "",
@@ -839,6 +841,9 @@ function cardHtml(card) {
   const keyPapers = card.keyPapers && card.keyPapers.length
     ? `<div class="refs"><b>Additional linked papers:</b><ul class="sample-list">${card.keyPapers.slice(0,3).map(p=>`<li><a href="${esc(p.url || p.pdf_url || "#")}" target="_blank" rel="noopener">${esc(p.title || p.url || "linked paper")}</a></li>`).join("")}</ul></div>`
     : "";
+  const authoritative = card.authoritative
+    ? `<div class="refs"><b>Authoritative reference</b> (${esc(card.authoritative.source)}${card.authoritative.match_level==='domain-crosswalk'?' \u00b7 domain crosswalk':''}): ${card.authoritative.official_term?`<b>${esc(card.authoritative.official_term)}</b> \u2014 `:''}${esc(card.authoritative.definition)}<br><span class="muted">${esc(card.authoritative.citation)}${card.authoritative.confidence?` (confidence: ${esc(card.authoritative.confidence)})`:''}</span></div>`
+    : "";
   const childLevels = card.kind === "group"
     ? ["L1","L2","L3","L4"].filter(l => Number(l.slice(1)) > Number(card.level.slice(1)) && cards.some(c => c.domain === card.domain && c.level === l && pathStartsWith(c.path, card.path)))
     : [];
@@ -854,6 +859,7 @@ function cardHtml(card) {
     <div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
     <div class="path"><b>Hierarchy:</b> ${crumbsHtml(card.path)}</div>
     <div class="definition"><b>Definition:</b> ${esc(card.definition || fallbackDefinition(card))}${card.korean ? ` (${esc(card.korean)})` : ""}</div>
+    ${authoritative}
     ${koreanPolicyEvidence}
     ${samples}
     ${actions}
