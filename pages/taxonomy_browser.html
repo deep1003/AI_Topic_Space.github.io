@@ -651,6 +651,7 @@ function addTopicCard(out, node, ordinal) {
     childCount: 0,
     samples: [],
     riskScore: null,
+    nodeType: node.node_type || "",
     evidenceTitle: "",
     evidenceUrl: "",
     review: node.review || "",
@@ -795,6 +796,7 @@ function filteredCards() {
 function cardHtml(card) {
   const chips = [
     card.level,
+    card.nodeType ? card.nodeType : "",
     card.kind === "risk" ? "risk card" : card.kind,
     card.childCount ? `${card.childCount.toLocaleString()} child L${card.domain==="Risks" ? "4" : "3"} nodes` : "",
     card.evidenceUrl ? "linked evidence" : "",
