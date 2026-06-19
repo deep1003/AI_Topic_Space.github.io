@@ -640,7 +640,7 @@ function addTopicCard(out, node, ordinal) {
     level: "L3",
     ordinal,
     title: node.l3_label || node.l3 || node.phrase || node.id,
-    path: [node.l0 || node.domain, node.l1, node.l2, node.l3_label || node.l3].filter(Boolean),
+    path: [node.l0 || node.domain, node.l2, node.l3_label || node.l3].filter(Boolean),
     id: node.id,
     korean: node.korean || "",
     definition: node.definition || "",
@@ -655,7 +655,7 @@ function addTopicCard(out, node, ordinal) {
     evidenceUrl: "",
     review: node.review || "",
     orderKey: ordinal,
-    pathKey: pathKey([node.l0 || node.domain, node.l1, node.l2, node.l3_label || node.l3].filter(Boolean))
+    pathKey: pathKey([node.l0 || node.domain, node.l2, node.l3_label || node.l3].filter(Boolean))
   });
 }
 function addRiskCard(out, node, ordinal) {
@@ -711,15 +711,11 @@ function buildCards() {
     const nodes = (payload.nodes || []).filter(n => (n.l0 || n.domain) === domain);
     const d = DOMAIN_LETTERS[domain];
     addGroupCard(out, {domain, level:"L0", ordinal:d, title:domain, path:[domain], rows:nodes});
-    groupBy(nodes, n=>n.l1).forEach(([l1, l1Rows], i1) => {
-      const o1 = `${d}.${i1+1}`;
-      addGroupCard(out, {domain, level:"L1", ordinal:o1, title:l1, path:[domain,l1], rows:l1Rows});
-      groupBy(l1Rows, n=>n.l2).forEach(([l2, l2Rows], i2) => {
-        const o2 = `${o1}.${i2+1}`;
-        addGroupCard(out, {domain, level:"L2", ordinal:o2, title:l2, path:[domain,l1,l2], rows:l2Rows});
-        l2Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i3) => {
-          addTopicCard(out, n, `${o2}.${i3+1}`);
-        });
+    groupBy(nodes, n=>n.l2).forEach(([l2, l2Rows], i2) => {
+      const o2 = `${d}.${i2+1}`;
+      addGroupCard(out, {domain, level:"L2", ordinal:o2, title:l2, path:[domain,l2], rows:l2Rows});
+      l2Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i3) => {
+        addTopicCard(out, n, `${o2}.${i3+1}`);
       });
     });
   }
