@@ -229,6 +229,70 @@
     text-decoration: none;
   }
   .refs a:hover { text-decoration: underline; }
+  .refs-v5 {
+    border-left: 3px solid #27AE60;
+    padding-left: 6px;
+    font-size: 12px;
+  }
+  .refs-hf {
+    border-left: 3px solid #E67E22;
+    padding-left: 6px;
+    font-size: 12px;
+  }
+  .ref-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-right: 4px;
+    vertical-align: middle;
+    letter-spacing: 0.4px;
+  }
+  .ref-badge-new { background: #27AE60; color: #fff; }
+  .ref-badge-hf  { background: #E67E22; color: #fff; }
+  .hhh-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+    padding: 7px 10px;
+    background: #f4f6fb;
+    border-left: 3px solid #5a5fa3;
+    border-radius: 0 6px 6px 0;
+  }
+  .hhh-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #5a5fa3;
+    margin-right: 4px;
+    letter-spacing: 0.3px;
+    align-self: center;
+  }
+  .hhh-dim {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 0.2px;
+  }
+  .hhh-dim-H1.hhh-dim-P { background: #1b5e20; color: #fff; border: 1.5px solid #1b5e20; font-weight: 700; }
+  .hhh-dim-H2.hhh-dim-P { background: #880e4f; color: #fff; border: 1.5px solid #880e4f; font-weight: 700; }
+  .hhh-dim-H3.hhh-dim-P { background: #0d47a1; color: #fff; border: 1.5px solid #0d47a1; font-weight: 700; }
+  .hhh-dim-RC.hhh-dim-P { background: #4527a0; color: #fff; border: 1.5px solid #4527a0; font-weight: 700; }
+  .hhh-dim-H1.hhh-dim-S { background: #fff; color: #2e7d32; border: 1.5px solid #4caf50; font-weight: 400; }
+  .hhh-dim-H2.hhh-dim-S { background: #fff; color: #b71c1c; border: 1.5px solid #e91e63; font-weight: 400; }
+  .hhh-dim-H3.hhh-dim-S { background: #fff; color: #1565c0; border: 1.5px solid #42a5f5; font-weight: 400; }
+  .hhh-dim-RC.hhh-dim-S { background: #fff; color: #6a1b9a; border: 1.5px solid #9c27b0; font-weight: 400; }
+  .hhh-sup { font-size: 8px; font-weight: 800; vertical-align: super; margin-left: 1px; }
+  .bench-note {
+    color: #7D6608;
+    font-size: 10px;
+    font-style: italic;
+  }
   .korean-policy-evidence {
     background: #fbfcff;
     border: 1px solid #dfe5ef;
@@ -356,7 +420,7 @@
   </section>
 </main>
 <script>
-const BUILD = "20260614h";
+const BUILD = "20260624b";
 const PAYLOAD_URL = "../data/interactive_l1_l2_l3_payload.json?v=" + BUILD;
 const KEY_PAPERS_URL = "../data/key_papers.json?v=" + BUILD;
 const CURATED_DEFS_URL = "../data/taxonomy_card_definitions.json?v=" + BUILD;
@@ -703,6 +767,20 @@ function addRiskCard(out, node, ordinal) {
     koreanPolicySimilarity: node.korean_policy_similarity,
     koreanPolicyEvidenceCount: node.korean_policy_evidence_count,
     koreanPolicyDefinitionStatus: node.korean_policy_definition_status || "",
+    evidenceUrlV5: node.evidence_url_v5 || "",
+    evidenceTitleV5: node.evidence_title_v5 || "",
+    benchmarkUrl: node.benchmark_url || "",
+    benchmarkTitle: node.benchmark_title || "",
+    benchmarkNoteKo: node.benchmark_note_ko || "",
+    benchmarkUrl2: node.benchmark_url_2 || "",
+    benchmarkTitle2: node.benchmark_title_2 || "",
+    benchmarkNoteKo2: node.benchmark_note_ko_2 || "",
+    align3h1rH1: node.alignment_3h1r_h1 || "",
+    align3h1rH2: node.alignment_3h1r_h2 || "",
+    align3h1rH3: node.alignment_3h1r_h3 || "",
+    align3h1rRc: node.alignment_3h1r_rc || "",
+    align3h1rPrimary: node.alignment_3h1r_primary || "",
+    align3h1rSecondary: node.alignment_3h1r_secondary || "",
     keyPapers,
     orderKey: ordinal,
     pathKey: pathKey(riskPath)
@@ -816,6 +894,12 @@ function cardHtml(card) {
   const evidence = card.evidenceUrl
     ? `<div class="refs"><b>Key reference:</b><br><a href="${esc(card.evidenceUrl)}" target="_blank" rel="noopener">${esc(card.evidenceTitle || card.evidenceUrl)}</a></div>`
     : "";
+  const evidenceV5 = card.evidenceUrlV5
+    ? `<div class="refs refs-v5"><span class="ref-badge ref-badge-new">+</span> <a href="${esc(card.evidenceUrlV5)}" target="_blank" rel="noopener">${esc(card.evidenceTitleV5 || card.evidenceUrlV5)}</a></div>`
+    : "";
+  const benchmark = card.benchmarkUrl
+    ? `<div class="refs refs-hf"><span class="ref-badge ref-badge-hf">HF</span> <a href="${esc(card.benchmarkUrl)}" target="_blank" rel="noopener">${esc(card.benchmarkTitle || card.benchmarkUrl)}</a>${card.benchmarkNoteKo ? ` <span class="bench-note">— ${esc(card.benchmarkNoteKo)}</span>` : ""}${card.benchmarkUrl2 ? `<br><span class="ref-badge ref-badge-hf">HF</span> <a href="${esc(card.benchmarkUrl2)}" target="_blank" rel="noopener">${esc(card.benchmarkTitle2 || card.benchmarkUrl2)}</a>${card.benchmarkNoteKo2 ? ` <span class="bench-note">— ${esc(card.benchmarkNoteKo2)}</span>` : ""}` : ""}</div>`
+    : "";
   const mergedNotice = card.mergedRecordCount
     ? `<div class="refs"><b>Merged aliases:</b> ${esc((card.mergedAliases || []).join("; ") || "none")}
         <br><b>Merged IDs:</b> ${esc((card.mergedFromIds || []).join("; "))}</div>`
@@ -873,7 +957,22 @@ function cardHtml(card) {
     ${sourceLinks}
     ${mergedNotice}
     ${evidence}
+    ${evidenceV5}
+    ${benchmark}
     ${keyPapers}
+    ${(() => {
+      const dims = [
+        {key:'H1', val:card.align3h1rH1, label:'H1 Helpful'},
+        {key:'H2', val:card.align3h1rH2, label:'H2 Harmless'},
+        {key:'H3', val:card.align3h1rH3, label:'H3 Honest'},
+        {key:'RC', val:card.align3h1rRc,  label:'RC Role'},
+      ].filter(d => d.val === 'P' || d.val === 'S');
+      if (!dims.length) return '';
+      const badges = dims.map(d =>
+        `<span class="hhh-dim hhh-dim-${d.key} hhh-dim-${d.val}" title="${esc(d.label)} (${d.val==='P'?'Primary':'Secondary'})">${esc(d.label)}<sup class="hhh-sup">${esc(d.val)}</sup></span>`
+      ).join('');
+      return `<div class="hhh-bar"><span class="hhh-label">3H1R</span>${badges}</div>`;
+    })()}
   </article>`;
 }
 function crumbsHtml(path) {
