@@ -69,8 +69,8 @@ def card_badges(card: dict) -> str:
 
 
 def evidence_link(card: dict) -> str:
-    url = card.get("evidence_url_v5") or card.get("evidence_url") or ""
-    title = card.get("evidence_title_v5") or card.get("evidence_title") or ""
+    url = card.get("evidence_url") or card.get("evidence_url_v5") or ""
+    title = card.get("evidence_title") or card.get("evidence_title_v5") or ""
     if not url:
         return '<span class="src-na">No evidence URL</span>'
     return f'<a class="src-link" href="{esc(url)}" target="_blank" rel="noopener">{esc(title or url)}</a>'
