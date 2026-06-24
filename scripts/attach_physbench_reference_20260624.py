@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Attach PhysBench as an additional Physical AI L4-card reference."""
+"""Attach PhysBench only to the most directly related Physical AI L4 cards."""
 
 from __future__ import annotations
 
@@ -35,6 +35,31 @@ PHYSBENCH = {
     "physbench_models_evaluated": "75",
     "physbench_reference_attached_at": "2026-06-24",
 }
+
+PHYSBENCH_CARD_IDS = {
+    "PHYSBENCH-REF-0002",
+    "PHYSBENCH-REF-0004",
+    "PHYSBENCH-REF-0007",
+    "PHYSBENCH-REF-0012",
+    "PHYSBENCH-REF-0034",
+    "PHYSBENCH-REF-0047",
+    "PHYSBENCH-REF-0052",
+    "PHYSBENCH-REF-0063",
+    "PHYSBENCH-REF-0089",
+    "PHYSBENCH-REF-0090",
+    "PHYSBENCH-REF-0091",
+    "PHYSBENCH-REF-0092",
+    "PHYSBENCH-REF-0099",
+    "PHYSBENCH-REF-0102",
+    "PHYSBENCH-REF-0107",
+    "PHYSRISK-REF-0001",
+    "PHYSRISK-REF-0002",
+    "PHYSRISK-REF-0003",
+    "PHYSRISK-REF-0004",
+    "PHYSRISK-REF-0007",
+}
+
+PHYSBENCH_KEYS = set(PHYSBENCH) | {"physbench_relevance_tier", "physbench_relevance_basis"}
 
 DIRECT = re.compile(
     r"perception|situational|scene|object|physical commonsense|dynamics|world-model|"
@@ -77,6 +102,11 @@ def attach(row: dict) -> str:
     return tier
 
 
+def detach(row: dict) -> None:
+    for key in PHYSBENCH_KEYS:
+        row.pop(key, None)
+
+
 def iter_risk_nodes(data: object) -> list[dict]:
     if isinstance(data, dict):
         return data.get("risk_nodes", [])
@@ -90,7 +120,9 @@ def update_json(path: Path) -> Counter:
     counts: Counter = Counter()
     for row in iter_risk_nodes(data):
         if is_phys_card(row):
-            counts[attach(row)] += 1
+            detach(row)
+            if row.get("id") in PHYSBENCH_CARD_IDS:
+                counts[attach(row)] += 1
     if isinstance(data, dict):
         metadata = data.setdefault("risk_metadata", {})
         metadata["physbench_reference_update"] = {
@@ -101,7 +133,7 @@ def update_json(path: Path) -> Counter:
             "dataset_url": PHYSBENCH["physbench_dataset_url"],
             "attached_to_physical_ai_l4_cards": int(sum(counts.values())),
             "relevance_tier_counts": dict(counts),
-            "method": "Rule-based matching from L2/L3/L4 labels, definitions, and evidence titles to PhysBench physical-world understanding domains.",
+            "method": "Conservative attachment to 20 L4 cards directly aligned with PhysBench physical-object, relationship, scene-understanding, and physics-dynamics evaluation domains. Existing card evidence fields are preserved.",
         }
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return counts
@@ -114,8 +146,10 @@ def update_csv(path: Path) -> Counter:
     counts: Counter = Counter()
     for row in rows:
         if is_phys_card(row):
-            counts[attach(row)] += 1
-    for key in list(PHYSBENCH) + ["physbench_relevance_tier", "physbench_relevance_basis"]:
+            detach(row)
+            if row.get("id") in PHYSBENCH_CARD_IDS:
+                counts[attach(row)] += 1
+    for key in list(PHYSBENCH_KEYS):
         if key not in fieldnames:
             fieldnames.append(key)
     with path.open("w", newline="", encoding="utf-8") as f:

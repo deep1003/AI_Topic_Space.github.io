@@ -292,8 +292,8 @@ def main() -> None:
     missing = [c["id"] for c in cards if not c.get("alignment_3h1r_primary")]
     if missing:
         raise SystemExit(f"Cards missing primary alignment: {missing[:5]}")
-    V7_OUT.write_text(render_v7(cards), encoding="utf-8")
-    RATIONALE_OUT.write_text(render_rationale(cards), encoding="utf-8")
+    V7_OUT.write_text("\n".join(line.rstrip() for line in render_v7(cards).splitlines()) + "\n", encoding="utf-8")
+    RATIONALE_OUT.write_text("\n".join(line.rstrip() for line in render_rationale(cards).splitlines()) + "\n", encoding="utf-8")
     print(f"Wrote {V7_OUT} and {RATIONALE_OUT}")
 
 
