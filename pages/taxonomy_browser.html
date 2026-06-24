@@ -955,6 +955,17 @@ function cardHtml(card) {
       ${score}
     </div>
     ${sourceLinks}
+    ${card.domain === "Risks" && card.level === "L0" ? `<div style="margin-top:12px;padding:10px 14px;background:#f8f4ff;border-radius:8px;border:1px solid #d1b3ff">
+  <div style="font-size:11px;font-weight:700;color:#6a1b9a;margin-bottom:8px;letter-spacing:0.5px">📄 PAI Risk Taxonomy 문서</div>
+  <a href="pai_risk_taxonomy_bilingual_v7.html" target="_blank"
+     style="display:block;margin-bottom:6px;padding:6px 10px;background:white;border-radius:6px;border:1px solid #e0d4f5;color:#4527a0;font-size:12px;font-weight:600;text-decoration:none">
+    📋 PAI Risk Taxonomy v7 — 182개 L4 카드 + 3H1R 정렬
+  </a>
+  <a href="pai_3h1r_rationale_20260624.html" target="_blank"
+     style="display:block;padding:6px 10px;background:white;border-radius:6px;border:1px solid #e0d4f5;color:#4527a0;font-size:12px;font-weight:600;text-decoration:none">
+    🔍 3H1R 적용 판단근거 — 182개 카드 전체
+  </a>
+</div>` : ""}
     ${mergedNotice}
     ${evidence}
     ${evidenceV5}
