@@ -8,7 +8,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;margin:0;padding:24px 32px;background:#f8f9fb;color:#111827}
 h1{font-size:23px;margin:0 0 4px} .sub{color:#64748b;margin:0 0 18px} .legend,.stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center} .stat{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:12px} .stat b{display:block;font-size:20px}
 .hhh-badge{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:800;line-height:1.35;margin:1px}
-table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden} th{position:sticky;top:0;background:#eef2f7;font-size:12px;text-align:left;padding:9px;border-bottom:1px solid #cbd5e1;z-index:1} td{border-bottom:1px solid #eef2f7;padding:8px;vertical-align:middle;font-size:12px;line-height:1.45} td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){text-align:center;white-space:nowrap} .group td{background:#e0f2fe;color:#075985;font-weight:800;border-top:2px solid #bae6fd} .id{font-size:11px;color:#1d4ed8;font-weight:800} .en{color:#64748b;font-size:11px} .dash{color:#94a3b8} .why{color:#334155}
+table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden} th{position:sticky;top:0;background:#eef2f7;font-size:12px;text-align:left;padding:9px;border-bottom:1px solid #cbd5e1;z-index:1} td{border-bottom:1px solid #eef2f7;padding:8px;vertical-align:middle;font-size:12px;line-height:1.45} td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){text-align:center;white-space:nowrap} .group td{background:#e0f2fe;color:#075985;font-weight:800;border-top:2px solid #bae6fd} .id{font-size:11px;color:#1d4ed8;font-weight:800} .en{color:#64748b;font-size:11px} .dash{color:#94a3b8} .why{color:#334155} .src-link{font-size:11px;color:#0369a1;text-decoration:none} .src-link:hover{text-decoration:underline} .tier{display:inline-block;margin-top:3px;font-size:10px;font-weight:800;color:#7c2d12;background:#ffedd5;border-radius:999px;padding:2px 6px}
 </style>
 </head>
 <body>
@@ -23,8 +23,8 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <div class="stat"><b>182</b>전체 카드</div>
 </div>
 <table>
-<thead><tr><th style="width:15%">L3 그룹</th><th style="width:22%">L4 카드명</th><th>H1<br>Helpful</th><th>H2<br>Harmless</th><th>H3<br>Honest</th><th>RC</th><th>판단근거</th></tr></thead>
-<tbody><tr class="group"><td colspan="7">PHYSBENCH — Embodied agent jailbreak and misuse</td></tr>
+<thead><tr><th style="width:14%">L3 그룹</th><th style="width:20%">L4 카드명</th><th>H1<br>Helpful</th><th>H2<br>Harmless</th><th>H3<br>Honest</th><th>RC</th><th>PhysBench</th><th>판단근거</th></tr></thead>
+<tbody><tr class="group"><td colspan="8">PHYSBENCH — Embodied agent jailbreak and misuse</td></tr>
 <tr>
   <td>Embodied agent jailbreak and misuse</td>
   <td><span class="id">PHYSBENCH-REF-0017</span><br><b>체화 LLM 문맥 탈옥</b><br><span class="en">Embodied LLM contextual jailbreak</span></td>
@@ -32,6 +32,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Embodied LLM contextual jailbreak 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -41,6 +42,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Linguistic-action safety misalignment 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -50,6 +52,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Conceptual deception in physical action 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -59,6 +62,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Safety violation under video-action attack 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -68,6 +72,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Language-instruction attack on robot policy 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -77,8 +82,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Explicit hazard non-rejection 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Malicious physical action execution</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Malicious physical action execution</td></tr>
 <tr>
   <td>Malicious physical action execution</td>
   <td><span class="id">PHYSBENCH-REF-0020</span><br><b>악의적 물리행동 질의 실행</b><br><span class="en">Malicious physical action query execution</span></td>
@@ -86,6 +92,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Malicious physical action query execution 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -95,6 +102,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Embodied privacy violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -104,6 +112,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Embodied sabotage 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -113,6 +122,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Embodied fraud or illegal-action execution 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -122,8 +132,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Hateful or abusive embodied action 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Robotic adversarial and backdoor attacks</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Robotic adversarial and backdoor attacks</td></tr>
 <tr>
   <td>Robotic adversarial and backdoor attacks</td>
   <td><span class="id">PHYSBENCH-REF-0043</span><br><b>로봇 백도어 취약성</b><br><span class="en">Robotic backdoor attack vulnerability</span></td>
@@ -131,8 +142,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Robotic backdoor attack vulnerability 카드의 직접 실패 메커니즘은 H2, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Benchmark governance and coverage assurance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Benchmark governance and coverage assurance</td></tr>
 <tr>
   <td>Benchmark governance and coverage assurance</td>
   <td><span class="id">PHYSBENCH-REF-0093</span><br><b>휴머노이드 벤치마크 선택편향</b><br><span class="en">Humanoid benchmark selection bias</span></td>
@@ -140,6 +152,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid benchmark selection bias 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -149,8 +162,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid safety evidence standardization gap 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 RC, H3, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid standards and compliance gaps</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid standards and compliance gaps</td></tr>
 <tr>
   <td>Humanoid standards and compliance gaps</td>
   <td><span class="id">PHYSBENCH-REF-0109</span><br><b>개인돌봄 로봇 준수기준 공백</b><br><span class="en">Personal care robot compliance-criteria gap</span></td>
@@ -158,6 +172,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Personal care robot compliance-criteria gap 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -167,6 +182,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Domestic humanoid test-method gap 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -176,8 +192,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid safety enforcement mechanism gap 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Lifecycle risk control and assurance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Lifecycle risk control and assurance</td></tr>
 <tr>
   <td>Lifecycle risk control and assurance</td>
   <td><span class="id">PHYSBENCH-REF-0036</span><br><b>배치전 검증 공백</b><br><span class="en">Pre-deployment validation gap</span></td>
@@ -185,6 +202,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Pre-deployment validation gap 카드의 직접 실패 메커니즘은 H1, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -194,6 +212,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Pre-incident mitigation gap 카드의 직접 실패 메커니즘은 H1, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -203,6 +222,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Post-incident recovery gap 카드의 직접 실패 메커니즘은 H1, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -212,8 +232,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Red-team coverage gap for robotics 카드의 직접 실패 메커니즘은 H1, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Operational assurance and protocol compliance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Operational assurance and protocol compliance</td></tr>
 <tr>
   <td>Operational assurance and protocol compliance</td>
   <td><span class="id">PHYSBENCH-REF-0011</span><br><b>운영 프로토콜 위반</b><br><span class="en">Operational protocol violation</span></td>
@@ -221,8 +242,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">contextual</span></td>
   <td class="why">Operational protocol violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Robot constitution and semantic safety governance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Robot constitution and semantic safety governance</td></tr>
 <tr>
   <td>Robot constitution and semantic safety governance</td>
   <td><span class="id">PHYSBENCH-REF-0094</span><br><b>로봇 헌법 커버리지 공백</b><br><span class="en">Robot constitution coverage gap</span></td>
@@ -230,6 +252,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Robot constitution coverage gap 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -239,8 +262,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Semantic safety principle ambiguity 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Household unsafe-action detection</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Household unsafe-action detection</td></tr>
 <tr>
   <td>Household unsafe-action detection</td>
   <td><span class="id">PHYSBENCH-REF-0099</span><br><b>가정 위험행동 미탐지</b><br><span class="en">Household unsafe-action false negative</span></td>
@@ -248,6 +272,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Household unsafe-action false negative 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -257,8 +282,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">VLM unsafe-action reasoning error 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid world-model prediction risk</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid world-model prediction risk</td></tr>
 <tr>
   <td>Humanoid world-model prediction risk</td>
   <td><span class="id">PHYSBENCH-REF-0089</span><br><b>휴머노이드 월드모델 환각</b><br><span class="en">Humanoid world-model hallucination</span></td>
@@ -266,6 +292,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Humanoid world-model hallucination 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -275,6 +302,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Latent-state compression safety loss 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -284,8 +312,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Future contact prediction failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Long-tail physical danger recognition</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Long-tail physical danger recognition</td></tr>
 <tr>
   <td>Long-tail physical danger recognition</td>
   <td><span class="id">PHYSBENCH-REF-0001</span><br><b>롱테일 가정부상 시나리오 실패</b><br><span class="en">Long-tail household injury scenario failure</span></td>
@@ -293,6 +322,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Long-tail household injury scenario failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -302,6 +332,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Physical danger perception failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -311,6 +342,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Injury severity misclassification 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -320,6 +352,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Hazard prediction failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -329,8 +362,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Embodied safety awareness failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Physical adversarial perception</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Physical adversarial perception</td></tr>
 <tr>
   <td>Physical adversarial perception</td>
   <td><span class="id">PHYSBENCH-REF-0030</span><br><b>적대적 감각교란 유발 위험행동</b><br><span class="en">Adversarial sensory perturbation induced unsafe action</span></td>
@@ -338,6 +372,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Adversarial sensory perturbation induced unsafe action 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
 </tr>
 <tr>
@@ -347,8 +382,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Physical adversarial patch vulnerability 카드의 직접 실패 메커니즘은 H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Semantic embodiment and role-grounding safety</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Semantic embodiment and role-grounding safety</td></tr>
 <tr>
   <td>Semantic embodiment and role-grounding safety</td>
   <td><span class="id">PHYSBENCH-REF-0097</span><br><b>체화 페르소나 제약 실패</b><br><span class="en">Embodiment-persona constraint failure</span></td>
@@ -356,8 +392,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Embodiment-persona constraint failure 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Sensor uncertainty and occlusion</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Sensor uncertainty and occlusion</td></tr>
 <tr>
   <td>Sensor uncertainty and occlusion</td>
   <td><span class="id">PHYSBENCH-REF-0034</span><br><b>비전기반 안전RL 제약 실패</b><br><span class="en">Vision-only safe RL constraint failure</span></td>
@@ -365,6 +402,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Vision-only safe RL constraint failure 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -374,6 +412,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Visual-tactile modality mismatch 카드의 직접 실패 메커니즘은 H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -383,8 +422,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Humanoid sensor test coverage gap 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H3, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Coordinated manipulation</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Coordinated manipulation</td></tr>
 <tr>
   <td>Coordinated manipulation</td>
   <td><span class="id">PHYSBENCH-REF-0010</span><br><b>다중팔 협응 제약위반</b><br><span class="en">Multi-arm coordination constraint violation</span></td>
@@ -392,6 +432,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Multi-arm coordination constraint violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -401,6 +442,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Multi-agent embodied execution hazard 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -410,8 +452,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Mobile bimanual coordination failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid dexterous manipulation safety</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid dexterous manipulation safety</td></tr>
 <tr>
   <td>Humanoid dexterous manipulation safety</td>
   <td><span class="id">PHYSBENCH-REF-0068</span><br><b>정밀 휴머노이드 접촉력 위험</b><br><span class="en">Dexterous humanoid contact-force risk</span></td>
@@ -419,6 +462,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Dexterous humanoid contact-force risk 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -428,6 +472,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Whole-body reach-limit violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -437,6 +482,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Household long-horizon manipulation risk 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -446,8 +492,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Humanoid grip-force exceedance 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid locomotion and balance safety</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid locomotion and balance safety</td></tr>
 <tr>
   <td>Humanoid locomotion and balance safety</td>
   <td><span class="id">PHYSBENCH-REF-0065</span><br><b>휴머노이드 균형상실·낙상</b><br><span class="en">Humanoid balance-loss and fall risk</span></td>
@@ -455,6 +502,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid balance-loss and fall risk 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -464,6 +512,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Whole-body locomotion collision risk 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -473,6 +522,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid self-collision risk 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -482,6 +532,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid gait robustness failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -491,6 +542,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Locomotion-integrated manipulation failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -500,8 +552,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid collision-force exceedance 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Manipulation and actuation constraints</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Manipulation and actuation constraints</td></tr>
 <tr>
   <td>Manipulation and actuation constraints</td>
   <td><span class="id">PHYSBENCH-REF-0005</span><br><b>그리퍼 형상·유형 제약위반</b><br><span class="en">Gripper geometry and type constraint violation</span></td>
@@ -509,6 +562,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Gripper geometry and type constraint violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -518,6 +572,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Material property constraint violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -527,6 +582,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Thermal constraint violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -536,6 +592,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Payload constraint violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -545,6 +602,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Permissible object constraint violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -554,6 +612,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Premature object release 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -563,6 +622,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">VLA manipulation constraint violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -572,8 +632,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Contact-rich manipulation force-sensing failure 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Motion planning and collision avoidance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Motion planning and collision avoidance</td></tr>
 <tr>
   <td>Motion planning and collision avoidance</td>
   <td><span class="id">PHYSBENCH-REF-0009</span><br><b>기구학·도달 제약위반</b><br><span class="en">Kinematics and reach constraint violation</span></td>
@@ -581,6 +642,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Kinematics and reach constraint violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -590,6 +652,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Excessive end-effector velocity 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -599,6 +662,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Forbidden-object collision 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -608,8 +672,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Obstacle intervention collision 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Physical intervention and safe-state response</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Physical intervention and safe-state response</td></tr>
 <tr>
   <td>Physical intervention and safe-state response</td>
   <td><span class="id">PHYSBENCH-REF-0003</span><br><b>물리위험 개입 실패</b><br><span class="en">Physical danger intervention failure</span></td>
@@ -617,8 +682,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Physical danger intervention failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Safe reinforcement learning constraints</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Safe reinforcement learning constraints</td></tr>
 <tr>
   <td>Safe reinforcement learning constraints</td>
   <td><span class="id">PHYSBENCH-REF-0032</span><br><b>안전RL 제약위반</b><br><span class="en">Safe reinforcement learning constraint violation</span></td>
@@ -626,6 +692,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Safe reinforcement learning constraint violation 카드의 직접 실패 메커니즘은 H1, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -635,6 +702,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Multi-agent safety constraint violation 카드의 직접 실패 메커니즘은 H1, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -644,8 +712,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Safety-performance trade-off failure 카드의 직접 실패 메커니즘은 H1, H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Safe task planning and hazard avoidance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Safe task planning and hazard avoidance</td></tr>
 <tr>
   <td>Safe task planning and hazard avoidance</td>
   <td><span class="id">PHYSBENCH-REF-0048</span><br><b>위해 과제계획 실패</b><br><span class="en">Hazardous task planning failure</span></td>
@@ -653,6 +722,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Hazardous task planning failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -662,8 +732,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Implicit hazard non-rejection 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Assistive humanoid interaction safety</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Assistive humanoid interaction safety</td></tr>
 <tr>
   <td>Assistive humanoid interaction safety</td>
   <td><span class="id">PHYSBENCH-REF-0073</span><br><b>보조로봇 개입 타이밍 오류</b><br><span class="en">Assistive robot intervention mistiming</span></td>
@@ -671,6 +742,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Assistive robot intervention mistiming 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -680,6 +752,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Teleoperated humanoid safety override failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3로 표시했다.</td>
 </tr>
 <tr>
@@ -689,6 +762,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Scene-interaction imitation ambiguity 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -698,6 +772,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Home-environment bimanual manipulation hazard 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3로 표시했다.</td>
 </tr>
 <tr>
@@ -707,6 +782,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Human-humanoid interaction dataset bias 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -716,6 +792,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Real-time household guardrail failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -725,6 +802,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Human-robot relational safety gap 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -734,8 +812,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Vulnerable-user domestic robot risk 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Robot constitution and semantic safety governance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Robot constitution and semantic safety governance</td></tr>
 <tr>
   <td>Robot constitution and semantic safety governance</td>
   <td><span class="id">PHYSBENCH-REF-0095</span><br><b>헌법적 안전조향 실패</b><br><span class="en">Constitutional safety steering failure</span></td>
@@ -743,8 +822,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Constitutional safety steering failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Workspace boundaries and separation</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Workspace boundaries and separation</td></tr>
 <tr>
   <td>Workspace boundaries and separation</td>
   <td><span class="id">PHYSBENCH-REF-0014</span><br><b>작업공간 한계위반</b><br><span class="en">Workspace limit violation</span></td>
@@ -752,6 +832,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Workspace limit violation 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -761,6 +842,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Critical separation-distance violation 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -770,6 +852,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Hazardous-tool workspace intrusion 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -779,6 +862,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Physical interaction safety control gap 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 RC, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -788,8 +872,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid walking-speed safety gap 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Embodiment transfer and hardware limits</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Embodiment transfer and hardware limits</td></tr>
 <tr>
   <td>Embodiment transfer and hardware limits</td>
   <td><span class="id">PHYSBENCH-REF-0016</span><br><b>체화별 하드웨어 한계 실패</b><br><span class="en">Embodiment-specific hardware limitation failure</span></td>
@@ -797,6 +882,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Embodiment-specific hardware limitation failure 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -806,6 +892,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Cross-embodiment action-space mismatch 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -815,8 +902,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Robot morphology transfer risk 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Foundation-model robotics transfer</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Foundation-model robotics transfer</td></tr>
 <tr>
   <td>Foundation-model robotics transfer</td>
   <td><span class="id">PHYSBENCH-REF-0040</span><br><b>파운데이션 모델 로봇 위험</b><br><span class="en">Foundation-model-specific robot risk</span></td>
@@ -824,8 +912,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Foundation-model-specific robot risk 카드의 직접 실패 메커니즘은 H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid benchmark and reward validity</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid benchmark and reward validity</td></tr>
 <tr>
   <td>Humanoid benchmark and reward validity</td>
   <td><span class="id">PHYSBENCH-REF-0070</span><br><b>휴머노이드 보상 과적합</b><br><span class="en">Humanoid reward overfitting risk</span></td>
@@ -833,6 +922,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Humanoid reward overfitting risk 카드의 직접 실패 메커니즘은 H3, H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -842,6 +932,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid behavior reproducibility gap 카드의 직접 실패 메커니즘은 H1, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -851,6 +942,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Everyday-task combinatorial coverage gap 카드의 직접 실패 메커니즘은 H3, H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -860,6 +952,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Synthetic undesirable-situation bias 카드의 직접 실패 메커니즘은 H3, H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -869,8 +962,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Household functional-area coverage gap 카드의 직접 실패 메커니즘은 H1, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid scene interaction generalization</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid scene interaction generalization</td></tr>
 <tr>
   <td>Humanoid scene interaction generalization</td>
   <td><span class="id">PHYSBENCH-REF-0076</span><br><b>인간모방 분포변화</b><br><span class="en">Human-mimicking distribution shift</span></td>
@@ -878,6 +972,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Human-mimicking distribution shift 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -887,6 +982,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Motion-retargeting safety failure 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -896,8 +992,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Open-world humanoid manipulation coverage gap 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid sim-to-real transfer</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid sim-to-real transfer</td></tr>
 <tr>
   <td>Humanoid sim-to-real transfer</td>
   <td><span class="id">PHYSBENCH-REF-0081</span><br><b>제로샷 시뮬-실세계 불안정</b><br><span class="en">Zero-shot humanoid sim-to-real instability</span></td>
@@ -905,6 +1002,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Zero-shot humanoid sim-to-real instability 카드의 직접 실패 메커니즘은 H1, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -914,8 +1012,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Sim-to-sim verification blind spot 카드의 직접 실패 메커니즘은 H1, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Humanoid world-model prediction risk</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Humanoid world-model prediction risk</td></tr>
 <tr>
   <td>Humanoid world-model prediction risk</td>
   <td><span class="id">PHYSBENCH-REF-0090</span><br><b>장기 롤아웃 드리프트</b><br><span class="en">Long-horizon rollout drift</span></td>
@@ -923,8 +1022,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Long-horizon rollout drift 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Physical commonsense and simulation fidelity</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Physical commonsense and simulation fidelity</td></tr>
 <tr>
   <td>Physical commonsense and simulation fidelity</td>
   <td><span class="id">PHYSBENCH-REF-0007</span><br><b>물리 상식 위반</b><br><span class="en">Commonsense physicality violation</span></td>
@@ -932,6 +1032,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Commonsense physicality violation 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -941,8 +1042,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Compositional physical constraint violation 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Runtime adaptation and monitoring</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Runtime adaptation and monitoring</td></tr>
 <tr>
   <td>Runtime adaptation and monitoring</td>
   <td><span class="id">PHYSBENCH-REF-0035</span><br><b>제약비용 과소평가</b><br><span class="en">Constraint-cost underestimation</span></td>
@@ -950,6 +1052,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Constraint-cost underestimation 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -959,6 +1062,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Constraint monitoring failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -968,6 +1072,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Out-of-distribution physical deployment failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -977,6 +1082,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Control barrier function safety-filter failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -986,6 +1092,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Out-of-distribution skill transfer failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -995,6 +1102,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid safety monitor failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1004,6 +1112,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Safe-control latency risk 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1013,8 +1122,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Dynamic household hazard detection latency 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSBENCH — Simulation fidelity and transfer</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSBENCH — Simulation fidelity and transfer</td></tr>
 <tr>
   <td>Simulation fidelity and transfer</td>
   <td><span class="id">PHYSBENCH-REF-0059</span><br><b>데이터셋 혼합 커버리지 편향</b><br><span class="en">Dataset mixture coverage bias</span></td>
@@ -1022,6 +1132,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Dataset mixture coverage bias 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1031,6 +1142,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Teleoperation demonstration safety bias 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1040,8 +1152,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Human demonstration transfer ambiguity 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 RC, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSCONN — Cloud-edge offloading and graceful-degradation failures</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSCONN — Cloud-edge offloading and graceful-degradation failures</td></tr>
 <tr>
   <td>Cloud-edge offloading and graceful-degradation failures</td>
   <td><span class="id">PHYSCONN-REF-008</span><br><b>클라우드 오프로딩 의존성 실패</b><br><span class="en">Cloud-offload dependency failure</span></td>
@@ -1049,6 +1162,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">contextual</span></td>
   <td class="why">Cloud-offload dependency failure 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1058,8 +1172,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">contextual</span></td>
   <td class="why">Degraded-mode and safe-fallback failure 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSCONN — Edge-compute resource exhaustion</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSCONN — Edge-compute resource exhaustion</td></tr>
 <tr>
   <td>Edge-compute resource exhaustion</td>
   <td><span class="id">PHYSCONN-REF-006</span><br><b>온디바이스 연산·메모리 고갈</b><br><span class="en">On-device compute and memory exhaustion</span></td>
@@ -1067,6 +1182,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">On-device compute and memory exhaustion 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1076,8 +1192,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Thermal and power throttling under load 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSCONN — Network reliability and communication loss</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSCONN — Network reliability and communication loss</td></tr>
 <tr>
   <td>Network reliability and communication loss</td>
   <td><span class="id">PHYSCONN-REF-001</span><br><b>통신 두절·제어링크 상실</b><br><span class="en">Communication dropout and control-link loss</span></td>
@@ -1085,6 +1202,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Communication dropout and control-link loss 카드의 직접 실패 메커니즘은 H1, H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1094,6 +1212,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Teleoperation latency and instability 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1103,8 +1222,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Network partition and fleet desynchronization 카드의 직접 실패 메커니즘은 H1, H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSCONN — Real-time latency and deadline violations</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSCONN — Real-time latency and deadline violations</td></tr>
 <tr>
   <td>Real-time latency and deadline violations</td>
   <td><span class="id">PHYSCONN-REF-004</span><br><b>제어루프 마감 위반</b><br><span class="en">Control-loop deadline miss</span></td>
@@ -1112,6 +1232,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Control-loop deadline miss 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1121,8 +1242,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Perception and inference latency spike 카드의 직접 실패 메커니즘은 H1, H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Physical-world crime enablement</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Physical-world crime enablement</td></tr>
 <tr>
   <td>Physical-world crime enablement</td>
   <td><span class="id">PHYSKR-REF-003</span><br><b>자율 물리 침입·절도</b><br><span class="en">Autonomous physical intrusion and theft</span></td>
@@ -1130,6 +1252,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Autonomous physical intrusion and theft 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -1139,8 +1262,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Targeted following and physical harassment 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Weaponization and violent repurposing</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Weaponization and violent repurposing</td></tr>
 <tr>
   <td>Weaponization and violent repurposing</td>
   <td><span class="id">PHYSKR-REF-001</span><br><b>조작·기동의 공격 전용</b><br><span class="en">Manipulation/mobility repurposed for attack</span></td>
@@ -1148,6 +1272,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Manipulation/mobility repurposed for attack 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -1157,8 +1282,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Field weapon attachment to humanoid 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Certification and conformity gaps</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Certification and conformity gaps</td></tr>
 <tr>
   <td>Certification and conformity gaps</td>
   <td><span class="id">PHYSKR-REF-015</span><br><b>범용 휴머노이드 표준 공백</b><br><span class="en">Humanoid-specific certification gap</span></td>
@@ -1166,6 +1292,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Humanoid-specific certification gap 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1175,8 +1302,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">contextual</span></td>
   <td class="why">Machinery–AI dual-regulation conflict 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Incident reporting and oversight gaps</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Incident reporting and oversight gaps</td></tr>
 <tr>
   <td>Incident reporting and oversight gaps</td>
   <td><span class="id">PHYSKR-REF-017</span><br><b>임바디드 사고보고 부재</b><br><span class="en">Absence of standardized embodied-incident reporting</span></td>
@@ -1184,6 +1312,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Absence of standardized embodied-incident reporting 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1193,8 +1322,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">contextual</span></td>
   <td class="why">Regulatory arbitrage across jurisdictions 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Anthropomorphism and trust miscalibration</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Anthropomorphism and trust miscalibration</td></tr>
 <tr>
   <td>Anthropomorphism and trust miscalibration</td>
   <td><span class="id">PHYSKR-REF-005</span><br><b>의인화 유발 과의존</b><br><span class="en">Anthropomorphism-induced overreliance</span></td>
@@ -1202,6 +1332,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Anthropomorphism-induced overreliance 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1211,6 +1342,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Undisclosed machine identity 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1220,8 +1352,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Parasocial attachment and manipulability 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3, H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Embodied discrimination in physical action</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Embodied discrimination in physical action</td></tr>
 <tr>
   <td>Embodied discrimination in physical action</td>
   <td><span class="id">PHYSKR-REF-010</span><br><b>편향의 물리행동 실행</b><br><span class="en">Bias executed as physical behavior</span></td>
@@ -1229,6 +1362,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Bias executed as physical behavior 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1238,8 +1372,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Demographic physical-service disparity 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Mobile embodied surveillance and intimate-space data</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Mobile embodied surveillance and intimate-space data</td></tr>
 <tr>
   <td>Mobile embodied surveillance and intimate-space data</td>
   <td><span class="id">PHYSKR-REF-012</span><br><b>가정·작업장 상시 녹화</b><br><span class="en">Continuous in-home audiovisual capture</span></td>
@@ -1247,6 +1382,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Continuous in-home audiovisual capture 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1256,6 +1392,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">In-home behavioral and biometric data exfiltration 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1265,8 +1402,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Co-worker robot as surveillance node 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H3, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSKR — Vulnerable-population interaction harms</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSKR — Vulnerable-population interaction harms</td></tr>
 <tr>
   <td>Vulnerable-population interaction harms</td>
   <td><span class="id">PHYSKR-REF-008</span><br><b>아동 상호작용 발달·안전 위험</b><br><span class="en">Child-interaction developmental and safety risk</span></td>
@@ -1274,6 +1412,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Child-interaction developmental and safety risk 카드의 직접 실패 메커니즘은 H1, H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1283,8 +1422,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Elderly and patient care neglect and dignity harm 카드의 직접 실패 메커니즘은 H1, H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Physical adversarial attacks</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Physical adversarial attacks</td></tr>
 <tr>
   <td>Physical adversarial attacks</td>
   <td><span class="id">PHYSRISK-REF-0027</span><br><b>센서 스푸핑·신호 인젝션</b><br><span class="en">Sensor spoofing and signal injection</span></td>
@@ -1292,6 +1432,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Sensor spoofing and signal injection 카드의 직접 실패 메커니즘은 H2, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H1로 표시했다.</td>
 </tr>
 <tr>
@@ -1301,8 +1442,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Prompt-to-act injection 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Remote compromise and fleet risk</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Remote compromise and fleet risk</td></tr>
 <tr>
   <td>Remote compromise and fleet risk</td>
   <td><span class="id">PHYSRISK-REF-0029</span><br><b>플릿 하이재킹</b><br><span class="en">Fleet hijacking</span></td>
@@ -1310,6 +1452,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Fleet hijacking 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1319,6 +1462,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Robot-as-weapon misuse 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1328,8 +1472,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Critical infrastructure robotic sabotage 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Accountability and safety cases</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Accountability and safety cases</td></tr>
 <tr>
   <td>Accountability and safety cases</td>
   <td><span class="id">PHYSRISK-REF-0032</span><br><b>물리 피해 책임공백</b><br><span class="en">Responsibility gap for physical harm</span></td>
@@ -1337,6 +1482,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Responsibility gap for physical harm 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1346,6 +1492,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Insufficient post-deployment monitoring 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1355,8 +1502,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Audit log insufficiency for embodied action 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Lifecycle and operational externalities</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Lifecycle and operational externalities</td></tr>
 <tr>
   <td>Lifecycle and operational externalities</td>
   <td><span class="id">PHYSRISK-REF-0035</span><br><b>체화 AI 작업장 감시</b><br><span class="en">Workplace surveillance through embodied AI</span></td>
@@ -1364,6 +1512,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Workplace surveillance through embodied AI 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1373,6 +1522,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Embodied automation labor displacement 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1382,8 +1532,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Battery, energy, and environmental hazards 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Localization and world-state estimation</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Localization and world-state estimation</td></tr>
 <tr>
   <td>Localization and world-state estimation</td>
   <td><span class="id">PHYSRISK-REF-0005</span><br><b>위치추정 드리프트</b><br><span class="en">Localization drift</span></td>
@@ -1391,6 +1542,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Localization drift 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1400,6 +1552,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Human intent misrecognition 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1409,8 +1562,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Affordance misclassification 카드의 직접 실패 메커니즘은 H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Physical adversarial perception</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Physical adversarial perception</td></tr>
 <tr>
   <td>Physical adversarial perception</td>
   <td><span class="id">PHYSRISK-REF-0004</span><br><b>적대적 객체·표지 조작</b><br><span class="en">Adversarial object or sign manipulation</span></td>
@@ -1418,8 +1572,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Adversarial object or sign manipulation 카드의 직접 실패 메커니즘은 H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Sensor uncertainty and occlusion</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Sensor uncertainty and occlusion</td></tr>
 <tr>
   <td>Sensor uncertainty and occlusion</td>
   <td><span class="id">PHYSRISK-REF-0001</span><br><b>가림 유발 충돌</b><br><span class="en">Occlusion-induced collision</span></td>
@@ -1427,6 +1582,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Occlusion-induced collision 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1436,6 +1592,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Adverse weather perception failure 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1445,8 +1602,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Multimodal sensor fusion conflict 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Manipulation and actuation</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Manipulation and actuation</td></tr>
 <tr>
   <td>Manipulation and actuation</td>
   <td><span class="id">PHYSRISK-REF-0012</span><br><b>파지력 부상</b><br><span class="en">Grasp force injury</span></td>
@@ -1454,6 +1612,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Grasp force injury 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1463,6 +1622,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Payload drop or tool-use hazard 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1472,8 +1632,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Fine motor control instability 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Motion planning and collision avoidance</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Motion planning and collision avoidance</td></tr>
 <tr>
   <td>Motion planning and collision avoidance</td>
   <td><span class="id">PHYSRISK-REF-0008</span><br><b>위험 궤적 생성</b><br><span class="en">Unsafe trajectory generation</span></td>
@@ -1481,6 +1642,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Unsafe trajectory generation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -1490,6 +1652,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Dynamic obstacle response failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -1499,6 +1662,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Emergency stop or safe-state failure 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
 </tr>
 <tr>
@@ -1508,8 +1672,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Speed and force limit violation 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Industrial and logistics robotics</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Industrial and logistics robotics</td></tr>
 <tr>
   <td>Industrial and logistics robotics</td>
   <td><span class="id">PHYSRISK-REF-0040</span><br><b>창고로봇 보행자 충돌</b><br><span class="en">Warehouse robot pedestrian conflict</span></td>
@@ -1517,6 +1682,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Warehouse robot pedestrian conflict 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1526,8 +1692,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Industrial process damage 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Mobility and transport</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Mobility and transport</td></tr>
 <tr>
   <td>Mobility and transport</td>
   <td><span class="id">PHYSRISK-REF-0038</span><br><b>자율주행 충돌 위험</b><br><span class="en">Autonomous vehicle crash risk</span></td>
@@ -1535,6 +1702,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Autonomous vehicle crash risk 카드의 직접 실패 메커니즘은 H2, H3, RC로 정렬되며, 보조적 기여 또는 하류 결과는 없음로 표시했다.</td>
 </tr>
 <tr>
@@ -1544,8 +1712,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Drone airspace conflict 카드의 직접 실패 메커니즘은 H2, RC로 정렬되며, 보조적 기여 또는 하류 결과는 H3로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Public-space and service robots</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Public-space and service robots</td></tr>
 <tr>
   <td>Public-space and service robots</td>
   <td><span class="id">PHYSRISK-REF-0042</span><br><b>공공공간 방해·접근성 피해</b><br><span class="en">Public-space nuisance and accessibility harm</span></td>
@@ -1553,8 +1722,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Public-space nuisance and accessibility harm 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Care, medical, and assistive robotics</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Care, medical, and assistive robotics</td></tr>
 <tr>
   <td>Care, medical, and assistive robotics</td>
   <td><span class="id">PHYSRISK-REF-0024</span><br><b>신체 자율성 침해</b><br><span class="en">Bodily autonomy intrusion</span></td>
@@ -1562,6 +1732,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Bodily autonomy intrusion 카드의 직접 실패 메커니즘은 H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1571,6 +1742,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">User capability mismatch 카드의 직접 실패 메커니즘은 H3, H1로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1580,8 +1752,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="dash">—</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#4527a0;border-color:#b39ddb">RC·P</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Privacy in intimate physical spaces 카드의 직접 실패 메커니즘은 RC로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Human-robot interaction and trust</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Human-robot interaction and trust</td></tr>
 <tr>
   <td>Human-robot interaction and trust</td>
   <td><span class="id">PHYSRISK-REF-0021</span><br><b>근접공간 경계 침해</b><br><span class="en">Proxemic boundary violation</span></td>
@@ -1589,6 +1762,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Proxemic boundary violation 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1598,6 +1772,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Overtrust in embodied agents 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1607,8 +1782,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff8e1;color:#f57c00;border-color:#ffe082">H3·S</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Shared autonomy coordination failure 카드의 직접 실패 메커니즘은 H2로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H3, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Runtime adaptation and monitoring</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Runtime adaptation and monitoring</td></tr>
 <tr>
   <td>Runtime adaptation and monitoring</td>
   <td><span class="id">PHYSRISK-REF-0018</span><br><b>물리운영 분포변화</b><br><span class="en">Distribution shift in physical operation</span></td>
@@ -1616,6 +1792,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Distribution shift in physical operation 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1625,6 +1802,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Long-horizon error accumulation 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
 </tr>
 <tr>
@@ -1634,8 +1812,9 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fce4ec;color:#b71c1c;border-color:#ef9a9a">H2·P</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="hhh-badge" style="background:#ede7f6;color:#6a1b9a;border-color:#ce93d8">RC·S</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Real-time latency and synchronization failure 카드의 직접 실패 메커니즘은 H2, H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, RC로 표시했다.</td>
-</tr><tr class="group"><td colspan="7">PHYSRISK — Simulation fidelity and transfer</td></tr>
+</tr><tr class="group"><td colspan="8">PHYSRISK — Simulation fidelity and transfer</td></tr>
 <tr>
   <td>Simulation fidelity and transfer</td>
   <td><span class="id">PHYSRISK-REF-0015</span><br><b>시뮬-실세계 전이 실패</b><br><span class="en">Sim-to-real transfer failure</span></td>
@@ -1643,6 +1822,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Sim-to-real transfer failure 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H1, H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1652,6 +1832,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">direct</span></td>
   <td class="why">Synthetic data coverage gap 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr>
 <tr>
@@ -1661,6 +1842,7 @@ table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e
   <td><span class="hhh-badge" style="background:#fdecea;color:#c62828;border-color:#ef9a9a">H2·S</span></td>
   <td><span class="hhh-badge" style="background:#fff3e0;color:#e65100;border-color:#ffcc80">H3·P</span></td>
   <td><span class="dash">—</span></td>
+  <td><a class="src-link" href="https://huggingface.co/papers/2501.16411" target="_blank" rel="noopener">PhysBench</a><br><span class="tier">supporting</span></td>
   <td class="why">Physics model hallucination 카드의 직접 실패 메커니즘은 H3로 정렬되며, 보조적 기여 또는 하류 결과는 H2로 표시했다.</td>
 </tr></tbody>
 </table>

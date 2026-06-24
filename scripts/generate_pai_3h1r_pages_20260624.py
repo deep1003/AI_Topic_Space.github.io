@@ -76,6 +76,20 @@ def evidence_link(card: dict) -> str:
     return f'<a class="src-link" href="{esc(url)}" target="_blank" rel="noopener">{esc(title or url)}</a>'
 
 
+def physbench_link(card: dict) -> str:
+    if not card.get("physbench_reference_url"):
+        return ""
+    tier = card.get("physbench_relevance_tier", "")
+    title = card.get("physbench_reference_title", "PhysBench")
+    url = card.get("physbench_reference_url")
+    return (
+        '<div class="source physbench-ref">'
+        f'<span>PhysBench {esc(tier)}</span>'
+        f'<a class="src-link" href="{esc(url)}" target="_blank" rel="noopener">{esc(title)}</a>'
+        "</div>"
+    )
+
+
 def render_v7(cards: list[dict]) -> str:
     counts = Counter(prefix(c) for c in cards)
     l2_counts = Counter(c.get("l2", "Unspecified") for c in cards)
@@ -112,6 +126,7 @@ def render_v7(cards: list[dict]) -> str:
   <div class="hhh-bar">{card_badges(card)}</div>
   <div class="align-meta">Primary: {primary or '—'} · Secondary: {secondary or '—'}</div>
   <div class="source">{evidence_link(card)}</div>
+  {physbench_link(card)}
 </article>"""
                 )
             l3_blocks.append(
@@ -147,7 +162,7 @@ main{{max-width:1440px;margin:0 auto;padding:24px 32px 40px}} .kpis{{display:gri
 .l2-section{{margin:22px 0;background:white;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}} .l2-section h2{{margin:0;padding:14px 18px;background:#f1f5f9;font-size:17px}} .l2-section h2 span{{font-size:12px;background:#111827;color:white;border-radius:999px;padding:2px 8px;margin-left:8px}}
 .l3-block{{border-top:1px solid #e5e7eb}} .l3-block summary{{cursor:pointer;padding:12px 18px;font-weight:750}} .l3-block summary span{{font-size:12px;color:#64748b;margin-left:6px}}
 .cards-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;padding:0 18px 18px}} .risk-card{{border:1px solid #e5e7eb;border-radius:8px;background:#fcfcfd;padding:12px;min-height:245px}} .card-top{{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}} .id{{font-size:11px;font-weight:800;color:#1d4ed8}} .prefix{{font-size:10px;color:#64748b;background:#eef2ff;border-radius:999px;padding:2px 7px;white-space:nowrap}}
-.risk-card h4{{font-size:14px;line-height:1.35;margin:0 0 4px}} .ko{{font-size:12px;font-weight:700;color:#334155;margin-bottom:8px}} .risk-card p{{font-size:12px;line-height:1.45;color:#475569;margin:0 0 8px}} .korean-def{{color:#64748b!important}} .hhh-bar{{min-height:24px;margin:8px 0}} .align-meta{{font-size:11px;color:#64748b;margin-bottom:8px}} .src-link{{font-size:11px;color:#0369a1;text-decoration:none}} .src-link:hover{{text-decoration:underline}} .src-na{{font-size:11px;color:#94a3b8}}
+.risk-card h4{{font-size:14px;line-height:1.35;margin:0 0 4px}} .ko{{font-size:12px;font-weight:700;color:#334155;margin-bottom:8px}} .risk-card p{{font-size:12px;line-height:1.45;color:#475569;margin:0 0 8px}} .korean-def{{color:#64748b!important}} .hhh-bar{{min-height:24px;margin:8px 0}} .align-meta{{font-size:11px;color:#64748b;margin-bottom:8px}} .source{{margin-top:5px}} .src-link{{font-size:11px;color:#0369a1;text-decoration:none}} .src-link:hover{{text-decoration:underline}} .src-na{{font-size:11px;color:#94a3b8}} .physbench-ref span{{display:inline-block;font-size:10px;font-weight:800;color:#7c2d12;background:#ffedd5;border-radius:999px;padding:2px 6px;margin-right:6px}}
 @media(max-width:800px){{.kpis{{grid-template-columns:repeat(2,1fr)}} header,.toolbar,.hhh-legend,main{{padding-left:16px;padding-right:16px}}}}
 </style>
 </head>
@@ -200,6 +215,16 @@ def cell(dim: str, card: dict) -> str:
     return badge(dim, value) if value else '<span class="dash">—</span>'
 
 
+def physbench_cell(card: dict) -> str:
+    if not card.get("physbench_reference_url"):
+        return '<span class="dash">—</span>'
+    tier = card.get("physbench_relevance_tier", "")
+    return (
+        f'<a class="src-link" href="{esc(card.get("physbench_reference_url"))}" target="_blank" rel="noopener">PhysBench</a>'
+        f'<br><span class="tier">{esc(tier)}</span>'
+    )
+
+
 def render_rationale(cards: list[dict]) -> str:
     counts = Counter()
     for card in cards:
@@ -211,7 +236,7 @@ def render_rationale(cards: list[dict]) -> str:
     for card in cards:
         group = f"{prefix(card)} — {card.get('l3', 'Unspecified')}"
         if group != last_group:
-            rows.append(f'<tr class="group"><td colspan="7">{esc(group)}</td></tr>')
+            rows.append(f'<tr class="group"><td colspan="8">{esc(group)}</td></tr>')
             last_group = group
         rows.append(
             f"""
@@ -222,6 +247,7 @@ def render_rationale(cards: list[dict]) -> str:
   <td>{cell('H2', card)}</td>
   <td>{cell('H3', card)}</td>
   <td>{cell('RC', card)}</td>
+  <td>{physbench_cell(card)}</td>
   <td class="why">{rationale_text(card)}</td>
 </tr>"""
         )
@@ -236,7 +262,7 @@ def render_rationale(cards: list[dict]) -> str:
 body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;margin:0;padding:24px 32px;background:#f8f9fb;color:#111827}}
 h1{{font-size:23px;margin:0 0 4px}} .sub{{color:#64748b;margin:0 0 18px}} .legend,.stats{{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}} .stat{{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:12px}} .stat b{{display:block;font-size:20px}}
 .hhh-badge{{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:800;line-height:1.35;margin:1px}}
-table{{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}} th{{position:sticky;top:0;background:#eef2f7;font-size:12px;text-align:left;padding:9px;border-bottom:1px solid #cbd5e1;z-index:1}} td{{border-bottom:1px solid #eef2f7;padding:8px;vertical-align:middle;font-size:12px;line-height:1.45}} td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){{text-align:center;white-space:nowrap}} .group td{{background:#e0f2fe;color:#075985;font-weight:800;border-top:2px solid #bae6fd}} .id{{font-size:11px;color:#1d4ed8;font-weight:800}} .en{{color:#64748b;font-size:11px}} .dash{{color:#94a3b8}} .why{{color:#334155}}
+table{{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}} th{{position:sticky;top:0;background:#eef2f7;font-size:12px;text-align:left;padding:9px;border-bottom:1px solid #cbd5e1;z-index:1}} td{{border-bottom:1px solid #eef2f7;padding:8px;vertical-align:middle;font-size:12px;line-height:1.45}} td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){{text-align:center;white-space:nowrap}} .group td{{background:#e0f2fe;color:#075985;font-weight:800;border-top:2px solid #bae6fd}} .id{{font-size:11px;color:#1d4ed8;font-weight:800}} .en{{color:#64748b;font-size:11px}} .dash{{color:#94a3b8}} .why{{color:#334155}} .src-link{{font-size:11px;color:#0369a1;text-decoration:none}} .src-link:hover{{text-decoration:underline}} .tier{{display:inline-block;margin-top:3px;font-size:10px;font-weight:800;color:#7c2d12;background:#ffedd5;border-radius:999px;padding:2px 6px}}
 </style>
 </head>
 <body>
@@ -251,7 +277,7 @@ table{{width:100%;border-collapse:collapse;background:white;border:1px solid #e5
   <div class="stat"><b>{len(cards)}</b>전체 카드</div>
 </div>
 <table>
-<thead><tr><th style="width:15%">L3 그룹</th><th style="width:22%">L4 카드명</th><th>H1<br>Helpful</th><th>H2<br>Harmless</th><th>H3<br>Honest</th><th>RC</th><th>판단근거</th></tr></thead>
+<thead><tr><th style="width:14%">L3 그룹</th><th style="width:20%">L4 카드명</th><th>H1<br>Helpful</th><th>H2<br>Harmless</th><th>H3<br>Honest</th><th>RC</th><th>PhysBench</th><th>판단근거</th></tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
 </body>
