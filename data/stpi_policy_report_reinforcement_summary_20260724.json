@@ -1,0 +1,1365 @@
+{
+  "generated_at": "2026-07-25",
+  "scope": "Asymmetric AI policy report corpus, 1990-2026, 2026 partial year",
+  "filter_mode": "asymmetric_policy_v2",
+  "filter_rule": {
+    "korea": "explicit AI cue and policy L3 top1 similarity >= 0.524",
+    "foreign": "explicit AI cue or AI-policy cue or policy L3 top1 similarity >= 0.40",
+    "l3_mapping": "candidate L3 similarity >= 0.43 and top1 gap <= 0.10"
+  },
+  "integrated_candidate_layer": {
+    "country_document_rows": 2905,
+    "base_documents": 2898,
+    "verified_local_rows": 1314,
+    "candidate_rows_requiring_review": 1591
+  },
+  "countries": [
+    {
+      "country": "미국",
+      "records": 1300,
+      "first_year": 1992,
+      "last_year": 2026,
+      "verified": 988,
+      "candidates": 312
+    },
+    {
+      "country": "일본",
+      "records": 224,
+      "first_year": 2003,
+      "last_year": 2026,
+      "verified": 135,
+      "candidates": 89
+    },
+    {
+      "country": "중국",
+      "records": 207,
+      "first_year": 1993,
+      "last_year": 2026,
+      "verified": 69,
+      "candidates": 138
+    },
+    {
+      "country": "캐나다",
+      "records": 182,
+      "first_year": 2000,
+      "last_year": 2026,
+      "verified": 116,
+      "candidates": 66
+    },
+    {
+      "country": "국제기구",
+      "records": 94,
+      "first_year": 2016,
+      "last_year": 2026,
+      "verified": 0,
+      "candidates": 94
+    },
+    {
+      "country": "EU",
+      "records": 77,
+      "first_year": 1991,
+      "last_year": 2026,
+      "verified": 1,
+      "candidates": 76
+    },
+    {
+      "country": "United Kingdom",
+      "records": 59,
+      "first_year": 2000,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 59
+    },
+    {
+      "country": "대만",
+      "records": 42,
+      "first_year": 2016,
+      "last_year": 2026,
+      "verified": 5,
+      "candidates": 37
+    },
+    {
+      "country": "Australia",
+      "records": 40,
+      "first_year": 1991,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 40
+    },
+    {
+      "country": "Germany",
+      "records": 37,
+      "first_year": 2015,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 37
+    },
+    {
+      "country": "Türkiye",
+      "records": 36,
+      "first_year": 2011,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 36
+    },
+    {
+      "country": "France",
+      "records": 33,
+      "first_year": 2010,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 33
+    },
+    {
+      "country": "Colombia",
+      "records": 29,
+      "first_year": 2013,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 29
+    },
+    {
+      "country": "Spain",
+      "records": 28,
+      "first_year": 1994,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 28
+    },
+    {
+      "country": "India",
+      "records": 27,
+      "first_year": 2015,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 27
+    },
+    {
+      "country": "Singapore",
+      "records": 25,
+      "first_year": 2017,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 25
+    },
+    {
+      "country": "Serbia",
+      "records": 21,
+      "first_year": 2011,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 21
+    },
+    {
+      "country": "Norway",
+      "records": 20,
+      "first_year": 1990,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 20
+    },
+    {
+      "country": "Portugal",
+      "records": 18,
+      "first_year": 2016,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 18
+    },
+    {
+      "country": "한국",
+      "records": 18,
+      "first_year": 2016,
+      "last_year": 2025,
+      "verified": 0,
+      "candidates": 18
+    },
+    {
+      "country": "Israel",
+      "records": 17,
+      "first_year": 2018,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 17
+    },
+    {
+      "country": "Belgium",
+      "records": 16,
+      "first_year": 2010,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 16
+    },
+    {
+      "country": "Estonia",
+      "records": 16,
+      "first_year": 2018,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 16
+    },
+    {
+      "country": "Malta",
+      "records": 16,
+      "first_year": 2014,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 16
+    },
+    {
+      "country": "Slovenia",
+      "records": 15,
+      "first_year": 1992,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 15
+    },
+    {
+      "country": "Hungary",
+      "records": 14,
+      "first_year": 2015,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 14
+    },
+    {
+      "country": "Italy",
+      "records": 13,
+      "first_year": 2018,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 13
+    },
+    {
+      "country": "Mexico",
+      "records": 13,
+      "first_year": 2018,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 13
+    },
+    {
+      "country": "Peru",
+      "records": 13,
+      "first_year": 2013,
+      "last_year": 2024,
+      "verified": 0,
+      "candidates": 13
+    },
+    {
+      "country": "Sweden",
+      "records": 13,
+      "first_year": 2016,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 13
+    },
+    {
+      "country": "Brazil",
+      "records": 12,
+      "first_year": 2018,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 12
+    },
+    {
+      "country": "Denmark",
+      "records": 12,
+      "first_year": 2014,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 12
+    },
+    {
+      "country": "Finland",
+      "records": 12,
+      "first_year": 2017,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 12
+    },
+    {
+      "country": "Netherlands",
+      "records": 12,
+      "first_year": 2016,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 12
+    },
+    {
+      "country": "Argentina",
+      "records": 11,
+      "first_year": 2001,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 11
+    },
+    {
+      "country": "New Zealand",
+      "records": 11,
+      "first_year": 2013,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 11
+    },
+    {
+      "country": "Russian Federation",
+      "records": 11,
+      "first_year": 2015,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 11
+    },
+    {
+      "country": "Chile",
+      "records": 10,
+      "first_year": 2018,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 10
+    },
+    {
+      "country": "Austria",
+      "records": 9,
+      "first_year": 1999,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 9
+    },
+    {
+      "country": "Czechia",
+      "records": 8,
+      "first_year": 2011,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 8
+    },
+    {
+      "country": "Egypt",
+      "records": 8,
+      "first_year": 2019,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 8
+    },
+    {
+      "country": "Ireland",
+      "records": 8,
+      "first_year": 2005,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 8
+    },
+    {
+      "country": "United Arab Emirates",
+      "records": 8,
+      "first_year": 2016,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 8
+    },
+    {
+      "country": "Tunisia",
+      "records": 7,
+      "first_year": 2004,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 7
+    },
+    {
+      "country": "Costa Rica",
+      "records": 6,
+      "first_year": 2018,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 6
+    },
+    {
+      "country": "Kazakhstan",
+      "records": 6,
+      "first_year": 2016,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 6
+    },
+    {
+      "country": "Luxembourg",
+      "records": 6,
+      "first_year": 2014,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 6
+    },
+    {
+      "country": "Saudi Arabia",
+      "records": 6,
+      "first_year": 2019,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 6
+    },
+    {
+      "country": "Thailand",
+      "records": 6,
+      "first_year": 2017,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 6
+    },
+    {
+      "country": "Kenya",
+      "records": 5,
+      "first_year": 2013,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 5
+    },
+    {
+      "country": "Switzerland",
+      "records": 5,
+      "first_year": 2016,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 5
+    },
+    {
+      "country": "Viet Nam",
+      "records": 5,
+      "first_year": 2017,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 5
+    },
+    {
+      "country": "Greece",
+      "records": 4,
+      "first_year": 2002,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Iceland",
+      "records": 4,
+      "first_year": 2018,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Latvia",
+      "records": 4,
+      "first_year": 2019,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Lithuania",
+      "records": 4,
+      "first_year": 2017,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Poland",
+      "records": 4,
+      "first_year": 2012,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Romania",
+      "records": 4,
+      "first_year": 2019,
+      "last_year": 2023,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Rwanda",
+      "records": 4,
+      "first_year": 2021,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "South Africa",
+      "records": 4,
+      "first_year": 2016,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Uruguay",
+      "records": 4,
+      "first_year": 2018,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 4
+    },
+    {
+      "country": "Armenia",
+      "records": 2,
+      "first_year": 2002,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Bulgaria",
+      "records": 2,
+      "first_year": 2020,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Cyprus",
+      "records": 2,
+      "first_year": 2014,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Mauritius",
+      "records": 2,
+      "first_year": 2018,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Morocco",
+      "records": 2,
+      "first_year": 2019,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Nigeria",
+      "records": 2,
+      "first_year": 2020,
+      "last_year": 2022,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Slovak Republic",
+      "records": 2,
+      "first_year": 2005,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Uganda",
+      "records": 2,
+      "first_year": 2019,
+      "last_year": 2019,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Uzbekistan",
+      "records": 2,
+      "first_year": 2021,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 2
+    },
+    {
+      "country": "Belgium - Brussels Capital",
+      "records": 1,
+      "first_year": 2006,
+      "last_year": 2006,
+      "verified": 0,
+      "candidates": 1
+    },
+    {
+      "country": "Croatia",
+      "records": 1,
+      "first_year": 2020,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 1
+    },
+    {
+      "country": "Indonesia",
+      "records": 1,
+      "first_year": 2020,
+      "last_year": 2020,
+      "verified": 0,
+      "candidates": 1
+    },
+    {
+      "country": "Ukraine",
+      "records": 1,
+      "first_year": 2021,
+      "last_year": 2021,
+      "verified": 0,
+      "candidates": 1
+    }
+  ],
+  "source_status": [
+    {
+      "country": "Argentina",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 11
+    },
+    {
+      "country": "Armenia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Australia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 40
+    },
+    {
+      "country": "Austria",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 9
+    },
+    {
+      "country": "Belgium",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 16
+    },
+    {
+      "country": "Belgium - Brussels Capital",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 1
+    },
+    {
+      "country": "Brazil",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 12
+    },
+    {
+      "country": "Bulgaria",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Chile",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 10
+    },
+    {
+      "country": "Colombia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 29
+    },
+    {
+      "country": "Costa Rica",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "Croatia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 1
+    },
+    {
+      "country": "Cyprus",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Czechia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 8
+    },
+    {
+      "country": "Denmark",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 12
+    },
+    {
+      "country": "EU",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 11
+    },
+    {
+      "country": "EU",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 65
+    },
+    {
+      "country": "EU",
+      "source_status": "verified_local_corpus",
+      "records": 1
+    },
+    {
+      "country": "Egypt",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 8
+    },
+    {
+      "country": "Estonia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 16
+    },
+    {
+      "country": "Finland",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 12
+    },
+    {
+      "country": "France",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 33
+    },
+    {
+      "country": "Germany",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 37
+    },
+    {
+      "country": "Greece",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Hungary",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 14
+    },
+    {
+      "country": "Iceland",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "India",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 27
+    },
+    {
+      "country": "Indonesia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 1
+    },
+    {
+      "country": "Ireland",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 8
+    },
+    {
+      "country": "Israel",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 17
+    },
+    {
+      "country": "Italy",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 13
+    },
+    {
+      "country": "Kazakhstan",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "Kenya",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 5
+    },
+    {
+      "country": "Latvia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Lithuania",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Luxembourg",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "Malta",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 16
+    },
+    {
+      "country": "Mauritius",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Mexico",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 13
+    },
+    {
+      "country": "Morocco",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Netherlands",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 12
+    },
+    {
+      "country": "New Zealand",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 11
+    },
+    {
+      "country": "Nigeria",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Norway",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 20
+    },
+    {
+      "country": "Peru",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 13
+    },
+    {
+      "country": "Poland",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Portugal",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 18
+    },
+    {
+      "country": "Romania",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Russian Federation",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 11
+    },
+    {
+      "country": "Rwanda",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Saudi Arabia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "Serbia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 21
+    },
+    {
+      "country": "Singapore",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 25
+    },
+    {
+      "country": "Slovak Republic",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Slovenia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 15
+    },
+    {
+      "country": "South Africa",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Spain",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 28
+    },
+    {
+      "country": "Sweden",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 13
+    },
+    {
+      "country": "Switzerland",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 5
+    },
+    {
+      "country": "Thailand",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "Tunisia",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 7
+    },
+    {
+      "country": "Türkiye",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 36
+    },
+    {
+      "country": "Uganda",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Ukraine",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 1
+    },
+    {
+      "country": "United Arab Emirates",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 8
+    },
+    {
+      "country": "United Kingdom",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 59
+    },
+    {
+      "country": "Uruguay",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "Uzbekistan",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 2
+    },
+    {
+      "country": "Viet Nam",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 5
+    },
+    {
+      "country": "국제기구",
+      "source_status": "candidate_needs_source_check",
+      "records": 1
+    },
+    {
+      "country": "국제기구",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 19
+    },
+    {
+      "country": "국제기구",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 74
+    },
+    {
+      "country": "대만",
+      "source_status": "candidate_needs_source_check",
+      "records": 28
+    },
+    {
+      "country": "대만",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 4
+    },
+    {
+      "country": "대만",
+      "source_status": "official_url_access_restricted_needs_browser_review",
+      "records": 1
+    },
+    {
+      "country": "대만",
+      "source_status": "official_url_candidate_needs_review",
+      "records": 4
+    },
+    {
+      "country": "대만",
+      "source_status": "verified_local_corpus",
+      "records": 5
+    },
+    {
+      "country": "미국",
+      "source_status": "candidate_needs_source_check",
+      "records": 71
+    },
+    {
+      "country": "미국",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 36
+    },
+    {
+      "country": "미국",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 199
+    },
+    {
+      "country": "미국",
+      "source_status": "official_url_candidate_needs_review",
+      "records": 6
+    },
+    {
+      "country": "미국",
+      "source_status": "verified_local_corpus",
+      "records": 988
+    },
+    {
+      "country": "일본",
+      "source_status": "candidate_needs_source_check",
+      "records": 51
+    },
+    {
+      "country": "일본",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 10
+    },
+    {
+      "country": "일본",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 24
+    },
+    {
+      "country": "일본",
+      "source_status": "official_url_access_restricted_needs_browser_review",
+      "records": 1
+    },
+    {
+      "country": "일본",
+      "source_status": "official_url_candidate_needs_review",
+      "records": 3
+    },
+    {
+      "country": "일본",
+      "source_status": "verified_local_corpus",
+      "records": 135
+    },
+    {
+      "country": "중국",
+      "source_status": "candidate_needs_source_check",
+      "records": 63
+    },
+    {
+      "country": "중국",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 45
+    },
+    {
+      "country": "중국",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 26
+    },
+    {
+      "country": "중국",
+      "source_status": "official_url_candidate_needs_review",
+      "records": 4
+    },
+    {
+      "country": "중국",
+      "source_status": "verified_local_corpus",
+      "records": 69
+    },
+    {
+      "country": "캐나다",
+      "source_status": "candidate_needs_source_check",
+      "records": 41
+    },
+    {
+      "country": "캐나다",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 7
+    },
+    {
+      "country": "캐나다",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 16
+    },
+    {
+      "country": "캐나다",
+      "source_status": "official_url_candidate_needs_review",
+      "records": 2
+    },
+    {
+      "country": "캐나다",
+      "source_status": "verified_local_corpus",
+      "records": 116
+    },
+    {
+      "country": "한국",
+      "source_status": "claude_v2_candidate_needs_source_review",
+      "records": 6
+    },
+    {
+      "country": "한국",
+      "source_status": "external_database_candidate_needs_source_review",
+      "records": 12
+    }
+  ],
+  "asymmetric_corpus": {
+    "filter": "asymmetric: KR explicit AI and top1 similarity >=0.524; GLOBAL explicit AI or AI policy cue or top1 similarity >=0.40; L3 activation mapping similarity >=0.43 and top1 gap <=0.10",
+    "selected_by_group": {
+      "GLOBAL": 8211,
+      "KR": 2829
+    },
+    "mapped_docs_by_group": {
+      "GLOBAL": 7794,
+      "KR": 2829
+    },
+    "selected_2022_2026_by_group": {
+      "GLOBAL": 3260,
+      "KR": 1542
+    },
+    "mapped_2022_2026_by_group": {
+      "GLOBAL": 3163,
+      "KR": 1542
+    },
+    "n_ref_policy_l3": 475
+  },
+  "recent_2022_2026_metrics": [
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "국가 전체",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 1995,
+      "n_topics": 353,
+      "variety": 0.7431578947368421,
+      "balance": 0.9874457004135548,
+      "disparity": 0.3472560754181597,
+      "rao_stirling": 0.3088182488385647,
+      "div": 0.2548262548858818
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "국가+국제기구 전체",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 2055,
+      "n_topics": 353,
+      "variety": 0.7431578947368421,
+      "balance": 0.9874085263534944,
+      "disparity": 0.3472560754181597,
+      "rao_stirling": 0.3081877425194815,
+      "div": 0.254816661521406
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "국제기구",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 60,
+      "n_topics": 93,
+      "variety": 0.1957894736842105,
+      "balance": 0.9758661979930306,
+      "disparity": 0.2997854463738668,
+      "rao_stirling": 0.2760507456404822,
+      "div": 0.0572783052427059
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "미국",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 162,
+      "n_topics": 137,
+      "variety": 0.2884210526315789,
+      "balance": 0.979851834871736,
+      "disparity": 0.3103727469658227,
+      "rao_stirling": 0.2794692755567717,
+      "div": 0.0877144102492295
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "유럽",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 97,
+      "n_topics": 128,
+      "variety": 0.2694736842105263,
+      "balance": 0.9764193110195124,
+      "disparity": 0.3264762287827458,
+      "rao_stirling": 0.2975430839588864,
+      "div": 0.0859021997466401
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "전체(KR+해외)",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 4705,
+      "n_topics": 455,
+      "variety": 0.9578947368421052,
+      "balance": 0.991025738281383,
+      "disparity": 0.3485470726574622,
+      "rao_stirling": 0.3275113417657264,
+      "div": 0.3308751570585478
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "중국",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 67,
+      "n_topics": 108,
+      "variety": 0.2273684210526315,
+      "balance": 0.9809406484959052,
+      "disparity": 0.3161117422947961,
+      "rao_stirling": 0.2889945452693444,
+      "div": 0.0705039591752703
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "한국",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 1542,
+      "n_topics": 334,
+      "variety": 0.7031578947368421,
+      "balance": 0.9874160299878678,
+      "disparity": 0.3465404254966886,
+      "rao_stirling": 0.3128773947316821,
+      "div": 0.2406062668888387
+    },
+    {
+      "time_unit": "period_5y",
+      "compare_unit": "해외 전체",
+      "year": "",
+      "period_5y": "2022-2026",
+      "n_docs": 3163,
+      "n_topics": 445,
+      "variety": 0.936842105263158,
+      "balance": 0.9915410640321948,
+      "disparity": 0.3478472705534902,
+      "rao_stirling": 0.3327163725050029,
+      "div": 0.3231213883801254
+    }
+  ],
+  "recent_2022_2026_gap_summary": [
+    {
+      "comparison": "국가 전체 vs 한국",
+      "baseline_n_docs": 1995,
+      "target_n_docs": 1542,
+      "baseline_active_l3": 353,
+      "target_active_l3": 334,
+      "absolute_gap_l3": 19,
+      "strong_relative_gap_l3": 23,
+      "moderate_relative_gap_l3": 9,
+      "relative_gap_l3_total": 32,
+      "sum_positive_gap_share_pp": 8.96023633389659,
+      "top10_gap_share_pp": 4.108833265192859
+    },
+    {
+      "comparison": "국가 전체 vs 미국",
+      "baseline_n_docs": 1995,
+      "target_n_docs": 162,
+      "baseline_active_l3": 353,
+      "target_active_l3": 137,
+      "absolute_gap_l3": 216,
+      "strong_relative_gap_l3": 223,
+      "moderate_relative_gap_l3": 15,
+      "relative_gap_l3_total": 238,
+      "sum_positive_gap_share_pp": 39.58262425558255,
+      "top10_gap_share_pp": 11.46897318436147
+    },
+    {
+      "comparison": "국가 전체 vs 중국",
+      "baseline_n_docs": 1995,
+      "target_n_docs": 67,
+      "baseline_active_l3": 353,
+      "target_active_l3": 108,
+      "absolute_gap_l3": 245,
+      "strong_relative_gap_l3": 247,
+      "moderate_relative_gap_l3": 9,
+      "relative_gap_l3_total": 256,
+      "sum_positive_gap_share_pp": 45.113211878700795,
+      "top10_gap_share_pp": 12.788905950152095
+    },
+    {
+      "comparison": "국가 전체 vs 유럽",
+      "baseline_n_docs": 1995,
+      "target_n_docs": 97,
+      "baseline_active_l3": 353,
+      "target_active_l3": 128,
+      "absolute_gap_l3": 225,
+      "strong_relative_gap_l3": 229,
+      "moderate_relative_gap_l3": 8,
+      "relative_gap_l3_total": 237,
+      "sum_positive_gap_share_pp": 40.54514658522426,
+      "top10_gap_share_pp": 9.223525429188944
+    },
+    {
+      "comparison": "국가+국제기구 전체 vs 한국",
+      "baseline_n_docs": 2055,
+      "target_n_docs": 1542,
+      "baseline_active_l3": 353,
+      "target_active_l3": 334,
+      "absolute_gap_l3": 19,
+      "strong_relative_gap_l3": 23,
+      "moderate_relative_gap_l3": 11,
+      "relative_gap_l3_total": 34,
+      "sum_positive_gap_share_pp": 10.030875066118004,
+      "top10_gap_share_pp": 4.532649814809295
+    },
+    {
+      "comparison": "전체(KR+해외) vs 한국",
+      "baseline_n_docs": 4705,
+      "target_n_docs": 1542,
+      "baseline_active_l3": 455,
+      "target_active_l3": 334,
+      "absolute_gap_l3": 121,
+      "strong_relative_gap_l3": 154,
+      "moderate_relative_gap_l3": 40,
+      "relative_gap_l3_total": 194,
+      "sum_positive_gap_share_pp": 22.471788980361534,
+      "top10_gap_share_pp": 5.4580488683564585
+    }
+  ],
+  "outputs": {
+    "manifest": "/Users/deep1003/data3/kim_jongrip_ai_stpi_full_datasets_share_20260630/09_stpi_presentation/dispersion_analysis_20260712/policy_v2_metrics_20260724/policy_v2_asymmetric_analysis_manifest_20260725.json",
+    "diversity_metrics": "/Users/deep1003/data3/kim_jongrip_ai_stpi_full_datasets_share_20260630/09_stpi_presentation/dispersion_analysis_20260712/policy_v2_metrics_20260724/policy_v2_asymmetric_diversity_metrics_annual_5year_20260725.csv",
+    "gap_summary": "/Users/deep1003/data3/kim_jongrip_ai_stpi_full_datasets_share_20260630/09_stpi_presentation/dispersion_analysis_20260712/policy_v2_metrics_20260724/policy_v2_asymmetric_policy_gap_summary_2022_2026_20260725.csv",
+    "gap_top10": "/Users/deep1003/data3/kim_jongrip_ai_stpi_full_datasets_share_20260630/09_stpi_presentation/dispersion_analysis_20260712/policy_v2_metrics_20260724/policy_v2_asymmetric_policy_gap_top10_2022_2026_20260725.csv"
+  },
+  "policy_gap_shortfall_2022_2026": {
+    "comparison": "combined KR+foreign observed policy space vs Korea",
+    "period": "2022-2026",
+    "partial_2026": true,
+    "observed_policy_space_l3": 455,
+    "korea_active_l3": 334,
+    "absolute_gap_l3": 121,
+    "absolute_gap_pct": 26.6,
+    "positive_shortfall_l3": 297,
+    "strong_underrepresentation_l3": 33,
+    "moderate_underrepresentation_l3": 40,
+    "shortfall_sum_pp": 22.47,
+    "top10_shortfall_sum_pp": 5.46,
+    "ranking_rule": "sort by shortfall_pp descending",
+    "formula": "shortfall_pp = 100 * max(0, p_REF - p_KR); r = p_KR / p_REF is supplementary intensity indicator",
+    "top10_topics": [
+      "Tech Diplomacy",
+      "Digital inclusion",
+      "Inclusive innovation",
+      "Economic Disruption",
+      "workforce transition",
+      "Cybernetic Governance",
+      "Harm Reduction Models",
+      "Environmental sustainability",
+      "Social Justice in AI",
+      "Structural Inequality"
+    ]
+  }
+}

@@ -39,15 +39,16 @@
 <header>
   <a class="back" href="../index.html">&larr; Back to the interactive AI Topic Space / AI Risks Space</a>
   <h1>Project Data, Coverage &amp; Risk-Card Quality Overview</h1>
-  <p>Descriptive statistics for the AI knowledge-ecosystem project: a single semantic space (the Science&ndash;Technology&ndash;Policy Interface, STPI) over Korean and international AI <b>academic papers</b>, <b>patents</b>, and <b>policy / institutional documents</b> (1990&ndash;2026), plus a global <b>AI-risk</b> overlay. Here the <b>Science</b> domain is read broadly as <i>all AI-related research</i> and therefore <b>includes the AI-risk research literature</b>; the <b>Policy</b> domain likewise <b>includes AI-risk governance standards</b> (NIST AI RMF, OECD, ISO, OWASP, MITRE, NHTSA). Document accounting: <b>Total literature = Science + Patents + Policy + Risk materials</b>, where <b>Risk materials</b> = risk research papers + reports + simple sources (plus risk-related policy reports). Risk records that are academic papers and not already present in Science are deduplicated and folded into Science (26,760 added, so Science = 34,664 + 26,760 = 61,424); 3,491 risk-related policy reports are reassigned from Policy to Risk materials. The 1990&ndash;2026 STPI reference space itself is built from the 111,384 paper+patent+policy documents, with the AI-risk literature projected onto it as an overlay. The AI-risk charts, evidence-status counts, risk-card quality audit, and seminal-reference list are computed from the published data.</p>
+  <p>Descriptive statistics for the integrated AI document space (1990&ndash;2026), synchronized to <code>/Users/deep1003/data3/integrated_ai_document_space_20260704</code>. The current display master contains <b>AI</b> 3,906,767 records (papers 1,749,159; policy reports 125,372; patents 2,032,236), <b>AI Infra</b> 741,428 records (219,002; 341; 522,085), <b>Physical AI</b> 383,149 records (31,386; 1,654; 350,109), and <b>Physical AI Risks</b> 82,971 records (50,375; 938; 31,658). Counts are deduplicated within each document type and category; overlap across categories is intentionally retained.</p>
+  <p>Policy report reinforcement note, 2026-07-25: the policy corpus now uses an asymmetric screening rule. Korean policy reports are conservatively retained only when explicit AI cues are present and the policy L3 top-1 similarity is at least 0.524. Foreign policy reports are expanded more aggressively, retaining records with explicit AI cues, AI-policy cues, or policy L3 top-1 similarity of at least 0.40. This yields 2,829 Korean policy records and 8,211 foreign policy records, with L3 mappings for 2,829 Korean and 7,794 foreign records. For 2022-2026, the mapped analysis corpus contains 1,542 Korean records and 3,163 foreign records. The resulting recent-period L3 DIV is 0.241 for Korea, 0.323 for the foreign policy corpus, and 0.331 for the combined KR+foreign policy corpus. The 2026 records are partial-year observations, and newly harvested foreign records remain marked as a candidate reinforcement layer pending full source review.</p>
 </header>
 <div class="wrap">
   <div class="kpis" id="kpis"></div>
 
   <div class="grid">
     <div class="card">
-      <h2>Corpus composition by domain</h2>
-      <p class="sub">Documents by domain; Science shown inclusive of the AI-risk research literature (light segment)</p>
+      <h2>Integrated corpus composition</h2>
+      <p class="sub">Papers, policy reports, and patents by integrated dataset group</p>
       <div class="cv"><canvas id="cDomain"></canvas></div>
     </div>
     <div class="card">
@@ -58,7 +59,7 @@
 
     <div class="card wide">
       <h2>Policy documents by period <span style="color:var(--muted);font-weight:400;font-size:12px">(v5 collection)</span></h2>
-      <p class="sub">Domestic (Korean) vs. international policy documents across eight 5-year periods — temporal growth of the policy collection (8,993 total; 3,491 risk-related reports reassigned to Risk materials, 5,502 remain as general policy)</p>
+      <p class="sub">Policy/report records in the integrated document space; headline totals are synchronized to the 2026-07-04 master counts</p>
       <div class="cv"><canvas id="cPeriod"></canvas></div>
     </div>
 
@@ -91,8 +92,8 @@
     </div>
 
     <div class="card">
-      <h2>AI-risk literature screened, by risk domain</h2>
-      <p class="sub">Broad records retrieved for the risk overlay (26,943 risk records: 26,936 academic papers + 7 reports/sources; risk materials incl. risk-related policy = 30,434)</p>
+      <h2>Physical AI Risks by document type</h2>
+      <p class="sub">Integrated Physical AI risk records: 50,375 papers, 938 policy reports, and 31,658 patents (82,971 total)</p>
       <div class="cv"><canvas id="cLitDom"></canvas></div>
     </div>
     <div class="card">
@@ -108,12 +109,12 @@
   </div>
 
   <h2 style="margin:38px 0 2px;font-size:22px;font-weight:900;letter-spacing:-.4px">Physical AI risk data</h2>
-  <p class="sub" style="margin:0 0 16px;color:var(--muted);font-size:14px">Literature, sources, and institutions behind the Physical AI risk taxonomy (182 L4 risk cards organised along the perception &rarr; decision &rarr; action pipeline; PHYSRISK×42, PHYSBENCH×113, PHYSCONN×9, PHYSKR×18). All 182 cards have been annotated with the 3H1R alignment framework (Helpful&middot;Harmless&middot;Honest&middot;Role Consistency, Primary/Secondary distinction) as of 2026-06-24. PhysBench is attached conservatively to 20 directly related physical-world-understanding L4 cards. Paper-corpus charts are computed from the relevance-screened Physical AI literature (5,168 records, after removing 54 off-topic records from an initial 5,222 by BGE-M3 semantic-similarity screening); framework and evidence charts are computed live from the published risk cards.</p>
+  <p class="sub" style="margin:0 0 16px;color:var(--muted);font-size:14px">Literature, sources, and institutions behind the Physical AI risk taxonomy. The synchronized integrated corpus contains 383,149 Physical AI records (31,386 papers, 1,654 policy reports, 350,109 patents) and 82,971 Physical AI risk records (50,375 papers, 938 policy reports, 31,658 patents). The taxonomy release keeps 182 L4 risk cards, 24 human-defined L3 categories, and card-level evidence/reference mappings.</p>
   <div class="kpis" id="physKpis"></div>
   <div class="grid">
     <div class="card wide">
       <h2>Physical AI research collected, by year and type</h2>
-      <p class="sub">5,168 relevance-screened OpenAlex records for the Physical AI overlay (1994&ndash;2026), segmented by work type</p>
+      <p class="sub">Integrated Physical AI document space by source family; detailed yearly slices remain in the local manifest</p>
       <div class="cv"><canvas id="pPapersYear"></canvas></div>
     </div>
     <div class="card">
@@ -144,7 +145,7 @@
   </div>
 </div>
 <footer>
-  <p><b>Sources.</b> Documents projected into the STPI space (m2 L3-activation manifest): papers 34,664; patents 67,727; policy 8,993 (total 111,384). The policy corpus was later expanded to 12,002 (v5 core) / 14,660 (v5 collection by period, charted above). Reference hierarchy: <code>l0_l1_l2_l3_hierarchy_counts.csv</code>, consolidated to 1,898 L3 cards after canonicalization, L2 rebalancing, and near-duplicate merging (L2 clusters: 80). AI-risk literature counts: risk-overlay descriptive statistics (26,937 broad / 17,685 affiliation-ready records). AI-risk node charts are computed at load time from <code>data/global_ai_risk_l4_overlay_nodes.json</code>, consolidated to 1,699 L4 risk cards after duplicate-card merging. Korean policy evidence has been attached to 518 L4 risk cards by matching 949 domestic AI-risk policy candidates to risk-card definitions with BGE-M3 cosine similarity (threshold 0.56); the match table is stored in <code>data/korean_policy_ai_risk_l4_matches.csv</code>. The risk-card quality audit is stored in <code>data/risk_card_quality_audit_summary.json</code>; it separates cards already backed by direct evidence from cards still queued for source-link refinement or evidence-status review. The Science domain is presented inclusive of AI-risk research (26,937 papers) and Policy inclusive of AI-risk governance standards. Seminal top-venue references are stored in <code>data/key_papers.json</code> — 39 papers ranked by relevance / importance / originality and linked to 125 L4 nodes. The duplicate-card audit is stored in <code>data/taxonomy_card_deduplication_audit.csv</code>. <b>Reference-taxonomy refinement (2026-06):</b> L3 labels are canonicalized (Title-case, acronym-preserving) with cross-domain concepts linked by shared canonical IDs; the degenerate single-child L1 level was removed (now Domain&rarr;L2&rarr;L3); each L3 is tagged by node type (method, task, concept, principle, instrument, risk, field); oversized L2 clusters were rebalanced (max cluster 90&rarr;46); and 2,749 nodes were mapped to authoritative sources (ISO/IEC 22989, NIST AI RMF, EU AI Act, MIT AI Risk Repository, OECD, and standard texts) where defined.</p>
+  <p><b>Sources.</b> Display counts are synchronized to <code>/Users/deep1003/data3/integrated_ai_document_space_20260704</code>: AI 3,906,767; AI Infra 741,428; Physical AI 383,149; Physical AI Risks 82,971. By document type, the integrated Physical AI risk subset contains 50,375 papers, 938 policy reports, and 31,658 patents. The canonical machine-readable counts are stored in <code>data/integrated_counts_canonical_20260704.json</code>; the full manifest is stored in <code>integrated_document_space_manifest.json</code>.</p>
 </footer>
 <script>
 const C={policy:"#c95662",science:"#2f6fad",tech:"#25864b",risk:"#7a3b84"};
@@ -160,41 +161,40 @@ function bar(id,labels,data,colors,opts={}){
               y:{grid:{display:opts.horizontal?false:true,color:"#eee"},ticks:{font:{size:11}}}},...(opts.o||{})}});
 }
 
-// ---- static project figures (recomputed 2026-06-14 per unified document accounting) ----
-// Accounting: Total literature = Science papers + Patents + Policy + Risk materials.
-//  - Risk materials = risk research papers + reports + simple sources (+ risk-related policy reports).
-//  - Risk records that are academic papers and NOT already in Science (deduplicated by DOI/title)
-//    are folded INTO Science (Science = all AI research). 26,760 such papers were added.
-//  - Risk-related policy reports (broad keyword match, 3,491) are moved from Policy into Risk materials.
-const sciencePapersBase=34664;          // original AI research papers
-const newAcademicRisk=26760;            // risk academic papers newly folded into Science (dedup)
-const science=sciencePapersBase+newAcademicRisk;   // 61,424
-const patents=67727;
-const policyTotal=8993, policyRisk=3491, policy=policyTotal-policyRisk;  // 5,502 remaining
-const riskRecords=26943, riskNonAcademic=7;        // risk papers + 7 reports/simple sources
-const riskMaterials=riskRecords+policyRisk;         // 30,434 (papers + reports + risk policy)
-const newUniqueRisk=newAcademicRisk+riskNonAcademic; // 26,767 new unique documents from the risk set
-const totalCorpus=sciencePapersBase+patents+policyTotal+newUniqueRisk; // 138,151 unique union
-const refSpaceDocs=sciencePapersBase+patents+policyTotal;              // 111,384 STPI reference-space corpus
-const riskQuality={
-  total_l4_cards:1699,
-  cards_with_issues:190,
-  issue_counts:{definition_under_3_sentences:0,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},
-  curated_patched_node_ids:["AGENTBENCH-REF-0009"]
+// ---- canonical integrated project figures (synchronized 2026-07-04) ----
+const integratedCounts={
+  ai:{papers:1749159,policy_reports:125372,patents:2032236,total:3906767},
+  aiInfra:{papers:219002,policy_reports:341,patents:522085,total:741428},
+  physicalAi:{papers:31386,policy_reports:1654,patents:350109,total:383149},
+  physicalAiRisks:{papers:50375,policy_reports:938,patents:31658,total:82971}
 };
+const science=integratedCounts.ai.papers;
+const patents=integratedCounts.ai.patents;
+const policy=integratedCounts.ai.policy_reports;
+const riskMaterials=integratedCounts.physicalAiRisks.total;
+const totalCorpus=integratedCounts.ai.total;
+const refSpaceDocs=integratedCounts.physicalAi.total;
+const riskQuality={total_l4_cards:1699,cards_with_issues:190,issue_counts:{definition_under_3_sentences:0,generic_evidence_url:35,generic_evidence_title:28,ambiguous_verified_status:157},curated_patched_node_ids:["AGENTBENCH-REF-0009"]};
 document.getElementById("kpis").innerHTML=[
-  ["Total documents (unique)",fmt(totalCorpus)],["Science (AI research, incl. risk papers)",fmt(science)],
-  ["Patents (Technology)",fmt(patents)],["Policy / institutional (excl. risk)",fmt(policy)],
-  ["Risk materials (papers, reports, policy)",fmt(riskMaterials)],["AI-risk L4 cards",fmt(riskQuality.total_l4_cards)],
-  ["Risk cards in review queue",fmt(riskQuality.cards_with_issues)],["Seminal top-venue refs","39"],
-  ["STPI reference-space docs",fmt(refSpaceDocs)],["Reference L3 nodes",fmt(1898)],["Period","1990–2026"]
+  ["AI total",fmt(integratedCounts.ai.total)],
+  ["AI Infra total",fmt(integratedCounts.aiInfra.total)],
+  ["Physical AI total",fmt(integratedCounts.physicalAi.total)],
+  ["Physical AI Risks total",fmt(integratedCounts.physicalAiRisks.total)],
+  ["AI papers",fmt(integratedCounts.ai.papers)],
+  ["AI policy reports",fmt(integratedCounts.ai.policy_reports)],
+  ["AI patents",fmt(integratedCounts.ai.patents)],
+  ["Risk papers",fmt(integratedCounts.physicalAiRisks.papers)],
+  ["Risk policy reports",fmt(integratedCounts.physicalAiRisks.policy_reports)],
+  ["Risk patents",fmt(integratedCounts.physicalAiRisks.patents)],
+  ["Period","1990–2026"]
 ].map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 
 new Chart(document.getElementById("cDomain"),{type:'bar',
-  data:{labels:["Science (AI research)","Technology (patents)","Policy / institutional"],
+  data:{labels:["AI","AI Infra","Physical AI","Physical AI Risks"],
     datasets:[
-      {label:"Core corpus",data:[sciencePapersBase,patents,policy],backgroundColor:[C.science,C.tech,C.policy],borderRadius:4},
-      {label:"AI-risk papers folded into Science",data:[newAcademicRisk,0,0],backgroundColor:"#9ec3e6",borderRadius:4}]},
+      {label:"Papers",data:[integratedCounts.ai.papers,integratedCounts.aiInfra.papers,integratedCounts.physicalAi.papers,integratedCounts.physicalAiRisks.papers],backgroundColor:C.science,borderRadius:4},
+      {label:"Policy reports",data:[integratedCounts.ai.policy_reports,integratedCounts.aiInfra.policy_reports,integratedCounts.physicalAi.policy_reports,integratedCounts.physicalAiRisks.policy_reports],backgroundColor:C.policy,borderRadius:4},
+      {label:"Patents",data:[integratedCounts.ai.patents,integratedCounts.aiInfra.patents,integratedCounts.physicalAi.patents,integratedCounts.physicalAiRisks.patents],backgroundColor:C.tech,borderRadius:4}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+fmt(c.parsed.y)}}},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
 
@@ -213,8 +213,7 @@ new Chart(document.getElementById("cPeriod"),{type:'bar',
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:"#eee"}}}}});
 
-bar("cLitDom",["Fairness","Agentic / multi-agent","Physical AI","Value alignment","Hate speech"],
-    [7972,7891,6583,2854,2482],PALETTE);
+bar("cLitDom",["Papers","Policy reports","Patents"],[integratedCounts.physicalAiRisks.papers,integratedCounts.physicalAiRisks.policy_reports,integratedCounts.physicalAiRisks.patents],[C.science,C.policy,C.tech]);
 bar("cCountry",["United States","China","India"],[5663,2372,1690],[C.science,C.policy,C.tech],{horizontal:true});
 
 bar("cRiskQuality",
@@ -223,8 +222,8 @@ bar("cRiskQuality",
   ["#b0556f","#d98e2b","#d98e2b","#8a8f98"],
   {horizontal:true});
 
-// ---- Physical AI paper-corpus charts (snapshot of 5,222-record screen) ----
-const physKpi=[["Physical AI papers (screened)","5,168"],["Off-topic records removed","54"],["Curated benchmark / standard sources","23"],["L4 risk cards","182"],["L3 / L2 / stages","55 / 8 / 7"],["Korea-affiliated papers","173"],["3H1R aligned cards","182 / 182"]];
+// ---- Physical AI integrated-corpus charts ----
+const physKpi=[["Physical AI total",fmt(integratedCounts.physicalAi.total)],["Physical AI papers",fmt(integratedCounts.physicalAi.papers)],["Physical AI policy reports",fmt(integratedCounts.physicalAi.policy_reports)],["Physical AI patents",fmt(integratedCounts.physicalAi.patents)],["Physical AI Risks total",fmt(integratedCounts.physicalAiRisks.total)],["L4 risk cards","182"],["Human-defined L3","24"]];
 document.getElementById("physKpis").innerHTML=physKpi.map(([l,v])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 const pYears=["≤2017","2018","2019","2020","2021","2022","2023","2024","2025","2026"];
 new Chart(document.getElementById("pPapersYear"),{type:'bar',
@@ -298,5 +297,6 @@ fetch("../data/key_papers.json").then(r=>r.json()).then(kp=>{
   bar("cSeminal",e.map(x=>x[0]),e.map(x=>x[1]),PALETTE.concat(PALETTE),{horizontal:true});
 }).catch(()=>{});
 </script>
+<script id="policy_gap_shortfall_2022_2026" type="application/json">{"observed_policy_space_l3":455,"absolute_gap_l3":121,"absolute_gap_pct":26.6,"positive_shortfall_l3":297,"shortfall_sum_pp":22.47,"ranking_rule":"shortfall_pp_desc"}</script>
 </body>
 </html>

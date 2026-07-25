@@ -2,6 +2,8 @@
 
 Updated: 2026-06-05
 
+Policy report reinforcement note, 2026-07-25: the policy corpus now uses an asymmetric screening rule. Korean policy reports are conservatively retained only when explicit AI cues are present and the policy L3 top-1 similarity is at least 0.524. Foreign policy reports are expanded more aggressively, retaining records with explicit AI cues, AI-policy cues, or policy L3 top-1 similarity of at least 0.40. This yields 2,829 Korean policy records and 8,211 foreign policy records, with L3 mappings for 2,829 Korean and 7,794 foreign records. For 2022-2026, the mapped analysis corpus contains 1,542 Korean records and 3,163 foreign records. The resulting recent-period L3 DIV is 0.241 for Korea, 0.323 for the foreign policy corpus, and 0.331 for the combined KR+foreign policy corpus. For the 2022-2026 policy-gap analysis, the observed L3 policy space contains 455 topics. Korea has 121 absolute gaps (26.6%) and 297 positive shortfall topics, defined as topics where the Korean normalized activation share is lower than the combined KR+foreign reference share. The summed shortfall is 22.47 percentage points, and the top shortfall topics are Tech Diplomacy, Digital inclusion, Inclusive innovation, Economic Disruption, and workforce transition. The 2026 records are partial-year observations, and newly harvested foreign records remain marked as a candidate reinforcement layer pending full source review.
+
 ## Purpose
 
 This module records the current AI Topic Space visualization and reporting layer used in the manuscript and Appendix A. The purpose is to make the hierarchy, activation logic, policy-gap definition, HTML artifact, static snapshots, and LaTeX integration auditable from one local folder.
