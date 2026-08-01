@@ -46,6 +46,32 @@
     font-size: 18px;
     line-height: 1.35;
   }
+  header { position: relative; }
+  .dict-link {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    transition: background .15s, border-color .15s, transform .15s;
+  }
+  .dict-link:hover { background: #f4f3ef; border-color: #c9c8c2; transform: translateY(-1px); }
+  .dict-link .dict-icon { font-size: 14px; }
+  .dict-link .dict-sub { font-weight: 400; font-size: 11.5px; opacity: .62; }
+  @media (max-width: 900px) {
+    .dict-link { position: static; margin-top: 14px; }
+  }
   .top-actions {
     display: flex;
     gap: 10px;
@@ -373,6 +399,11 @@
 </head>
 <body>
 <header>
+  <a class="dict-link" href="policy_topic_dictionary.html" target="_blank" rel="noopener"
+     title="AI 정책 토픽 사전 — L0/L1/L2/L3 전 계층 영·한 병기 정의">
+    <span class="dict-icon">📘</span>
+    <span>AI 정책 토픽 사전<span class="dict-sub"> · Policy Topic Dictionary</span></span>
+  </a>
   <h1>AI Topic Taxonomy</h1>
   <div class="subtitle">
     Science, Technology, Policy, and Risks taxonomy browser. Cards are generated from the existing AI Topic Space payload; L1 risk cards add source-based scope definitions, while L4 risk cards retain their verified evidence links.
@@ -704,7 +735,9 @@ function addTopicCard(out, node, ordinal) {
     level: "L3",
     ordinal,
     title: node.l3_label || node.l3 || node.phrase || node.id,
-    path: [node.l0 || node.domain, node.l2, node.l3_label || node.l3].filter(Boolean),
+    // L1 is included so that L1/L2 group cards and their L3 children share a consistent
+    // path prefix (required by pathStartsWith for the subtree buttons).
+    path: [node.l0 || node.domain, node.l1, node.l2, node.l3_label || node.l3].filter(Boolean),
     id: node.id,
     korean: node.korean || "",
     definition: node.definition || "",
@@ -792,11 +825,20 @@ function buildCards() {
     const nodes = (payload.nodes || []).filter(n => (n.l0 || n.domain) === domain);
     const d = DOMAIN_LETTERS[domain];
     addGroupCard(out, {domain, level:"L0", ordinal:d, title:domain, path:[domain], rows:nodes});
-    groupBy(nodes, n=>n.l2).forEach(([l2, l2Rows], i2) => {
-      const o2 = `${d}.${i2+1}`;
-      addGroupCard(out, {domain, level:"L2", ordinal:o2, title:l2, path:[domain,l2], rows:l2Rows});
-      l2Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i3) => {
-        addTopicCard(out, n, `${o2}.${i3+1}`);
+    // L1 group cards: the reference domains (Science/Technology/Policy) carry an L1 taxonomy
+    // layer just as the Risks domain does; emitting it keeps the level counts aligned with the
+    // published topic dictionary (L0 / L1 / L2 / L3).
+    const l1Groups = groupBy(nodes, n=>n.l1);
+    l1Groups.sort((a,b)=> b[1].length - a[1].length || String(a[0]).localeCompare(String(b[0])));
+    l1Groups.forEach(([l1, l1Rows], i1) => {
+      const o1 = `${d}.${i1+1}`;
+      addGroupCard(out, {domain, level:"L1", ordinal:o1, title:l1, path:[domain,l1], rows:l1Rows});
+      groupBy(l1Rows, n=>n.l2).forEach(([l2, l2Rows], i2) => {
+        const o2 = `${o1}.${i2+1}`;
+        addGroupCard(out, {domain, level:"L2", ordinal:o2, title:l2, path:[domain,l1,l2], rows:l2Rows});
+        l2Rows.slice().sort((a,b)=>labelOf(a).localeCompare(labelOf(b))).forEach((n, i3) => {
+          addTopicCard(out, n, `${o2}.${i3+1}`);
+        });
       });
     });
   }
