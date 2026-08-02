@@ -11,7 +11,8 @@
    "review"
   ],
   "version": "v1 (reference-domain backbone: Science/Technology/Policy L1+L2) + sync_20260802 (labor/education branches, rights-impact & democratic-integrity L2, Policy L0)",
-  "generated": "2026-06-14"
+  "generated": "2026-06-14",
+  "policy_sync_20260803": "Policy L2 cards aligned to the 475/23 reference space; removed 2, added 0"
  },
  "defs": {
   "Science|||L1|||AI science and research": {
@@ -5014,20 +5015,6 @@
    "review": "curated_v2_KR",
    "source_url": "https://spri.kr/posts/view/23873",
    "pipeline_order": 97
-  },
-  "Policy|||L2|||Rights-impact regulation and biometrics": {
-   "english": "A regulatory subfield of AI governance that establishes prohibitions, risk classifications, and ex ante impact-assessment duties for AI systems whose deployment bears directly on fundamental rights, with particular attention to biometric identification, biometric categorisation, emotion recognition, and remote surveillance of persons in publicly accessible spaces. It is distinguished from general data protection, which governs the lawful processing of personal data as such rather than the permissibility of specific rights-affecting applications, and from algorithmic fairness, which addresses the statistical distribution of model outcomes rather than binding legal duties of prohibition, human oversight, notification, and fundamental rights impact assessment.",
-   "korean": "생체인식·원격 감시 등 기본권에 직접적으로 영향을 미치는 인공지능 활용에 대하여 금지 관행, 위험 분류, 기본권 영향평가 및 인간의 감독·고지 의무를 사전적으로 규율하는 인공지능 거버넌스의 규제 하위 영역이며, 개인정보의 적법한 처리 일반을 다루는 데이터보호나 모형 산출의 통계적 형평을 다루는 알고리즘 공정성과는 구별되는 범주이다.",
-   "source": "Regulation (EU) 2024/1689 of the European Parliament and of the Council laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)",
-   "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-   "review": "curated_v1_sync_20260802"
-  },
-  "Policy|||L2|||Digital rights and democratic integrity": {
-   "english": "A policy subfield concerned with safeguarding the conditions of democratic self-government in digitally mediated environments, encompassing civil liberties and digital rights, electoral and information integrity, digital identity, and the transparency mechanisms—open data, public sector algorithm registers, stakeholder participation—through which public authorities remain accountable for their use of automated systems. It is distinguished from legal-framework-focused digital rights regulation, which codifies enforceable individual entitlements against platforms and controllers, and from disinformation-specific policy, which targets a single class of informational harm rather than the broader institutional preconditions of democratic accountability.",
-   "korean": "디지털 환경에서 민주적 자기통치의 조건을 보호하는 정책 영역으로서, 시민적 자유와 디지털 권리, 선거·정보 무결성, 디지털 신원, 그리고 공공부문 알고리즘 등록부·공공데이터 개방·이해관계자 참여와 같은 공적 책임성 기제를 포괄하며, 개인의 권리를 법제화하는 디지털권 규제나 허위정보에 국한된 정책과는 구별되는 범주이다.",
-   "source": "Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law (CETS No. 225, 2024)",
-   "source_url": "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225",
-   "review": "curated_v1_sync_20260802"
   },
   "Policy|||L2|||노동분야": {
    "english": "The labor domain is a separately constituted analytical category, grounded in expert-provided definitions, that addresses the effects of artificial intelligence on the future of work, task structure and transition, and labor market institutions, together with the corresponding employment, training, and social safety net policy responses; it focuses on labor rather than industrial promotion and investment, and was established separately to support analysis of policy gaps in Korea relative to other countries.",
