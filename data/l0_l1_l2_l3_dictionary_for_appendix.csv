@@ -456,7 +456,7 @@ POLICY-REF-0410,Policy,AI policy and governance,Risk-based AI regulation and ove
 POLICY-REF-0415,Policy,AI policy and governance,Risk-based AI regulation and oversight,standards and benchmarks,,평가·비교의 기준이 되는 표준과 벤치마크.,Claude,pending,pending
 POLICY-REF-0416,Policy,AI policy and governance,Risk-based AI regulation and oversight,standards-setting bodies,,국제 기술·규범 표준을 제정하는 기구.,Claude,pending,pending
 POLICY-REF-0441,Policy,AI policy and governance,Risk-based AI regulation and oversight,technology-neutral regulation,,특정 기술에 얽매이지 않고 결과·기능 기준으로 적용되는 규제.,Claude,pending,pending
-POLICY-REF-0446,Policy,AI policy and governance,Risk-based AI regulation and oversight,the Brussels effect,,EU 규제가 사실상 글로벌 표준으로 확산되는 규제 파급 효과.,Claude,pending,pending
+POLICY-REF-0446,Policy,AI policy and governance,Risk-based AI regulation and oversight,Regulatory diffusion,,주요 관할권의 규제 모형과 표준이 국경을 넘어 확산되는 과정.,Claude,pending,pending
 POLICY-REF-0450,Policy,AI policy and governance,Risk-based AI regulation and oversight,threshold of compute,,규제 대상 여부를 판단하는 기준으로 쓰이는 연산량 임계치.,Claude,pending,pending
 POLICY-REF-0049,Policy,AI policy and governance,STS and philosophy of AI,Anthropocentrism in AI,인공지능의 인간 중심주의,인공지능 기술의 개발과 배치에서 인간의 존엄성 보장과 복지 증진을 최우선 목표로 삼아야 한다는 정책적 기조이다.,ChatGPT_Gemini,pending,researcher_intervened_review_v2
 POLICY-REF-0085,Policy,AI policy and governance,STS and philosophy of AI,Co-evolution of AI and Society,인공지능과 사회의 공진화,가치 시스템을 매개로 인공지능 기술과 인간 사회의 규범이 상호작용하며 상호 유기적으로 변화하고 발전하는 역학 구조이다.,ChatGPT_Gemini,pending,researcher_intervened_review_v2
